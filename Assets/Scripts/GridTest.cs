@@ -5,17 +5,37 @@ using CodeMonkey.Utils;
 
 public class GridTest : MonoBehaviour
 {
-    private PlacementGrid grid;
+    public PlacementGrid grid;
     private void Start()
     {
-        grid = new PlacementGrid(22, 11, 1f);
+        grid = new PlacementGrid(22, 11, 1f, transform.position);
     }
 
     private void Update()
     {
-        if(InputManager.gameplayInstance.isLeftMouseDown)
+        if(InputManager.gameplayInstance.isLeftClickBeingPressed)
         {
-            grid.SetValue(UtilsClass.GetMouseWorldPosition(), 20);
+            LeftClick();
         }
+    }
+    private void OnEnable()
+    {
+        //InputManager.gameplayInstance.OnLeftClickDown.AddListener(LeftClick);
+        InputManager.gameplayInstance.OnRightClickDown.AddListener(RightClick);
+    }
+    private void OnDisable()
+    {
+        //InputManager.gameplayInstance.OnLeftClickDown.RemoveListener(LeftClick);
+        InputManager.gameplayInstance.OnRightClickDown.RemoveListener(RightClick);
+    }
+
+    void LeftClick()
+    {
+        grid.SetValue(UtilsClass.GetMouseWorldPosition(), 20);
+    }
+
+    void RightClick()
+    {
+        Debug.Log(grid.GetValue(UtilsClass.GetMouseWorldPosition()));
     }
 }

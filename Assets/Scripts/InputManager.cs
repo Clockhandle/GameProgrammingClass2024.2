@@ -1,14 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
     public static InputManager gameplayInstance;
     [SerializeField] private EventChannelSO gameEvent; // Assign this in the Editor
-    public bool isLeftMouseDown;
 
+    //Input Events
+    public UnityEvent OnLeftClickDown;
+    public UnityEvent OnLeftClickRelease;
+    public UnityEvent OnRightClickDown;
+    public UnityEvent OnRightClickRelease;
+
+    //Pretained input reference
+    public bool isLeftClickBeingPressed;
     private void Awake()
     {
         if (gameplayInstance == null)
@@ -28,8 +36,29 @@ public class InputManager : MonoBehaviour
         }
     }
 
-    public void OnLeftMouseDown(InputAction.CallbackContext context)
+    public void OnLeftMouse(InputAction.CallbackContext context)
     {
-        isLeftMouseDown = context.performed;
+        if (context.started)
+        {
+            OnLeftClickDown?.Invoke();
+            isLeftClickBeingPressed = true;
+        }
+        else if(context.canceled)
+        {
+            isLeftClickBeingPressed = false;
+            OnLeftClickRelease?.Invoke();
+        }
+    }
+
+    public void OnRightMouse(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            OnRightClickDown?.Invoke();
+        }
+        else if (context.canceled)
+        {
+            OnRightClickRelease?.Invoke();
+        }
     }
 }
