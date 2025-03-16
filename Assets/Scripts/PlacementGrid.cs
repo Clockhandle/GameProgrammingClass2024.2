@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using CodeMonkey.Utils;
+using UnityEngine.Tilemaps;
 
 public class PlacementGrid
 {
@@ -87,3 +88,41 @@ public class PlacementGrid
         return GetValue(x, y);
     }
 }
+
+//using System.Collections.Generic;
+//using UnityEngine;
+//using UnityEngine.Tilemaps;
+
+//public enum GridType { Empty, Ground, HighGround, Water }
+
+//public class TilemapGridSystem : MonoBehaviour
+//{
+//    [SerializeField] private Tilemap tilemap;
+
+//    private Dictionary<Vector3Int, GridType> tileDataLookup = new Dictionary<Vector3Int, GridType>();
+
+//    private void Start()
+//    {
+//        BoundsInt bounds = tilemap.cellBounds;
+
+//        foreach (Vector3Int position in bounds.allPositionsWithin)
+//        {
+//            TileBase tile = tilemap.GetTile(position);
+
+//            if (tile is CustomTile customTile && customTile.tileData != null)
+//            {
+//                tileDataLookup[position] = customTile.tileData.gridType;
+//            }
+//            else
+//            {
+//                tileDataLookup[position] = GridType.Empty; // Default to empty
+//            }
+//        }
+//    }
+
+//    public GridType GetGridType(Vector3 worldPosition)
+//    {
+//        Vector3Int cellPosition = tilemap.WorldToCell(worldPosition);
+//        return tileDataLookup.TryGetValue(cellPosition, out GridType type) ? type : GridType.Empty;
+//    }
+//}
