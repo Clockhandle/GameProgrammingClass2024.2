@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2a2cff69ae735d43ad81a8163e9f31a, type: 3}
   m_Name: High Tile
   m_EditorClassIdentifier: 
-  tile:
+  tiles:
   - {fileID: 11400000, guid: 7bfba1e90edc16141b538fef611d9cd6, type: 2}
   - {fileID: 11400000, guid: 4859dbb994e2e7a48a617ec057901e6d, type: 2}
   - {fileID: 11400000, guid: 2da0581e3a69dee46bd67ef0558303bd, type: 2}

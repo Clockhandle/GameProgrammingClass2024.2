@@ -3679,6 +3679,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilemap: {fileID: 1790147525}
+  tileDataArray:
+  - {fileID: 11400000, guid: 18bd6e3c25af9954fb24283e8270e549, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
