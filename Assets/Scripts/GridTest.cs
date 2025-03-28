@@ -6,27 +6,22 @@ using CodeMonkey.Utils;
 public class GridTest : MonoBehaviour
 {
     public PlacementGrid grid;
+
+    private void OnEnable()
+    {
+        // Subscribe to the tap event from the InputManager.
+        InputManager.OnTap += LeftClick;
+    }
+
+    private void OnDisable()
+    {
+        // Unsubscribe when the script is disabled.
+        InputManager.OnTap -= LeftClick;
+    }
+
     private void Start()
     {
         grid = new PlacementGrid(22, 11, 1f, transform.position);
-    }
-
-    private void Update()
-    {
-        if(InputManager.gameplayInstance.isLeftClickBeingPressed)
-        {
-            LeftClick();
-        }
-    }
-    private void OnEnable()
-    {
-        //InputManager.gameplayInstance.OnLeftClickDown.AddListener(LeftClick);
-        InputManager.gameplayInstance.OnRightClickDown.AddListener(RightClick);
-    }
-    private void OnDisable()
-    {
-        //InputManager.gameplayInstance.OnLeftClickDown.RemoveListener(LeftClick);
-        InputManager.gameplayInstance.OnRightClickDown.RemoveListener(RightClick);
     }
 
     void LeftClick()
@@ -34,8 +29,4 @@ public class GridTest : MonoBehaviour
         grid.SetValue(UtilsClass.GetMouseWorldPosition(), 20);
     }
 
-    void RightClick()
-    {
-        Debug.Log(grid.GetValue(UtilsClass.GetMouseWorldPosition()));
-    }
 }

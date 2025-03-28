@@ -8,24 +8,34 @@ public class TileManager : MonoBehaviour
     [SerializeField]
     private TileDataSO[] tileDataArray; // Array of all TileDataSO assets
 
-    private void Update()
+    private void OnEnable()
     {
-        if (Input.GetMouseButton(0))
+        // Subscribe to InputManager's OnTap event.
+        InputManager.OnTap += CheckTileAtMouse;
+    }
+
+    private void OnDisable()
+    {
+        // Unsubscribe when disabled.
+        InputManager.OnTap -= CheckTileAtMouse;
+    }
+
+    // This method is called when a tap event occurs.
+    private void CheckTileAtMouse()
+    {
+        Vector2 mousePosition = InputManager.MouseWorldPosition;
+        Vector3Int gridPosition = tilemap.WorldToCell(mousePosition);
+
+        TileBase clickedTile = tilemap.GetTile(gridPosition);
+
+        if (clickedTile != null)
         {
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3Int gridPosition = tilemap.WorldToCell(mousePosition);
-
-            TileBase clickedTile = tilemap.GetTile(gridPosition);
-
-            if (clickedTile != null)
-            {
-                Debug.Log($"At position {gridPosition}, there is a {clickedTile.name}");
-                CheckTileProperties(clickedTile);
-            }
-            else
-            {
-                Debug.Log($"No tile found at {gridPosition}");
-            }
+            Debug.Log($"At position {gridPosition}, there is a {clickedTile.name}");
+            CheckTileProperties(clickedTile);
+        }
+        else
+        {
+            Debug.Log($"No tile found at {gridPosition}");
         }
     }
 

@@ -15,7 +15,17 @@ public class DragToScreen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     {
         _rectTransform = GetComponent<RectTransform>();
         _canvas = GetComponentInParent<Canvas>();
+
+        if (_canvas == null)
+        {
+            Debug.LogError("Canvas not found! Make sure the object is inside a Canvas.");
+        }
+        else
+        {
+            Debug.Log("Canvas found: " + _canvas.name);
+        }
     }
+
 
     private void Start()
     {
@@ -28,7 +38,7 @@ public class DragToScreen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     public void OnDrag(PointerEventData eventData)
     {
-        Debug.Log("On Drag!");
+        Debug.Log("On Drag!" + eventData.delta);
         _rectTransform.anchoredPosition += eventData.delta / _canvas.scaleFactor;
     }
 

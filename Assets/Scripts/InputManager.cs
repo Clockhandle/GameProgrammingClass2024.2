@@ -1,64 +1,71 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Interactions;
+using System;
 
 public class InputManager : MonoBehaviour
 {
-    public static InputManager gameplayInstance;
-    [SerializeField] private EventChannelSO gameEvent; // Assign this in the Editor
+    private PlayerInput inputActions;
+    private bool isHolding;
+    public static Vector3 MouseWorldPosition { get; private set; } // Stores world position
 
-    //Input Events
-    public UnityEvent OnLeftClickDown;
-    public UnityEvent OnLeftClickRelease;
-    public UnityEvent OnRightClickDown;
-    public UnityEvent OnRightClickRelease;
+    public static event Action OnTap;
+    public static event Action OnHold;
+    public static event Action OnRelease;
 
-    //Pretained input reference
-    public bool isLeftClickBeingPressed;
     private void Awake()
     {
-        if (gameplayInstance == null)
-        {
-            gameplayInstance = this;
-        }
-        else
-        {
-            Destroy(gameObject); // Prevent duplicates if multiple InputManagers exist
-        }
+        inputActions = new PlayerInput();
+
+        // Subscribe to input events
+        inputActions.Mouse.Click.performed += ctx => OnMouseClick(ctx);
+        inputActions.Mouse.Hold.performed += ctx => OnMouseHold(ctx);
+        inputActions.Mouse.Release.performed += _ => OnMouseRelease();
     }
-    public void OnExit(InputAction.CallbackContext context)
+
+    private void OnEnable() => inputActions.Enable();
+
+    private void OnDisable() => inputActions.Disable();
+
+    private void Update()
     {
-        if (context.performed)
+        MouseWorldPosition = GetMouseWorldPosition();
+        if (isHolding)
         {
-            gameEvent.Raise();
+            Vector2 mousePosition = Mouse.current.position.ReadValue();
+            Debug.Log($"Mouse Hold at screen position: {mousePosition}");
+            Debug.Log($"Mouse Hold at world position: {MouseWorldPosition}");
         }
     }
 
-    public void OnLeftMouse(InputAction.CallbackContext context)
+    private void OnMouseClick(InputAction.CallbackContext ctx)
     {
-        if (context.started)
+        // Check if the click was a tap (quick press and release)
+        if (ctx.interaction is TapInteraction)
         {
-            OnLeftClickDown?.Invoke();
-            isLeftClickBeingPressed = true;
-        }
-        else if(context.canceled)
-        {
-            isLeftClickBeingPressed = false;
-            OnLeftClickRelease?.Invoke();
+            Debug.Log("Mouse Tap detected!");
+            OnTap?.Invoke();
         }
     }
 
-    public void OnRightMouse(InputAction.CallbackContext context)
+    private void OnMouseHold(InputAction.CallbackContext ctx)
     {
-        if (context.performed)
-        {
-            OnRightClickDown?.Invoke();
-        }
-        else if (context.canceled)
-        {
-            OnRightClickRelease?.Invoke();
-        }
+        Debug.Log("Mouse Hold started!");
+        isHolding = true;
+        OnHold?.Invoke();
+    }
+
+    private void OnMouseRelease()
+    {
+        Debug.Log("Mouse Released!");
+        isHolding = false;
+        OnRelease?.Invoke();
+    }
+
+    private Vector3 GetMouseWorldPosition()
+    {
+        Vector2 screenPosition = Mouse.current.position.ReadValue();
+        float depth = -Camera.main.transform.position.z;
+        return Camera.main.ScreenToWorldPoint(new Vector3(screenPosition.x, screenPosition.y, depth));
     }
 }
