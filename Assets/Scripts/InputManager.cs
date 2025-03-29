@@ -2,12 +2,14 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Interactions;
 using System;
+using UnityEngine.EventSystems;
 
 public class InputManager : MonoBehaviour
 {
     private PlayerInput inputActions;
     private bool isHolding;
     public static Vector3 MouseWorldPosition { get; private set; } // Stores world position
+    public static bool IsPointerOverUI { get; private set; }
 
     public static event Action OnTap;
     public static event Action OnHold;
@@ -18,8 +20,8 @@ public class InputManager : MonoBehaviour
         inputActions = new PlayerInput();
 
         // Subscribe to input events
-        inputActions.Mouse.Click.performed += ctx => OnMouseClick(ctx);
-        inputActions.Mouse.Hold.performed += ctx => OnMouseHold(ctx);
+        inputActions.Mouse.Click.performed += _ => OnMouseClick();
+        inputActions.Mouse.Hold.performed += _ => OnMouseHold();
         inputActions.Mouse.Release.performed += _ => OnMouseRelease();
     }
 
@@ -29,35 +31,33 @@ public class InputManager : MonoBehaviour
 
     private void Update()
     {
+        IsPointerOverUI = EventSystem.current != null && EventSystem.current.IsPointerOverGameObject();
         MouseWorldPosition = GetMouseWorldPosition();
         if (isHolding)
         {
             Vector2 mousePosition = Mouse.current.position.ReadValue();
-            Debug.Log($"Mouse Hold at screen position: {mousePosition}");
-            Debug.Log($"Mouse Hold at world position: {MouseWorldPosition}");
+            //Debug.Log($"Mouse Hold at screen position: {mousePosition}");
+            //Debug.Log($"Mouse Hold at world position: {MouseWorldPosition}");
         }
     }
 
-    private void OnMouseClick(InputAction.CallbackContext ctx)
+    private void OnMouseClick()
     {
-        // Check if the click was a tap (quick press and release)
-        if (ctx.interaction is TapInteraction)
-        {
-            Debug.Log("Mouse Tap detected!");
-            OnTap?.Invoke();
-        }
+        if (IsPointerOverUI) return;
+        Debug.Log("OnTap");
+        OnTap?.Invoke();
     }
 
-    private void OnMouseHold(InputAction.CallbackContext ctx)
+    private void OnMouseHold()
     {
-        Debug.Log("Mouse Hold started!");
+        if (IsPointerOverUI) return;
         isHolding = true;
         OnHold?.Invoke();
     }
 
     private void OnMouseRelease()
     {
-        Debug.Log("Mouse Released!");
+        if (IsPointerOverUI) return;
         isHolding = false;
         OnRelease?.Invoke();
     }
