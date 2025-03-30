@@ -24,14 +24,16 @@ public enum UnitClass
 public class UnitDataSO : ScriptableObject
 {
     [Header("Stats")]
-    public int health = 0;
     public int maxHealth = 100;
     public int defense = 10;
     public float resistance = 0;
     public int SP = 10;
-    public int DP = 10;
 
     [Header("Trait")]
     public UnitType type;
     public UnitClass unitClass;
+
+    [Header("Deployment")]
+    public int DP = 10;
+    public int maxNumberOfDeployments = 5;
 }

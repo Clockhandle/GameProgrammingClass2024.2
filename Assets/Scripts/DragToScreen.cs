@@ -13,11 +13,15 @@ public class DragToScreen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     private Vector2 startPosition;
     private Vector3Int closestTile;
     private bool canPlace;
+    private Unit unit;
+    private DeploymentManager deploymentManager;
 
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
         canvas = GetComponentInParent<Canvas>();
+        unit = characterPrefab.GetComponent<Unit>();
+        deploymentManager = new DeploymentManager();
 
         if (!canvas)
         {
@@ -32,7 +36,9 @@ public class DragToScreen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        tileManager.HighlightPlaceableTiles();
+
+        tileManager.GetAllowedTileFlags(unit);
+        tileManager.HighlightPlaceableTiles(characterPrefab);
         canPlace = false;
     }
 
@@ -66,15 +72,38 @@ public class DragToScreen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         if (canPlace)
         {
             Vector3 snapPosition = tileManager.tilemap.GetCellCenterWorld(closestTile);
-            bool placed = tileManager.TryPlaceCharacter(snapPosition, characterPrefab);
 
-            if (placed)
+            // Check if deployment is allowed for this unit prefab.
+            if (deploymentManager.CanDeploy(characterPrefab, unit.unitDataSO.maxNumberOfDeployments))
             {
-                gameObject.SetActive(false);
+                bool placed = tileManager.TryPlaceCharacter(snapPosition, characterPrefab);
+                if (placed)
+                {
+                    // Register the deployment.
+                    deploymentManager.RegisterDeployment(characterPrefab);
+
+                    // After registering, check if we've reached the limit.
+                    if (!deploymentManager.CanDeploy(characterPrefab, unit.unitDataSO.maxNumberOfDeployments))
+                    {
+                        // Limit reached: disable the UI element.
+                        gameObject.SetActive(false);
+                    }
+                    else
+                    {
+                        // Not yet reached limit: reset UI for another placement.
+                        ResetPosition();
+                    }
+                }
+                else
+                {
+                    Debug.Log("Placement failed on final check.");
+                    ResetPosition();
+                }
             }
             else
             {
-                ResetPosition();
+                Debug.Log("Deployment limit reached for this unit type.");
+                gameObject.SetActive(false);
             }
         }
         else
@@ -95,13 +124,9 @@ public class DragToScreen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         }
     }
 
-    private void SnapToMouse(PointerEventData eventData)
-    {
-        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
-    }
-
     private void ResetPosition()
     {
         rectTransform.anchoredPosition = startPosition;
     }
+
 }

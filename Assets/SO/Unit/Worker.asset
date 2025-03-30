@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15e5fd9db2dce3c40a6321014b0f375f, type: 3}
-  m_Name: Scout
+  m_Name: Worker
   m_EditorClassIdentifier: 
-  maxHealth: 80
+  maxHealth: 100
   defense: 10
   resistance: 0
   SP: 10
   DP: 10
   type: -1
-  unitClass: 16
+  unitClass: 8
