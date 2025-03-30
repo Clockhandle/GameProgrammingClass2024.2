@@ -16,6 +16,7 @@ MonoBehaviour:
   defense: 10
   resistance: 0
   SP: 10
-  DP: 10
   type: 2
   unitClass: 2
+  DP: 10
+  maxNumberOfDeployments: 2
