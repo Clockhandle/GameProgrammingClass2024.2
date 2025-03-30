@@ -1,72 +1,107 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
+
 public class DragToScreen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-
     private RectTransform rectTransform;
     private Canvas canvas;
-    [SerializeField]
-    private GameObject characterPrefab;
-    [SerializeField]
-    private TileManager tileManager;
+
+    [SerializeField] private GameObject characterPrefab;
+    [SerializeField] private TileManager tileManager;
 
     private Vector2 startPosition;
+    private Vector3Int closestTile;
+    private bool canPlace;
 
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
         canvas = GetComponentInParent<Canvas>();
 
-        if (canvas == null)
+        if (!canvas)
         {
-            Debug.LogError("Canvas not found! Make sure the object is inside a Canvas.");
-        }
-        else
-        {
-            Debug.Log("Canvas found: " + canvas.name);
+            Debug.LogError("Canvas not found! Ensure the object is inside a Canvas.");
         }
     }
-
 
     private void Start()
     {
         startPosition = rectTransform.anchoredPosition;
     }
+
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log("On Begin Drag!");
         tileManager.HighlightPlaceableTiles();
+        canPlace = false;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        Vector3 worldPos = InputManager.MouseWorldPosition;
+        closestTile = tileManager.GetClosestPlaceableTile(worldPos, out canPlace);
+
+        if (canPlace)
+        {
+            SnapToTile(closestTile);
+        }
+        else
+        {
+            // Immediately snap the UI element to the mouse position in canvas space
+            Vector2 localPoint;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                canvas.transform as RectTransform,
+                eventData.position,      // Use the current pointer screen position
+                canvas.worldCamera,      // Provide the correct camera (or null if using Overlay)
+                out localPoint);
+            rectTransform.anchoredPosition = localPoint;
+            rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         tileManager.tileHighlighter.ClearHighlights();
-        // Convert the drop position from screen space to world space.
-        Vector3 dropWorldPos = InputManager.MouseWorldPosition;
 
-        // Use the TileManager to attempt character placement.
-        bool placed = tileManager.TryPlaceCharacter(dropWorldPos, characterPrefab);
-
-        if (!placed)
+        if (canPlace)
         {
-            Debug.Log("Invalid placement: tile is unplaceable or already occupied.");
-        }
+            Vector3 snapPosition = tileManager.tilemap.GetCellCenterWorld(closestTile);
+            bool placed = tileManager.TryPlaceCharacter(snapPosition, characterPrefab);
 
-        // Reset the UI element's position and disable it.
-        rectTransform.anchoredPosition = startPosition;
-        gameObject.SetActive(false);
+            if (placed)
+            {
+                gameObject.SetActive(false);
+            }
+            else
+            {
+                ResetPosition();
+            }
+        }
+        else
+        {
+            ResetPosition();
+        }
     }
 
-    //private Vector3 GetWorldPositionFromUI(Vector2 screenPosition)
-    //{
-    //    float depth = -Camera.main.transform.position.z; // For 2D, if Camera is at z = -10, depth becomes 10.
-    //    return Camera.main.ScreenToWorldPoint(new Vector3(screenPosition.x, screenPosition.y, depth));
-    //}
+    private void SnapToTile(Vector3Int tilePosition)
+    {
+        Vector3 worldPos = tileManager.tilemap.GetCellCenterWorld(tilePosition);
+        Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+
+        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                canvas.transform as RectTransform, screenPos, canvas.worldCamera, out Vector2 anchoredPos))
+        {
+            rectTransform.anchoredPosition = anchoredPos;
+        }
+    }
+
+    private void SnapToMouse(PointerEventData eventData)
+    {
+        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+    }
+
+    private void ResetPosition()
+    {
+        rectTransform.anchoredPosition = startPosition;
+    }
 }

@@ -4,8 +4,8 @@ using UnityEngine.Tilemaps;
 
 public class TileManager : MonoBehaviour
 {
-    [SerializeField]
-    private Tilemap tilemap;
+
+    public Tilemap tilemap;
     [SerializeField]
     private TileDataSO[] tileDataArray; // Array of all TileDataSO assets
     public TileDataLookUp tileDataLookUp;
@@ -60,5 +60,15 @@ public class TileManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public Vector3Int GetClosestPlaceableTile(Vector3 worldPos, out bool canPlace)
+    {
+        Vector3Int cellPos = tilemap.WorldToCell(worldPos);
+        TileDataSO data = tileDataLookUp.GetTileData(tilemap.GetTile(cellPos));
+
+        canPlace = (data != null && (data.tileProperties & TileType.LowTile) != 0 && !tileOccupancyCheck.IsTileOccupied(cellPos));
+
+        return cellPos;
     }
 }
