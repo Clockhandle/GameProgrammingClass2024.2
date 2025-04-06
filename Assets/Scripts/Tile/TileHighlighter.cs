@@ -1,13 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+public interface ItileHighlighter
+{
+    void HighlightTile(Vector3Int cellPos, Color color);
+    void ClearHighlights();
+}
 
-public class TileHighlighter
+
+public class TileHighlighter : ItileHighlighter
 {
     private Tilemap tilemap;
-
     public TileHighlighter(Tilemap tilemap)
     {
         Debug.Log($"Initialized {this.GetType().Name}!");

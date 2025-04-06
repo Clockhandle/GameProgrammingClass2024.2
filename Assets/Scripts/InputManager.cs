@@ -10,6 +10,7 @@ public class InputManager : MonoBehaviour
     private bool isHolding;
     public static Vector3 MouseWorldPosition { get; private set; } // Stores world position
     public static bool IsPointerOverUI { get; private set; }
+    public static bool IsSpecificUIDragging { get; private set; }
 
     public static event Action OnTap;
     public static event Action OnHold;
@@ -33,12 +34,12 @@ public class InputManager : MonoBehaviour
     {
         IsPointerOverUI = EventSystem.current != null && EventSystem.current.IsPointerOverGameObject();
         MouseWorldPosition = GetMouseWorldPosition();
-        if (isHolding)
-        {
-            Vector2 mousePosition = Mouse.current.position.ReadValue();
-            //Debug.Log($"Mouse Hold at screen position: {mousePosition}");
-            //Debug.Log($"Mouse Hold at world position: {MouseWorldPosition}");
-        }
+        //if (isHolding)
+        //{
+        //    Vector2 mousePosition = Mouse.current.position.ReadValue();
+        //    Debug.Log($"Mouse Hold at screen position: {mousePosition}");
+        //    Debug.Log($"Mouse Hold at world position: {MouseWorldPosition}");
+        //}
     }
 
     private void OnMouseClick()
@@ -62,10 +63,29 @@ public class InputManager : MonoBehaviour
         OnRelease?.Invoke();
     }
 
+    public static void SignalUIDragStart()
+    {
+        IsSpecificUIDragging = true;
+        // Debug.Log("InputManager: UI Drag Started"); // Optional debug
+    }
+
+    public static void SignalUIDragEnd()
+    {
+        IsSpecificUIDragging = false;
+        // Debug.Log("InputManager: UI Drag Ended"); // Optional debug
+    }
+
     private Vector3 GetMouseWorldPosition()
     {
+        // Your implementation (ideally the robust one)
         Vector2 screenPosition = Mouse.current.position.ReadValue();
-        float depth = -Camera.main.transform.position.z;
-        return Camera.main.ScreenToWorldPoint(new Vector3(screenPosition.x, screenPosition.y, depth));
+        // Example using Plane Raycast (adjust plane definition as needed)
+        Plane groundPlane = new Plane(Vector3.forward, Vector3.zero);
+        Ray ray = Camera.main.ScreenPointToRay(screenPosition);
+        if (groundPlane.Raycast(ray, out float enterDistance))
+        {
+            return ray.GetPoint(enterDistance);
+        }
+        return Vector3.zero; // Fallback
     }
 }

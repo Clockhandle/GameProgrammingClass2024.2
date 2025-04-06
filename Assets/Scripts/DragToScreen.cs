@@ -1,3 +1,4 @@
+using TowerDefense.Utils;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -36,8 +37,8 @@ public class DragToScreen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-
-        tileManager.GetAllowedTileFlags(unit);
+        InputManager.SignalUIDragStart();
+        tileManager.CurrentTileFlags = GameUtils.GetAllowedTileFlags(unit);
         tileManager.HighlightPlaceableTiles(characterPrefab);
         canPlace = false;
     }
@@ -45,7 +46,7 @@ public class DragToScreen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     public void OnDrag(PointerEventData eventData)
     {
         Vector3 worldPos = InputManager.MouseWorldPosition;
-        closestTile = tileManager.GetClosestPlaceableTile(worldPos, out canPlace);
+        closestTile = tileManager.GetClosestPlaceableTile(worldPos, characterPrefab, out canPlace);
 
         if (canPlace)
         {
@@ -61,12 +62,14 @@ public class DragToScreen : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
                 canvas.worldCamera,      // Provide the correct camera (or null if using Overlay)
                 out localPoint);
             rectTransform.anchoredPosition = localPoint;
-            rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+            //rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
         }
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        InputManager.SignalUIDragEnd();
+
         tileManager.tileHighlighter.ClearHighlights();
 
         if (canPlace)
