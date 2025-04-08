@@ -32,7 +32,7 @@ public class TileManager : MonoBehaviour
         Unit unitData = characterPrefab.GetComponent<Unit>();
         if (unitData == null) return false;
 
-        CurrentTileFlags = UnitUtils.GetAllowedTileFlags(unitData);
+        CurrentTileFlags = GameUtils.GetAllowedTileFlags(unitData);
 
         if (!tilePlacementValidator.IsPlacementValid(cellPos, CurrentTileFlags)) return false;
 
@@ -45,7 +45,7 @@ public class TileManager : MonoBehaviour
     public void HighlightPlaceableTiles(GameObject characterPrefab)
     {
         Unit unitData = characterPrefab.GetComponent<Unit>();
-        CurrentTileFlags = UnitUtils.GetAllowedTileFlags(unitData);
+        CurrentTileFlags = GameUtils.GetAllowedTileFlags(unitData);
 
         BoundsInt bounds = tilemap.cellBounds;
         foreach (Vector3Int pos in bounds.allPositionsWithin)
@@ -59,7 +59,7 @@ public class TileManager : MonoBehaviour
     {
         Vector3Int cellPos = tilemap.WorldToCell(worldPos);
         Unit unitData = characterPrefab.GetComponent<Unit>();
-        CurrentTileFlags = UnitUtils.GetAllowedTileFlags(unitData);
+        CurrentTileFlags = GameUtils.GetAllowedTileFlags(unitData);
 
         canPlace = tilePlacementValidator.IsPlacementValid(cellPos, CurrentTileFlags);
         return cellPos;

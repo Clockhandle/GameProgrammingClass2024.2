@@ -1,23 +1,74 @@
-using System.Collections;
+// DeploymentManager.cs (Add this method to the existing Singleton script)
+
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeploymentManager
+public class DeploymentManager : MonoBehaviour
 {
-    // Maps each unit prefab to the number of instances deployed.
-    private Dictionary<GameObject, int> deployedCounts = new Dictionary<GameObject, int>();
+    public static DeploymentManager Instance { get; private set; }
+    private Dictionary<int, int> deployedCounts = new Dictionary<int, int>();
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+            // DontDestroyOnLoad(gameObject); // Optional
+            Debug.Log("DeploymentManager Singleton Instance Initialized.");
+        }
+    }
+
+    // Keep CanDeploy, RegisterDeployment, UnregisterDeployment...
 
     public bool CanDeploy(GameObject unitPrefab, int maxDeployCount)
     {
-        int currentCount = deployedCounts.ContainsKey(unitPrefab) ? deployedCounts[unitPrefab] : 0;
-        return currentCount < maxDeployCount;
+        if (unitPrefab == null) return false;
+        int key = unitPrefab.GetInstanceID();
+        int currentCount = deployedCounts.ContainsKey(key) ? deployedCounts[key] : 0;
+        bool canDeploy = currentCount < maxDeployCount;
+        return canDeploy;
     }
 
     public void RegisterDeployment(GameObject unitPrefab)
     {
-        if (deployedCounts.ContainsKey(unitPrefab))
-            deployedCounts[unitPrefab]++;
-        else
-            deployedCounts[unitPrefab] = 1;
+        if (unitPrefab == null) return;
+        int key = unitPrefab.GetInstanceID();
+        if (deployedCounts.ContainsKey(key)) deployedCounts[key]++;
+        else deployedCounts[key] = 1;
+        Debug.Log($"Registered Deployment: {unitPrefab.name}, New Count: {deployedCounts[key]}");
     }
+
+    public void UnregisterDeployment(GameObject unitPrefab)
+    {
+        if (unitPrefab == null) return;
+        int key = unitPrefab.GetInstanceID();
+        if (deployedCounts.ContainsKey(key))
+        {
+            if (deployedCounts[key] > 0)
+            {
+                deployedCounts[key]--;
+                Debug.Log($"Unregistered Deployment: {unitPrefab.name}, New Count: {deployedCounts[key]}");
+            }
+        }
+        else Debug.LogWarning($"Attempted to unregister {unitPrefab.name}, but it wasn't tracked.");
+    }
+
+
+    // --- NEW METHOD ---
+    /// <summary>
+    /// Gets the current deployment count for a specific unit prefab.
+    /// </summary>
+    /// <param name="unitPrefab">The unit prefab.</param>
+    /// <returns>The number of currently deployed units of that type.</returns>
+    public int GetCurrentDeploymentCount(GameObject unitPrefab)
+    {
+        if (unitPrefab == null) return 0;
+        int key = unitPrefab.GetInstanceID();
+        return deployedCounts.ContainsKey(key) ? deployedCounts[key] : 0;
+    }
+    // --- End NEW METHOD ---
 }
