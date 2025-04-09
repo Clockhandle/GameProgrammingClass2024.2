@@ -1812,8 +1812,10 @@ GameObject:
   m_Component:
   - component: {fileID: 492209783}
   - component: {fileID: 492209784}
+  - component: {fileID: 492209786}
+  - component: {fileID: 492209785}
   m_Layer: 0
-  m_Name: DeploymentManager
+  m_Name: Managers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1846,6 +1848,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b364d046941faab4aaecbad76e4c2513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &492209785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492209782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba541aa3416e90343b5044c3c6a3e1f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentCanvas: {fileID: 521243656}
+  dragGhostIconParent: {fileID: 521243657}
+  dragGhostIconPrefab: {fileID: 1655506598558559457, guid: bf080484a41eb49409cc31ccdecc120a, type: 3}
+  placementUIManager: {fileID: 492209786}
+--- !u!114 &492209786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492209782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc4f2956b578654fbcbc20db00e4074, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directionSelectionUIPrefab: {fileID: 3815950023907793805, guid: 039eeb05d41c36d40b8139c598d21dc2, type: 3}
+  parentCanvas: {fileID: 521243656}
+  UIOffset: {x: -150, y: 150}
 --- !u!1 &501438455
 GameObject:
   m_ObjectHideFlags: 0
@@ -1940,8 +1973,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1734904474}
-          m_TargetAssemblyTypeName: DragToScreen, Assembly-CSharp
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
           m_MethodName: HandleBeginDrag
           m_Mode: 0
           m_Arguments:
@@ -1956,8 +1989,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1734904474}
-          m_TargetAssemblyTypeName: DragToScreen, Assembly-CSharp
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
           m_MethodName: HandleDrag
           m_Mode: 0
           m_Arguments:
@@ -1972,8 +2005,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1734904474}
-          m_TargetAssemblyTypeName: DragToScreen, Assembly-CSharp
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
           m_MethodName: HandleEndDrag
           m_Mode: 0
           m_Arguments:
@@ -2227,7 +2260,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -2609,50 +2642,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1132209545
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1132209547}
-  - component: {fileID: 1132209546}
-  m_Layer: 0
-  m_Name: Test
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1132209546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1132209545}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fdeecec09775fd41a3ea7c560e78b67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1132209547
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1132209545}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9, y: -5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1221235898
 GameObject:
   m_ObjectHideFlags: 0
@@ -2831,8 +2820,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1734904474}
-          m_TargetAssemblyTypeName: DragToScreen, Assembly-CSharp
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
           m_MethodName: HandleBeginDrag
           m_Mode: 0
           m_Arguments:
@@ -2847,8 +2836,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1734904474}
-          m_TargetAssemblyTypeName: DragToScreen, Assembly-CSharp
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
           m_MethodName: HandleDrag
           m_Mode: 0
           m_Arguments:
@@ -2863,8 +2852,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1734904474}
-          m_TargetAssemblyTypeName: DragToScreen, Assembly-CSharp
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
           m_MethodName: HandleEndDrag
           m_Mode: 0
           m_Arguments:
@@ -2995,8 +2984,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1734904474}
-          m_TargetAssemblyTypeName: DragToScreen, Assembly-CSharp
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
           m_MethodName: HandleBeginDrag
           m_Mode: 0
           m_Arguments:
@@ -3011,8 +3000,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1734904474}
-          m_TargetAssemblyTypeName: DragToScreen, Assembly-CSharp
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
           m_MethodName: HandleDrag
           m_Mode: 0
           m_Arguments:
@@ -3027,8 +3016,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1734904474}
-          m_TargetAssemblyTypeName: DragToScreen, Assembly-CSharp
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
           m_MethodName: HandleEndDrag
           m_Mode: 0
           m_Arguments:
@@ -3263,8 +3252,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1734904474}
-          m_TargetAssemblyTypeName: DragToScreen, Assembly-CSharp
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
           m_MethodName: HandleBeginDrag
           m_Mode: 0
           m_Arguments:
@@ -3279,8 +3268,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1734904474}
-          m_TargetAssemblyTypeName: DragToScreen, Assembly-CSharp
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
           m_MethodName: HandleDrag
           m_Mode: 0
           m_Arguments:
@@ -3295,8 +3284,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1734904474}
-          m_TargetAssemblyTypeName: DragToScreen, Assembly-CSharp
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
           m_MethodName: HandleEndDrag
           m_Mode: 0
           m_Arguments:
@@ -3413,7 +3402,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1734904473}
-  - component: {fileID: 1734904474}
   m_Layer: 5
   m_Name: DragToScreenManager
   m_TagString: Untagged
@@ -3445,22 +3433,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1734904474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1734904472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba541aa3416e90343b5044c3c6a3e1f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tileManager: {fileID: 1863292795}
-  parentCanvas: {fileID: 0}
-  dragGhostIconParent: {fileID: 0}
-  dragGhostIconPrefab: {fileID: 1655506598558559457, guid: bf080484a41eb49409cc31ccdecc120a, type: 3}
 --- !u!1 &1757036465
 GameObject:
   m_ObjectHideFlags: 0
@@ -3639,8 +3611,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1734904474}
-          m_TargetAssemblyTypeName: DragToScreen, Assembly-CSharp
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
           m_MethodName: HandleBeginDrag
           m_Mode: 0
           m_Arguments:
@@ -3655,8 +3627,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1734904474}
-          m_TargetAssemblyTypeName: DragToScreen, Assembly-CSharp
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
           m_MethodName: HandleDrag
           m_Mode: 0
           m_Arguments:
@@ -3671,8 +3643,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1734904474}
-          m_TargetAssemblyTypeName: DragToScreen, Assembly-CSharp
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
           m_MethodName: HandleEndDrag
           m_Mode: 0
           m_Arguments:
@@ -5883,7 +5855,6 @@ SceneRoots:
   - {fileID: 743245476}
   - {fileID: 521243657}
   - {fileID: 1863292794}
-  - {fileID: 1132209547}
   - {fileID: 2041566784}
   - {fileID: 1757036467}
   - {fileID: 1221235900}

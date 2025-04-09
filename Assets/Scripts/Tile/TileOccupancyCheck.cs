@@ -46,4 +46,10 @@ public class TileOccupancyCheck
             Debug.Log("No cell in OccupancyDictionary!");
         }
     }
+
+    public void SetTileToOccupied(Vector3 worldPos, bool occupied)
+    {
+        Vector3Int cellPos = tilemap.WorldToCell(worldPos);
+        SetTileToOccupied(cellPos, occupied);
+    }
 }
