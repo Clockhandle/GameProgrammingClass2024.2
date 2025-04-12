@@ -1,5 +1,6 @@
-// DragToScreenManager.cs (Test Version with TEMPORARY Direct Placement)
+// DragToScreenManager.cs (Phase 1 Logic included, LayoutElement fix REMOVED)
 
+using System.Collections.Generic;
 using TowerDefense.Utils;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -7,17 +8,27 @@ using UnityEngine.UI;
 
 public class DragToScreenManager : MonoBehaviour
 {
+    // --- Singleton ---
+    public static DragToScreenManager Instance { get; private set; }
+
+    // --- Inspector References ---
     [Header("Required References")]
+    [Tooltip("Assign the GameObject that DIRECTLY holds all the UnitIconData icons as children")]
+    [SerializeField] private Transform unitIconContainer;
     [SerializeField] private Canvas parentCanvas;
-    [SerializeField] private RectTransform dragGhostIconParent;
+    public RectTransform dragGhostIconParent;
     [SerializeField] private GameObject dragGhostIconPrefab;
+    // Keep PlacementUIManager reference for the input blocking check
     [SerializeField] private PlacementUIManager placementUIManager;
 
+
     // --- State ---
+    private List<UnitIconData> unitIcons = new List<UnitIconData>();
     private GameObject currentDraggedPrefab = null;
     private Unit currentUnitDataOnPrefab = null;
-    private UnitIconData currentlyDraggedIconData = null; // Store reference to the original icon's data component
+    private UnitIconData currentlyDraggedIconData = null;
     private bool isDragging = false;
+    private bool isDraggingLastOne = false;
     private bool canPlace;
     private Vector3Int closestTile;
 
@@ -28,6 +39,7 @@ public class DragToScreenManager : MonoBehaviour
     private Transform originalParent = null;
     private int originalSiblingIndex;
     private Vector2 originalAnchoredPosition;
+    // REMOVED: private LayoutElement draggedOriginalLayoutElement;
 
     // --- Dependencies ---
     private DeploymentManager deploymentManager;
@@ -35,100 +47,101 @@ public class DragToScreenManager : MonoBehaviour
 
     private void Awake()
     {
-        deploymentManager = DeploymentManager.Instance; // Use Singleton
-        tileManager = TileManager.Instance;
-        // --- Validate References --- (Same as before)
-        bool referencesValid = true;
-        if (tileManager == null) { Debug.LogError("DragToScreenManager: TileManager not assigned!", this); referencesValid = false; }
-        if (parentCanvas == null) parentCanvas = GetComponentInParent<Canvas>();
-        if (parentCanvas == null) { Debug.LogError("DragToScreenManager: Parent Canvas not found!", this); referencesValid = false; }
-        if (deploymentManager == null) { Debug.LogError("DragToScreenManager: DeploymentManager Singleton Instance not found!", this); referencesValid = false; }
-        if (dragGhostIconPrefab == null) { Debug.LogError("DragToScreenManager: Drag Ghost Icon Prefab not assigned!", this); referencesValid = false; }
-        if (dragGhostIconParent == null) dragGhostIconParent = parentCanvas.transform as RectTransform;
-        if (placementUIManager == null) placementUIManager = PlacementUIManager.Instance;
-        if (placementUIManager == null) { Debug.LogError("DragToScreenManager: PlacementUIManager Singleton Instance not found!", this); referencesValid = false; }
+        // Singleton Setup
+        if (Instance != null && Instance != this) { Destroy(gameObject); return; }
+        Instance = this;
 
-        if (!referencesValid) { Debug.LogError("DragToScreenManager disabled due to missing references."); this.enabled = false; }
+        // Get Dependencies
+        deploymentManager = DeploymentManager.Instance;
+        tileManager = TileManager.Instance;
+        if (placementUIManager == null) placementUIManager = PlacementUIManager.Instance; // Get if not assigned
+
+        // Validate References
+        bool referencesValid = true;
+        if (unitIconContainer == null) { /* LogError */ referencesValid = false; }
+        if (tileManager == null) { /* LogError */ referencesValid = false; }
+        if (parentCanvas == null) parentCanvas = GetComponentInParent<Canvas>();
+        if (parentCanvas == null) { /* LogError */ referencesValid = false; }
+        if (deploymentManager == null) { /* LogError */ referencesValid = false; }
+        if (dragGhostIconPrefab == null) { /* LogError */ referencesValid = false; }
+        if (dragGhostIconParent == null) dragGhostIconParent = parentCanvas.transform as RectTransform;
+        if (placementUIManager == null) { /* LogError */ referencesValid = false; } // Still need this check
+        if (!referencesValid) { this.enabled = false; /* LogError */ return; }
+
+        // Populate Icon List
+        PopulateUnitIconList();
+    }
+
+    private void PopulateUnitIconList()
+    {
+        unitIcons.Clear();
+        if (unitIconContainer != null)
+        {
+            unitIconContainer.GetComponentsInChildren<UnitIconData>(true, unitIcons);
+        }
+        else { Debug.LogError("DragToScreenManager: Unit Icon Container not assigned!"); }
     }
 
     // --- Event Handlers ---
 
     public void HandleBeginDrag(BaseEventData baseData)
     {
-        if (placementUIManager != null && placementUIManager.IsDirectionUIShown)
-        {
-            PointerEventData eventDataForCancel = baseData as PointerEventData;
-            if (eventDataForCancel != null) eventDataForCancel.pointerDrag = null;
-            return;
-        }
-
+        // Block if direction setting UI is active
+        if (placementUIManager != null && placementUIManager.IsDirectionUIShown) { PointerEventData data = baseData as PointerEventData; if (data != null) data.pointerDrag = null; return; }
         if (!this.enabled) return;
-
         PointerEventData eventData = baseData as PointerEventData;
         if (eventData == null || eventData.pointerDrag == null) return;
 
-        // Store reference to the icon data component being dragged
         currentlyDraggedIconData = eventData.pointerDrag.GetComponent<UnitIconData>();
-        if (currentlyDraggedIconData == null || currentlyDraggedIconData.unitPrefab == null) 
-        { 
-            CancelDrag(); 
-            return; 
-        }
+        if (currentlyDraggedIconData == null || currentlyDraggedIconData.unitPrefab == null) { CancelDrag(); return; }
 
         Unit unitComp = currentlyDraggedIconData.unitPrefab.GetComponent<Unit>();
-        if (unitComp == null || unitComp.unitDataSO == null) 
-        { 
-            CancelDrag(); 
-            return; 
-        }
+        if (unitComp == null || unitComp.unitDataSO == null) { CancelDrag(); return; }
 
-        // --- Check Deployment Limit ---
+        // Check Deployment Limit
         int maxCount = unitComp.unitDataSO.maxNumberOfDeployments;
-        if (!deploymentManager.CanDeploy(currentlyDraggedIconData.unitPrefab, maxCount))
-        {
-            Debug.Log($"Deployment limit reached for {currentlyDraggedIconData.unitPrefab.name}. Drag cancelled.");
-            CancelDrag(); 
-            return;
-        }
+        if (!deploymentManager.CanDeploy(currentlyDraggedIconData.unitPrefab, maxCount)) { CancelDrag(); return; }
 
-        // --- Decide Drag Type based on Count ---
+        // Decide Drag Type
         int currentCount = deploymentManager.GetCurrentDeploymentCount(currentlyDraggedIconData.unitPrefab);
-        bool isLastOne = (maxCount - currentCount <= 1);
+        isDraggingLastOne = (maxCount - currentCount <= 1);
 
+        // Set common state
         isDragging = true;
         currentDraggedPrefab = currentlyDraggedIconData.unitPrefab;
         currentUnitDataOnPrefab = unitComp;
         InputManager.SignalUIDragStart();
 
-        if (isLastOne)
+        if (isDraggingLastOne)
         {
-            // --- Drag Original Icon ---
-            ghostIconInstance = null;
-            ghostIconRectTransform = null; // Ensure no ghost
+            // --- Prepare Original Icon ---
+            ghostIconInstance = null; ghostIconRectTransform = null;
             draggedOriginalIconRect = currentlyDraggedIconData.GetComponent<RectTransform>();
-            if (draggedOriginalIconRect == null) 
-            {
-                CancelDrag(); 
-                return; 
-            }
+            if (draggedOriginalIconRect == null) { CancelDrag(); return; }
+
+            // ** NO LayoutElement logic here **
+
             originalParent = draggedOriginalIconRect.parent;
             originalSiblingIndex = draggedOriginalIconRect.GetSiblingIndex();
             originalAnchoredPosition = draggedOriginalIconRect.anchoredPosition;
-            draggedOriginalIconRect.SetParent(dragGhostIconParent, true);
+            draggedOriginalIconRect.SetParent(dragGhostIconParent, true); // Reparent
             draggedOriginalIconRect.SetAsLastSibling();
-            ToggleRaycasts(draggedOriginalIconRect, false); // Disable raycasts on original while dragging
-            UpdateOriginalIconPosition(eventData);
+            ToggleRaycasts(draggedOriginalIconRect, false); // Disable raycasts
+
+            // Explicitly Set Position Under Mouse AFTER Reparenting
+            Vector2 initialLocalPoint;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(dragGhostIconParent, eventData.position, parentCanvas.worldCamera, out initialLocalPoint);
+            draggedOriginalIconRect.anchoredPosition = initialLocalPoint;
         }
         else
         {
-            // --- Drag Ghost Icon ---
-            draggedOriginalIconRect = null; originalParent = null; // Ensure no original tracked
+            // --- Prepare Ghost Icon ---
+            draggedOriginalIconRect = null; originalParent = null;
             CreateGhostIcon(currentlyDraggedIconData, eventData);
             // Optional: Visually disable original icon
-            // currentlyDraggedIconData.gameObject.SetActive(false);
         }
 
-        // --- Common Drag Start Actions ---
+        // Highlight tiles
         if (tileManager != null) tileManager.HighlightPlaceableTiles(currentDraggedPrefab);
         canPlace = false;
     }
@@ -137,14 +150,13 @@ public class DragToScreenManager : MonoBehaviour
     public void HandleDrag(BaseEventData baseData)
     {
         if (!isDragging) return;
-
         PointerEventData eventData = baseData as PointerEventData;
         if (eventData == null || tileManager == null || currentDraggedPrefab == null) return;
 
         Vector3 worldPos = InputManager.MouseWorldPosition;
         closestTile = tileManager.GetClosestPlaceableTile(worldPos, currentDraggedPrefab, out canPlace);
 
-        // --- Update Position based on Drag Type ---
+        // Update position conditionally (ghost or original)
         if (ghostIconInstance != null)
         {
             UpdateGhostIconPosition(eventData);
@@ -165,148 +177,76 @@ public class DragToScreenManager : MonoBehaviour
         InputManager.SignalUIDragEnd();
 
         if (tileManager?.tileHighlighter != null)
-            tileManager.tileHighlighter.ClearHighlights(); // Or ClearAllTrackedHighlights
+            tileManager.tileHighlighter.ClearHighlights();
 
-        // Phase 1 Placement logic
+        // --- PHASE 1 PLACEMENT LOGIC ---
         if (canPlace)
         {
             Vector3 snapPosition = tileManager.tilemap.GetCellCenterWorld(closestTile);
             Unit awaitDeploymentUnit = null;
 
+            // Call provisional placement
             bool placedSuccessfully = tileManager.TryPlaceCharacterProvisionally(snapPosition, currentDraggedPrefab, out awaitDeploymentUnit);
-            if(placedSuccessfully && awaitDeploymentUnit != null)
-            {
-                Debug.Log($"Phase 1: Provisionally placed {currentDraggedPrefab.name}. Requesting Direction Input");
 
-                if(placementUIManager != null)
-                {
-                    placementUIManager.ShowDirectionUIForUnit(awaitDeploymentUnit);
-                }
-                else
-                {
-                    Debug.LogError("PlacementUIManager reference missing!");
-                }
-            }
-            else
+            if (placedSuccessfully && awaitDeploymentUnit != null)
             {
-                Debug.LogWarning($"Phase 1: Provisionally placement failed for {currentDraggedPrefab?.name ?? "Unknown"}. at {closestTile}");
+                Debug.Log($"Phase 1: Provisionally placed {currentDraggedPrefab.name}. Unit handles Direction UI.");
+
+                // Disable Original Icon If Last One Was Placed
+                if (isDraggingLastOne && currentlyDraggedIconData != null)
+                {
+                    currentlyDraggedIconData.gameObject.SetActive(false);
+                }
             }
+            else { Debug.LogWarning($"Phase 1: Provisional placement failed for {currentDraggedPrefab?.name ?? "Unknown"} at {closestTile}."); }
         }
-        else
-        {
-            Debug.Log("Drag ended over non-placeable area.");
-            // Original icon will be reset by cleanup logic below.
-        }
+        else { Debug.Log("Drag ended over non-placeable area."); }
+        // --- END PHASE 1 LOGIC ---
 
 
         // --- Cleanup ---
-        // This part remains the same, handles resetting original icon or destroying ghost
         if (ghostIconInstance != null)
         {
             DestroyGhostIcon();
-            // Optional: Re-enable original icon if it was disabled during ghost drag
-            // if(currentlyDraggedIconData != null) currentlyDraggedIconData.gameObject.SetActive(true);
+            // Optional: Re-enable original icon
         }
         else if (draggedOriginalIconRect != null)
         {
-            // Only reset the original icon if it hasn't been disabled above by reaching deploy limit
+            // Reset original icon *only if it wasn't just disabled*
             if (currentlyDraggedIconData != null && currentlyDraggedIconData.gameObject.activeSelf)
             {
-                ResetOriginalIcon();
+                ResetOriginalIcon(); // Resets parent, index, position, raycasts (NO layout element)
             }
-            else if (draggedOriginalIconRect != null) // Ensure ref is cleared if icon was disabled
-            {
-                // Icon was disabled, just clear the manager's reference to it
-                draggedOriginalIconRect = null;
-                originalParent = null;
-            }
+            else { /* Icon was disabled, just clear refs */ draggedOriginalIconRect = null; originalParent = null; }
         }
 
-        ResetDragState(); // Reset internal manager state
+        ResetDragState(); // Reset manager's internal state
     }
 
-    // --- Helper Methods --- (Keep all helpers: CreateGhostIcon, DestroyGhostIcon, ResetOriginalIcon, UpdateGhostIconPosition, UpdateOriginalIconPosition, SnapGhostIconToTile, SnapOriginalIconToTile, ResetDragState, CancelDrag, ToggleRaycasts)
-    // ... (Include all helper methods from the previous response here) ...
-    private void CreateGhostIcon(UnitIconData iconData, PointerEventData eventData)
-    {
-        if (dragGhostIconPrefab == null) return;
-        ghostIconInstance = Instantiate(dragGhostIconPrefab, dragGhostIconParent);
-        ghostIconInstance.name = $"GhostIcon_{iconData.unitPrefab.name}";
-        Image ghostImage = ghostIconInstance.GetComponent<Image>();
-        Image originalImage = iconData.GetComponent<Image>();
-        if (ghostImage != null && originalImage != null && originalImage.sprite != null)
-        {
-            ghostImage.sprite = originalImage.sprite; 
-            ghostImage.color = originalImage.color;
-            ghostImage.raycastTarget = false;
-        }
-        else if (ghostImage != null) ghostImage.raycastTarget = false;
-        ghostIconRectTransform = ghostIconInstance.GetComponent<RectTransform>();
-        if (ghostIconRectTransform != null) UpdateGhostIconPosition(eventData);
-        else Debug.LogError("Ghost Icon Prefab missing RectTransform!", ghostIconInstance);
-        ghostIconInstance.SetActive(true);
-    }
-    private void DestroyGhostIcon() 
-    { 
-        if (ghostIconInstance != null) 
-        { 
-            Destroy(ghostIconInstance);
-            ghostIconInstance = null; 
-            ghostIconRectTransform = null;
-        } 
-    }
+
+    // --- Helper Methods ---
+
+    // ResetOriginalIcon (NO LayoutElement)
     private void ResetOriginalIcon()
     {
         if (draggedOriginalIconRect == null) return;
+
         if (originalParent != null)
         {
             draggedOriginalIconRect.SetParent(originalParent, true);
-            draggedOriginalIconRect.SetSiblingIndex(originalSiblingIndex);
+            try { draggedOriginalIconRect.SetSiblingIndex(originalSiblingIndex); } catch { }
         }
         draggedOriginalIconRect.anchoredPosition = originalAnchoredPosition;
         ToggleRaycasts(draggedOriginalIconRect, true);
-        draggedOriginalIconRect = null; originalParent = null;
-    }
-    private void UpdateGhostIconPosition(PointerEventData eventData) 
-    { 
-        if (ghostIconRectTransform == null || parentCanvas == null) return; 
-        Vector2 localPoint; 
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(parentCanvas.transform as RectTransform, eventData.position, parentCanvas.worldCamera, out localPoint); 
-        ghostIconRectTransform.anchoredPosition = localPoint; 
-    }
-    private void UpdateOriginalIconPosition(PointerEventData eventData) 
-    { 
-        if (draggedOriginalIconRect == null || parentCanvas == null) return;
-        Vector2 localPoint; 
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(parentCanvas.transform as RectTransform, eventData.position, parentCanvas.worldCamera, out localPoint);
-        draggedOriginalIconRect.anchoredPosition = localPoint; 
-    }
-    private void SnapGhostIconToTile(Vector3Int tilePosition) 
-    { 
-        if (tileManager == null || parentCanvas == null || ghostIconRectTransform == null || Camera.main == null) return;
-        Vector3 worldPos = tileManager.tilemap.GetCellCenterWorld(tilePosition);
-        Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
-        Vector2 anchoredPos; 
-        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(parentCanvas.transform as RectTransform, screenPos, parentCanvas.worldCamera, out anchoredPos)) 
-        { 
-            ghostIconRectTransform.anchoredPosition = anchoredPos; 
-        } 
-    }
-    private void SnapOriginalIconToTile(Vector3Int tilePosition)
-    { 
-        if (tileManager == null || parentCanvas == null || draggedOriginalIconRect == null || Camera.main == null) return; 
-        Vector3 worldPos = tileManager.tilemap.GetCellCenterWorld(tilePosition); 
-        Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos); 
-        Vector2 anchoredPos;
-        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(parentCanvas.transform as RectTransform, screenPos, parentCanvas.worldCamera, out anchoredPos)) 
-        { 
-            draggedOriginalIconRect.anchoredPosition = anchoredPos; 
-        } 
+
+        // References cleared in ResetDragState
     }
 
-    private void ResetDragState() 
-    { 
+    // ResetDragState (NO LayoutElement)
+    private void ResetDragState()
+    {
         isDragging = false;
+        isDraggingLastOne = false;
         currentDraggedPrefab = null;
         currentUnitDataOnPrefab = null;
         canPlace = false;
@@ -315,22 +255,67 @@ public class DragToScreenManager : MonoBehaviour
         draggedOriginalIconRect = null;
         originalParent = null;
         currentlyDraggedIconData = null;
-    } // Added currentlyDraggedIconData = null
-    private void CancelDrag() 
-    { 
-        Debug.Log("Drag cancelled during initiation."); 
-        DestroyGhostIcon(); 
-        if (draggedOriginalIconRect != null) ResetOriginalIcon(); 
-        ResetDragState(); 
-    }
-    private void ToggleRaycasts(Transform target, bool enable) 
-    { 
-        Graphic g = target.GetComponent<Graphic>(); 
-        if (g != null) g.raycastTarget = enable; 
-        foreach (Transform child in target) 
-        {
-            ToggleRaycasts(child, enable);
-        } 
+        // NO draggedOriginalLayoutElement reset
     }
 
-}
+    // HandleUnitRetreat (Relies on Layout Group)
+    public void HandleUnitRetreat(GameObject unitPrefab)
+    {
+        if (unitPrefab == null) { /* Log warning */ return; }
+
+        foreach (UnitIconData icon in unitIcons)
+        {
+            if (icon != null && icon.unitPrefab == unitPrefab)
+            {
+                // Found the matching icon!
+                RectTransform iconRect = icon.GetComponent<RectTransform>();
+                if (iconRect == null) continue; // Need RectTransform
+
+                // ** DEBUG LOG 1: What state are we trying to restore? **
+                Debug.Log($"Attempting reset for {icon.name}: Target Parent={icon.originalParent?.name}, Target Index={icon.originalSiblingIndex}, Target Pos={icon.originalAnchoredPosition}");
+
+
+                if (icon.originalParent != null)
+                {
+
+                    // Reparent first
+                    iconRect.SetParent(icon.originalParent, false); 
+                    try { iconRect.SetSiblingIndex(icon.originalSiblingIndex); } catch { } // Try/Catch just in case
+                }
+                else { Debug.LogWarning($"Original parent for {icon.name} not stored, cannot reparent accurately."); }
+
+                // Restore position AFTER potential reparenting
+                iconRect.anchoredPosition = icon.originalAnchoredPosition;
+                Debug.Log($"Position set for {icon.name}. Current Anchored Pos: {iconRect.anchoredPosition}");
+                // Re-enable raycasting if it was disabled (ToggleRaycasts handles null checks)
+                ToggleRaycasts(iconRect, true);
+
+                // Re-activate the GameObject
+                if (!icon.gameObject.activeSelf)
+                {
+                    icon.gameObject.SetActive(true);
+                }
+
+                // Optional: Force layout group update on the original parent
+                if (icon.originalParent != null)
+                    LayoutRebuilder.MarkLayoutForRebuild(icon.originalParent as RectTransform); // Requires 'using UnityEngine.UI;'
+
+                return; // Exit after handling
+            }
+        }
+        // ... (Log warning if not found) ...
+        Debug.LogWarning($"Could not find matching UnitIconData in list to re-enable for prefab {unitPrefab.name}");
+    }
+
+    // Keep other helpers: CreateGhostIcon, DestroyGhostIcon, Update/Snap methods, CancelDrag, ToggleRaycasts...
+    // ... (Include the rest of the helper methods from the previous full script) ...
+    private void CreateGhostIcon(UnitIconData iconData, PointerEventData eventData) { if (dragGhostIconPrefab == null) return; ghostIconInstance = Instantiate(dragGhostIconPrefab, dragGhostIconParent); ghostIconInstance.name = $"GhostIcon_{iconData.unitPrefab.name}"; Image ghostImage = ghostIconInstance.GetComponent<Image>(); Image originalImage = iconData.GetComponent<Image>(); if (ghostImage != null && originalImage != null && originalImage.sprite != null) { ghostImage.sprite = originalImage.sprite; ghostImage.color = originalImage.color; ghostImage.raycastTarget = false; } else if (ghostImage != null) ghostImage.raycastTarget = false; ghostIconRectTransform = ghostIconInstance.GetComponent<RectTransform>(); if (ghostIconRectTransform != null) UpdateGhostIconPosition(eventData); else Debug.LogError("Ghost Icon Prefab missing RectTransform!", ghostIconInstance); ghostIconInstance.SetActive(true); }
+    private void DestroyGhostIcon() { if (ghostIconInstance != null) { Destroy(ghostIconInstance); ghostIconInstance = null; ghostIconRectTransform = null; } }
+    private void UpdateGhostIconPosition(PointerEventData eventData) { if (ghostIconRectTransform == null || parentCanvas == null) return; Vector2 localPoint; RectTransformUtility.ScreenPointToLocalPointInRectangle(parentCanvas.transform as RectTransform, eventData.position, parentCanvas.worldCamera, out localPoint); ghostIconRectTransform.anchoredPosition = localPoint; }
+    private void UpdateOriginalIconPosition(PointerEventData eventData) { if (draggedOriginalIconRect == null || parentCanvas == null) return; Vector2 localPoint; RectTransform referenceRect = draggedOriginalIconRect.parent as RectTransform; if (referenceRect == null) referenceRect = parentCanvas.transform as RectTransform; RectTransformUtility.ScreenPointToLocalPointInRectangle(referenceRect, eventData.position, parentCanvas.worldCamera, out localPoint); draggedOriginalIconRect.anchoredPosition = localPoint; }
+    private void SnapGhostIconToTile(Vector3Int tilePosition) { if (tileManager == null || parentCanvas == null || ghostIconRectTransform == null || Camera.main == null) return; Vector3 worldPos = tileManager.tilemap.GetCellCenterWorld(tilePosition); Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos); Vector2 anchoredPos; if (RectTransformUtility.ScreenPointToLocalPointInRectangle(parentCanvas.transform as RectTransform, screenPos, parentCanvas.worldCamera, out anchoredPos)) { ghostIconRectTransform.anchoredPosition = anchoredPos; } }
+    private void SnapOriginalIconToTile(Vector3Int tilePosition) { if (tileManager == null || parentCanvas == null || draggedOriginalIconRect == null || Camera.main == null) return; Vector3 worldPos = tileManager.tilemap.GetCellCenterWorld(tilePosition); Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos); Vector2 anchoredPos; RectTransform referenceRect = draggedOriginalIconRect.parent as RectTransform; if (referenceRect == null) referenceRect = parentCanvas.transform as RectTransform; if (RectTransformUtility.ScreenPointToLocalPointInRectangle(referenceRect, screenPos, parentCanvas.worldCamera, out anchoredPos)) { draggedOriginalIconRect.anchoredPosition = anchoredPos; } }
+    private void CancelDrag() {DestroyGhostIcon(); if (draggedOriginalIconRect != null) ResetOriginalIcon(); ResetDragState(); }
+    private void ToggleRaycasts(Transform target, bool enable) { Graphic g = target.GetComponent<Graphic>(); if (g != null) g.raycastTarget = enable; foreach (Transform child in target) { ToggleRaycasts(child, enable); } }
+
+} // End of Class

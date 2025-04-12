@@ -134,3 +134,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitDataSO: {fileID: 11400000, guid: bc120c0706be58e4f9c7e6c0b23ecbd1, type: 2}
+  directionUIWorldPrefab: {fileID: 8002188024767451207, guid: 039eeb05d41c36d40b8139c598d21dc2, type: 3}
+  uiLocalOffset: {x: -1, y: 1, z: 0}

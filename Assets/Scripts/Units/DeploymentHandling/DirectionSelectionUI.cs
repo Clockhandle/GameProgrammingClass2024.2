@@ -23,27 +23,26 @@ public class DirectionSelectionUI : MonoBehaviour
         }
     }
 
-    public void Initialize(Unit unit)
+    public void Initialize(Unit unit) 
     {
-        targetUnit = unit;
-        if(targetUnit == null)
-        {
-            PlacementUIManager.Instance.HideUIDirection();
-        }
+        targetUnit = unit; 
+        if (targetUnit == null) PlacementUIManager.Instance?.NotifyDirectionUIHidden(); 
+        /* Maybe Destroy(gameObject) here too? */ 
     }
 
     private void OnRetreatClicked()
     {
-        Debug.Log("Retreat button clicked!");
-        if(targetUnit != null)
+        Debug.Log($"Retreat button clicked via UI.");
+        if (targetUnit != null)
         {
-            //Phase 2
+            // Tell the unit to handle its own retreat process.
+            // It will destroy this UI instance (as a child), notify managers, etc.
             targetUnit.InitiateRetreat();
-            gameObject.SetActive(false);
         }
         else
         {
-            PlacementUIManager.Instance?.HideUIDirection();
+            Debug.LogWarning("Retreat clicked, but targetUnit is already null.");
+            Destroy(gameObject); // Destroy self if target lost
         }
     }
 

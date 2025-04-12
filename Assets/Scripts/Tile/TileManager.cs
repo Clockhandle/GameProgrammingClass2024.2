@@ -67,6 +67,7 @@ public class TileManager : MonoBehaviour
 
         if(newUnitComponent != null)
         {
+            newUnitComponent.SetSourcePrefab(characterPrefab);
             newUnitComponent.InitializeAwaitDeploymentState();
             tileOccupancyCheck.SetTileToOccupied(cellPos, true);
             placedUnit = newUnitComponent;
