@@ -28,6 +28,7 @@ public class CameraController : MonoBehaviour
 
     private void HandleCameraDrag()
     {
+
         if (mainCamera == null) return;
 
         Mouse currentMouse = Mouse.current;

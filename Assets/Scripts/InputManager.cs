@@ -34,12 +34,12 @@ public class InputManager : MonoBehaviour
     {
         IsPointerOverUI = EventSystem.current != null && EventSystem.current.IsPointerOverGameObject();
         MouseWorldPosition = GetMouseWorldPosition();
-        //if (isHolding)
-        //{
-        //    Vector2 mousePosition = Mouse.current.position.ReadValue();
-        //    Debug.Log($"Mouse Hold at screen position: {mousePosition}");
-        //    Debug.Log($"Mouse Hold at world position: {MouseWorldPosition}");
-        //}
+        if (isHolding)
+        {
+            //Vector2 mousePosition = Mouse.current.position.ReadValue();
+            //Debug.Log($"Mouse Hold at screen position: {mousePosition}");
+            //Debug.Log($"Mouse Hold at world position: {MouseWorldPosition}");
+        }
     }
 
     private void OnMouseClick()
@@ -63,13 +63,13 @@ public class InputManager : MonoBehaviour
         OnRelease?.Invoke();
     }
 
-    public static void SignalUIDragStart()
+    public static void SignalUIDragActive()
     {
         IsSpecificUIDragging = true;
         // Debug.Log("InputManager: UI Drag Started"); // Optional debug
     }
 
-    public static void SignalUIDragEnd()
+    public static void SignalUIDragInactive()
     {
         IsSpecificUIDragging = false;
         // Debug.Log("InputManager: UI Drag Ended"); // Optional debug

@@ -7,13 +7,13 @@ public class Unit : MonoBehaviour
     public UnitDataSO unitDataSO;
 
     [Header("World Space UI")]
-    [Tooltip("Assign the World Space Canvas Prefab for Direction Selection UI")]
-    [SerializeField] private GameObject directionUIWorldPrefab;
-    [SerializeField] private Vector3 uiLocalOffset = new Vector3(0, 1.5f, 0); // Offset from unit pivot
+    [Tooltip("Assign the World Space Canvas Prefab with DirectionControlUI script")]
+    [SerializeField] private GameObject directionControlUIPrefab; // Use updated name
+    [SerializeField] private Vector3 uiLocalOffset = Vector3.zero; // Typically zero if handle is root & centered
 
+    private GameObject directionUIInstance;
+    public GameObject SourcePrefab { get; private set; }
     private UnitStates currentStates;
-    private GameObject directionUIInstance; // Holds the instantiated UI
-    private GameObject sourcePrefab; // Added: Stores the original prefab
 
     // Optional: Cache camera if accessed frequently
     // private Camera mainCamera;
@@ -26,46 +26,27 @@ public class Unit : MonoBehaviour
     }
 
     // Called immediately after instantiation by TileManager.TryPlaceCharacterProvisionally
-    public void InitializeAwaitDeploymentState(/* Removed TileManager parameter */)
+    public void InitializeAwaitDeploymentState(GameObject prefab)
     {
+        this.SourcePrefab = prefab;
         currentStates = new UnitAwaitDeploymentState();
         currentStates?.StartState(this);
-        Debug.Log($"{gameObject.name} initialized in AwaitingDirectionState.");
 
-        // --- Instantiate and Setup World Space UI ---
-        if (directionUIWorldPrefab != null)
+        if (directionControlUIPrefab != null)
         {
-            // Instantiate as a child of this Unit's transform
-            directionUIInstance = Instantiate(directionUIWorldPrefab, transform);
-            // Set local position relative to the unit pivot point
-            directionUIInstance.transform.localPosition = uiLocalOffset;
-            // Ensure default rotation relative to parent (can be adjusted later)
+            directionUIInstance = Instantiate(directionControlUIPrefab, transform);
+            directionUIInstance.transform.localPosition = uiLocalOffset; // Often Vector3.zero now
             directionUIInstance.transform.localRotation = Quaternion.identity;
 
-            // Assign Main Camera to the World Space Canvas's Event Camera
             Canvas uiCanvas = directionUIInstance.GetComponent<Canvas>();
-            if (uiCanvas != null && uiCanvas.renderMode == RenderMode.WorldSpace)
-            {
-                uiCanvas.worldCamera = Camera.main; // Use cached camera if available
-            }
-            else if (uiCanvas == null)
-            {
-                Debug.LogError("directionUIWorldPrefab is missing Canvas component!", directionUIInstance);
-            }
+            if (uiCanvas != null && uiCanvas.renderMode == RenderMode.WorldSpace) { uiCanvas.worldCamera = Camera.main; }
 
-            // Get the UI script and initialize it with this unit instance
-            DirectionSelectionUI uiScript = directionUIInstance.GetComponent<DirectionSelectionUI>();
-            if (uiScript != null)
-            {
-                uiScript.Initialize(this);
-            }
-            else
-            {
-                Debug.LogError("directionUIWorldPrefab is missing DirectionSelectionUI script component!", directionUIInstance);
-            }
+            // *** Get the new combined script ***
+            DirectionControlUI uiScript = directionUIInstance.GetComponent<DirectionControlUI>();
+            if (uiScript != null) { uiScript.Initialize(this); }
+            else { Debug.LogError("directionControlUIPrefab missing DirectionControlUI script!", this); }
 
-            // Notify manager that UI is active
-            PlacementUIManager.Instance?.NotifyDirectionUIShown(); // Use null-conditional operator
+            PlacementUIManager.Instance?.NotifyDirectionUIShown();
         }
         else { Debug.LogWarning("directionUIWorldPrefab not assigned to Unit prefab! Cannot show direction UI.", this); }
         // --- End UI Setup ---
@@ -75,102 +56,116 @@ public class Unit : MonoBehaviour
 
     public void SetSourcePrefab(GameObject prefab)
     {
-        this.sourcePrefab = prefab;
+        this.SourcePrefab = prefab;
     }
 
-    // Called externally (e.g., by DirectionSelectionUI) when direction is confirmed
     public void ConfirmPlacement(Quaternion finalRotation)
     {
+        // 1. Check if we are in the correct state to confirm
         if (currentStates is UnitAwaitDeploymentState)
         {
-            // --- Destroy Direction UI ---
-            if (directionUIInstance != null) Destroy(directionUIInstance);
-            PlacementUIManager.Instance?.NotifyDirectionUIHidden();
-            // --- End Destroy UI ---
+            // --- Placement Finalization Steps ---
 
-            transform.rotation = finalRotation; // Apply final rotation
+            // 2. Notify manager that the Direction UI is going away
+            //    Do this BEFORE destroying the UI or switching state.
+            PlacementUIManager.Instance?.NotifyDirectionUIHidden(); // <-- PLACE NOTIFY HERE
 
-            UnitStates operationalState = UnitStateFactory.CreateState(unitDataSO);
-            SwitchState(operationalState); // Transition to Idle, ArcherState, etc.
+            // 3. Destroy the Direction UI instance explicitly (optional but clean)
+            //    Do this BEFORE switching state.
+            if (directionUIInstance != null)
+            {
+                Destroy(directionUIInstance); // <-- PLACE UI DESTROY HERE
+                directionUIInstance = null; // Clear reference
+            }
 
-            // Trigger deployment finalization actions
-            PlayDeploymentAnimation();
-            // EnableActiveComponents(true);
+            // 4. Apply the final rotation to the Unit itself
+            transform.rotation = finalRotation; // <-- PLACE ROTATION SET HERE
+
+            // 5. Get the Unit's first operational state from the factory
+            UnitStates operationalState = UnitStateFactory.CreateState(unitDataSO); // <-- PLACE FACTORY CALL HERE
+
+            // 6. Switch the Unit's state machine to the operational state
+            SwitchState(operationalState); // <-- PLACE STATE SWITCH HERE
+
+            // 7. Trigger post-placement actions (animation, enabling components, etc.)
+            PlayDeploymentAnimation(); // <-- PLACE ANIMATION/ETC HERE
+                                       // EnableActiveComponents(true); // Example
 
             Debug.Log($"{gameObject.name} placement confirmed facing {finalRotation.eulerAngles}. Switched to {operationalState?.GetType().Name}");
+
+            // --- NOTE: DeploymentManager.RegisterDeployment() is called AFTER this
+            // --- method returns, over in the DirectionDragger.OnEndDrag method.
         }
-        // ... (else block for wrong state) ...
+        else
+        {
+            Debug.LogWarning($"ConfirmPlacement called on {gameObject.name} but it was not in AwaitingDeploymentState. Current state: {currentStates?.GetType().Name}");
+            // Optional: Still try to destroy the UI if it somehow exists?
+            if (directionUIInstance != null) Destroy(directionUIInstance);
+            PlacementUIManager.Instance?.NotifyDirectionUIHidden();
+        }
     }
 
     // Called externally (e.g., by DirectionSelectionUI) when retreat is chosen
     public void InitiateRetreat()
     {
-        // Store state before potentially destroying UI that calls this
+        // Store state information needed AFTER potential destruction
         bool wasAwaitingDirection = currentStates is UnitAwaitDeploymentState;
-        UnitStates stateBeforeRetreat = currentStates; // For logging if needed
+        GameObject prefabToRestore = SourcePrefab; // Store prefab before 'this' is potentially invalid
+        Vector3 positionToUnoccupy = transform.position; // Store position before 'this' is destroyed
 
-        // Immediately destroy the UI if it exists (it's a child, will go away anyway, but cleaner)
-        if (directionUIInstance != null)
-        {
-            Destroy(directionUIInstance);
-        }
+        UnitStates stateBeforeRetreat = currentStates; // For logging/checks
 
-        // Notify UI manager state change (do this early)
-        PlacementUIManager.Instance?.NotifyDirectionUIHidden();
-
-        // Check if retreat is possible from the current state
+        // Exit early if state is null (something went wrong)
         if (stateBeforeRetreat == null)
         {
             Debug.LogWarning($"InitiateRetreat called on {gameObject.name} but state was null.", this);
-            // Destroy self just in case something went very wrong
-            Destroy(gameObject);
+            Destroy(gameObject); // Destroy self just in case
             return;
         }
 
-        // --- Logic for Retreating from Provisional State ---
+        // --- Handle Retreat from Provisional State ---
         if (wasAwaitingDirection)
         {
             Debug.Log($"Retreat initiated for {gameObject.name} from AwaitingDeploymentState");
 
-            // 1. Re-enable the original UI icon via DragToScreenManager
-            if (sourcePrefab != null)
+            // --- Cleanup and Notifications (Order Matters!) ---
+
+            // 1. Notify PlacementUIManager UI is hidden (unblocks camera/drag ASAP)
+            PlacementUIManager.Instance?.NotifyDirectionUIHidden(); // <-- PLACE NOTIFY PUI HERE
+
+            // 2. Notify DragToScreenManager to re-enable the list icon
+            //    Needs the prefab reference we stored.
+            if (prefabToRestore != null)
             {
-                if (DragToScreenManager.Instance != null)
-                {
-                    DragToScreenManager.Instance.HandleUnitRetreat(sourcePrefab);
-                }
-                else { Debug.LogError($"DragToScreenManager Instance not found while trying to re-enable icon for {sourcePrefab.name}"); }
+                DragToScreenManager.Instance?.HandleUnitRetreat(prefabToRestore); // <-- PLACE NOTIFY DSM HERE
             }
             else { Debug.LogWarning($"Source prefab reference missing on {gameObject.name}, cannot re-enable UI icon."); }
 
-            // 2. Unoccupy the Tile
-            if (TileManager.Instance != null && TileManager.Instance.tileOccupancyCheck != null)
+            // 3. Unoccupy the Tile
+            //    Needs the position we stored.
+            if (TileManager.Instance?.tileOccupancyCheck != null)
             {
-                TileManager.Instance.tileOccupancyCheck.SetTileToOccupied(transform.position, false);
+                TileManager.Instance.tileOccupancyCheck.SetTileToOccupied(positionToUnoccupy, false); // <-- PLACE UNOCCUPY TILE HERE
             }
             else { Debug.LogError($"Cannot unoccupy tile for {gameObject.name}, TileManager missing!"); }
 
-            // 3. Deployment count was never incremented, so no DeploymentManager notification needed.
+            // 4. Deployment count was never incremented for this state.
 
-            // 4. Destroy this Unit GameObject
-            Destroy(gameObject);
+            // 5. Destroy this Unit GameObject
+            //    This MUST be last, as it also destroys the child UI and this script instance.
+            Destroy(gameObject); // <-- PLACE DESTROY UNIT HERE
         }
-        // --- Logic for Retreating from Active State (Phase 2b/Later) ---
-        // else if (currentStates is SomeActiveStateThatAllowsRetreat)
+        // --- Handle Retreat from Active State (Later) ---
+        // else if (/* check if current state allows active retreat */)
         // {
-        //     Debug.Log($"Retreat initiated for {gameObject.name} from Active state {currentStates.GetType().Name}");
-        //     // 1. Re-enable original UI Icon (maybe after cooldown?)
-        //     // 2. Unoccupy Tile
-        //     // 3. **** Call DeploymentManager.Instance.UnregisterDeployment(sourcePrefab); ****
-        //     // 4. Trigger Cooldown logic...
-        //     // 5. Destroy(gameObject);
+        //     // Similar steps, but MUST call DeploymentManager.UnregisterDeployment
+        //     // And potentially handle cooldowns differently for the list icon
         // }
         else
         {
-            Debug.LogWarning($"InitiateRetreat called on {gameObject.name} from state {currentStates.GetType().Name} where retreat is not currently implemented.");
-            // Decide if you should destroy anyway or do nothing. For now, let's destroy.
-            if (TileManager.Instance != null && TileManager.Instance.tileOccupancyCheck != null) { TileManager.Instance.tileOccupancyCheck.SetTileToOccupied(transform.position, false); }
-            Destroy(gameObject); // Destroy even if state was unexpected? Or just log?
+            Debug.LogWarning($"InitiateRetreat called on {gameObject.name} from state {stateBeforeRetreat.GetType().Name} where retreat is not currently implemented.");
+            // Optionally destroy anyway? Or just ignore? Depends on desired game rules.
+            // Destroy(gameObject);
         }
     }
 

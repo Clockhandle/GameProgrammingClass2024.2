@@ -110,7 +110,7 @@ public class DragToScreenManager : MonoBehaviour
         isDragging = true;
         currentDraggedPrefab = currentlyDraggedIconData.unitPrefab;
         currentUnitDataOnPrefab = unitComp;
-        InputManager.SignalUIDragStart();
+        InputManager.SignalUIDragActive();
 
         if (isDraggingLastOne)
         {
@@ -174,7 +174,7 @@ public class DragToScreenManager : MonoBehaviour
     {
         if (!isDragging) return;
 
-        InputManager.SignalUIDragEnd();
+        InputManager.SignalUIDragInactive();
 
         if (tileManager?.tileHighlighter != null)
             tileManager.tileHighlighter.ClearHighlights();

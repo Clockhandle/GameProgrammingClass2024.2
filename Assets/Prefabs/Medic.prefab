@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6841365688292740706}
   - component: {fileID: 3928611554853354696}
   - component: {fileID: 5070981990953955509}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Medic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,5 +134,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitDataSO: {fileID: 11400000, guid: 7a1b07e8ac8d3094eabf95031740ad00, type: 2}
-  directionUIWorldPrefab: {fileID: 8002188024767451207, guid: 039eeb05d41c36d40b8139c598d21dc2, type: 3}
-  uiLocalOffset: {x: -1, y: 1, z: 0}
+  directionControlUIPrefab: {fileID: 8002188024767451207, guid: 039eeb05d41c36d40b8139c598d21dc2, type: 3}
+  uiLocalOffset: {x: 0, y: 0, z: 0}

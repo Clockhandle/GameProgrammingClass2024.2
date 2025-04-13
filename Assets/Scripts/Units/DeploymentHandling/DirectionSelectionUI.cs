@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class DirectionSelectionUI : MonoBehaviour
 {
     [Tooltip("Assign the retreat button from the UI prefab")]
-    [SerializeField]
-    private Button retreatButton;
+    [SerializeField] private Button retreatButton;
+    [SerializeField] private DirectionControlUI directionControl; // Assign DirectionHandle GO in Inspector
+
 
     private Unit targetUnit;
 
@@ -21,18 +22,23 @@ public class DirectionSelectionUI : MonoBehaviour
         {
             retreatButton.onClick.AddListener(OnRetreatClicked);
         }
+        if (directionControl == null) directionControl = GetComponentInChildren<DirectionControlUI>();
+        if (directionControl == null) Debug.LogError("DirectionDragger component not found in children!", this);
     }
 
     public void Initialize(Unit unit) 
     {
         targetUnit = unit; 
-        if (targetUnit == null) PlacementUIManager.Instance?.NotifyDirectionUIHidden(); 
-        /* Maybe Destroy(gameObject) here too? */ 
+        if (targetUnit == null) PlacementUIManager.Instance?.NotifyDirectionUIHidden();
+        /* Maybe Destroy(gameObject) here too? */
+        if (directionControl != null)
+        {
+            directionControl.Initialize(targetUnit);
+        }
     }
 
     private void OnRetreatClicked()
     {
-        Debug.Log($"Retreat button clicked via UI.");
         if (targetUnit != null)
         {
             // Tell the unit to handle its own retreat process.
