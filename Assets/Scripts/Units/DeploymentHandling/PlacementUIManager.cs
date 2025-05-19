@@ -25,7 +25,6 @@ public class PlacementUIManager : MonoBehaviour
         }
         Instance = this;
         // DontDestroyOnLoad(gameObject); // Optional
-        Debug.Log("PlacementUIManager Singleton Instance Initialized (State Tracker Role).");
     }
 
     /// <summary>
@@ -34,7 +33,6 @@ public class PlacementUIManager : MonoBehaviour
     public void NotifyDirectionUIShown()
     {
         isDirectionUIShown = true;
-        Debug.Log("PlacementUIManager State: Direction UI SHOWN");
     }
 
     /// <summary>
@@ -43,7 +41,6 @@ public class PlacementUIManager : MonoBehaviour
     public void NotifyDirectionUIHidden()
     {
         isDirectionUIShown = false;
-        Debug.Log("PlacementUIManager State: Direction UI HIDDEN");
     }
 
     // REMOVED: No longer needs prefab refs, canvas refs, or methods like

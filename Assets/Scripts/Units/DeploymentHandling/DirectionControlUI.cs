@@ -19,6 +19,7 @@ public class DirectionControlUI : MonoBehaviour
     [SerializeField] private float deadZoneRadius = 10f;
     [SerializeField] private Vector2 defaultDirection = Vector2.up;
     [SerializeField] private float defaultAngleDegrees = 90f; // Default to Up
+    private UnitRange targetUnitRange;
 
 
     // --- State & References ---
@@ -28,6 +29,7 @@ public class DirectionControlUI : MonoBehaviour
     private Camera eventCamera;
     private bool isDraggingHandle = false;
     private Vector2 handleInitialLocalPos; // Initial position of handle within panel (likely 0,0)
+    private bool retreatModeOnly = false;
 
     void Awake()
     {
@@ -53,6 +55,7 @@ public class DirectionControlUI : MonoBehaviour
     public void Initialize(Unit unit)
     {
         targetUnit = unit;
+        targetUnitRange = unit.GetComponentInChildren<UnitRange>();
         Canvas localCanvas = GetComponent<Canvas>();
         if (localCanvas != null) { eventCamera = localCanvas.worldCamera; }
         else { Debug.LogError("DirectionControlUI requires a Canvas component on the same GameObject!", this); }
@@ -61,6 +64,11 @@ public class DirectionControlUI : MonoBehaviour
 
         // Reset handle visuals on init
         ResetHandleVisuals();
+
+        if (targetUnitRange != null)
+        {
+            targetUnitRange.ShowRangePreview(false);
+        }
     }
 
     // Reset handle to center/default rotation
@@ -87,21 +95,40 @@ public class DirectionControlUI : MonoBehaviour
     {
         if (!isDraggingHandle || targetUnit == null || handleRectTransform == null || panelRectTransform == null) return;
         PointerEventData eventData = baseData as PointerEventData;
+
         // Calculate pointer position relative to the PARENT PANEL's pivot
         Vector2 localPoint;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(panelRectTransform, eventData.position, eventData.pressEventCamera ?? eventCamera, out localPoint);
 
         float distance = localPoint.magnitude;
-        Vector2 direction = (distance > 0.01f) ? localPoint.normalized : (Quaternion.Euler(0, 0, handleRectTransform.localEulerAngles.z) * Vector2.up); // Use current visual dir if no move
+        Vector2 direction = (distance > 0.01f) ? localPoint.normalized : (Quaternion.Euler(0, 0, handleRectTransform.localEulerAngles.z) * Vector2.up);
 
         // Clamp Handle Position
         float clampedDistance = Mathf.Min(distance, dragRadius);
         Vector2 targetHandlePosition = direction * clampedDistance;
         handleRectTransform.anchoredPosition = targetHandlePosition;
 
-        // Update Handle Rotation (Angle relative to positive X-axis for Atan2(y,x))
+        // Update Handle Rotation
         float visualAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        handleRectTransform.localRotation = Quaternion.Euler(0, 0, visualAngle - 90f); // Offset if handle sprite faces UP
+        handleRectTransform.localRotation = Quaternion.Euler(0, 0, visualAngle - 90f);
+
+        // Update the range visibility and rotation based on deadzone
+        if (targetUnitRange != null)
+        {
+            // Check if outside deadzone
+            bool outsideDeadZone = distance >= deadZoneRadius;
+
+            // Only show and update range when outside deadzone
+
+            if (outsideDeadZone)
+            {
+                targetUnitRange.ShowRangePreview(outsideDeadZone);
+                Quaternion rangeRotation = Quaternion.Euler(0, 0, visualAngle);
+                targetUnitRange.transform.rotation = rangeRotation;
+            }
+        }
+
+
     }
 
     public void HandleEndDrag(BaseEventData baseData)
@@ -115,26 +142,27 @@ public class DirectionControlUI : MonoBehaviour
 
         float finalAngleDegrees; // The angle we will apply to the Unit's Z rotation
 
-        // Check Deadzone
+        // Inside HandleEndDrag method in DirectionControlUI.cs
         if (finalDistance < deadZoneRadius)
         {
-            Debug.Log("Drag ended inside deadzone, using default angle.");
-            finalAngleDegrees = defaultAngleDegrees; // Use the defined default angle
-            ResetHandleVisuals(); // Reset handle visuals
+            finalAngleDegrees = defaultAngleDegrees;
+            ResetHandleVisuals();
         }
         else
         {
-            // Calculate direction vector FROM the final handle position
+            // Existing code for outside deadzone...
             Vector2 finalDirection = finalHandlePosition.normalized;
-            // Calculate angle relative to the positive X-axis (Right)
             finalAngleDegrees = Mathf.Atan2(finalDirection.y, finalDirection.x) * Mathf.Rad2Deg;
-            // No need to reset handle visuals here, let it stay where released
         }
 
         // Create the final rotation for the UNIT using the calculated angle
         Quaternion finalUnitRotation = Quaternion.Euler(0, 0, finalAngleDegrees);
 
-        Debug.Log($"Direction Drag Ended. Final Handle Position: {finalHandlePosition}, Calculated Angle (X-axis): {finalAngleDegrees}, Final Unit Rotation: {finalUnitRotation.eulerAngles}");
+        // Hide the range preview now - before calling ConfirmPlacement
+        if (targetUnitRange != null)
+        {
+            targetUnitRange.ShowRangePreview(false);
+        }
 
         // Confirm Placement (Unit handles state change & destroying this UI)
         targetUnit.ConfirmPlacement(finalUnitRotation);
@@ -149,6 +177,32 @@ public class DirectionControlUI : MonoBehaviour
     }
 
     // Keep OnRetreatClicked, Initialize, Awake, OnDestroy...
+
+    public void SetRetreatModeOnly(bool retreatOnly)
+    {
+        retreatModeOnly = retreatOnly;
+
+        if (retreatOnly)
+        {
+            // Hide direction handle if present
+            if (directionHandleImage != null)
+                directionHandleImage.gameObject.SetActive(false);
+
+            // Show only retreat button in a centered position
+            if (retreatButton != null)
+            {
+                retreatButton.gameObject.SetActive(true);
+            }
+        }
+    }
+
+    public void HideAllControls()
+    {
+        if (directionHandleImage != null)
+            directionHandleImage.gameObject.SetActive(false);
+        if (retreatButton != null)
+            retreatButton.gameObject.SetActive(false);
+    }
     private void OnRetreatClicked() { /* ... Same ... */ if (targetUnit != null) targetUnit.InitiateRetreat(); else Destroy(gameObject); }
     void OnDestroy() { /* ... Same ... */ if (retreatButton != null) retreatButton.onClick.RemoveListener(OnRetreatClicked); PlacementUIManager.Instance?.NotifyDirectionUIHidden(); InputManager.SignalUIDragInactive(); }
 }

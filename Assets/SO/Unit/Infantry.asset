@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15e5fd9db2dce3c40a6321014b0f375f, type: 3}
   m_Name: Infantry
   m_EditorClassIdentifier: 
-  health: 100
   maxHealth: 100
   defense: 10
   resistance: 0
   SP: 10
-  DP: 10
+  blockCount: 3
   type: 1
   unitClass: 1
+  DP: 10
+  maxNumberOfDeployments: 5

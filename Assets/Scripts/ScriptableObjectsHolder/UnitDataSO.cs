@@ -28,6 +28,9 @@ public class UnitDataSO : ScriptableObject
     public int defense = 10;
     public float resistance = 0;
     public int SP = 10;
+    public int blockCount = 1;
+    public int attackDamage = 1;
+    public float attackInterval = 1.0f;
 
     [Header("Trait")]
     public UnitType type;

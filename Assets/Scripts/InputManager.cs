@@ -45,7 +45,6 @@ public class InputManager : MonoBehaviour
     private void OnMouseClick()
     {
         if (IsPointerOverUI) return;
-        Debug.Log("OnTap");
         OnTap?.Invoke();
     }
 

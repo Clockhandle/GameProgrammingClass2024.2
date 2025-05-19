@@ -22,7 +22,6 @@ public class TileManager : MonoBehaviour
         else
         {
             Instance = this;
-            Debug.Log("TileManager Singleton Instance Initialized.");
         }
         tileDataLookUp = new TileDataLookUp(tileDataArray); // Updated: No Tilemap
         tileOccupancyCheck = new TileOccupancyCheck(tilemap);
@@ -71,7 +70,6 @@ public class TileManager : MonoBehaviour
             newUnitComponent.InitializeAwaitDeploymentState(characterPrefab);
             tileOccupancyCheck.SetTileToOccupied(cellPos, true);
             placedUnit = newUnitComponent;
-            Debug.Log($"Provisional prefab {characterPrefab.name} placed at {cellPos} successfully");
             return true;
         }
         else

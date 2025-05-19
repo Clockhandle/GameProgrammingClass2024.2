@@ -35,7 +35,6 @@ public class UnitIconData : MonoBehaviour
                 originalAnchoredPosition = rectTransform.anchoredPosition;
                 initialStateStored = true;
 
-                Debug.Log($"Stored initial state for {gameObject.name}: Parent={originalParent.name}, Index={originalSiblingIndex}, Pos={originalAnchoredPosition}");
             }
             // else { Debug.LogWarning($"Could not store initial state for {gameObject.name}", this); }
         }

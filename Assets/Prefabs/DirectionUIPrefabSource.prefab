@@ -321,7 +321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -392,8 +392,9 @@ MonoBehaviour:
   retreatButton: {fileID: 7872324775969703038}
   directionHandleImage: {fileID: 8764931859015983764}
   dragRadius: 50
-  deadZoneRadius: 10
+  deadZoneRadius: 40
   defaultDirection: {x: 0, y: 0}
+  defaultAngleDegrees: 90
 --- !u!1 &8031793446220792817
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,19 +1,45 @@
 // Unit.cs (Updated to Manage World Space UI)
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
     [Header("Unit Data")]
     public UnitDataSO unitDataSO;
+    public int currentHealth;
+
 
     [Header("World Space UI")]
     [Tooltip("Assign the World Space Canvas Prefab with DirectionControlUI script")]
     [SerializeField] private GameObject directionControlUIPrefab; // Use updated name
     [SerializeField] private Vector3 uiLocalOffset = Vector3.zero; // Typically zero if handle is root & centered
 
+    [Header("Range Settings")]
+    [SerializeField] private UnitRange rangeComponent;
+    [SerializeField] private float rangeWidthTiles = 3f;
+    [SerializeField] private float rangeHeightTiles = 5f;
+    [SerializeField] private float tileSize = 1f;
+
     private GameObject directionUIInstance;
     public GameObject SourcePrefab { get; private set; }
     private UnitStates currentStates;
+
+    private List<EnemyMover> blockedEnemies = new List<EnemyMover>();
+    public int BlockCount => unitDataSO != null ? unitDataSO.blockCount : 1;
+
+    private Coroutine attackCoroutine;
+
+    void OnEnable()
+    {
+        attackCoroutine = StartCoroutine(AttackBlockedEnemiesRoutine());
+    }
+
+    void OnDisable()
+    {
+        if (attackCoroutine != null)
+            StopCoroutine(attackCoroutine);
+    }
 
     // Optional: Cache camera if accessed frequently
     // private Camera mainCamera;
@@ -23,6 +49,7 @@ public class Unit : MonoBehaviour
         // mainCamera = Camera.main; // Example caching
         // Ensure UnitDataSO is assigned
         if (unitDataSO == null) Debug.LogError("UnitDataSO not found on Unit!", this);
+        currentHealth = unitDataSO != null ? unitDataSO.maxHealth : 1;
     }
 
     // Called immediately after instantiation by TileManager.TryPlaceCharacterProvisionally
@@ -52,6 +79,12 @@ public class Unit : MonoBehaviour
         // --- End UI Setup ---
 
         // Optional: Disable unwanted components here
+        if (rangeComponent != null)
+        {
+            rangeComponent.Initialize(this);
+            rangeComponent.SetRangeSize(rangeWidthTiles * tileSize, rangeHeightTiles * tileSize);
+            rangeComponent.ShowRangePreview(false); // Initially hidden, will show on drag
+        }
     }
 
     public void SetSourcePrefab(GameObject prefab)
@@ -64,42 +97,51 @@ public class Unit : MonoBehaviour
         // 1. Check if we are in the correct state to confirm
         if (currentStates is UnitAwaitDeploymentState)
         {
+            // --- DP Check and Spend ---
+            if (unitDataSO != null && DPManager.Instance != null)
+            {
+                int unitDP = unitDataSO.DP;
+                if (!DPManager.Instance.CanSpendDP(unitDP))
+                {
+                    Debug.LogWarning("Not enough DP to confirm deployment!");
+                    // Optionally destroy the provisional unit or show a warning
+                    Destroy(gameObject);
+                    return;
+                }
+                DPManager.Instance.SpendDP(unitDP);
+            }
+
             // --- Placement Finalization Steps ---
 
             // 2. Notify manager that the Direction UI is going away
-            //    Do this BEFORE destroying the UI or switching state.
-            PlacementUIManager.Instance?.NotifyDirectionUIHidden(); // <-- PLACE NOTIFY HERE
+            PlacementUIManager.Instance?.NotifyDirectionUIHidden();
 
             // 3. Destroy the Direction UI instance explicitly (optional but clean)
-            //    Do this BEFORE switching state.
             if (directionUIInstance != null)
             {
-                Destroy(directionUIInstance); // <-- PLACE UI DESTROY HERE
-                directionUIInstance = null; // Clear reference
+                var directionUI = directionUIInstance.GetComponent<DirectionControlUI>();
+                if (directionUI != null)
+                {
+                    directionUI.HideAllControls();
+                }
             }
 
-            // 4. Apply the final rotation to the Unit itself
-            transform.rotation = finalRotation; // <-- PLACE ROTATION SET HERE
+            // Update range rotation to match final unit rotation
+            if (rangeComponent != null)
+            {
+                rangeComponent.transform.rotation = finalRotation;
+            }
 
-            // 5. Get the Unit's first operational state from the factory
-            UnitStates operationalState = UnitStateFactory.CreateState(unitDataSO); // <-- PLACE FACTORY CALL HERE
+            UnitStates operationalState = UnitStateFactory.CreateState(unitDataSO);
 
-            // 6. Switch the Unit's state machine to the operational state
-            SwitchState(operationalState); // <-- PLACE STATE SWITCH HERE
+            SwitchState(operationalState);
 
             // 7. Trigger post-placement actions (animation, enabling components, etc.)
-            PlayDeploymentAnimation(); // <-- PLACE ANIMATION/ETC HERE
-                                       // EnableActiveComponents(true); // Example
-
-            Debug.Log($"{gameObject.name} placement confirmed facing {finalRotation.eulerAngles}. Switched to {operationalState?.GetType().Name}");
-
-            // --- NOTE: DeploymentManager.RegisterDeployment() is called AFTER this
-            // --- method returns, over in the DirectionDragger.OnEndDrag method.
+            PlayDeploymentAnimation();
         }
         else
         {
             Debug.LogWarning($"ConfirmPlacement called on {gameObject.name} but it was not in AwaitingDeploymentState. Current state: {currentStates?.GetType().Name}");
-            // Optional: Still try to destroy the UI if it somehow exists?
             if (directionUIInstance != null) Destroy(directionUIInstance);
             PlacementUIManager.Instance?.NotifyDirectionUIHidden();
         }
@@ -110,62 +152,59 @@ public class Unit : MonoBehaviour
     {
         // Store state information needed AFTER potential destruction
         bool wasAwaitingDirection = currentStates is UnitAwaitDeploymentState;
-        GameObject prefabToRestore = SourcePrefab; // Store prefab before 'this' is potentially invalid
-        Vector3 positionToUnoccupy = transform.position; // Store position before 'this' is destroyed
+        GameObject prefabToRestore = SourcePrefab;
+        Vector3 positionToUnoccupy = transform.position;
 
-        UnitStates stateBeforeRetreat = currentStates; // For logging/checks
+        UnitStates stateBeforeRetreat = currentStates;
 
-        // Exit early if state is null (something went wrong)
         if (stateBeforeRetreat == null)
         {
-            Debug.LogWarning($"InitiateRetreat called on {gameObject.name} but state was null.", this);
-            Destroy(gameObject); // Destroy self just in case
+            Debug.LogWarning($"InitiateRetreat called on {gameObject.name} but state was null.");
+            Destroy(gameObject);
             return;
         }
 
-        // --- Handle Retreat from Provisional State ---
+        // --- Handle Retreat from Provisional State (placement mode) ---
         if (wasAwaitingDirection)
         {
-            Debug.Log($"Retreat initiated for {gameObject.name} from AwaitingDeploymentState");
-
-            // --- Cleanup and Notifications (Order Matters!) ---
-
-            // 1. Notify PlacementUIManager UI is hidden (unblocks camera/drag ASAP)
-            PlacementUIManager.Instance?.NotifyDirectionUIHidden(); // <-- PLACE NOTIFY PUI HERE
-
-            // 2. Notify DragToScreenManager to re-enable the list icon
-            //    Needs the prefab reference we stored.
+            // Existing code for provisional retreat...
+            PlacementUIManager.Instance?.NotifyDirectionUIHidden();
             if (prefabToRestore != null)
             {
-                DragToScreenManager.Instance?.HandleUnitRetreat(prefabToRestore); // <-- PLACE NOTIFY DSM HERE
+                DragToScreenManager.Instance?.HandleUnitRetreat(prefabToRestore);
             }
             else { Debug.LogWarning($"Source prefab reference missing on {gameObject.name}, cannot re-enable UI icon."); }
 
-            // 3. Unoccupy the Tile
-            //    Needs the position we stored.
+            // Unoccupy the tile
             if (TileManager.Instance?.tileOccupancyCheck != null)
             {
-                TileManager.Instance.tileOccupancyCheck.SetTileToOccupied(positionToUnoccupy, false); // <-- PLACE UNOCCUPY TILE HERE
+                TileManager.Instance.tileOccupancyCheck.SetTileToOccupied(positionToUnoccupy, false);
             }
             else { Debug.LogError($"Cannot unoccupy tile for {gameObject.name}, TileManager missing!"); }
 
-            // 4. Deployment count was never incremented for this state.
-
-            // 5. Destroy this Unit GameObject
-            //    This MUST be last, as it also destroys the child UI and this script instance.
-            Destroy(gameObject); // <-- PLACE DESTROY UNIT HERE
+            Destroy(gameObject);
         }
-        // --- Handle Retreat from Active State (Later) ---
-        // else if (/* check if current state allows active retreat */)
-        // {
-        //     // Similar steps, but MUST call DeploymentManager.UnregisterDeployment
-        //     // And potentially handle cooldowns differently for the list icon
-        // }
+        // --- Handle Retreat from Active/Operational State ---
         else
         {
-            Debug.LogWarning($"InitiateRetreat called on {gameObject.name} from state {stateBeforeRetreat.GetType().Name} where retreat is not currently implemented.");
-            // Optionally destroy anyway? Or just ignore? Depends on desired game rules.
-            // Destroy(gameObject);
+            // Clear any selection first
+            UnitSelectionManager.Instance?.ClearSelection();
+
+            // Unregister deployment with deployment manager
+            if (prefabToRestore != null)
+            {
+                DeploymentManager.Instance?.UnregisterDeployment(prefabToRestore);
+                // Re-enable the icon for deployment
+                DragToScreenManager.Instance?.HandleUnitRetreat(prefabToRestore);
+            }
+
+            // Unoccupy the tile
+            if (TileManager.Instance?.tileOccupancyCheck != null)
+            {
+                TileManager.Instance.tileOccupancyCheck.SetTileToOccupied(positionToUnoccupy, false);
+            }
+
+            Destroy(gameObject);
         }
     }
 
@@ -178,4 +217,73 @@ public class Unit : MonoBehaviour
     public void SwitchState(UnitStates newState) { /* ... */ if (newState == null) return; currentStates?.ExitState(this); currentStates = newState; currentStates?.StartState(this); }
     private void PlayDeploymentAnimation() { Debug.Log($"Playing Deployment Animation for {gameObject.name}"); }
 
+    public void OnTargetEnterRange(GameObject target)
+    {
+        // Handle enemy entering range
+        Debug.Log($"Target {target.name} entered range of {gameObject.name}");
+    }
+
+    public void OnTargetExitRange(GameObject target)
+    {
+        // Handle enemy exiting range
+        Debug.Log($"Target {target.name} exited range of {gameObject.name}");
+    }
+
+    // Add this method to Unit.cs
+    public UnitStates GetCurrentState()
+    {
+        return currentStates;
+    }
+    public bool CanBlockMore()
+    {
+        return blockedEnemies.Count < BlockCount;
+    }
+
+    public void AddBlockedEnemy(EnemyMover enemy)
+    {
+        if (!blockedEnemies.Contains(enemy))
+            blockedEnemies.Add(enemy);
+    }
+
+    public void RemoveBlockedEnemy(EnemyMover enemy)
+    {
+        blockedEnemies.Remove(enemy);
+    }
+
+    private IEnumerator AttackBlockedEnemiesRoutine()
+    {
+        while (true)
+        {
+            float interval = unitDataSO != null ? unitDataSO.attackInterval : 1.0f;
+            int damage = unitDataSO != null ? unitDataSO.attackDamage : 1;
+
+            yield return new WaitForSeconds(interval);
+
+            for (int i = blockedEnemies.Count - 1; i >= 0; i--)
+            {
+                var enemy = blockedEnemies[i];
+                if (enemy != null)
+                {
+                    var health = enemy.GetComponent<EnemyHealth>();
+                    if (health != null)
+                        health.TakeDamage(damage);
+                }
+            }
+        }
+    }
+
+    public void TakeDamage(int amount)
+    {
+        currentHealth -= amount;
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        // Add any cleanup logic here (e.g., notify managers, play animation)
+        Destroy(gameObject);
+    }
 }

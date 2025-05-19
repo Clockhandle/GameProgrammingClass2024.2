@@ -185,22 +185,21 @@ public class DragToScreenManager : MonoBehaviour
             Vector3 snapPosition = tileManager.tilemap.GetCellCenterWorld(closestTile);
             Unit awaitDeploymentUnit = null;
 
-            // Call provisional placement
+            // Call provisional placement (no DP check/spend here)
             bool placedSuccessfully = tileManager.TryPlaceCharacterProvisionally(snapPosition, currentDraggedPrefab, out awaitDeploymentUnit);
 
             if (placedSuccessfully && awaitDeploymentUnit != null)
             {
-                Debug.Log($"Phase 1: Provisionally placed {currentDraggedPrefab.name}. Unit handles Direction UI.");
-
-                // Disable Original Icon If Last One Was Placed
                 if (isDraggingLastOne && currentlyDraggedIconData != null)
                 {
                     currentlyDraggedIconData.gameObject.SetActive(false);
                 }
             }
-            else { Debug.LogWarning($"Phase 1: Provisional placement failed for {currentDraggedPrefab?.name ?? "Unknown"} at {closestTile}."); }
+            else
+            {
+                Debug.LogWarning($"Phase 1: Provisional placement failed for {currentDraggedPrefab?.name ?? "Unknown"} at {closestTile}.");
+            }
         }
-        else { Debug.Log("Drag ended over non-placeable area."); }
         // --- END PHASE 1 LOGIC ---
 
 
@@ -217,7 +216,12 @@ public class DragToScreenManager : MonoBehaviour
             {
                 ResetOriginalIcon(); // Resets parent, index, position, raycasts (NO layout element)
             }
-            else { /* Icon was disabled, just clear refs */ draggedOriginalIconRect = null; originalParent = null; }
+            else
+            {
+                // Icon was disabled, just clear refs
+                draggedOriginalIconRect = null;
+                originalParent = null;
+            }
         }
 
         ResetDragState(); // Reset manager's internal state
@@ -272,7 +276,6 @@ public class DragToScreenManager : MonoBehaviour
                 if (iconRect == null) continue; // Need RectTransform
 
                 // ** DEBUG LOG 1: What state are we trying to restore? **
-                Debug.Log($"Attempting reset for {icon.name}: Target Parent={icon.originalParent?.name}, Target Index={icon.originalSiblingIndex}, Target Pos={icon.originalAnchoredPosition}");
 
 
                 if (icon.originalParent != null)
@@ -286,7 +289,6 @@ public class DragToScreenManager : MonoBehaviour
 
                 // Restore position AFTER potential reparenting
                 iconRect.anchoredPosition = icon.originalAnchoredPosition;
-                Debug.Log($"Position set for {icon.name}. Current Anchored Pos: {iconRect.anchoredPosition}");
                 // Re-enable raycasting if it was disabled (ToggleRaycasts handles null checks)
                 ToggleRaycasts(iconRect, true);
 

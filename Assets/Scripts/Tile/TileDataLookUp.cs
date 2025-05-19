@@ -11,7 +11,6 @@ public class TileDataLookUp
 
     public TileDataLookUp(TileDataSO[] tileDataArray)
     {
-        Debug.Log($"Initialized {this.GetType().Name}!");
         this.tileDataArray = tileDataArray;
     }
     public void GenerateDataDictionary()

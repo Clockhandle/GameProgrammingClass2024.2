@@ -18,7 +18,6 @@ public class DeploymentManager : MonoBehaviour
         {
             Instance = this;
             // DontDestroyOnLoad(gameObject); // Optional
-            Debug.Log("DeploymentManager Singleton Instance Initialized.");
         }
     }
 
@@ -39,7 +38,6 @@ public class DeploymentManager : MonoBehaviour
         int key = unitPrefab.GetInstanceID();
         if (deployedCounts.ContainsKey(key)) deployedCounts[key]++;
         else deployedCounts[key] = 1;
-        Debug.Log($"Registered Deployment: {unitPrefab.name}, New Count: {deployedCounts[key]}");
     }
 
     public void UnregisterDeployment(GameObject unitPrefab)
@@ -51,7 +49,6 @@ public class DeploymentManager : MonoBehaviour
             if (deployedCounts[key] > 0)
             {
                 deployedCounts[key]--;
-                Debug.Log($"Unregistered Deployment: {unitPrefab.name}, New Count: {deployedCounts[key]}");
             }
         }
         else Debug.LogWarning($"Attempted to unregister {unitPrefab.name}, but it wasn't tracked.");

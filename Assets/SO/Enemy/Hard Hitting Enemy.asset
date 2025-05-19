@@ -9,17 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15e5fd9db2dce3c40a6321014b0f375f, type: 3}
-  m_Name: Scout
+  m_Script: {fileID: 11500000, guid: eeb5abc4f2fcf7843a30adc1d8591e32, type: 3}
+  m_Name: Hard Hitting Enemy
   m_EditorClassIdentifier: 
-  maxHealth: 80
-  defense: 10
-  resistance: 0
-  SP: 10
-  blockCount: 2
-  attackDamage: 30
-  attackInterval: 1
-  type: -1
-  unitClass: 16
-  DP: 10
-  maxNumberOfDeployments: 1
+  maxHealth: 50
+  moveSpeed: 1
+  damage: 100
