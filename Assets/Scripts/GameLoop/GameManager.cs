@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     public List<EnemySpawner> spawners = new List<EnemySpawner>();
 
     private HashSet<GameObject> activeEnemies = new HashSet<GameObject>();
+    private int enemySlainCounter = 0;
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -58,6 +60,7 @@ public class GameManager : MonoBehaviour
     public void OnEnemyDefeated()
     {
         enemiesDefeated++;
+        IncrementEnemySlainCounter();
         UpdateEnemyCountUI();
         if (enemiesDefeated >= totalEnemiesToDefeat)
         {
@@ -105,5 +108,12 @@ public class GameManager : MonoBehaviour
     public int GetActiveEnemyCount()
     {
         return activeEnemies.Count;
+    }
+
+    public void IncrementEnemySlainCounter()
+    {
+        enemySlainCounter++;
+        // Optionally update UI or trigger events here
+        Debug.Log($"Enemy slain! Total: {enemySlainCounter}");
     }
 }

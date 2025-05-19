@@ -11,6 +11,9 @@ public class EnemySpawner : MonoBehaviour
     private int spawnedCount = 0;
     public int maxEnemies = 10; // Set per spawner
 
+    [Header("Path Settings")]
+    public EnemyPath enemyPath;
+
     public int GetQuota() => maxEnemies;
 
     void Start()
@@ -39,6 +42,13 @@ public class EnemySpawner : MonoBehaviour
             GameObject enemy = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
             spawnedCount++;
             GameManager.Instance?.RegisterEnemy(enemy);
+
+            // Assign the path to the enemy's path follower
+            var pathFollower = enemy.GetComponent<EnemyPathFollower>();
+            if (pathFollower != null && enemyPath != null)
+            {
+                pathFollower.SetPath(enemyPath);
+            }
         }
     }
 }

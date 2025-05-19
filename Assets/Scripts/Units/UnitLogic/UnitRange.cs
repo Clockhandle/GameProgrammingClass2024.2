@@ -4,7 +4,7 @@ using UnityEngine;
 public class UnitRange : MonoBehaviour
 {
     private Unit parentUnit;
-    private HashSet<EnemyMover> enemiesInRange = new HashSet<EnemyMover>();
+    private HashSet<EnemyPathFollower> enemiesInRange = new HashSet<EnemyPathFollower>();
     private BoxCollider2D boxCollider;
 
     [SerializeField] private SpriteRenderer rangeVisual;
@@ -61,8 +61,7 @@ public class UnitRange : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (parentUnit == null || !parentUnit.IsOperational) return;
-
-        EnemyMover enemy = other.GetComponent<EnemyMover>();
+        EnemyPathFollower enemy = other.GetComponent<EnemyPathFollower>();
         if (enemy != null)
         {
             enemiesInRange.Add(enemy);
@@ -74,7 +73,7 @@ public class UnitRange : MonoBehaviour
     {
         if (parentUnit == null || !parentUnit.IsOperational) return;
 
-        EnemyMover enemy = other.GetComponent<EnemyMover>();
+        EnemyPathFollower enemy = other.GetComponent<EnemyPathFollower>();
         if (enemy != null)
         {
             enemiesInRange.Remove(enemy);
@@ -82,5 +81,5 @@ public class UnitRange : MonoBehaviour
         }
     }
 
-    public IEnumerable<EnemyMover> GetEnemiesInRange() => enemiesInRange;
+    public IEnumerable<EnemyPathFollower> GetEnemiesInRange() => enemiesInRange;
 }

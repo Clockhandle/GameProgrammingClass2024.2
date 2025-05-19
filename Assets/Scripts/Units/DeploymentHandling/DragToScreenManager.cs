@@ -267,22 +267,43 @@ public class DragToScreenManager : MonoBehaviour
     {
         if (unitPrefab == null) { /* Log warning */ return; }
 
+        // If the prefab is on cooldown, subscribe to the event and return
+        if (RedeploymentManager.Instance != null && RedeploymentManager.Instance.IsOnCooldown(unitPrefab))
+        {
+            RedeploymentManager.Instance.OnRedeployReady -= OnRedeployReadyHandler; // Prevent double subscription
+            RedeploymentManager.Instance.OnRedeployReady += OnRedeployReadyHandler;
+            return;
+        }
+
+        // If not on cooldown, immediately re-enable the prefab/icon
+        ReactivatePrefab(unitPrefab);
+    }
+
+    // Handler for cooldown completion
+    private void OnRedeployReadyHandler(GameObject prefab)
+    {
+        // Unsubscribe to avoid memory leaks
+        if (RedeploymentManager.Instance != null)
+            RedeploymentManager.Instance.OnRedeployReady -= OnRedeployReadyHandler;
+
+        ReactivatePrefab(prefab);
+    }
+
+    // Actual logic to re-enable the prefab/icon in UI
+    private void ReactivatePrefab(GameObject prefab)
+    {
         foreach (UnitIconData icon in unitIcons)
         {
-            if (icon != null && icon.unitPrefab == unitPrefab)
+            if (icon != null && icon.unitPrefab == prefab)
             {
                 // Found the matching icon!
                 RectTransform iconRect = icon.GetComponent<RectTransform>();
                 if (iconRect == null) continue; // Need RectTransform
 
-                // ** DEBUG LOG 1: What state are we trying to restore? **
-
-
                 if (icon.originalParent != null)
                 {
-
                     // Reparent first
-                    iconRect.SetParent(icon.originalParent, false); 
+                    iconRect.SetParent(icon.originalParent, false);
                     try { iconRect.SetSiblingIndex(icon.originalSiblingIndex); } catch { } // Try/Catch just in case
                 }
                 else { Debug.LogWarning($"Original parent for {icon.name} not stored, cannot reparent accurately."); }
@@ -306,7 +327,7 @@ public class DragToScreenManager : MonoBehaviour
             }
         }
         // ... (Log warning if not found) ...
-        Debug.LogWarning($"Could not find matching UnitIconData in list to re-enable for prefab {unitPrefab.name}");
+        Debug.LogWarning($"Could not find matching UnitIconData in list to re-enable for prefab {prefab.name}");
     }
 
     // Keep other helpers: CreateGhostIcon, DestroyGhostIcon, Update/Snap methods, CancelDrag, ToggleRaycasts...

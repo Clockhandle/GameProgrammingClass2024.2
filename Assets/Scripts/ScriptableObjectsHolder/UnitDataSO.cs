@@ -39,4 +39,6 @@ public class UnitDataSO : ScriptableObject
     [Header("Deployment")]
     public int DP = 10;
     public int maxNumberOfDeployments = 5;
+    public Sprite icon;
+    public float redeployCooldown = 10f;
 }

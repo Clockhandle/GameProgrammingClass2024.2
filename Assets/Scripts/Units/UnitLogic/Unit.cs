@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Unit : MonoBehaviour
@@ -9,7 +10,6 @@ public class Unit : MonoBehaviour
     [Header("Unit Data")]
     public UnitDataSO unitDataSO;
     public int currentHealth;
-
 
     [Header("World Space UI")]
     [Tooltip("Assign the World Space Canvas Prefab with DirectionControlUI script")]
@@ -26,8 +26,8 @@ public class Unit : MonoBehaviour
     public GameObject SourcePrefab { get; private set; }
     private UnitStates currentStates;
 
-    private List<EnemyMover> blockedEnemies = new List<EnemyMover>();
-    private HashSet<EnemyMover> enemiesInRange = new HashSet<EnemyMover>();
+    private List<EnemyPathFollower> blockedEnemies = new List<EnemyPathFollower>();
+    private HashSet<EnemyPathFollower> enemiesInRange = new HashSet<EnemyPathFollower>();
     public bool IsOperational { get; private set; } = false;
     public int BlockCount => unitDataSO != null ? unitDataSO.blockCount : 1;
 
@@ -166,8 +166,6 @@ public class Unit : MonoBehaviour
             return;
         }
 
-        
-
         if (wasAwaitingDirection)
         {
 
@@ -190,6 +188,12 @@ public class Unit : MonoBehaviour
         // --- Handle Retreat from Active/Operational State ---
         else
         {
+
+            // Get the icon for the unit (assumes you have a way to get it, e.g., from UnitDataSO)
+            Sprite unitIcon = unitDataSO != null ? unitDataSO.icon : null; // Add an 'icon' field to UnitDataSO if needed
+            float cooldown = unitDataSO != null ? unitDataSO.redeployCooldown : 10f; // Or use a dedicated redeployCooldown
+
+            RedeploymentManager.Instance.AddToWaitList(SourcePrefab, unitIcon, cooldown);
 
             if (unitDataSO != null && DPManager.Instance != null)
             {
@@ -226,13 +230,13 @@ public class Unit : MonoBehaviour
     public void SwitchState(UnitStates newState) { /* ... */ if (newState == null) return; currentStates?.ExitState(this); currentStates = newState; currentStates?.StartState(this); }
     private void PlayDeploymentAnimation() { Debug.Log($"Playing Deployment Animation for {gameObject.name}"); }
 
-    public void OnEnemyEnterRange(EnemyMover enemy)
+    public void OnEnemyEnterRange(EnemyPathFollower enemy)
     {
         if (!IsOperational) return;
         enemiesInRange.Add(enemy);
     }
 
-    public void OnEnemyExitRange(EnemyMover enemy)
+    public void OnEnemyExitRange(EnemyPathFollower enemy)
     {
         if (!IsOperational) return;
         enemiesInRange.Remove(enemy);
@@ -248,13 +252,13 @@ public class Unit : MonoBehaviour
         return blockedEnemies.Count < BlockCount;
     }
 
-    public void AddBlockedEnemy(EnemyMover enemy)
+    public void AddBlockedEnemy(EnemyPathFollower enemy)
     {
         if (!blockedEnemies.Contains(enemy))
             blockedEnemies.Add(enemy);
     }
 
-    public void RemoveBlockedEnemy(EnemyMover enemy)
+    public void RemoveBlockedEnemy(EnemyPathFollower enemy)
     {
         blockedEnemies.Remove(enemy);
     }

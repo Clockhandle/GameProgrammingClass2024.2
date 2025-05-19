@@ -45,7 +45,12 @@ public abstract class EnemyBase : MonoBehaviour
 
     protected virtual void Die()
     {
+        if (isDead) return;
         isDead = true;
+
+        // Unified: Notify GameManager that this enemy is defeated (slain or reached goal)
+        GameManager.Instance?.OnEnemyDefeated();
+
         // Add death effects, drop loot, etc.
         Destroy(gameObject);
     }
