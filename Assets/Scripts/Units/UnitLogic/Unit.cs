@@ -1,6 +1,7 @@
 // Unit.cs (Updated to Manage World Space UI)
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Unit : MonoBehaviour
@@ -26,19 +27,19 @@ public class Unit : MonoBehaviour
     private UnitStates currentStates;
 
     private List<EnemyMover> blockedEnemies = new List<EnemyMover>();
+    private HashSet<EnemyMover> enemiesInRange = new HashSet<EnemyMover>();
+    public bool IsOperational { get; private set; } = false;
     public int BlockCount => unitDataSO != null ? unitDataSO.blockCount : 1;
 
-    private Coroutine attackCoroutine;
 
     void OnEnable()
     {
-        attackCoroutine = StartCoroutine(AttackBlockedEnemiesRoutine());
+        StartCoroutine(AttackEnemiesInRangeRoutine());
     }
 
     void OnDisable()
     {
-        if (attackCoroutine != null)
-            StopCoroutine(attackCoroutine);
+        StopCoroutine(AttackEnemiesInRangeRoutine());
     }
 
     // Optional: Cache camera if accessed frequently
@@ -94,6 +95,7 @@ public class Unit : MonoBehaviour
 
     public void ConfirmPlacement(Quaternion finalRotation)
     {
+        IsOperational = true;
         // 1. Check if we are in the correct state to confirm
         if (currentStates is UnitAwaitDeploymentState)
         {
@@ -224,16 +226,16 @@ public class Unit : MonoBehaviour
     public void SwitchState(UnitStates newState) { /* ... */ if (newState == null) return; currentStates?.ExitState(this); currentStates = newState; currentStates?.StartState(this); }
     private void PlayDeploymentAnimation() { Debug.Log($"Playing Deployment Animation for {gameObject.name}"); }
 
-    public void OnTargetEnterRange(GameObject target)
+    public void OnEnemyEnterRange(EnemyMover enemy)
     {
-        // Handle enemy entering range
-        Debug.Log($"Target {target.name} entered range of {gameObject.name}");
+        if (!IsOperational) return;
+        enemiesInRange.Add(enemy);
     }
 
-    public void OnTargetExitRange(GameObject target)
+    public void OnEnemyExitRange(EnemyMover enemy)
     {
-        // Handle enemy exiting range
-        Debug.Log($"Target {target.name} exited range of {gameObject.name}");
+        if (!IsOperational) return;
+        enemiesInRange.Remove(enemy);
     }
 
     // Add this method to Unit.cs
@@ -257,25 +259,25 @@ public class Unit : MonoBehaviour
         blockedEnemies.Remove(enemy);
     }
 
-    private IEnumerator AttackBlockedEnemiesRoutine()
+    private IEnumerator AttackEnemiesInRangeRoutine()
     {
         while (true)
         {
-            float interval = unitDataSO != null ? unitDataSO.attackInterval : 1.0f;
-            int damage = unitDataSO != null ? unitDataSO.attackDamage : 1;
-
-            yield return new WaitForSeconds(interval);
-
-            for (int i = blockedEnemies.Count - 1; i >= 0; i--)
+            if (IsOperational)
             {
-                var enemy = blockedEnemies[i];
-                if (enemy != null)
+                int damage = unitDataSO != null ? unitDataSO.attackDamage : 1;
+                foreach (var enemy in enemiesInRange.ToArray())
                 {
-                    var health = enemy.GetComponent<EnemyHealth>();
-                    if (health != null)
-                        health.TakeDamage(damage);
+                    if (enemy != null)
+                    {
+                        var health = enemy.GetComponent<EnemyBase>();
+                        if (health != null)
+                            health.TakeDamage(damage);
+                    }
                 }
             }
+            float interval = unitDataSO != null ? unitDataSO.attackInterval : 1.0f;
+            yield return new WaitForSeconds(interval);
         }
     }
 

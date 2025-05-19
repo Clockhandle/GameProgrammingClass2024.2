@@ -1,24 +1,30 @@
 using UnityEngine;
 
+[RequireComponent(typeof(EnemyBase))]
 public class EnemyMover : MonoBehaviour
 {
-    [Header("Movement Settings")]
     public Vector2 moveDirection = Vector2.left;
-    public float moveSpeed = 2f;
-
-    [Header("Block Offset Settings")]
     public float offsetRadius = 0.2f;
 
     private bool isBlocked = false;
     private Vector3 blockOffset = Vector3.zero;
     private Vector3 blockBasePosition = Vector3.zero;
     private Unit blockingUnit = null;
+    private EnemyBase enemyBase;
+
+    void Awake()
+    {
+        enemyBase = GetComponent<EnemyBase>();
+    }
 
     void Update()
     {
         if (!isBlocked)
         {
-            transform.Translate(moveDirection.normalized * moveSpeed * Time.deltaTime);
+            float speed = enemyBase != null && enemyBase.enemyData != null
+                ? enemyBase.enemyData.moveSpeed
+                : 2f;
+            transform.Translate(moveDirection.normalized * speed * Time.deltaTime);
         }
         else
         {
@@ -28,21 +34,20 @@ public class EnemyMover : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (!isBlocked)
+        Unit unit = other.GetComponent<Unit>();
+        if (!isBlocked && unit != null && unit.IsOperational && unit.CanBlockMore())
         {
-            Unit unit = other.GetComponent<Unit>();
-            if (unit != null && unit.CanBlockMore())
-            {
-                isBlocked = true;
-                blockBasePosition = transform.position;
-                blockOffset = (Vector3)(Random.insideUnitCircle * offsetRadius);
-                blockingUnit = unit;
-                unit.AddBlockedEnemy(this);
-            }
+            isBlocked = true;
+            blockBasePosition = transform.position;
+            blockOffset = (Vector3)(Random.insideUnitCircle * offsetRadius);
+            blockingUnit = unit;
+            unit.AddBlockedEnemy(this.GetComponent<EnemyMover>());
         }
 
         if (other.CompareTag("Goal"))
         {
+            GameManager.Instance?.UnregisterEnemy(gameObject);
+            GameManager.Instance?.OnEnemyReachedGoal();
             Destroy(gameObject);
         }
     }
@@ -54,7 +59,7 @@ public class EnemyMover : MonoBehaviour
         {
             isBlocked = false;
             blockOffset = Vector3.zero;
-            unit.RemoveBlockedEnemy(this);
+            unit.RemoveBlockedEnemy(this.GetComponent<EnemyMover>());
             blockingUnit = null;
         }
     }

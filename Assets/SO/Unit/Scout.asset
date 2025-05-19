@@ -17,8 +17,8 @@ MonoBehaviour:
   resistance: 0
   SP: 10
   blockCount: 2
-  attackDamage: 10
-  attackInterval: 1
+  attackDamage: 200
+  attackInterval: 0.25
   type: -1
   unitClass: 16
   DP: 10

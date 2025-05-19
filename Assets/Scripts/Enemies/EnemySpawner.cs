@@ -9,7 +9,15 @@ public class EnemySpawner : MonoBehaviour
 
     private float timer;
     private int spawnedCount = 0;
-    public int maxEnemies = 100; // Set to 3
+    public int maxEnemies = 10; // Set per spawner
+
+    public int GetQuota() => maxEnemies;
+
+    void Start()
+    {
+        // Optionally, register this spawner in a static list for quota summing
+        EnemySpawnerRegistry.Register(this);
+    }
 
     void Update()
     {
@@ -28,8 +36,29 @@ public class EnemySpawner : MonoBehaviour
     {
         if (enemyPrefab != null && spawnPoint != null)
         {
-            Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
+            GameObject enemy = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
             spawnedCount++;
+            GameManager.Instance?.RegisterEnemy(enemy);
         }
+    }
+}
+
+// Helper registry for quota summing
+public static class EnemySpawnerRegistry
+{
+    private static readonly System.Collections.Generic.List<EnemySpawner> spawners = new();
+
+    public static void Register(EnemySpawner spawner)
+    {
+        if (!spawners.Contains(spawner))
+            spawners.Add(spawner);
+    }
+
+    public static int GetTotalQuota()
+    {
+        int total = 0;
+        foreach (var spawner in spawners)
+            total += spawner.GetQuota();
+        return total;
     }
 }

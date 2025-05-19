@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4633535477705826107}
   - component: {fileID: 3338548304988179924}
   - component: {fileID: 3980027443460669960}
-  - component: {fileID: -1204315923269627493}
+  - component: {fileID: 3866021797516618656}
   m_Layer: 10
   m_Name: Enemy
   m_TagString: Enemy
@@ -165,7 +165,7 @@ MonoBehaviour:
   moveDirection: {x: -1, y: 0}
   moveSpeed: 2
   offsetRadius: 0.2
---- !u!114 &-1204315923269627493
+--- !u!114 &3866021797516618656
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -174,7 +174,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2308237452221420818}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 336c118fd4cd61b48bd0a688a9f41956, type: 3}
+  m_Script: {fileID: 11500000, guid: 726da5fb7a49bac4c9b1e52a7abe5880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 1f28858c3a484f342bbfe34cb3abe981, type: 2}
+  enemyData: {fileID: 11400000, guid: c205ed18a88348e4faec8941ccbaa466, type: 2}
+  moveDirection: {x: -1, y: 0}

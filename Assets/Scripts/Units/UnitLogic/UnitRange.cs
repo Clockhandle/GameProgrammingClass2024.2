@@ -1,8 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class UnitRange : MonoBehaviour
 {
     private Unit parentUnit;
+    private HashSet<EnemyMover> enemiesInRange = new HashSet<EnemyMover>();
     private BoxCollider2D boxCollider;
 
     [SerializeField] private SpriteRenderer rangeVisual;
@@ -58,17 +60,27 @@ public class UnitRange : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (parentUnit != null && other.CompareTag("Enemy"))
+        if (parentUnit == null || !parentUnit.IsOperational) return;
+
+        EnemyMover enemy = other.GetComponent<EnemyMover>();
+        if (enemy != null)
         {
-            parentUnit.OnTargetEnterRange(other.gameObject);
+            enemiesInRange.Add(enemy);
+            parentUnit.OnEnemyEnterRange(enemy);
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (parentUnit != null && other.CompareTag("Enemy"))
+        if (parentUnit == null || !parentUnit.IsOperational) return;
+
+        EnemyMover enemy = other.GetComponent<EnemyMover>();
+        if (enemy != null)
         {
-            parentUnit.OnTargetExitRange(other.gameObject);
+            enemiesInRange.Remove(enemy);
+            parentUnit.OnEnemyExitRange(enemy);
         }
     }
+
+    public IEnumerable<EnemyMover> GetEnemiesInRange() => enemiesInRange;
 }
