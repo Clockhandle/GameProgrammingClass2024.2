@@ -164,10 +164,11 @@ public class Unit : MonoBehaviour
             return;
         }
 
-        // --- Handle Retreat from Provisional State (placement mode) ---
+        
+
         if (wasAwaitingDirection)
         {
-            // Existing code for provisional retreat...
+
             PlacementUIManager.Instance?.NotifyDirectionUIHidden();
             if (prefabToRestore != null)
             {
@@ -187,6 +188,12 @@ public class Unit : MonoBehaviour
         // --- Handle Retreat from Active/Operational State ---
         else
         {
+
+            if (unitDataSO != null && DPManager.Instance != null)
+            {
+                DPManager.Instance.GainDP(unitDataSO.DP);
+            }
+
             // Clear any selection first
             UnitSelectionManager.Instance?.ClearSelection();
 

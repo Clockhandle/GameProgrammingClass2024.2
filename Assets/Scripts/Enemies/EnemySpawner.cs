@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
 
     private float timer;
     private int spawnedCount = 0;
-    public int maxEnemies = 3; // Set to 3
+    public int maxEnemies = 100; // Set to 3
 
     void Update()
     {

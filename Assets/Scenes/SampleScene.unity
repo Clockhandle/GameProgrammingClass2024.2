@@ -2703,7 +2703,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 2308237452221420818, guid: c57c3c882e4170f43a09432aa427076e, type: 3}
   spawnPoint: {fileID: 1069802098}
   spawnInterval: 2
-  maxEnemies: 3
+  maxEnemies: 10
 --- !u!1 &1153293930
 GameObject:
   m_ObjectHideFlags: 0
