@@ -25,12 +25,12 @@ public class EnemyPathFollower : MonoBehaviour
         Debug.Log($"{gameObject.name}: Path set with {path?.checkpoints.Count ?? 0} checkpoints.");
     }
 
-    void Awake()
+    protected virtual void Awake()
     {
         enemyBase = GetComponent<EnemyBase>();
     }
 
-    void Update()
+   protected virtual void Update()
     {
         if (isBlocked)
         {

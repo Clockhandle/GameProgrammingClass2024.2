@@ -31,6 +31,8 @@ public class UnitDataSO : ScriptableObject
     public int blockCount = 1;
     public int attackDamage = 1;
     public float attackInterval = 1.0f;
+    public float attackRange = 1;
+    public Vector3 attackOffset;
 
     [Header("Trait")]
     public UnitType type;

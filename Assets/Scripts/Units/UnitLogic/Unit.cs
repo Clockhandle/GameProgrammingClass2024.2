@@ -9,6 +9,12 @@ public class Unit : MonoBehaviour
 {
     [Header("Unit Data")]
     public UnitDataSO unitDataSO;
+    public Animator animator;
+    public bool facingRight = true;
+    private IUnitStates currentState;
+    public GameObject ArrowPrefab;
+
+
     public int currentHealth;
 
     [Header("World Space UI")]
@@ -47,6 +53,7 @@ public class Unit : MonoBehaviour
 
     void Awake()
     {
+        animator = GetComponent<Animator>();
         // mainCamera = Camera.main; // Example caching
         // Ensure UnitDataSO is assigned
         if (unitDataSO == null) Debug.LogError("UnitDataSO not found on Unit!", this);
@@ -95,6 +102,13 @@ public class Unit : MonoBehaviour
 
     public void ConfirmPlacement(Quaternion finalRotation)
     {
+        UnitRangeArcher archer = GetComponent<UnitRangeArcher>();
+        if (archer != null)
+        {
+            archer.Initialize(this);
+        }
+
+
         IsOperational = true;
         // 1. Check if we are in the correct state to confirm
         if (currentStates is UnitAwaitDeploymentState)
@@ -147,6 +161,7 @@ public class Unit : MonoBehaviour
             if (directionUIInstance != null) Destroy(directionUIInstance);
             PlacementUIManager.Instance?.NotifyDirectionUIHidden();
         }
+        ScanForInitialEnemies();
     }
 
     // Called externally (e.g., by DirectionSelectionUI) when retreat is chosen
@@ -224,22 +239,38 @@ public class Unit : MonoBehaviour
     private void Update()
     {
         currentStates?.UpdateState(this);
+        UpdateAnimatorState();
     }
+
 
     // Keep SwitchState and other helpers...
     public void SwitchState(UnitStates newState) { /* ... */ if (newState == null) return; currentStates?.ExitState(this); currentStates = newState; currentStates?.StartState(this); }
     private void PlayDeploymentAnimation() { Debug.Log($"Playing Deployment Animation for {gameObject.name}"); }
 
+
+
+    //enemy in range
+    public List<EnemyPathFollower> enemiesInRangeList = new List<EnemyPathFollower>();
+    private EnemyPathFollower CurrentTarget => enemiesInRangeList.Count > 0 ? enemiesInRangeList[0] : null;
+
+
     public void OnEnemyEnterRange(EnemyPathFollower enemy)
     {
-        if (!IsOperational) return;
-        enemiesInRange.Add(enemy);
+        if (!IsOperational || enemiesInRangeList.Contains(enemy)) return;
+
+        enemiesInRangeList.Add(enemy);
     }
 
     public void OnEnemyExitRange(EnemyPathFollower enemy)
     {
-        if (!IsOperational) return;
-        enemiesInRange.Remove(enemy);
+        if (enemiesInRangeList.Remove(enemy))
+        {
+            if (enemy == CurrentTarget)
+            {
+                // Target removed — auto-rotate to new first enemy
+                UpdateAnimatorState();
+            }
+        }
     }
 
     // Add this method to Unit.cs
@@ -263,26 +294,67 @@ public class Unit : MonoBehaviour
         blockedEnemies.Remove(enemy);
     }
 
+ 
+
+
+    public void DealDamage()
+    {
+        if (!IsOperational || enemiesInRangeList.Count == 0) return;
+
+        var target = CurrentTarget;
+        if (target == null) return;
+
+        int damage = unitDataSO != null ? unitDataSO.attackDamage : 1;
+        var enemyHealth = target.GetComponent<EnemyBase>();
+
+        if (enemyHealth != null)
+        {
+            enemyHealth.TakeDamage(damage);
+            if (enemyHealth.CurrentHealth <= 0)
+            {
+                enemiesInRangeList.Remove(target); // Remove the one we damaged and confirmed dead
+            }
+        }
+    }
+
+    private void UpdateAnimatorState()
+    {
+        if (animator != null)
+        {
+            animator.SetBool("isAttacking", CurrentTarget != null);
+        }
+    }
+
+    void ScanForInitialEnemies()
+    {
+        Vector2 direction = facingRight ? Vector2.right : Vector2.left;
+        Vector2 center = (Vector2)transform.position + direction * unitDataSO.attackOffset.x;
+        float radius = unitDataSO.attackRange;
+
+        Collider2D[] hits = Physics2D.OverlapCircleAll(center, radius);
+        foreach (var hit in hits)
+        {
+            var enemy = hit.GetComponent<EnemyPathFollower>();
+            if (enemy != null)
+            {
+                OnEnemyEnterRange(enemy);
+            }
+        }
+    }
+
+
+
     private IEnumerator AttackEnemiesInRangeRoutine()
     {
-        while (true)
+       while (true)
+    {
+        if (IsOperational)
         {
-            if (IsOperational)
-            {
-                int damage = unitDataSO != null ? unitDataSO.attackDamage : 1;
-                foreach (var enemy in enemiesInRange.ToArray())
-                {
-                    if (enemy != null)
-                    {
-                        var health = enemy.GetComponent<EnemyBase>();
-                        if (health != null)
-                            health.TakeDamage(damage);
-                    }
-                }
-            }
-            float interval = unitDataSO != null ? unitDataSO.attackInterval : 1.0f;
-            yield return new WaitForSeconds(interval);
+            UpdateAnimatorState(); // triggers animation if enemy present
         }
+        float interval = unitDataSO != null ? unitDataSO.attackInterval : 1.0f;
+        yield return new WaitForSeconds(interval);
+    }
     }
 
     public void TakeDamage(int amount)
@@ -299,4 +371,20 @@ public class Unit : MonoBehaviour
         // Add any cleanup logic here (e.g., notify managers, play animation)
         Destroy(gameObject);
     }
+
+
+
+    private void OnDrawGizmosSelected()
+    {
+        if (unitDataSO == null)
+            return;
+
+        Gizmos.color = Color.red;
+
+        Vector2 direction = facingRight ? Vector2.right : Vector2.left;
+        Vector2 center = (Vector2)transform.position + direction * unitDataSO.attackOffset.x;
+
+        Gizmos.DrawWireSphere(center, unitDataSO.attackRange);
+    }
+
 }

@@ -19,6 +19,8 @@ MonoBehaviour:
   blockCount: 2
   attackDamage: 200
   attackInterval: 0.25
+  attackRange: 1
+  attackOffset: {x: 1, y: 0, z: 0}
   type: -1
   unitClass: 16
   DP: 10

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6363247169474114233}
   m_Layer: 8
   m_Name: Scout
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,12 +136,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitDataSO: {fileID: 11400000, guid: 8b6762133954a2347a444b4c46f523b9, type: 2}
+  animator: {fileID: 0}
+  facingRight: 1
+  currentHealth: 0
   directionControlUIPrefab: {fileID: 8002188024767451207, guid: 039eeb05d41c36d40b8139c598d21dc2, type: 3}
   uiLocalOffset: {x: 0, y: 0, z: 0}
   rangeComponent: {fileID: 1658252164539729704}
   rangeWidthTiles: 2
   rangeHeightTiles: 1
   tileSize: 0.5
+  enemiesInRangeList: []
 --- !u!50 &-6363247169474114233
 Rigidbody2D:
   serializedVersion: 4
