@@ -37,7 +37,7 @@ public class Arrow : MonoBehaviour
 
         Debug.Log($"Arrow hit {collision.name}");
 
-        var enemy = collision.GetComponent<EnemyBase>();
+        var enemy = collision.GetComponent<Entity>();
         if (enemy != null)
         {
             enemy.TakeDamage(damage);

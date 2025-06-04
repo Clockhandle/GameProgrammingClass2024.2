@@ -19,8 +19,9 @@ MonoBehaviour:
   blockCount: 1
   attackDamage: 1
   attackInterval: 1
-  attackRange: 1
+  attackRange: 4
   attackOffset: {x: 1, y: 0, z: 0}
+  healAmount: 5
   type: 2
   unitClass: 4
   DP: 10

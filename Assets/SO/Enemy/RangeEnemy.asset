@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb5abc4f2fcf7843a30adc1d8591e32, type: 3}
   m_Name: RangeEnemy
   m_EditorClassIdentifier: 
-  maxHealth: 7
+  maxHealth: 10
   moveSpeed: 2
-  damage: 1
+  damage: 5
+  idleTime: 3
+  longRange: 6

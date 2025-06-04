@@ -59,6 +59,7 @@ public class EnemySpawner : MonoBehaviour
         }
 
         GameManager.Instance?.RegisterEnemy(enemyObj);
+        spawnedCount++;
     }
 }
 

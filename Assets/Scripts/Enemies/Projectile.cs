@@ -3,10 +3,10 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     private Transform target;
-    private int damage;
-    private float speed = 8f;
+    protected int damage;
+    private float speed = 10f;
 
-    public void Initialize(Transform target, int damage)
+    public virtual void Initialize(Transform target, int damage)
     {
         this.target = target;
         this.damage = damage;
@@ -28,7 +28,7 @@ public class Projectile : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    protected virtual  void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Unit")) return;
 
@@ -36,6 +36,7 @@ public class Projectile : MonoBehaviour
         if (unit != null)
         {
             unit.TakeDamage(damage);
+            Debug.Log("Projectile HITTTT BITCHHH");
         }
 
         Destroy(gameObject);

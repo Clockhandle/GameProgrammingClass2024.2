@@ -1,112 +1,121 @@
 using UnityEngine;
+using System.Collections.Generic;
+
 
 public class EnemyRanged : EnemyBase
 {
     [Header("Ranged Attack")]
     public GameObject projectilePrefab;
-    private Transform firePoint;
+    public Transform firePoint;
     public float attackRange = 4f;
+    public LayerMask unitLayerMask;
 
-    [Header("Attack Logic")]
-    private float phaseDuration = 2f;
-    private float phaseTimer = 0f;
 
     public bool isAttacking = false;
-    public bool isWalkingPhase = false;
+    public bool isWalking = true;
 
-    protected override void OnUpdate()
+    [Header("Attack Phases")]
+    public float walkAfterAttackDuration = 4f;
+    private float walkAfterAttackTimer = 0f;
+    private bool isWalkingAfterAttack = false;
+
+
+    public List<Unit> detectedUnits = new List<Unit>();
+
+    protected override void Update()
     {
+
         firePoint = this.transform;
-
-        if (isDead || projectilePrefab == null || firePoint == null)
-            return;
-
-        if (currentTarget != null)
+        if (isWalkingAfterAttack)
         {
-            float distance = Vector2.Distance(transform.position, currentTarget.transform.position);
-
-            if (distance <= attackRange)
+            walkAfterAttackTimer += Time.deltaTime;
+            TriggerWalk();
+            if (walkAfterAttackTimer >= walkAfterAttackDuration)
             {
-                phaseTimer += Time.deltaTime;
+                walkAfterAttackTimer = 0f;
+                isWalkingAfterAttack = false;
 
-                if (isAttacking)
+                if (HasUnitInRange())
                 {
-                    animator.SetBool("isAttacking", true);
-                    // wait for animation to call FireProjectileAnimationEvent()
+                    TriggerAttack(); // Attack again after walking
                 }
                 else
                 {
-                    animator.SetBool("isAttacking", false);
-                  //  WalkForward();
-                }
-
-                if (phaseTimer >= phaseDuration)
-                {
-                    phaseTimer = 0f;
-                    isAttacking = !isAttacking;
+                    TriggerWalk();
+                    currentTarget = null;
                 }
             }
-            else
+
+            return;
+
+        }
+
+        if (HasUnitInRange())
+        {
+            if (!isAttacking)
             {
-                animator.SetBool("isAttacking", false);
-              
+                TriggerAttack(); // Attack immediately
             }
         }
         else
         {
+            // No target in range
             animator.SetBool("isAttacking", false);
-            FindNearestTargetInRange();
+            animator.SetBool("isWalking", true);
+            isAttacking = false;
+            isWalking = true;
+            currentTarget = null;
         }
     }
 
-    //private void WalkForward()
-    //{
-    //    transform.position += transform.right * Time.deltaTime * 1.5f; // walk speed
-    //}
-
-    private void FindNearestTargetInRange()
+    public bool HasUnitInRange()
     {
-        var hits = Physics2D.OverlapCircleAll(transform.position, attackRange);
-        foreach (var hit in hits)
+        detectedUnits.Clear();
+        currentTarget = null;
+
+        GameObject[] units = GameObject.FindGameObjectsWithTag("Unit");
+
+        float closestDist = float.MaxValue;
+
+        foreach (var unitGO in units)
         {
-            if (hit.CompareTag("Unit"))
+            Unit unit = unitGO.GetComponent<Unit>();
+            if (unit == null || unit.isDead) continue; 
+
+            float dist = Vector2.Distance(transform.position, unitGO.transform.position);
+            if (dist <= attackRange)
             {
-                Unit unit = hit.GetComponent<Unit>();
-                if (unit != null)
+                detectedUnits.Add(unit);
+
+                if (dist < closestDist)
                 {
-                    SetTarget(unit);
-                    break;
+                    currentTarget = unit;
+                    closestDist = dist;
                 }
             }
         }
+
+        return currentTarget != null;
     }
-    public bool HasTargetInRange()
-    {
-        if (isDead || currentTarget == null) return false;
-        float distance = Vector2.Distance(transform.position, currentTarget.transform.position);
-        return distance <= attackRange;
-    }
+
     public void TriggerAttack()
     {
-        if (!isDead && currentTarget != null)
-        {
-            isAttacking = true;
-            isWalkingPhase = false;
-            animator.SetBool("isAttacking", true);
-            animator.SetBool("isWalking", false);
-        }
+        isAttacking = true;
+        isWalking = false;
+        animator.SetBool("isAttacking", true);
+        animator.SetBool("isWalking", false);
     }
-    public void EndAttackAndStartWalkingPhase()
+    public void TriggerWalk()
     {
         isAttacking = false;
-        isWalkingPhase = true;
+        isWalking = true;
         animator.SetBool("isAttacking", false);
         animator.SetBool("isWalking", true);
     }
 
     public void FireProjectileAnimationEvent()
     {
-        if (currentTarget == null || !HasTargetInRange()) return;
+        if (currentTarget == null) return;
 
         GameObject proj = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
         Projectile projectile = proj.GetComponent<Projectile>();
@@ -115,8 +124,14 @@ public class EnemyRanged : EnemyBase
             projectile.Initialize(currentTarget.transform, enemyData.damage);
         }
 
-        // After firing, switch to walking
-        EndAttackAndStartWalkingPhase();
+        // Start walking phase after attack
+        //isAttacking = false;
+        //isWalking = true;
+        isWalkingAfterAttack = true;
+        walkAfterAttackTimer = 0f;
+
+        //animator.SetBool("isAttacking", false);
+        //animator.SetBool("isWalking", true);
     }
 
     private void OnDrawGizmosSelected()

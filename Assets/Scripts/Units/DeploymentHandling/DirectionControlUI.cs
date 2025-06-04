@@ -32,6 +32,9 @@ public class DirectionControlUI : MonoBehaviour
     private bool retreatModeOnly = false;
 
 
+    [Header("Time Slow Settings")]
+    [SerializeField] private float dragTimeScale = 0.3f; // How slow time should be
+    private float originalTimeScale = 1f;
 
 
 
@@ -93,6 +96,11 @@ public class DirectionControlUI : MonoBehaviour
         if (!RectTransformUtility.RectangleContainsScreenPoint(handleRectTransform, eventData.position, eventData.pressEventCamera ?? eventCamera)) { eventData.pointerDrag = null; return; } // Ensure drag starts on handle
         isDraggingHandle = true;
         InputManager.SignalUIDragActive();
+
+        FindObjectOfType<SimpleCameraZoom>().ZoomTo(targetUnit.transform);
+        originalTimeScale = Time.timeScale;
+        Time.timeScale = dragTimeScale;
+
     }
 
 
@@ -172,6 +180,9 @@ public class DirectionControlUI : MonoBehaviour
     {
         if (!isDraggingHandle || targetUnit == null || handleRectTransform == null || panelRectTransform == null) return;
         isDraggingHandle = false;
+
+        Time.timeScale = originalTimeScale;
+        FindObjectOfType<SimpleCameraZoom>().ResetZoom(); // on drag end
 
         // Use the handle's FINAL Anchored Position relative to the panel center
         Vector2 finalHandlePosition = handleRectTransform.anchoredPosition;

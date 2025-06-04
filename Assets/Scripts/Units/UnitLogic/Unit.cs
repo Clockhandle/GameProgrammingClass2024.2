@@ -12,10 +12,15 @@ public class Unit : MonoBehaviour
     public Animator animator;
     public bool facingRight = true;
     private IUnitStates currentState;
+
+    //Prefab for arrow and heal
     public GameObject ArrowPrefab;
+    public GameObject HealEffectPrefab;
 
-
+    // Assign max and current health here
     public int currentHealth;
+    public int MaxHealth => unitDataSO.maxHealth;
+
 
     [Header("World Space UI")]
     [Tooltip("Assign the World Space Canvas Prefab with DirectionControlUI script")]
@@ -32,10 +37,15 @@ public class Unit : MonoBehaviour
     public GameObject SourcePrefab { get; private set; }
     private UnitStates currentStates;
 
+    //List of friend and foe
     private List<EnemyPathFollower> blockedEnemies = new List<EnemyPathFollower>();
-    private HashSet<EnemyPathFollower> enemiesInRange = new HashSet<EnemyPathFollower>();
+    public List<Unit> alliesInRangeList = new List<Unit>();
+
+
     public bool IsOperational { get; private set; } = false;
     public int BlockCount => unitDataSO != null ? unitDataSO.blockCount : 1;
+
+    [SerializeField] private HealthBarSlider healthBarSlider;
 
 
     void OnEnable()
@@ -54,6 +64,7 @@ public class Unit : MonoBehaviour
     void Awake()
     {
         animator = GetComponent<Animator>();
+        healthBarSlider = GetComponentInChildren<HealthBarSlider>();
         // mainCamera = Camera.main; // Example caching
         // Ensure UnitDataSO is assigned
         if (unitDataSO == null) Debug.LogError("UnitDataSO not found on Unit!", this);
@@ -106,6 +117,12 @@ public class Unit : MonoBehaviour
         if (archer != null)
         {
             archer.Initialize(this);
+        }
+
+        UnitMedic medic = GetComponent<UnitMedic>();
+        if(medic != null)
+        {
+            medic.Initialize(this);
         }
 
 
@@ -236,10 +253,16 @@ public class Unit : MonoBehaviour
         }
     }
 
+
+    // UPDATE FUNCTION IS HERE NIBA
     private void Update()
     {
         currentStates?.UpdateState(this);
         UpdateAnimatorState();
+        UpdateAlliesInRange();
+
+        CleanEnemyList(); // prevent null enemy taking up space in the list
+
     }
 
 
@@ -305,7 +328,8 @@ public class Unit : MonoBehaviour
         if (target == null) return;
 
         int damage = unitDataSO != null ? unitDataSO.attackDamage : 1;
-        var enemyHealth = target.GetComponent<EnemyBase>();
+        var enemyHealth = target.GetComponent<Entity>();
+        
 
         if (enemyHealth != null)
         {
@@ -322,6 +346,14 @@ public class Unit : MonoBehaviour
         if (animator != null)
         {
             animator.SetBool("isAttacking", CurrentTarget != null);
+        }
+    }
+
+    public void TriggerHealingAnim()
+    {
+        if (animator != null)
+        {
+            animator.SetBool("isHealing", true);
         }
     }
 
@@ -357,13 +389,40 @@ public class Unit : MonoBehaviour
     }
     }
 
+    //Add foe to list
+    void UpdateAlliesInRange()
+    {
+        alliesInRangeList.Clear();
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, unitDataSO.attackRange);
+        foreach (var col in colliders)
+        {
+            Unit ally = col.GetComponent<Unit>();
+            if (ally != null && ally != this && ally.IsOperational)
+            {
+                alliesInRangeList.Add(ally);
+            }
+        }
+    }
+
+
+
+    public bool isDead;
     public void TakeDamage(int amount)
     {
         currentHealth -= amount;
+        healthBarSlider.UpdateHealth(currentHealth, unitDataSO.maxHealth);
         if (currentHealth <= 0)
         {
             Die();
+            isDead = true;
         }
+    }
+
+    //Healing bitch
+    public void Heal(int amount)
+    {
+        currentHealth = Mathf.Min(currentHealth + amount, MaxHealth);
+        // trigger heal VFX sound
     }
 
     private void Die()
@@ -372,6 +431,10 @@ public class Unit : MonoBehaviour
         Destroy(gameObject);
     }
 
+    private void CleanEnemyList()
+    {
+        enemiesInRangeList.RemoveAll(enemy => enemy == null);
+    }
 
 
     private void OnDrawGizmosSelected()
