@@ -31,6 +31,11 @@ public class UnitDataSO : ScriptableObject
     public int blockCount = 1;
     public int attackDamage = 1;
     public float attackInterval = 1.0f;
+    public float attackRange = 1;
+    public Vector3 attackOffset;
+
+    [Header("Healing")]
+    public int healAmount = 2;
 
     [Header("Trait")]
     public UnitType type;
@@ -41,4 +46,6 @@ public class UnitDataSO : ScriptableObject
     public int maxNumberOfDeployments = 5;
     public Sprite icon;
     public float redeployCooldown = 10f;
+
+
 }

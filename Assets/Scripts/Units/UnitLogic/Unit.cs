@@ -9,7 +9,18 @@ public class Unit : MonoBehaviour
 {
     [Header("Unit Data")]
     public UnitDataSO unitDataSO;
+    public Animator animator;
+    public bool facingRight = true;
+    private IUnitStates currentState;
+
+    //Prefab for arrow and heal
+    public GameObject ArrowPrefab;
+    public GameObject HealEffectPrefab;
+
+    // Assign max and current health here
     public int currentHealth;
+    public int MaxHealth => unitDataSO.maxHealth;
+
 
     [Header("World Space UI")]
     [Tooltip("Assign the World Space Canvas Prefab with DirectionControlUI script")]
@@ -26,10 +37,15 @@ public class Unit : MonoBehaviour
     public GameObject SourcePrefab { get; private set; }
     private UnitStates currentStates;
 
+    //List of friend and foe
     private List<EnemyPathFollower> blockedEnemies = new List<EnemyPathFollower>();
-    private HashSet<EnemyPathFollower> enemiesInRange = new HashSet<EnemyPathFollower>();
+    public List<Unit> alliesInRangeList = new List<Unit>();
+
+
     public bool IsOperational { get; private set; } = false;
     public int BlockCount => unitDataSO != null ? unitDataSO.blockCount : 1;
+
+    [SerializeField] private HealthBarSlider healthBarSlider;
 
 
     void OnEnable()
@@ -47,6 +63,8 @@ public class Unit : MonoBehaviour
 
     void Awake()
     {
+        animator = GetComponent<Animator>();
+        healthBarSlider = GetComponentInChildren<HealthBarSlider>();
         // mainCamera = Camera.main; // Example caching
         // Ensure UnitDataSO is assigned
         if (unitDataSO == null) Debug.LogError("UnitDataSO not found on Unit!", this);
@@ -95,6 +113,19 @@ public class Unit : MonoBehaviour
 
     public void ConfirmPlacement(Quaternion finalRotation)
     {
+        UnitRangeArcher archer = GetComponent<UnitRangeArcher>();
+        if (archer != null)
+        {
+            archer.Initialize(this);
+        }
+
+        UnitMedic medic = GetComponent<UnitMedic>();
+        if(medic != null)
+        {
+            medic.Initialize(this);
+        }
+
+
         IsOperational = true;
         // 1. Check if we are in the correct state to confirm
         if (currentStates is UnitAwaitDeploymentState)
@@ -147,6 +178,7 @@ public class Unit : MonoBehaviour
             if (directionUIInstance != null) Destroy(directionUIInstance);
             PlacementUIManager.Instance?.NotifyDirectionUIHidden();
         }
+        ScanForInitialEnemies();
     }
 
     // Called externally (e.g., by DirectionSelectionUI) when retreat is chosen
@@ -221,25 +253,47 @@ public class Unit : MonoBehaviour
         }
     }
 
+
+    // UPDATE FUNCTION IS HERE NIBA
     private void Update()
     {
         currentStates?.UpdateState(this);
+        UpdateAnimatorState();
+        UpdateAlliesInRange();
+
+        CleanEnemyList(); // prevent null enemy taking up space in the list
+
     }
+
 
     // Keep SwitchState and other helpers...
     public void SwitchState(UnitStates newState) { /* ... */ if (newState == null) return; currentStates?.ExitState(this); currentStates = newState; currentStates?.StartState(this); }
     private void PlayDeploymentAnimation() { Debug.Log($"Playing Deployment Animation for {gameObject.name}"); }
 
+
+
+    //enemy in range
+    public List<EnemyPathFollower> enemiesInRangeList = new List<EnemyPathFollower>();
+    private EnemyPathFollower CurrentTarget => enemiesInRangeList.Count > 0 ? enemiesInRangeList[0] : null;
+
+
     public void OnEnemyEnterRange(EnemyPathFollower enemy)
     {
-        if (!IsOperational) return;
-        enemiesInRange.Add(enemy);
+        if (!IsOperational || enemiesInRangeList.Contains(enemy)) return;
+
+        enemiesInRangeList.Add(enemy);
     }
 
     public void OnEnemyExitRange(EnemyPathFollower enemy)
     {
-        if (!IsOperational) return;
-        enemiesInRange.Remove(enemy);
+        if (enemiesInRangeList.Remove(enemy))
+        {
+            if (enemy == CurrentTarget)
+            {
+                // Target removed — auto-rotate to new first enemy
+                UpdateAnimatorState();
+            }
+        }
     }
 
     // Add this method to Unit.cs
@@ -263,35 +317,112 @@ public class Unit : MonoBehaviour
         blockedEnemies.Remove(enemy);
     }
 
-    private IEnumerator AttackEnemiesInRangeRoutine()
+ 
+
+
+    public void DealDamage()
     {
-        while (true)
+        if (!IsOperational || enemiesInRangeList.Count == 0) return;
+
+        var target = CurrentTarget;
+        if (target == null) return;
+
+        int damage = unitDataSO != null ? unitDataSO.attackDamage : 1;
+        var enemyHealth = target.GetComponent<Entity>();
+        
+
+        if (enemyHealth != null)
         {
-            if (IsOperational)
+            enemyHealth.TakeDamage(damage);
+            if (enemyHealth.CurrentHealth <= 0)
             {
-                int damage = unitDataSO != null ? unitDataSO.attackDamage : 1;
-                foreach (var enemy in enemiesInRange.ToArray())
-                {
-                    if (enemy != null)
-                    {
-                        var health = enemy.GetComponent<EnemyBase>();
-                        if (health != null)
-                            health.TakeDamage(damage);
-                    }
-                }
+                enemiesInRangeList.Remove(target); // Remove the one we damaged and confirmed dead
             }
-            float interval = unitDataSO != null ? unitDataSO.attackInterval : 1.0f;
-            yield return new WaitForSeconds(interval);
         }
     }
 
+    private void UpdateAnimatorState()
+    {
+        if (animator != null)
+        {
+            animator.SetBool("isAttacking", CurrentTarget != null);
+        }
+    }
+
+    public void TriggerHealingAnim()
+    {
+        if (animator != null)
+        {
+            animator.SetBool("isHealing", true);
+        }
+    }
+
+    void ScanForInitialEnemies()
+    {
+        Vector2 direction = facingRight ? Vector2.right : Vector2.left;
+        Vector2 center = (Vector2)transform.position + direction * unitDataSO.attackOffset.x;
+        float radius = unitDataSO.attackRange;
+
+        Collider2D[] hits = Physics2D.OverlapCircleAll(center, radius);
+        foreach (var hit in hits)
+        {
+            var enemy = hit.GetComponent<EnemyPathFollower>();
+            if (enemy != null)
+            {
+                OnEnemyEnterRange(enemy);
+            }
+        }
+    }
+
+
+
+    private IEnumerator AttackEnemiesInRangeRoutine()
+    {
+       while (true)
+    {
+        if (IsOperational)
+        {
+            UpdateAnimatorState(); // triggers animation if enemy present
+        }
+        float interval = unitDataSO != null ? unitDataSO.attackInterval : 1.0f;
+        yield return new WaitForSeconds(interval);
+    }
+    }
+
+    //Add foe to list
+    void UpdateAlliesInRange()
+    {
+        alliesInRangeList.Clear();
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, unitDataSO.attackRange);
+        foreach (var col in colliders)
+        {
+            Unit ally = col.GetComponent<Unit>();
+            if (ally != null && ally != this && ally.IsOperational)
+            {
+                alliesInRangeList.Add(ally);
+            }
+        }
+    }
+
+
+
+    public bool isDead;
     public void TakeDamage(int amount)
     {
         currentHealth -= amount;
+        healthBarSlider.UpdateHealth(currentHealth, unitDataSO.maxHealth);
         if (currentHealth <= 0)
         {
             Die();
+            isDead = true;
         }
+    }
+
+    //Healing bitch
+    public void Heal(int amount)
+    {
+        currentHealth = Mathf.Min(currentHealth + amount, MaxHealth);
+        // trigger heal VFX sound
     }
 
     private void Die()
@@ -299,4 +430,24 @@ public class Unit : MonoBehaviour
         // Add any cleanup logic here (e.g., notify managers, play animation)
         Destroy(gameObject);
     }
+
+    private void CleanEnemyList()
+    {
+        enemiesInRangeList.RemoveAll(enemy => enemy == null);
+    }
+
+
+    private void OnDrawGizmosSelected()
+    {
+        if (unitDataSO == null)
+            return;
+
+        Gizmos.color = Color.red;
+
+        Vector2 direction = facingRight ? Vector2.right : Vector2.left;
+        Vector2 center = (Vector2)transform.position + direction * unitDataSO.attackOffset.x;
+
+        Gizmos.DrawWireSphere(center, unitDataSO.attackRange);
+    }
+
 }

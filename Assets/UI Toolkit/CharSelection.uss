@@ -1,0 +1,62 @@
+.buttonSelect {
+    width: 250px;
+    height: 464px;
+    background-image: none;
+    margin-top: 2px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    margin-left: 4px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-top-color: rgba(0, 0, 0, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+}
+
+.unitTitle {
+    width: 115px;
+    height: 49px;
+    translate: 0 209px;
+    background-image: url("project://database/Assets/SunnyLand%20Artwork/Environment/back.png?fileID=21300000&guid=8e160a2a620644cd6afef9119dad1093&type=3#back");
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-end;
+    align-self: center;
+    padding-bottom: 0;
+}
+
+.otherButton {
+}
+
+.UnitName {
+    font-size: 25px;
+}
+
+.UnitName {
+    font-size: 25px;
+}
+
+.InfoText {
+    margin-bottom: 60px;
+    -unity-font: initial;
+}
+
+.buttonSelect:hover {
+    scale: 1.05 1.05;
+    transition-duration: 0.2s;
+}
+
+.buttonSelect:active {
+    transition-duration: 0.2s;
+    scale: 1.1 1.1;
+    transition-timing-function: ease-out-bounce;
+    transition-delay: 0s;
+}

@@ -32,6 +32,6 @@ public static class UnitStateFactory
             return stateCreators[UnitClass.Scout]();
 
         // Fallback default state.
-        return new UnitDefaultState();
+        return new UnitAttackState();
     }
 }

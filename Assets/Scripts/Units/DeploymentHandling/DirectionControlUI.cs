@@ -31,6 +31,13 @@ public class DirectionControlUI : MonoBehaviour
     private Vector2 handleInitialLocalPos; // Initial position of handle within panel (likely 0,0)
     private bool retreatModeOnly = false;
 
+
+    [Header("Time Slow Settings")]
+    [SerializeField] private float dragTimeScale = 0.3f; // How slow time should be
+    private float originalTimeScale = 1f;
+
+
+
     void Awake()
     {
         panelRectTransform = GetComponent<RectTransform>(); // Get self
@@ -89,7 +96,14 @@ public class DirectionControlUI : MonoBehaviour
         if (!RectTransformUtility.RectangleContainsScreenPoint(handleRectTransform, eventData.position, eventData.pressEventCamera ?? eventCamera)) { eventData.pointerDrag = null; return; } // Ensure drag starts on handle
         isDraggingHandle = true;
         InputManager.SignalUIDragActive();
+
+        FindObjectOfType<SimpleCameraZoom>().ZoomTo(targetUnit.transform);
+        originalTimeScale = Time.timeScale;
+        Time.timeScale = dragTimeScale;
+
     }
+
+
 
     public void HandleDrag(BaseEventData baseData)
     {
@@ -100,41 +114,75 @@ public class DirectionControlUI : MonoBehaviour
         Vector2 localPoint;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(panelRectTransform, eventData.position, eventData.pressEventCamera ?? eventCamera, out localPoint);
 
-        float distance = localPoint.magnitude;
-        Vector2 direction = (distance > 0.01f) ? localPoint.normalized : (Quaternion.Euler(0, 0, handleRectTransform.localEulerAngles.z) * Vector2.up);
+        //float distance = localPoint.magnitude;
+        //Vector2 direction = (distance > 0.01f) ? localPoint.normalized : (Quaternion.Euler(0, 0, handleRectTransform.localEulerAngles.z) * Vector2.up);
 
-        // Clamp Handle Position
-        float clampedDistance = Mathf.Min(distance, dragRadius);
-        Vector2 targetHandlePosition = direction * clampedDistance;
+
+        // Snap direction to nearest axis (N, S, E, W)
+        Vector2 direction;
+        if (Mathf.Abs(localPoint.x) > Mathf.Abs(localPoint.y))
+            direction = (localPoint.x >= 0) ? Vector2.right : Vector2.left;
+        else
+            direction = (localPoint.y >= 0) ? Vector2.up : Vector2.down;
+
+        // Clamp to drag radius
+        Vector2 targetHandlePosition = direction * dragRadius;
         handleRectTransform.anchoredPosition = targetHandlePosition;
 
         // Update Handle Rotation
         float visualAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         handleRectTransform.localRotation = Quaternion.Euler(0, 0, visualAngle - 90f);
 
-        // Update the range visibility and rotation based on deadzone
+
+        // Update unit range direction and visibility
         if (targetUnitRange != null)
         {
-            // Check if outside deadzone
-            bool outsideDeadZone = distance >= deadZoneRadius;
-
-            // Only show and update range when outside deadzone
-
+            bool outsideDeadZone = localPoint.magnitude >= deadZoneRadius;
             if (outsideDeadZone)
             {
-                targetUnitRange.ShowRangePreview(outsideDeadZone);
-                Quaternion rangeRotation = Quaternion.Euler(0, 0, visualAngle);
-                targetUnitRange.transform.rotation = rangeRotation;
+                targetUnitRange.ShowRangePreview(true);
+                targetUnitRange.transform.rotation = Quaternion.Euler(0, 0, visualAngle);
             }
         }
 
 
+        //// Clamp Handle Position
+        //float clampedDistance = Mathf.Min(distance, dragRadius);
+        //Vector2 targetHandlePosition = direction * clampedDistance;
+        //handleRectTransform.anchoredPosition = targetHandlePosition;
+
+        //// Update Handle Rotation
+        //float visualAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        //handleRectTransform.localRotation = Quaternion.Euler(0, 0, visualAngle - 90f);
+
+        //// Update the range visibility and rotation based on deadzone
+        //if (targetUnitRange != null)
+        //{
+        //    // Check if outside deadzone
+        //    bool outsideDeadZone = distance >= deadZoneRadius;
+
+        //    // Only show and update range when outside deadzone
+
+        //    if (outsideDeadZone)
+        //    {
+        //        targetUnitRange.ShowRangePreview(outsideDeadZone);
+        //        Quaternion rangeRotation = Quaternion.Euler(0, 0, visualAngle);
+        //        targetUnitRange.transform.rotation = rangeRotation;
+        //    }
+        //}
+
+
     }
+
+
 
     public void HandleEndDrag(BaseEventData baseData)
     {
         if (!isDraggingHandle || targetUnit == null || handleRectTransform == null || panelRectTransform == null) return;
         isDraggingHandle = false;
+
+        Time.timeScale = originalTimeScale;
+        FindObjectOfType<SimpleCameraZoom>().ResetZoom(); // on drag end
 
         // Use the handle's FINAL Anchored Position relative to the panel center
         Vector2 finalHandlePosition = handleRectTransform.anchoredPosition;

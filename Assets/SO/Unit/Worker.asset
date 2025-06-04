@@ -12,11 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15e5fd9db2dce3c40a6321014b0f375f, type: 3}
   m_Name: Worker
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 150
   defense: 10
   resistance: 0
   SP: 10
+  blockCount: 2
+  attackDamage: 1
+  attackInterval: 1
+  attackRange: 3
+  attackOffset: {x: 1, y: 0, z: 0}
+  healAmount: 2
   type: -1
   unitClass: 8
   DP: 10
   maxNumberOfDeployments: 3
+  icon: {fileID: 0}
+  redeployCooldown: 10

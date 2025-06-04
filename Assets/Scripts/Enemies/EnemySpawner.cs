@@ -1,9 +1,11 @@
+using System.IO;
+using System;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
     [Header("Spawner Settings")]
-    public GameObject enemyPrefab;
+    public GameObject[] enemyPrefabs;
     public Transform spawnPoint;
     public float spawnInterval = 2f;
 
@@ -13,8 +15,14 @@ public class EnemySpawner : MonoBehaviour
 
     [Header("Path Settings")]
     public EnemyPath enemyPath;
+    public int EnemyIndex;
 
     public int GetQuota() => maxEnemies;
+
+    private void Awake()
+    {
+        
+    }
 
     void Start()
     {
@@ -31,25 +39,27 @@ public class EnemySpawner : MonoBehaviour
         if (timer >= spawnInterval)
         {
             timer = 0f;
-            SpawnEnemy();
+            SpawnEnemy(EnemyIndex);
         }
     }
 
-    void SpawnEnemy()
+    void SpawnEnemy(int index)
     {
-        if (enemyPrefab != null && spawnPoint != null)
+        if (index < 0 || index >= enemyPrefabs.Length)
         {
-            GameObject enemy = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
-            spawnedCount++;
-            GameManager.Instance?.RegisterEnemy(enemy);
-
-            // Assign the path to the enemy's path follower
-            var pathFollower = enemy.GetComponent<EnemyPathFollower>();
-            if (pathFollower != null && enemyPath != null)
-            {
-                pathFollower.SetPath(enemyPath);
-            }
+            Debug.LogWarning("Invalid enemy index");
+            return;
         }
+
+        GameObject enemyObj = Instantiate(enemyPrefabs[index], transform.position, Quaternion.identity);
+        var pathFollower = enemyObj.GetComponent<EnemyPathFollower>();
+        if (pathFollower != null)
+        {
+            pathFollower.SetPath(enemyPath);
+        }
+
+        GameManager.Instance?.RegisterEnemy(enemyObj);
+        spawnedCount++;
     }
 }
 

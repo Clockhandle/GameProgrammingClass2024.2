@@ -1,8 +1,11 @@
 using UnityEngine;
 
-[RequireComponent(typeof(EnemyBase))]
+//[RequireComponent(typeof(EnemyBase))]
 public class EnemyPathFollower : MonoBehaviour
 {
+    public bool isPaused = false;  // paused state
+
+
     private EnemyPath path;
     private int currentCheckpoint = 0;
     private float waitTimer = 0f;
@@ -16,6 +19,10 @@ public class EnemyPathFollower : MonoBehaviour
     private Vector3 blockBasePosition = Vector3.zero;
     private Unit blockingUnit = null;
 
+    //Enemy ranged
+    private EnemyRanged ranged;
+    private Entity entity;
+
     public void SetPath(EnemyPath newPath)
     {
         path = newPath;
@@ -25,13 +32,29 @@ public class EnemyPathFollower : MonoBehaviour
         Debug.Log($"{gameObject.name}: Path set with {path?.checkpoints.Count ?? 0} checkpoints.");
     }
 
-    void Awake()
+    protected virtual void Awake()
     {
-        enemyBase = GetComponent<EnemyBase>();
+        //enemyBase = GetComponent<EnemyBase>();
+        ranged = GetComponent<EnemyRanged>();
+        entity = GetComponent<Entity>();    
     }
 
-    void Update()
+   protected virtual void Update()
     {
+        if (!isPaused)
+        {
+            FollowPathStep();
+        }
+    }
+
+    // Path Follower funcition
+    public void FollowPathStep()
+    {
+        if (isPaused) return; 
+
+        if (ranged != null && !ranged.isWalking)
+            return;
+
         if (isBlocked)
         {
             transform.position = blockBasePosition + blockOffset;
@@ -65,7 +88,7 @@ public class EnemyPathFollower : MonoBehaviour
 
         // Move towards checkpoint
         Vector3 target = checkpoint.transform.position;
-        float speed = (enemyBase != null && enemyBase.enemyData != null) ? enemyBase.enemyData.moveSpeed : 3f;
+        float speed = (entity != null && entity.enemyDataSO != null) ? entity.enemyDataSO.moveSpeed : 3f;
 
         float distance = Vector3.Distance(transform.position, target);
         // Debug.Log($"{gameObject.name}: Moving towards checkpoint {currentCheckpoint} at {target}, distance: {distance:F3}");
@@ -88,6 +111,8 @@ public class EnemyPathFollower : MonoBehaviour
             }
         }
     }
+
+
 
     void OnTriggerEnter2D(Collider2D other)
     {
