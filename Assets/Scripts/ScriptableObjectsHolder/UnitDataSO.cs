@@ -47,5 +47,7 @@ public class UnitDataSO : ScriptableObject
     public Sprite icon;
     public float redeployCooldown = 10f;
 
+    [Header("Skill Cool Down")]
+    public float skillCoolDown = 8f;
 
 }

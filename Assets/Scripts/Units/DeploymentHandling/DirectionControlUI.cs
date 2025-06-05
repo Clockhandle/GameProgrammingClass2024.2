@@ -2,6 +2,8 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using System.Collections;
+
 
 [RequireComponent(typeof(RectTransform))] // Panel should have one
 [RequireComponent(typeof(Canvas))]       // Panel should have the World Space Canvas
@@ -11,6 +13,10 @@ public class DirectionControlUI : MonoBehaviour
     [Header("Child UI References")]
     [Tooltip("Assign the child 'Retreat' Button GameObject")]
     [SerializeField] private Button retreatButton;
+
+    [SerializeField] private Button buffskillButton;
+    [SerializeField] private Button dashskillButton;
+
     [Tooltip("Assign the child 'DirectionHandle' Image GameObject")]
     [SerializeField] private Image directionHandleImage; // The draggable visual handle
 
@@ -37,6 +43,9 @@ public class DirectionControlUI : MonoBehaviour
     private float originalTimeScale = 1f;
 
 
+    Slider buffCooldownSlider;
+    Slider dashCooldownSlider;
+
 
     void Awake()
     {
@@ -57,6 +66,10 @@ public class DirectionControlUI : MonoBehaviour
         // Setup Retreat Button
         if (retreatButton != null) { retreatButton.onClick.AddListener(OnRetreatClicked); }
         else { Debug.LogError("Retreat Button not assigned!", this); }
+
+       
+
+
     }
 
     public void Initialize(Unit unit)
@@ -76,6 +89,66 @@ public class DirectionControlUI : MonoBehaviour
         {
             targetUnitRange.ShowRangePreview(false);
         }
+
+        // Assign slier
+        buffCooldownSlider = GameObject.Find("BuffCooldownSlider")?.GetComponent<Slider>();
+        buffskillButton.interactable = true;
+
+        dashCooldownSlider = GameObject.Find("DashCoolDownSkill")?.GetComponent<Slider>();
+        dashskillButton.interactable = true;
+
+        //buff skill button active
+        if (buffskillButton != null)
+        {
+            buffskillButton.onClick.RemoveAllListeners();
+            buffskillButton.onClick.AddListener(() => { 
+                
+                targetUnit.TryActivateBuffSkill();
+                buffskillButton.interactable = false;
+                if (buffCooldownSlider != null)
+                {
+                    SkillCooldownUI cooldownUI = buffCooldownSlider.GetComponent<SkillCooldownUI>();
+
+                    cooldownUI.StartCoolDown(8f);
+                    SkillCooldownManager.Instance.StartCooldown(buffskillButton, 8f);
+                }
+
+
+            });
+
+           
+            buffskillButton.gameObject.SetActive(targetUnit is BuffGeneralUnit);
+        }
+
+        //dash skill button active
+        if (dashskillButton != null)
+        {
+            dashskillButton.onClick.RemoveAllListeners();
+            dashskillButton.onClick.AddListener(() => { 
+                
+                targetUnit.TryActivateDashSkill();
+                dashskillButton.interactable = false;
+              
+            if (dashCooldownSlider != null)
+            {
+                SkillCooldownUI cooldownUI = dashCooldownSlider.GetComponent<SkillCooldownUI>();
+               
+                cooldownUI.StartCoolDown(8f);
+                 SkillCooldownManager.Instance.StartCooldown(dashskillButton, 8f);
+                }
+
+            });
+               
+           
+            dashskillButton.gameObject.SetActive(targetUnit is DashGeneralUnit);
+        }
+    }
+
+    private IEnumerator ReactivateButtonAfterDelay(Button button, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        button.interactable = true;
+        Debug.Log("Cooldown over FOR DASSHHH");
     }
 
     // Reset handle to center/default rotation
@@ -244,12 +317,16 @@ public class DirectionControlUI : MonoBehaviour
         }
     }
 
+
+    
+
     public void HideAllControls()
     {
         if (directionHandleImage != null)
             directionHandleImage.gameObject.SetActive(false);
         if (retreatButton != null)
             retreatButton.gameObject.SetActive(false);
+        
     }
     private void OnRetreatClicked() { /* ... Same ... */ if (targetUnit != null) targetUnit.InitiateRetreat(); else Destroy(gameObject); }
     void OnDestroy() { /* ... Same ... */ if (retreatButton != null) retreatButton.onClick.RemoveListener(OnRetreatClicked); PlacementUIManager.Instance?.NotifyDirectionUIHidden(); InputManager.SignalUIDragInactive(); }

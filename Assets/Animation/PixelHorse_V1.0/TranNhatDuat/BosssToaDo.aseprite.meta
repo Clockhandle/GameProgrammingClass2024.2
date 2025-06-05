@@ -1,0 +1,719 @@
+fileFormatVersion: 2
+guid: a09fb32f5eb795d4c84008876c309ec2
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: BosssToaDo_Frame_0
+    originalName: 
+    pivot: {x: 0.0065120067, y: -1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 60
+      width: 2457
+      height: 48
+    spriteID: 94f752eb61634774fae96aa9f6120096
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -44, y: 28}
+  - name: BosssToaDo_Frame_1
+    originalName: 
+    pivot: {x: 0.0065120067, y: -1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 116
+      width: 2457
+      height: 48
+    spriteID: 8e40c948d45f03c43a94d1dbc4ccd35b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 116}
+  - name: BosssToaDo_Frame_2
+    originalName: 
+    pivot: {x: 0.004891969, y: -1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 228
+      width: 2453
+      height: 48
+    spriteID: 4c8bb6ca0104f9548a1396a031fc211f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 228}
+  - name: BosssToaDo_Frame_3
+    originalName: 
+    pivot: {x: 0.005297473, y: -1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 172
+      width: 2454
+      height: 48
+    spriteID: e614a9ece3732e445b5275d9d9b17f1d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 172}
+  - name: BosssToaDo_Frame_4
+    originalName: 
+    pivot: {x: 0.011340624, y: -1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 2469
+      height: 48
+    spriteID: 11479125abd833446acbeed3aa813751
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: BosssToaDo_Frame_5
+    originalName: 
+    pivot: {x: 0.020072259, y: -1.3714286}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 284
+      width: 2491
+      height: 35
+    spriteID: bc7df6196d5b14f42aaad0a7283c5753
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 284}
+  - name: BosssToaDo_Frame_6
+    originalName: 
+    pivot: {x: 0.016122531, y: -1.3714286}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 327
+      width: 2481
+      height: 35
+    spriteID: 410141ed4f8f7604591e3c62daf12c5a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 327}
+  - name: BosssToaDo_Frame_7
+    originalName: 
+    pivot: {x: 0.004486134, y: -1.3714286}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 628
+      width: 2452
+      height: 35
+    spriteID: e5a8f037e86e56b4fb69cc101d989d74
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 628}
+  - name: BosssToaDo_Frame_8
+    originalName: 
+    pivot: {x: 0.004486134, y: -1.3714286}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 671
+      width: 2452
+      height: 35
+    spriteID: 67f828b17278af34894fcdc6b3ea97cc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 671}
+  - name: BosssToaDo_Frame_9
+    originalName: 
+    pivot: {x: 0.004486134, y: -1.3714286}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 714
+      width: 2452
+      height: 35
+    spriteID: 1ccb2d8bb068c1e49a0bfbfee2336b26
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 714}
+  - name: BosssToaDo_Frame_10
+    originalName: 
+    pivot: {x: 0.004486134, y: -1.3714286}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 757
+      width: 2452
+      height: 35
+    spriteID: bf70883228cb8f3408b2152622ac29ab
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 757}
+  - name: BosssToaDo_Frame_11
+    originalName: 
+    pivot: {x: 0.004486134, y: -1.3714286}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 800
+      width: 2452
+      height: 35
+    spriteID: 8c0d9cb0e94768d438276c893e442da3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 800}
+  - name: BosssToaDo_Frame_12
+    originalName: 
+    pivot: {x: 0.011435832, y: -1.2631578}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2481
+      y: 4
+      width: 1574
+      height: 38
+    spriteID: 3847edb8be987ee4496605c9fcd1c058
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2481, y: 4}
+  - name: BosssToaDo_Frame_13
+    originalName: 
+    pivot: {x: 0.011340624, y: -1.3714286}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 456
+      width: 2469
+      height: 35
+    spriteID: b4f6ca0909cfd1c40a3d980ca8d26c51
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 456}
+  - name: BosssToaDo_Frame_14
+    originalName: 
+    pivot: {x: 0.012140834, y: -1.3714286}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 413
+      width: 2471
+      height: 35
+    spriteID: ab7c248ff975400449f31911b4fa7134
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 413}
+  - name: BosssToaDo_Frame_15
+    originalName: 
+    pivot: {x: 0.012540453, y: -1.3714286}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 370
+      width: 2472
+      height: 35
+    spriteID: 4965df08daa86234381b7948c8d9ffdb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 370}
+  - name: BosssToaDo_Frame_16
+    originalName: 
+    pivot: {x: 0.011340624, y: -1.3714286}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 499
+      width: 2469
+      height: 35
+    spriteID: de14cffbbc05d0645acddeebcc05bcbb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 499}
+  - name: BosssToaDo_Frame_17
+    originalName: 
+    pivot: {x: 0.007723577, y: -1.3714286}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 542
+      width: 2460
+      height: 35
+    spriteID: 48ebb8f405d68e94f8714e3d4cb77cc5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 542}
+  - name: BosssToaDo_Frame_18
+    originalName: 
+    pivot: {x: 0.0061074914, y: -1.3714286}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 585
+      width: 2456
+      height: 35
+    spriteID: 47ac8a11e88a99e4ba0c0aff50f09c16
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 585}
+  - name: BosssToaDo_Frame_19
+    originalName: 
+    pivot: {x: 0.64, y: -1.3714286}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4063
+      y: 4
+      width: 25
+      height: 35
+    spriteID: 62608e36d15959b4f8ad37a0fec05d32
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4063, y: 4}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 718674527
+    name: BosssToaDo
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: BosssToaDo_Frame_0
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 16
+        width: 2560
+        height: 128
+      spriteId: 94f752eb61634774fae96aa9f6120096
+    - name: BosssToaDo_Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 48
+        y: 48
+        width: 2457
+        height: 48
+      spriteId: 8e40c948d45f03c43a94d1dbc4ccd35b
+    - name: BosssToaDo_Frame_2
+      frameIndex: 2
+      additiveSortOrder: 0
+      cellRect:
+        x: 52
+        y: 48
+        width: 2453
+        height: 48
+      spriteId: 4c8bb6ca0104f9548a1396a031fc211f
+    - name: BosssToaDo_Frame_3
+      frameIndex: 3
+      additiveSortOrder: 0
+      cellRect:
+        x: 51
+        y: 48
+        width: 2454
+        height: 48
+      spriteId: e614a9ece3732e445b5275d9d9b17f1d
+    - name: BosssToaDo_Frame_4
+      frameIndex: 4
+      additiveSortOrder: 0
+      cellRect:
+        x: 36
+        y: 48
+        width: 2469
+        height: 48
+      spriteId: 11479125abd833446acbeed3aa813751
+    - name: BosssToaDo_Frame_5
+      frameIndex: 5
+      additiveSortOrder: 0
+      cellRect:
+        x: 14
+        y: 48
+        width: 2491
+        height: 35
+      spriteId: bc7df6196d5b14f42aaad0a7283c5753
+    - name: BosssToaDo_Frame_6
+      frameIndex: 6
+      additiveSortOrder: 0
+      cellRect:
+        x: 24
+        y: 48
+        width: 2481
+        height: 35
+      spriteId: 410141ed4f8f7604591e3c62daf12c5a
+    - name: BosssToaDo_Frame_7
+      frameIndex: 7
+      additiveSortOrder: 0
+      cellRect:
+        x: 53
+        y: 48
+        width: 2452
+        height: 35
+      spriteId: e5a8f037e86e56b4fb69cc101d989d74
+    - name: BosssToaDo_Frame_8
+      frameIndex: 8
+      additiveSortOrder: 0
+      cellRect:
+        x: 53
+        y: 48
+        width: 2452
+        height: 35
+      spriteId: 67f828b17278af34894fcdc6b3ea97cc
+    - name: BosssToaDo_Frame_9
+      frameIndex: 9
+      additiveSortOrder: 0
+      cellRect:
+        x: 53
+        y: 48
+        width: 2452
+        height: 35
+      spriteId: 1ccb2d8bb068c1e49a0bfbfee2336b26
+    - name: BosssToaDo_Frame_10
+      frameIndex: 10
+      additiveSortOrder: 0
+      cellRect:
+        x: 53
+        y: 48
+        width: 2452
+        height: 35
+      spriteId: bf70883228cb8f3408b2152622ac29ab
+    - name: BosssToaDo_Frame_11
+      frameIndex: 11
+      additiveSortOrder: 0
+      cellRect:
+        x: 53
+        y: 48
+        width: 2452
+        height: 35
+      spriteId: 8c0d9cb0e94768d438276c893e442da3
+    - name: BosssToaDo_Frame_12
+      frameIndex: 12
+      additiveSortOrder: 0
+      cellRect:
+        x: 46
+        y: 48
+        width: 1574
+        height: 38
+      spriteId: 3847edb8be987ee4496605c9fcd1c058
+    - name: BosssToaDo_Frame_13
+      frameIndex: 13
+      additiveSortOrder: 0
+      cellRect:
+        x: 36
+        y: 48
+        width: 2469
+        height: 35
+      spriteId: b4f6ca0909cfd1c40a3d980ca8d26c51
+    - name: BosssToaDo_Frame_14
+      frameIndex: 14
+      additiveSortOrder: 0
+      cellRect:
+        x: 34
+        y: 48
+        width: 2471
+        height: 35
+      spriteId: ab7c248ff975400449f31911b4fa7134
+    - name: BosssToaDo_Frame_15
+      frameIndex: 15
+      additiveSortOrder: 0
+      cellRect:
+        x: 33
+        y: 48
+        width: 2472
+        height: 35
+      spriteId: 4965df08daa86234381b7948c8d9ffdb
+    - name: BosssToaDo_Frame_16
+      frameIndex: 16
+      additiveSortOrder: 0
+      cellRect:
+        x: 36
+        y: 48
+        width: 2469
+        height: 35
+      spriteId: de14cffbbc05d0645acddeebcc05bcbb
+    - name: BosssToaDo_Frame_17
+      frameIndex: 17
+      additiveSortOrder: 0
+      cellRect:
+        x: 45
+        y: 48
+        width: 2460
+        height: 35
+      spriteId: 48ebb8f405d68e94f8714e3d4cb77cc5
+    - name: BosssToaDo_Frame_18
+      frameIndex: 18
+      additiveSortOrder: 0
+      cellRect:
+        x: 49
+        y: 48
+        width: 2456
+        height: 35
+      spriteId: 47ac8a11e88a99e4ba0c0aff50f09c16
+    - name: BosssToaDo_Frame_19
+      frameIndex: 19
+      additiveSortOrder: 0
+      cellRect:
+        x: 48
+        y: 48
+        width: 25
+        height: 35
+      spriteId: 62608e36d15959b4f8ad37a0fec05d32
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 128, y: 128}
