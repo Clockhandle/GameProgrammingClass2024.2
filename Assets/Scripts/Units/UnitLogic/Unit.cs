@@ -437,6 +437,29 @@ public class Unit : MonoBehaviour
     }
 
 
+  
+
+    //Skill Buff UNit only
+    public void TryActivateBuffSkill()
+    {
+        if (this is BuffGeneralUnit buffUnit)
+        {
+            buffUnit.ActivateBuffSkill();
+
+        }
+    }
+
+    //Skill Dash UNit only
+    public void TryActivateDashSkill()
+    {
+        if (this is DashGeneralUnit dashUnit)
+        {
+            dashUnit.ActivateDashSkill();
+        }
+    }
+
+
+
     private void OnDrawGizmosSelected()
     {
         if (unitDataSO == null)

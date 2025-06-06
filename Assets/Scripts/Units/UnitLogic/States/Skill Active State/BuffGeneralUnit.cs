@@ -6,7 +6,7 @@ public class BuffGeneralUnit : Unit
 {
     [Header("Buff Skill Settings")]
     [SerializeField] private float buffRadius = 5f;
-    [SerializeField] private int bonusHealth = 50;
+    [SerializeField] private int bonusHealth = 30;
     [SerializeField] private int bonusDamage = 10;
     [SerializeField] private float animSpeedMultiplier = 1.5f;
     [SerializeField] private float buffDuration = 5f;
@@ -23,10 +23,10 @@ public class BuffGeneralUnit : Unit
 
     public void ActivateBuffSkill()
     {
-        if (!IsOperational || skillUsed) return;
+        if ( skillUsed) return;
 
         skillUsed = true;
-
+        Debug.Log("Buff SKILL ACTIVE");
         StartCoroutine(ApplyTemporaryBuff());
     }
 
