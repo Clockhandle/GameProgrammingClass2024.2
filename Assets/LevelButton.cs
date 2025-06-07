@@ -32,7 +32,7 @@ public class LevelButton : MonoBehaviour
 
     private void LoadLevel()
     {
-        //Debug.Log("Loading level: " + levelData.levelName);
-        SceneManager.LoadScene(levelData.sceneToLoad);
+        ProgressManager.Instance.selectedLevel = this.levelData;
+        SceneManager.LoadScene("CharSelection");
     }
 }

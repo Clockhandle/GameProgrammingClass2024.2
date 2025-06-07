@@ -1,12 +1,12 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class ProgressManager : MonoBehaviour
 {
     public static ProgressManager Instance { get; private set; }
 
-    // Add a reference to the level list asset if you have one, 
-    // or just handle unlocking by scene name. Let's use scene names for simplicity.
-
+    public LevelData selectedLevel;
+    public List<Cards> selectedCards;
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -16,6 +16,8 @@ public class ProgressManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        selectedCards = new List<Cards>();
     }
 
     public void UnlockLevel(string levelSceneNameToUnlock)
