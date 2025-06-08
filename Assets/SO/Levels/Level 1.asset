@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Level 1
   m_EditorClassIdentifier: 
   levelName: Level 1
-  sceneToLoad: SampleScene
+  sceneToLoad: Level 1
   isUnlocked: 1

@@ -20,8 +20,6 @@ public class LevelMapController : MonoBehaviour
 
         LevelButton[] levelButtonsInScene = FindObjectsOfType<LevelButton>(true);
 
-        Debug.Log($"Found {levelButtonsInScene.Length} level buttons in the scene to configure.");
-
         // 2. Loop through each button that we found.
         foreach (LevelButton button in levelButtonsInScene)
         {

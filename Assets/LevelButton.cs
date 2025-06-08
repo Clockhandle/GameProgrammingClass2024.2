@@ -25,7 +25,6 @@ public class LevelButton : MonoBehaviour
         else
         {
             buttonComponent.interactable = true;
-            // IMPORTANT: Only add the listener if the level is unlocked
             buttonComponent.onClick.AddListener(LoadLevel);
         }
     }

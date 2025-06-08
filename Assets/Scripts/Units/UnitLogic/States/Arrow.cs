@@ -35,7 +35,7 @@ public class Arrow : MonoBehaviour
         if (!collision.CompareTag("Enemy"))
             return;
 
-        Debug.Log($"Arrow hit {collision.name}");
+        //Debug.Log($"Arrow hit {collision.name}");
 
         var enemy = collision.GetComponent<Entity>();
         if (enemy != null)
