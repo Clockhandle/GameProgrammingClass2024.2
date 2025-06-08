@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class SlotManager : MonoBehaviour
 {
@@ -41,8 +42,7 @@ public class SlotManager : MonoBehaviour
 
         multiSelectButton = root.Q<Button>("MultiSelectButton");
         clearButton = root.Q<Button>("ClearButton");
-        startButton  = root.Q<Button>("PlayButton");
-
+        startButton = root.Q<Button>("PlayButton");
 
         int count = content.childCount;
         teamMaxSize = count;
@@ -65,8 +65,7 @@ public class SlotManager : MonoBehaviour
 
         multiSelectButton.clicked += MultiSelectButton;
         clearButton.clicked += ClearButton;
-        //startButton.clicked +=
-      
+        startButton.clicked += StartLevel;
     }
 
     private void OnEnable()
@@ -162,4 +161,15 @@ public class SlotManager : MonoBehaviour
             button.style.unityBackgroundImageTintColor = Color.white;
         }
     }
+
+    public void StartLevel()
+    {
+        List<Cards> finalTeam = teamManager.listTeam;
+
+        ProgressManager.Instance.selectedCards = new List<Cards>(finalTeam);
+        SceneManager.LoadScene(ProgressManager.Instance.selectedLevel.sceneToLoad);
+
+        selectionCanvas.style.display = DisplayStyle.None;
+        teamCanvas.style.display = DisplayStyle.Flex;
+    }    
 }

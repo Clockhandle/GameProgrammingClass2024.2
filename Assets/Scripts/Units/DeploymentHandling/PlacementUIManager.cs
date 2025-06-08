@@ -42,7 +42,4 @@ public class PlacementUIManager : MonoBehaviour
     {
         isDirectionUIShown = false;
     }
-
-    // REMOVED: No longer needs prefab refs, canvas refs, or methods like
-    // ShowDirectionUIForUnit, PositionUIAtUnit, ScreenToAnchoredPosition, HideUIDirection (with Destroy)
 }

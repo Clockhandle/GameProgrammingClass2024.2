@@ -54,18 +54,10 @@ public class DeploymentManager : MonoBehaviour
         else Debug.LogWarning($"Attempted to unregister {unitPrefab.name}, but it wasn't tracked.");
     }
 
-
-    // --- NEW METHOD ---
-    /// <summary>
-    /// Gets the current deployment count for a specific unit prefab.
-    /// </summary>
-    /// <param name="unitPrefab">The unit prefab.</param>
-    /// <returns>The number of currently deployed units of that type.</returns>
     public int GetCurrentDeploymentCount(GameObject unitPrefab)
     {
         if (unitPrefab == null) return 0;
         int key = unitPrefab.GetInstanceID();
         return deployedCounts.ContainsKey(key) ? deployedCounts[key] : 0;
     }
-    // --- End NEW METHOD ---
 }
