@@ -18,6 +18,7 @@ public class SlotManager : MonoBehaviour
     private VisualElement teamCanvas;
     private Button multiSelectButton;
     private Button clearButton;
+    private Button startButton;
 
     [Header("Selection UI")]
     [SerializeField] private UIDocument selectionUIDocument;
@@ -40,6 +41,8 @@ public class SlotManager : MonoBehaviour
 
         multiSelectButton = root.Q<Button>("MultiSelectButton");
         clearButton = root.Q<Button>("ClearButton");
+        startButton  = root.Q<Button>("PlayButton");
+
 
         int count = content.childCount;
         teamMaxSize = count;
@@ -62,6 +65,7 @@ public class SlotManager : MonoBehaviour
 
         multiSelectButton.clicked += MultiSelectButton;
         clearButton.clicked += ClearButton;
+        //startButton.clicked +=
       
     }
 

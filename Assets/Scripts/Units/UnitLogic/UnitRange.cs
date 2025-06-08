@@ -69,6 +69,17 @@ public class UnitRange : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (parentUnit == null || !parentUnit.IsOperational) return;
+
+        EnemyPathFollower enemy = other.GetComponent<EnemyPathFollower>();
+        if (enemy != null && enemiesInRange.Add(enemy)) // Only call if newly added
+        {
+            parentUnit.OnEnemyEnterRange(enemy);
+        }
+    }
+
     private void OnTriggerExit2D(Collider2D other)
     {
         if (parentUnit == null || !parentUnit.IsOperational) return;

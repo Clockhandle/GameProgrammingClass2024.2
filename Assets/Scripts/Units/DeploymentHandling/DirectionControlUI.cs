@@ -14,8 +14,12 @@ public class DirectionControlUI : MonoBehaviour
     [Tooltip("Assign the child 'Retreat' Button GameObject")]
     [SerializeField] private Button retreatButton;
 
+
+    //Skill button
     [SerializeField] private Button buffskillButton;
     [SerializeField] private Button dashskillButton;
+    [SerializeField] private Button arrowskillButton;
+
 
     [Tooltip("Assign the child 'DirectionHandle' Image GameObject")]
     [SerializeField] private Image directionHandleImage; // The draggable visual handle
@@ -43,12 +47,19 @@ public class DirectionControlUI : MonoBehaviour
     private float originalTimeScale = 1f;
 
 
+    //CoolDownHandle slider
     Slider buffCooldownSlider;
     Slider dashCooldownSlider;
+    Slider arrowCooldownSlider;
+
+    // Handle the flip 
+
 
 
     void Awake()
     {
+       
+
         panelRectTransform = GetComponent<RectTransform>(); // Get self
 
         // Get handle's RectTransform from the assigned Image
@@ -97,6 +108,9 @@ public class DirectionControlUI : MonoBehaviour
         dashCooldownSlider = GameObject.Find("DashCoolDownSkill")?.GetComponent<Slider>();
         dashskillButton.interactable = true;
 
+        arrowCooldownSlider = GameObject.Find("ArrowSkillSlider")?.GetComponent<Slider>();
+        arrowskillButton.interactable = true;
+
         //buff skill button active
         if (buffskillButton != null)
         {
@@ -142,6 +156,32 @@ public class DirectionControlUI : MonoBehaviour
            
             dashskillButton.gameObject.SetActive(targetUnit is DashGeneralUnit);
         }
+
+
+        //arrow burst skill button active
+        if (arrowskillButton != null)
+        {
+            arrowskillButton.onClick.RemoveAllListeners();
+            arrowskillButton.onClick.AddListener(() => {
+
+                targetUnit.TryActivateBurstSkill();
+                arrowskillButton.interactable = false;
+
+                if (arrowCooldownSlider != null)
+                {
+                    SkillCooldownUI cooldownUI = arrowCooldownSlider.GetComponent<SkillCooldownUI>();
+
+                    cooldownUI.StartCoolDown(8f);
+                    SkillCooldownManager.Instance.StartCooldown(arrowskillButton, 8f);
+                }
+
+            });
+
+
+            arrowskillButton.gameObject.SetActive(targetUnit.GetComponent<UnitRangeGeneral>() != null);
+        }
+
+
     }
 
     private IEnumerator ReactivateButtonAfterDelay(Button button, float delay)
@@ -150,6 +190,9 @@ public class DirectionControlUI : MonoBehaviour
         button.interactable = true;
         Debug.Log("Cooldown over FOR DASSHHH");
     }
+
+   
+
 
     // Reset handle to center/default rotation
     private void ResetHandleVisuals()
@@ -274,6 +317,9 @@ public class DirectionControlUI : MonoBehaviour
             // Existing code for outside deadzone...
             Vector2 finalDirection = finalHandlePosition.normalized;
             finalAngleDegrees = Mathf.Atan2(finalDirection.y, finalDirection.x) * Mathf.Rad2Deg;
+
+            // Flip sprite based on drag direction
+            targetUnit.SetFacingDirection(finalDirection);
         }
 
         // Create the final rotation for the UNIT using the calculated angle
@@ -295,7 +341,16 @@ public class DirectionControlUI : MonoBehaviour
         // Signal Drag End
         InputManager.SignalUIDragInactive();
         // This GameObject is destroyed by targetUnit.ConfirmPlacement()
+
+
+        // Hande the flip of Unit according to direction 
+        
+
+
+
     }
+
+   
 
     // Keep OnRetreatClicked, Initialize, Awake, OnDestroy...
 

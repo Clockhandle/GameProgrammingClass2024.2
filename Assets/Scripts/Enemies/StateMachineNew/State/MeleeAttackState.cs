@@ -5,10 +5,12 @@ using UnityEngine;
 public class MeleeAttackState : AttackState
 {
     protected EnemyDataSO enemyData;
+   
 
     public MeleeAttackState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, Transform attackPosition, EnemyDataSO enemyData) : base(entity, stateMachine, animBoolName, attackPosition)
     {
         this.enemyData = enemyData;
+         
     }
 
     public override void Enter()

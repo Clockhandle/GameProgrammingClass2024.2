@@ -143,13 +143,17 @@ MonoBehaviour:
   animator: {fileID: 0}
   facingRight: 1
   ArrowPrefab: {fileID: 0}
+  HealEffectPrefab: {fileID: 0}
   currentHealth: 10
   directionControlUIPrefab: {fileID: 8002188024767451207, guid: 039eeb05d41c36d40b8139c598d21dc2, type: 3}
   uiLocalOffset: {x: 0, y: 0, z: 0}
   rangeComponent: {fileID: 6347643346213166617}
-  rangeWidthTiles: 4
-  rangeHeightTiles: 3
+  rangeWidthTiles: 3
+  rangeHeightTiles: 4
   tileSize: 0.5
+  alliesInRangeList: []
+  healthBarSlider: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   enemiesInRangeList: []
   isDead: 0
 --- !u!50 &-6363629595766365117
@@ -348,7 +352,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5218450643856030122}
@@ -393,7 +397,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 98933c1806c8ad54da9e790f470e38a7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -450,7 +454,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.2607713, y: 0.020337403}
+  m_Offset: {x: 1.0855888, y: -0.015033007}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0.5}
@@ -461,7 +465,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5215416, y: 2.941679}
+  m_Size: {x: 2.0201604, y: 1.8432207}
   m_EdgeRadius: 0
 --- !u!1 &6675143671871410760
 GameObject:

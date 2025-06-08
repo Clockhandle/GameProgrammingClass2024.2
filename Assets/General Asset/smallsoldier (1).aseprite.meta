@@ -1,0 +1,1386 @@
+fileFormatVersion: 2
+guid: f183ac2b7e3cff54385f280e894bfd1b
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: smallsoldier (1)_Frame_0
+    originalName: 
+    pivot: {x: 0.5294118, y: -1.9047619}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 235
+      y: 4
+      width: 17
+      height: 21
+    spriteID: 6a1ac93975f111e4f9dc4ca7c96f70e1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 235, y: 4}
+  - name: smallsoldier (1)_Frame_21
+    originalName: 
+    pivot: {x: 0.47368422, y: -1.3793104}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 65
+      width: 19
+      height: 29
+    spriteID: d7745946d5fda674aa7ecf35c30e0d75
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 65}
+  - name: smallsoldier (1)_Frame_22
+    originalName: 
+    pivot: {x: 0.38888884, y: -1.4285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 86
+      y: 65
+      width: 18
+      height: 28
+    spriteID: fe2f0ccfe64caf4448690f82324b5e05
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 86, y: 65}
+  - name: smallsoldier (1)_Frame_23
+    originalName: 
+    pivot: {x: 0.28571433, y: -1.6666666}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 33
+      width: 28
+      height: 24
+    spriteID: 18afc8053d49bcc41a833e14e7134b48
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 33}
+  - name: smallsoldier (1)_Frame_41
+    originalName: 
+    pivot: {x: 0.31250006, y: -2.3529413}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 184
+      y: 132
+      width: 16
+      height: 17
+    spriteID: b86cce31804b9f244ac89fd619ca3a7a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 184, y: 132}
+  - name: smallsoldier (1)_Frame_42
+    originalName: 
+    pivot: {x: 0.18181814, y: -3.0769231}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 154
+      y: 132
+      width: 22
+      height: 13
+    spriteID: fcb0fd8a2f660b84182629cdeb0d71f8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 154, y: 132}
+  - name: smallsoldier (1)_Frame_1
+    originalName: 
+    pivot: {x: 0.5294118, y: -1.9047619}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 29
+      y: 102
+      width: 17
+      height: 21
+    spriteID: 0eb2a1405994f0b4caba6bb6d6ce0bf7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 29, y: 102}
+  - name: smallsoldier (1)_Frame_2
+    originalName: 
+    pivot: {x: 0.5294118, y: -1.8181819}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 33
+      width: 17
+      height: 22
+    spriteID: 4f2d9cb7719a786418325779f6c60f5b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 144, y: 33}
+  - name: smallsoldier (1)_Frame_3
+    originalName: 
+    pivot: {x: 0.5294118, y: -1.8181819}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 169
+      y: 33
+      width: 17
+      height: 22
+    spriteID: 8b2b1ff241cd28a4b8194739741029dd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 169, y: 33}
+  - name: smallsoldier (1)_Frame_4
+    originalName: 
+    pivot: {x: 0.5294118, y: -1.9047619}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 54
+      y: 102
+      width: 17
+      height: 21
+    spriteID: cb6d7a7458b21824dacdd70c0ec4ee4a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 54, y: 102}
+  - name: smallsoldier (1)_Frame_5
+    originalName: 
+    pivot: {x: 0.5294118, y: -1.9047619}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 79
+      y: 102
+      width: 17
+      height: 21
+    spriteID: aafd3a65a690cc743aa3a048e5cc12df
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 79, y: 102}
+  - name: smallsoldier (1)_Frame_6
+    originalName: 
+    pivot: {x: 0.5294118, y: -1.9047619}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 104
+      y: 102
+      width: 17
+      height: 21
+    spriteID: 9730898457ebccf4d9ec6f9ee93b59c0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 104, y: 102}
+  - name: smallsoldier (1)_Frame_7
+    originalName: 
+    pivot: {x: 0.5294118, y: -1.8181819}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 194
+      y: 33
+      width: 17
+      height: 22
+    spriteID: aad7e8ebb44e69a45a210e80ca226686
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 194, y: 33}
+  - name: smallsoldier (1)_Frame_8
+    originalName: 
+    pivot: {x: 0.5294118, y: -1.9047619}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 129
+      y: 102
+      width: 17
+      height: 21
+    spriteID: d5c707222a9b17748bc3ea4d486bc9be
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 129, y: 102}
+  - name: smallsoldier (1)_Frame_9
+    originalName: 
+    pivot: {x: 0.5294118, y: -2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 79
+      y: 132
+      width: 17
+      height: 20
+    spriteID: 5b9893373bb2e624a86361fd8e5f21ce
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 79, y: 132}
+  - name: smallsoldier (1)_Frame_10
+    originalName: 
+    pivot: {x: 0.5294118, y: -1.9047619}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 154
+      y: 102
+      width: 17
+      height: 21
+    spriteID: 978ab3ce833a5114397dde727045d665
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 154, y: 102}
+  - name: smallsoldier (1)_Frame_11
+    originalName: 
+    pivot: {x: 0.5294118, y: -1.8181819}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 219
+      y: 33
+      width: 17
+      height: 22
+    spriteID: 080e02cf836f4a7479d059b217dd38df
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 219, y: 33}
+  - name: smallsoldier (1)_Frame_12
+    originalName: 
+    pivot: {x: 0.5294118, y: -1.9047619}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 179
+      y: 102
+      width: 17
+      height: 21
+    spriteID: 6101c8c9ac774d845afae2afaa4ecaa0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 179, y: 102}
+  - name: smallsoldier (1)_Frame_13
+    originalName: 
+    pivot: {x: 0.5294118, y: -2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 104
+      y: 132
+      width: 17
+      height: 20
+    spriteID: 0cf6c854758b43141815a41af3553585
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 104, y: 132}
+  - name: smallsoldier (1)_Frame_14
+    originalName: 
+    pivot: {x: 0.5294118, y: -1.9047619}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 102
+      width: 17
+      height: 21
+    spriteID: ba5ace96bc362954888a785c5cf72c97
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 204, y: 102}
+  - name: smallsoldier (1)_Frame_15
+    originalName: 
+    pivot: {x: 0.47368422, y: -1.4814814}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 59
+      y: 65
+      width: 19
+      height: 27
+    spriteID: aae0ab80a17ce1a40a059f9167c13af7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 59, y: 65}
+  - name: smallsoldier (1)_Frame_16
+    originalName: 
+    pivot: {x: 0.45000002, y: -1.5384616}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 31
+      y: 65
+      width: 20
+      height: 26
+    spriteID: f2d00cc4e86fa4f4c8bb7519cfc1c35e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 31, y: 65}
+  - name: smallsoldier (1)_Frame_17
+    originalName: 
+    pivot: {x: 0.41176465, y: -2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 4
+      width: 34
+      height: 20
+    spriteID: 0d9ac0c3b3b0eca4091a7e73b86a842e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 48, y: 4}
+  - name: smallsoldier (1)_Frame_18
+    originalName: 
+    pivot: {x: 0.41176465, y: -2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 90
+      y: 4
+      width: 34
+      height: 20
+    spriteID: 0e1f3fffd86416146b594082cfbfce54
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 90, y: 4}
+  - name: smallsoldier (1)_Frame_19
+    originalName: 
+    pivot: {x: 0.63636357, y: -2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 142
+      y: 65
+      width: 22
+      height: 20
+    spriteID: 7aeff54e9e448d648864a023d61368b1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 142, y: 65}
+  - name: smallsoldier (1)_Frame_20
+    originalName: 
+    pivot: {x: 0.5294118, y: -1.9047619}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 229
+      y: 102
+      width: 17
+      height: 21
+    spriteID: 9010e6a3147098046a5c17889a2f78af
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 229, y: 102}
+  - name: smallsoldier (1)_Frame_24
+    originalName: 
+    pivot: {x: 0.28571433, y: -2.222222}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 168
+      y: 4
+      width: 28
+      height: 18
+    spriteID: 2de3009dc0cb23542876b1a23abe40ea
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 168, y: 4}
+  - name: smallsoldier (1)_Frame_25
+    originalName: 
+    pivot: {x: 0.28571433, y: -2.1052632}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 132
+      y: 4
+      width: 28
+      height: 19
+    spriteID: 54912e37ae2147d46948de95cdafc405
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 132, y: 4}
+  - name: smallsoldier (1)_Frame_26
+    originalName: 
+    pivot: {x: 0.47368422, y: -1.9047619}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 229
+      y: 65
+      width: 19
+      height: 21
+    spriteID: 8539428b070c37f4a810d37f8804d80b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 229, y: 65}
+  - name: smallsoldier (1)_Frame_27
+    originalName: 
+    pivot: {x: 0.5294118, y: -1.9047619}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 132
+      width: 17
+      height: 21
+    spriteID: bafc4cac709b35d4ba1d359fcb737f1d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 132}
+  - name: smallsoldier (1)_Frame_28
+    originalName: 
+    pivot: {x: 0.5294118, y: -1.8181819}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 102
+      width: 17
+      height: 22
+    spriteID: ff3e14e164ef8ef44a90d75a9cd9a123
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 102}
+  - name: smallsoldier (1)_Frame_29
+    originalName: 
+    pivot: {x: 0.5294118, y: -1.9047619}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 29
+      y: 132
+      width: 17
+      height: 21
+    spriteID: 543f05650a7a63f498f8558cb05fabd6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 29, y: 132}
+  - name: smallsoldier (1)_Frame_30
+    originalName: 
+    pivot: {x: 0.40909094, y: -1.9047619}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 65
+      width: 22
+      height: 21
+    spriteID: e76ef2275e133404ab8eb6bdb6aecd82
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 112, y: 65}
+  - name: smallsoldier (1)_Frame_31
+    originalName: 
+    pivot: {x: 0.42857143, y: -2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 172
+      y: 65
+      width: 21
+      height: 20
+    spriteID: b14d1a024f1c6a044b379f3ba1e8fe19
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 172, y: 65}
+  - name: smallsoldier (1)_Frame_32
+    originalName: 
+    pivot: {x: 0.45000002, y: -2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 201
+      y: 65
+      width: 20
+      height: 20
+    spriteID: 9bfc6c6b2827218439cbb7edb65888c5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 201, y: 65}
+  - name: smallsoldier (1)_Frame_33
+    originalName: 
+    pivot: {x: 0.25, y: -1.9047619}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 36
+      height: 21
+    spriteID: b77ce04c9ff378a4895e6588286b4461
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: smallsoldier (1)_Frame_34
+    originalName: 
+    pivot: {x: 0.39130434, y: -1.9047619}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 4
+      width: 23
+      height: 21
+    spriteID: 8a8ab2d8f2216c64b95d2fd05e27be91
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 204, y: 4}
+  - name: smallsoldier (1)_Frame_35
+    originalName: 
+    pivot: {x: 0.5555555, y: -1.9047619}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 40
+      y: 33
+      width: 18
+      height: 21
+    spriteID: 1890628a0a4b0a44b91985892a8beed3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 40, y: 33}
+  - name: smallsoldier (1)_Frame_36
+    originalName: 
+    pivot: {x: 0.5555555, y: -1.9047619}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 66
+      y: 33
+      width: 18
+      height: 21
+    spriteID: 6dccdb22fb0b511488123ea7885b7861
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 66, y: 33}
+  - name: smallsoldier (1)_Frame_37
+    originalName: 
+    pivot: {x: 0.5555555, y: -1.9047619}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 92
+      y: 33
+      width: 18
+      height: 21
+    spriteID: 366ff118602c3ee44b7ca43debca3d7b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 92, y: 33}
+  - name: smallsoldier (1)_Frame_38
+    originalName: 
+    pivot: {x: 0.5555555, y: -1.9047619}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 118
+      y: 33
+      width: 18
+      height: 21
+    spriteID: 68140bcdbced7ac4fb2837af0e77d726
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 118, y: 33}
+  - name: smallsoldier (1)_Frame_39
+    originalName: 
+    pivot: {x: 0.5294118, y: -1.9047619}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 54
+      y: 132
+      width: 17
+      height: 21
+    spriteID: dec7235aee646d143b9431c358e19cf2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 54, y: 132}
+  - name: smallsoldier (1)_Frame_40
+    originalName: 
+    pivot: {x: 0.5294118, y: -2.1052632}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 129
+      y: 132
+      width: 17
+      height: 19
+    spriteID: e6e3e6d7c58dcba4e9090a094a2b9012
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 129, y: 132}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -1345886955
+    name: smallsoldier (1)
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: smallsoldier (1)_Frame_0
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 40
+        width: 17
+        height: 21
+      spriteId: 6a1ac93975f111e4f9dc4ca7c96f70e1
+    - name: smallsoldier (1)_Frame_21
+      frameIndex: 21
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 40
+        width: 19
+        height: 29
+      spriteId: d7745946d5fda674aa7ecf35c30e0d75
+    - name: smallsoldier (1)_Frame_22
+      frameIndex: 22
+      additiveSortOrder: 0
+      cellRect:
+        x: 43
+        y: 40
+        width: 18
+        height: 28
+      spriteId: fe2f0ccfe64caf4448690f82324b5e05
+    - name: smallsoldier (1)_Frame_23
+      frameIndex: 23
+      additiveSortOrder: 0
+      cellRect:
+        x: 42
+        y: 40
+        width: 28
+        height: 24
+      spriteId: 18afc8053d49bcc41a833e14e7134b48
+    - name: smallsoldier (1)_Frame_41
+      frameIndex: 41
+      additiveSortOrder: 0
+      cellRect:
+        x: 45
+        y: 40
+        width: 16
+        height: 17
+      spriteId: b86cce31804b9f244ac89fd619ca3a7a
+    - name: smallsoldier (1)_Frame_42
+      frameIndex: 42
+      additiveSortOrder: 0
+      cellRect:
+        x: 46
+        y: 40
+        width: 22
+        height: 13
+      spriteId: fcb0fd8a2f660b84182629cdeb0d71f8
+    - name: smallsoldier (1)_Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 40
+        width: 17
+        height: 21
+      spriteId: 0eb2a1405994f0b4caba6bb6d6ce0bf7
+    - name: smallsoldier (1)_Frame_2
+      frameIndex: 2
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 40
+        width: 17
+        height: 22
+      spriteId: 4f2d9cb7719a786418325779f6c60f5b
+    - name: smallsoldier (1)_Frame_3
+      frameIndex: 3
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 40
+        width: 17
+        height: 22
+      spriteId: 8b2b1ff241cd28a4b8194739741029dd
+    - name: smallsoldier (1)_Frame_4
+      frameIndex: 4
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 40
+        width: 17
+        height: 21
+      spriteId: cb6d7a7458b21824dacdd70c0ec4ee4a
+    - name: smallsoldier (1)_Frame_5
+      frameIndex: 5
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 40
+        width: 17
+        height: 21
+      spriteId: aafd3a65a690cc743aa3a048e5cc12df
+    - name: smallsoldier (1)_Frame_6
+      frameIndex: 6
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 40
+        width: 17
+        height: 21
+      spriteId: 9730898457ebccf4d9ec6f9ee93b59c0
+    - name: smallsoldier (1)_Frame_7
+      frameIndex: 7
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 40
+        width: 17
+        height: 22
+      spriteId: aad7e8ebb44e69a45a210e80ca226686
+    - name: smallsoldier (1)_Frame_8
+      frameIndex: 8
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 40
+        width: 17
+        height: 21
+      spriteId: d5c707222a9b17748bc3ea4d486bc9be
+    - name: smallsoldier (1)_Frame_9
+      frameIndex: 9
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 40
+        width: 17
+        height: 20
+      spriteId: 5b9893373bb2e624a86361fd8e5f21ce
+    - name: smallsoldier (1)_Frame_10
+      frameIndex: 10
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 40
+        width: 17
+        height: 21
+      spriteId: 978ab3ce833a5114397dde727045d665
+    - name: smallsoldier (1)_Frame_11
+      frameIndex: 11
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 40
+        width: 17
+        height: 22
+      spriteId: 080e02cf836f4a7479d059b217dd38df
+    - name: smallsoldier (1)_Frame_12
+      frameIndex: 12
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 40
+        width: 17
+        height: 21
+      spriteId: 6101c8c9ac774d845afae2afaa4ecaa0
+    - name: smallsoldier (1)_Frame_13
+      frameIndex: 13
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 40
+        width: 17
+        height: 20
+      spriteId: 0cf6c854758b43141815a41af3553585
+    - name: smallsoldier (1)_Frame_14
+      frameIndex: 14
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 40
+        width: 17
+        height: 21
+      spriteId: ba5ace96bc362954888a785c5cf72c97
+    - name: smallsoldier (1)_Frame_15
+      frameIndex: 15
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 40
+        width: 19
+        height: 27
+      spriteId: aae0ab80a17ce1a40a059f9167c13af7
+    - name: smallsoldier (1)_Frame_16
+      frameIndex: 16
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 40
+        width: 20
+        height: 26
+      spriteId: f2d00cc4e86fa4f4c8bb7519cfc1c35e
+    - name: smallsoldier (1)_Frame_17
+      frameIndex: 17
+      additiveSortOrder: 0
+      cellRect:
+        x: 36
+        y: 40
+        width: 34
+        height: 20
+      spriteId: 0d9ac0c3b3b0eca4091a7e73b86a842e
+    - name: smallsoldier (1)_Frame_18
+      frameIndex: 18
+      additiveSortOrder: 0
+      cellRect:
+        x: 36
+        y: 40
+        width: 34
+        height: 20
+      spriteId: 0e1f3fffd86416146b594082cfbfce54
+    - name: smallsoldier (1)_Frame_19
+      frameIndex: 19
+      additiveSortOrder: 0
+      cellRect:
+        x: 36
+        y: 40
+        width: 22
+        height: 20
+      spriteId: 7aeff54e9e448d648864a023d61368b1
+    - name: smallsoldier (1)_Frame_20
+      frameIndex: 20
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 40
+        width: 17
+        height: 21
+      spriteId: 9010e6a3147098046a5c17889a2f78af
+    - name: smallsoldier (1)_Frame_24
+      frameIndex: 24
+      additiveSortOrder: 0
+      cellRect:
+        x: 42
+        y: 40
+        width: 28
+        height: 18
+      spriteId: 2de3009dc0cb23542876b1a23abe40ea
+    - name: smallsoldier (1)_Frame_25
+      frameIndex: 25
+      additiveSortOrder: 0
+      cellRect:
+        x: 42
+        y: 40
+        width: 28
+        height: 19
+      spriteId: 54912e37ae2147d46948de95cdafc405
+    - name: smallsoldier (1)_Frame_26
+      frameIndex: 26
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 40
+        width: 19
+        height: 21
+      spriteId: 8539428b070c37f4a810d37f8804d80b
+    - name: smallsoldier (1)_Frame_27
+      frameIndex: 27
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 40
+        width: 17
+        height: 21
+      spriteId: bafc4cac709b35d4ba1d359fcb737f1d
+    - name: smallsoldier (1)_Frame_28
+      frameIndex: 28
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 40
+        width: 17
+        height: 22
+      spriteId: ff3e14e164ef8ef44a90d75a9cd9a123
+    - name: smallsoldier (1)_Frame_29
+      frameIndex: 29
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 40
+        width: 17
+        height: 21
+      spriteId: 543f05650a7a63f498f8558cb05fabd6
+    - name: smallsoldier (1)_Frame_30
+      frameIndex: 30
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 40
+        width: 22
+        height: 21
+      spriteId: e76ef2275e133404ab8eb6bdb6aecd82
+    - name: smallsoldier (1)_Frame_31
+      frameIndex: 31
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 40
+        width: 21
+        height: 20
+      spriteId: b14d1a024f1c6a044b379f3ba1e8fe19
+    - name: smallsoldier (1)_Frame_32
+      frameIndex: 32
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 40
+        width: 20
+        height: 20
+      spriteId: 9bfc6c6b2827218439cbb7edb65888c5
+    - name: smallsoldier (1)_Frame_33
+      frameIndex: 33
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 40
+        width: 36
+        height: 21
+      spriteId: b77ce04c9ff378a4895e6588286b4461
+    - name: smallsoldier (1)_Frame_34
+      frameIndex: 34
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 40
+        width: 23
+        height: 21
+      spriteId: 8a8ab2d8f2216c64b95d2fd05e27be91
+    - name: smallsoldier (1)_Frame_35
+      frameIndex: 35
+      additiveSortOrder: 0
+      cellRect:
+        x: 40
+        y: 40
+        width: 18
+        height: 21
+      spriteId: 1890628a0a4b0a44b91985892a8beed3
+    - name: smallsoldier (1)_Frame_36
+      frameIndex: 36
+      additiveSortOrder: 0
+      cellRect:
+        x: 40
+        y: 40
+        width: 18
+        height: 21
+      spriteId: 6dccdb22fb0b511488123ea7885b7861
+    - name: smallsoldier (1)_Frame_37
+      frameIndex: 37
+      additiveSortOrder: 0
+      cellRect:
+        x: 40
+        y: 40
+        width: 18
+        height: 21
+      spriteId: 366ff118602c3ee44b7ca43debca3d7b
+    - name: smallsoldier (1)_Frame_38
+      frameIndex: 38
+      additiveSortOrder: 0
+      cellRect:
+        x: 40
+        y: 40
+        width: 18
+        height: 21
+      spriteId: 68140bcdbced7ac4fb2837af0e77d726
+    - name: smallsoldier (1)_Frame_39
+      frameIndex: 39
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 40
+        width: 17
+        height: 21
+      spriteId: dec7235aee646d143b9431c358e19cf2
+    - name: smallsoldier (1)_Frame_40
+      frameIndex: 40
+      additiveSortOrder: 0
+      cellRect:
+        x: 41
+        y: 40
+        width: 17
+        height: 19
+      spriteId: e6e3e6d7c58dcba4e9090a094a2b9012
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 100, y: 100}

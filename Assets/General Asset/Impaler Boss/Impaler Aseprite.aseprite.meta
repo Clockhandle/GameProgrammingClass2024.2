@@ -1,0 +1,5214 @@
+fileFormatVersion: 2
+guid: 1ddfa9c9c752ea04ea1e9f4d74762a06
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Impaler Aseprite_Frame_0
+    originalName: 
+    pivot: {x: 1.9407408, y: -0.060402684}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2106
+      y: 2120
+      width: 135
+      height: 149
+    spriteID: bc00c0c09b1bc2b45a7952e9569e64e1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2106, y: 2120}
+  - name: Impaler Aseprite_Frame_1
+    originalName: 
+    pivot: {x: 1.9407408, y: -0.060402684}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2249
+      y: 2120
+      width: 135
+      height: 149
+    spriteID: 1d69ed8ba0e02ab479f7f61bac46559a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2249, y: 2120}
+  - name: Impaler Aseprite_Frame_2
+    originalName: 
+    pivot: {x: 1.9407408, y: -0.053333335}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1097
+      y: 2120
+      width: 135
+      height: 150
+    spriteID: b5fac3eb100c16346a9d9ff43ec85f52
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1097, y: 2120}
+  - name: Impaler Aseprite_Frame_3
+    originalName: 
+    pivot: {x: 1.9407408, y: -0.053333335}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1240
+      y: 2120
+      width: 135
+      height: 150
+    spriteID: 387eb786566fe184987e71c4ad637e0e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1240, y: 2120}
+  - name: Impaler Aseprite_Frame_4
+    originalName: 
+    pivot: {x: 1.9407408, y: -0.053691275}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2392
+      y: 2120
+      width: 135
+      height: 149
+    spriteID: 4a25404f2692391449ef297933997e4a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2392, y: 2120}
+  - name: Impaler Aseprite_Frame_5
+    originalName: 
+    pivot: {x: 1.9407408, y: -0.053691275}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2535
+      y: 2120
+      width: 135
+      height: 149
+    spriteID: 2defb5679c5eb46498b8740f17ac67f6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2535, y: 2120}
+  - name: Impaler Aseprite_Frame_6
+    originalName: 
+    pivot: {x: 1.9407408, y: -0.053691275}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2678
+      y: 2120
+      width: 135
+      height: 149
+    spriteID: 13cc1389a3f359a4f9a36c1b266c9196
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2678, y: 2120}
+  - name: Impaler Aseprite_Frame_7
+    originalName: 
+    pivot: {x: 1.9333334, y: -0.046666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1383
+      y: 2120
+      width: 135
+      height: 150
+    spriteID: 7e482a2e5c1c0314698d5c8b771d33af
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1383, y: 2120}
+  - name: Impaler Aseprite_Frame_8
+    originalName: 
+    pivot: {x: 1.9333334, y: -0.046666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1526
+      y: 2120
+      width: 135
+      height: 150
+    spriteID: 05cf6c861c23e974aa2c446aef07a8fa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1526, y: 2120}
+  - name: Impaler Aseprite_Frame_9
+    originalName: 
+    pivot: {x: 1.9333334, y: -0.046666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1669
+      y: 2120
+      width: 135
+      height: 150
+    spriteID: 21242919d864178468bfa5caf54620fd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1669, y: 2120}
+  - name: Impaler Aseprite_Frame_10
+    originalName: 
+    pivot: {x: 1.3113772, y: -0.10326087}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2974
+      y: 1747
+      width: 167
+      height: 184
+    spriteID: d111564e3c9cfc24f9962ed72300c173
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2974, y: 1747}
+  - name: Impaler Aseprite_Frame_11
+    originalName: 
+    pivot: {x: 1.2994012, y: -0.24022347}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3499
+      y: 1747
+      width: 167
+      height: 179
+    spriteID: f7118ce7cd4316b469d4cbec7fbedf2e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3499, y: 1747}
+  - name: Impaler Aseprite_Frame_12
+    originalName: 
+    pivot: {x: 1.2994012, y: -0.24022347}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3674
+      y: 1747
+      width: 167
+      height: 179
+    spriteID: f52331f384b4fe8449706ddf38645955
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3674, y: 1747}
+  - name: Impaler Aseprite_Frame_13
+    originalName: 
+    pivot: {x: 1.6580645, y: -0.26960784}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2811
+      y: 1747
+      width: 155
+      height: 204
+    spriteID: 9ffe13129a7c32c4087f3eb4aa45ed1e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2811, y: 1747}
+  - name: Impaler Aseprite_Frame_14
+    originalName: 
+    pivot: {x: 1.8503402, y: -0.04424779}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1194
+      y: 2292
+      width: 147
+      height: 113
+    spriteID: bf6c8abd0f5776f43b37bc58f7c38c13
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1194, y: 2292}
+  - name: Impaler Aseprite_Frame_15
+    originalName: 
+    pivot: {x: 1.8503402, y: -0.04424779}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1349
+      y: 2292
+      width: 147
+      height: 113
+    spriteID: 47735210be9d9264499683c11cd46632
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1349, y: 2292}
+  - name: Impaler Aseprite_Frame_16
+    originalName: 
+    pivot: {x: 0.826087, y: -0.06465517}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1507
+      width: 230
+      height: 232
+    spriteID: e8f5c04a820c71149be8cdc7db8d9c0f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1507}
+  - name: Impaler Aseprite_Frame_17
+    originalName: 
+    pivot: {x: 0.826087, y: -0.06465517}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 242
+      y: 1507
+      width: 230
+      height: 232
+    spriteID: f3377fb1bfbaf114bbea79d176655fb1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 242, y: 1507}
+  - name: Impaler Aseprite_Frame_18
+    originalName: 
+    pivot: {x: 0.826087, y: -0.06465517}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 480
+      y: 1507
+      width: 230
+      height: 232
+    spriteID: ce625154c2c46a64a806b0deb5373f75
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 480, y: 1507}
+  - name: Impaler Aseprite_Frame_19
+    originalName: 
+    pivot: {x: 0.7518797, y: -0.44444448}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2292
+      width: 133
+      height: 171
+    spriteID: 4708e20a48f02c24eaf7973cf776ff74
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2292}
+  - name: Impaler Aseprite_Frame_20
+    originalName: 
+    pivot: {x: 0.3560091, y: -0.007604563}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 270
+      width: 441
+      height: 263
+    spriteID: eebc664d1955da54ca5f922946797e8c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 270}
+  - name: Impaler Aseprite_Frame_21
+    originalName: 
+    pivot: {x: 0.3560091, y: -0.007604563}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 453
+      y: 270
+      width: 441
+      height: 263
+    spriteID: b54b1e7686558a043a86cb5306b61849
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 453, y: 270}
+  - name: Impaler Aseprite_Frame_22
+    originalName: 
+    pivot: {x: 0.3560091, y: -0.007604563}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 902
+      y: 270
+      width: 441
+      height: 263
+    spriteID: c77167f3ec6025f4da8afaf7e919dbae
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 902, y: 270}
+  - name: Impaler Aseprite_Frame_23
+    originalName: 
+    pivot: {x: 0.3560091, y: -0.007604563}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1351
+      y: 270
+      width: 441
+      height: 263
+    spriteID: 2870cd394a59b214f831156532254e37
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1351, y: 270}
+  - name: Impaler Aseprite_Frame_24
+    originalName: 
+    pivot: {x: 0.3560091, y: -0.007604563}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1800
+      y: 270
+      width: 441
+      height: 263
+    spriteID: b49deb4ca91e60d448b392ad7141da68
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1800, y: 270}
+  - name: Impaler Aseprite_Frame_25
+    originalName: 
+    pivot: {x: 0.3560091, y: -0.007604563}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2249
+      y: 270
+      width: 441
+      height: 263
+    spriteID: 2440d31ff1d33a747b4d8f8ff63d0437
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2249, y: 270}
+  - name: Impaler Aseprite_Frame_26
+    originalName: 
+    pivot: {x: 0.3560091, y: -0.007604563}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2698
+      y: 270
+      width: 441
+      height: 263
+    spriteID: 2805fa9f5d68e5742b32da4e34a4790f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2698, y: 270}
+  - name: Impaler Aseprite_Frame_27
+    originalName: 
+    pivot: {x: 0.3560091, y: -0.007604563}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3147
+      y: 270
+      width: 441
+      height: 263
+    spriteID: d57eb48c774ad2345ae57088a2900f3a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3147, y: 270}
+  - name: Impaler Aseprite_Frame_28
+    originalName: 
+    pivot: {x: 0.4091858, y: -0.027131783}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 479
+      height: 258
+    spriteID: f4160990ea6d79647970fdccc99333af
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Impaler Aseprite_Frame_29
+    originalName: 
+    pivot: {x: 0.4091858, y: -0.027131783}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 491
+      y: 4
+      width: 479
+      height: 258
+    spriteID: a47738e604625db48bb546a099a48e49
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 491, y: 4}
+  - name: Impaler Aseprite_Frame_30
+    originalName: 
+    pivot: {x: 0.4091858, y: -0.027131783}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 978
+      y: 4
+      width: 479
+      height: 258
+    spriteID: 384d2dda2749a8a43b1a5ab98d46b3d7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 978, y: 4}
+  - name: Impaler Aseprite_Frame_31
+    originalName: 
+    pivot: {x: 0.4091858, y: -0.027131783}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1465
+      y: 4
+      width: 479
+      height: 258
+    spriteID: 38f9ce13b04d708419d6d6f07a137308
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1465, y: 4}
+  - name: Impaler Aseprite_Frame_32
+    originalName: 
+    pivot: {x: 0.51989394, y: -0.027888445}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2724
+      y: 4
+      width: 377
+      height: 251
+    spriteID: 2cc1044f45b2053479c52433f3185ee8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2724, y: 4}
+  - name: Impaler Aseprite_Frame_33
+    originalName: 
+    pivot: {x: 0.51989394, y: -0.027888445}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3109
+      y: 4
+      width: 377
+      height: 251
+    spriteID: e9002a8c26a4fb44bac2dc2dfbbd828d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3109, y: 4}
+  - name: Impaler Aseprite_Frame_34
+    originalName: 
+    pivot: {x: 1.7215191, y: -0.07272728}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3792
+      y: 1969
+      width: 158
+      height: 110
+    spriteID: f44521ca0b09c3948b886219e23a0a94
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3792, y: 1969}
+  - name: Impaler Aseprite_Frame_35
+    originalName: 
+    pivot: {x: 1.8503402, y: -0.04424779}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1504
+      y: 2292
+      width: 147
+      height: 113
+    spriteID: 6eb8202d0e506524fa867c82e03d22c6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1504, y: 2292}
+  - name: Impaler Aseprite_Frame_36
+    originalName: 
+    pivot: {x: 1.3113772, y: -0.109289624}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3149
+      y: 1747
+      width: 167
+      height: 183
+    spriteID: 989c9db4072eff74597b2d4a7a5580ee
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3149, y: 1747}
+  - name: Impaler Aseprite_Frame_37
+    originalName: 
+    pivot: {x: 1.3113772, y: -0.109289624}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3324
+      y: 1747
+      width: 167
+      height: 183
+    spriteID: f0d66ea80da38cd42bcd261fd1def522
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3324, y: 1747}
+  - name: Impaler Aseprite_Frame_38
+    originalName: 
+    pivot: {x: 1.6163523, y: -0.39285716}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 778
+      y: 1969
+      width: 159
+      height: 140
+    spriteID: 99ae5a458d2901346b3fa3d96713cb45
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 778, y: 1969}
+  - name: Impaler Aseprite_Frame_39
+    originalName: 
+    pivot: {x: 0.6619318, y: -0.39007095}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2872
+      y: 1145
+      width: 352
+      height: 141
+    spriteID: a7e60d7bd0d1ca14aa3ae058dbfc85dd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2872, y: 1145}
+  - name: Impaler Aseprite_Frame_40
+    originalName: 
+    pivot: {x: 0.68351066, y: -0.25806454}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2808
+      y: 946
+      width: 376
+      height: 155
+    spriteID: fb8c5e0a345d8384ea0fc1a0b42ece4f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2808, y: 946}
+  - name: Impaler Aseprite_Frame_41
+    originalName: 
+    pivot: {x: 0.6638418, y: -0.53205127}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1732
+      y: 1294
+      width: 354
+      height: 156
+    spriteID: ff31879dc4191e24d8b7af64f676afc5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1732, y: 1294}
+  - name: Impaler Aseprite_Frame_42
+    originalName: 
+    pivot: {x: 0.68351066, y: -0.39285716}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2514
+      y: 1294
+      width: 376
+      height: 140
+    spriteID: 034795191016ab34bbf3bcda801174f2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2514, y: 1294}
+  - name: Impaler Aseprite_Frame_43
+    originalName: 
+    pivot: {x: 0.68010753, y: -0.1597633}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2441
+      y: 541
+      width: 372
+      height: 169
+    spriteID: dab10d7aeba02954db099b5de9e7cd74
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2441, y: 541}
+  - name: Impaler Aseprite_Frame_44
+    originalName: 
+    pivot: {x: 0.68351066, y: -0.39285716}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2898
+      y: 1294
+      width: 376
+      height: 140
+    spriteID: 2514c75550bfb074dabf0e81ccc94e7b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2898, y: 1294}
+  - name: Impaler Aseprite_Frame_45
+    originalName: 
+    pivot: {x: 0.62341774, y: -0.22500001}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3666
+      y: 1294
+      width: 316
+      height: 160
+    spriteID: 3da98642e3ee5ae4ca03eccee948571b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3666, y: 1294}
+  - name: Impaler Aseprite_Frame_46
+    originalName: 
+    pivot: {x: 0.68351066, y: -0.39285716}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3282
+      y: 1294
+      width: 376
+      height: 140
+    spriteID: 4322c6d3cf0b10d4ab6afadbf0b1c3f9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3282, y: 1294}
+  - name: Impaler Aseprite_Frame_47
+    originalName: 
+    pivot: {x: 0.6675978, y: -0.13953489}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3541
+      y: 541
+      width: 358
+      height: 172
+    spriteID: b2941cf584346a247b059d022f194f8c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3541, y: 541}
+  - name: Impaler Aseprite_Frame_48
+    originalName: 
+    pivot: {x: 0.68351066, y: -0.33536586}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2821
+      y: 541
+      width: 376
+      height: 164
+    spriteID: d7c5a0fa6f11adf44925088a83ad827f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2821, y: 541}
+  - name: Impaler Aseprite_Frame_49
+    originalName: 
+    pivot: {x: 1.0603774, y: -0.6666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1827
+      y: 1747
+      width: 265
+      height: 126
+    spriteID: cd7708f46d016be4f9ff339d111c58a6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1827, y: 1747}
+  - name: Impaler Aseprite_Frame_50
+    originalName: 
+    pivot: {x: 1.0603774, y: -0.6666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2100
+      y: 1747
+      width: 265
+      height: 126
+    spriteID: 8e1fc0979c1aa244dbde40436e3318c4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2100, y: 1747}
+  - name: Impaler Aseprite_Frame_51
+    originalName: 
+    pivot: {x: 1.0603774, y: -0.6666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2373
+      y: 1747
+      width: 265
+      height: 126
+    spriteID: 93c23fa29f1f7fa41822e6aad8798959
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2373, y: 1747}
+  - name: Impaler Aseprite_Frame_52
+    originalName: 
+    pivot: {x: 0.83231705, y: -0.015957447}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3205
+      y: 541
+      width: 328
+      height: 188
+    spriteID: a81a7d18008ab6547aaf2c1fe389d2df
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3205, y: 541}
+  - name: Impaler Aseprite_Frame_53
+    originalName: 
+    pivot: {x: 0.72374433, y: -0.015957447}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 776
+      y: 541
+      width: 438
+      height: 188
+    spriteID: a5e043d9e3784384ebec14dabd1e0026
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 776, y: 541}
+  - name: Impaler Aseprite_Frame_54
+    originalName: 
+    pivot: {x: 0.72374433, y: -0.016129032}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1668
+      y: 541
+      width: 438
+      height: 186
+    spriteID: 82ee6951c67559946b8bc0545d70198b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1668, y: 541}
+  - name: Impaler Aseprite_Frame_55
+    originalName: 
+    pivot: {x: 0.72374433, y: -0.015957447}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1222
+      y: 541
+      width: 438
+      height: 188
+    spriteID: 9389894efabc2ff4ba51a9dde5a20086
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1222, y: 541}
+  - name: Impaler Aseprite_Frame_56
+    originalName: 
+    pivot: {x: 0.9661017, y: -0.057971016}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3914
+      y: 1145
+      width: 177
+      height: 138
+    spriteID: 035af0873a4301044b5dda6f12b0ce93
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3914, y: 1145}
+  - name: Impaler Aseprite_Frame_57
+    originalName: 
+    pivot: {x: 0.9661017, y: -0.057971016}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 219
+      y: 1969
+      width: 177
+      height: 138
+    spriteID: d37dd3bed00fcb549a539293b6707ffc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 219, y: 1969}
+  - name: Impaler Aseprite_Frame_58
+    originalName: 
+    pivot: {x: 1.8503402, y: -0.07272728}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1659
+      y: 2292
+      width: 147
+      height: 110
+    spriteID: 59ae6c67666482e4ead843bd86ea376a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1659, y: 2292}
+  - name: Impaler Aseprite_Frame_59
+    originalName: 
+    pivot: {x: 1.9407408, y: -0.060402684}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2821
+      y: 2120
+      width: 135
+      height: 149
+    spriteID: 903c0bcd4f332744e80816683f372f25
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2821, y: 2120}
+  - name: Impaler Aseprite_Frame_60
+    originalName: 
+    pivot: {x: 1.0957447, y: -0.038793102}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3880
+      y: 4
+      width: 188
+      height: 232
+    spriteID: 982ca6f49b7168e4694eef96e7579c6d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3880, y: 4}
+  - name: Impaler Aseprite_Frame_61
+    originalName: 
+    pivot: {x: 1.0957447, y: -0.038793102}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2720
+      y: 1507
+      width: 188
+      height: 232
+    spriteID: 9b190fa61bf191949a91b76e15ef6c65
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2720, y: 1507}
+  - name: Impaler Aseprite_Frame_62
+    originalName: 
+    pivot: {x: 1.0957447, y: -0.038793102}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2916
+      y: 1507
+      width: 188
+      height: 232
+    spriteID: 33e8e7cf63119fc44bbba332104b5f54
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2916, y: 1507}
+  - name: Impaler Aseprite_Frame_63
+    originalName: 
+    pivot: {x: 0.98770493, y: -0.029268293}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 718
+      y: 1507
+      width: 244
+      height: 205
+    spriteID: f0978a44dcf4a3c4eb15d825e1a81ac9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 718, y: 1507}
+  - name: Impaler Aseprite_Frame_64
+    originalName: 
+    pivot: {x: 0.98770493, y: -0.029268293}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 970
+      y: 1507
+      width: 244
+      height: 205
+    spriteID: 8613c78fa1b9b3946a3ee11bde8d96b0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 970, y: 1507}
+  - name: Impaler Aseprite_Frame_65
+    originalName: 
+    pivot: {x: 0.98770493, y: -0.029268293}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1222
+      y: 1507
+      width: 244
+      height: 205
+    spriteID: 0e00b4945e5ecfd4a854ce20c8145a3a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1222, y: 1507}
+  - name: Impaler Aseprite_Frame_66
+    originalName: 
+    pivot: {x: 1.1642512, y: -0.041958045}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3849
+      y: 1747
+      width: 207
+      height: 143
+    spriteID: 44401f3f8f0cbb649bce9b3947103b24
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3849, y: 1747}
+  - name: Impaler Aseprite_Frame_67
+    originalName: 
+    pivot: {x: 1.9407408, y: -0.060402684}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2964
+      y: 2120
+      width: 135
+      height: 149
+    spriteID: 372d7c9657bf99a4db4e97e84525274b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2964, y: 2120}
+  - name: Impaler Aseprite_Frame_68
+    originalName: 
+    pivot: {x: 1.9407408, y: -0.060402684}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3107
+      y: 2120
+      width: 135
+      height: 149
+    spriteID: 4e7adaf37d021e44dbe795913c2ab513
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3107, y: 2120}
+  - name: Impaler Aseprite_Frame_69
+    originalName: 
+    pivot: {x: 1.9407408, y: -0.060402684}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3250
+      y: 2120
+      width: 135
+      height: 149
+    spriteID: 622784c9e96c96b408058a0753cf3f26
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3250, y: 2120}
+  - name: Impaler Aseprite_Frame_70
+    originalName: 
+    pivot: {x: 1.9407408, y: -0.060402684}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3393
+      y: 2120
+      width: 135
+      height: 149
+    spriteID: c01db4f30b8352f449cb943bd92eadcf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3393, y: 2120}
+  - name: Impaler Aseprite_Frame_71
+    originalName: 
+    pivot: {x: 1.9407408, y: -0.060402684}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3536
+      y: 2120
+      width: 135
+      height: 149
+    spriteID: 6395de108c7d4104cbd776fd56746e91
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3536, y: 2120}
+  - name: Impaler Aseprite_Frame_72
+    originalName: 
+    pivot: {x: 1.0957447, y: -0.038793102}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3112
+      y: 1507
+      width: 188
+      height: 232
+    spriteID: 8ab037bdde150c84989801da4c786cc7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3112, y: 1507}
+  - name: Impaler Aseprite_Frame_73
+    originalName: 
+    pivot: {x: 0.98770493, y: -0.029268293}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1474
+      y: 1507
+      width: 244
+      height: 205
+    spriteID: bde2e76cf623e464ab55fa094bfab6cf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1474, y: 1507}
+  - name: Impaler Aseprite_Frame_74
+    originalName: 
+    pivot: {x: 0.98770493, y: -0.029268293}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1726
+      y: 1507
+      width: 244
+      height: 205
+    spriteID: 8876eea9d2d943745acef7aaaddbe531
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1726, y: 1507}
+  - name: Impaler Aseprite_Frame_75
+    originalName: 
+    pivot: {x: 1.1444445, y: -0.042056076}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3907
+      y: 541
+      width: 180
+      height: 214
+    spriteID: 13ff55ebf292e594da13ba4de090d4f6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3907, y: 541}
+  - name: Impaler Aseprite_Frame_76
+    originalName: 
+    pivot: {x: 1.1444445, y: -0.042056076}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1747
+      width: 180
+      height: 214
+    spriteID: 43934eb59308f04429a3b4b31638ccb2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1747}
+  - name: Impaler Aseprite_Frame_77
+    originalName: 
+    pivot: {x: 1.2335329, y: -0.042056076}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1375
+      y: 1747
+      width: 167
+      height: 214
+    spriteID: a8e5ec210228c9045bb1e4263ed1ff20
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1375, y: 1747}
+  - name: Impaler Aseprite_Frame_78
+    originalName: 
+    pivot: {x: 1.312102, y: -0.04245283}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2646
+      y: 1747
+      width: 157
+      height: 212
+    spriteID: 892bacf6dc5fade4aa8aaeb28ff70d40
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2646, y: 1747}
+  - name: Impaler Aseprite_Frame_79
+    originalName: 
+    pivot: {x: 0.8607143, y: -0.029268293}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1294
+      width: 280
+      height: 205
+    spriteID: 90fa5ec307085aa428c14cb3989f2df2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1294}
+  - name: Impaler Aseprite_Frame_80
+    originalName: 
+    pivot: {x: 0.8607143, y: -0.029268293}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 292
+      y: 1294
+      width: 280
+      height: 205
+    spriteID: 825cf28dcbf70374b9d623849d85f0a0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 292, y: 1294}
+  - name: Impaler Aseprite_Frame_81
+    originalName: 
+    pivot: {x: 0.8607143, y: -0.029268293}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 580
+      y: 1294
+      width: 280
+      height: 205
+    spriteID: 776511b5164d43640a63af6e3485cd33
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 580, y: 1294}
+  - name: Impaler Aseprite_Frame_82
+    originalName: 
+    pivot: {x: 0.8607143, y: -0.029268293}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 868
+      y: 1294
+      width: 280
+      height: 205
+    spriteID: b9465c85c393f9b4eaac32a37541b246
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 868, y: 1294}
+  - name: Impaler Aseprite_Frame_83
+    originalName: 
+    pivot: {x: 0.8607143, y: -0.029268293}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1156
+      y: 1294
+      width: 280
+      height: 205
+    spriteID: 4f83a9a299512704e956e136684c803c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1156, y: 1294}
+  - name: Impaler Aseprite_Frame_84
+    originalName: 
+    pivot: {x: 0.8607143, y: -0.029268293}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1444
+      y: 1294
+      width: 280
+      height: 205
+    spriteID: 5c7b5b4cd22f4e946a3d77ce604edbee
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1444, y: 1294}
+  - name: Impaler Aseprite_Frame_85
+    originalName: 
+    pivot: {x: 0.98770493, y: -0.029268293}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1978
+      y: 1507
+      width: 244
+      height: 205
+    spriteID: dd1028ee294c88e41b3eb43598553c46
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1978, y: 1507}
+  - name: Impaler Aseprite_Frame_86
+    originalName: 
+    pivot: {x: 0.98770493, y: -0.030612243}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2230
+      y: 1507
+      width: 244
+      height: 196
+    spriteID: ae19b3bfbb810ca49997b29c1c1537ee
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2230, y: 1507}
+  - name: Impaler Aseprite_Frame_87
+    originalName: 
+    pivot: {x: 1.1642512, y: -0.041958045}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1969
+      width: 207
+      height: 143
+    spriteID: 9cdf3e382654d2447a31b0024a4f0f83
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1969}
+  - name: Impaler Aseprite_Frame_88
+    originalName: 
+    pivot: {x: 1.6838709, y: -0.069230765}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2464
+      y: 1969
+      width: 155
+      height: 130
+    spriteID: d4bef84d83a366744a46d27ea8ee90be
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2464, y: 1969}
+  - name: Impaler Aseprite_Frame_89
+    originalName: 
+    pivot: {x: 1.6838709, y: -0.069230765}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2627
+      y: 1969
+      width: 155
+      height: 130
+    spriteID: 8006c390d8779f84e8ce30e3832d6a35
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2627, y: 1969}
+  - name: Impaler Aseprite_Frame_90
+    originalName: 
+    pivot: {x: 1.6774193, y: -0.069230765}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2790
+      y: 1969
+      width: 155
+      height: 130
+    spriteID: 1fb3eac8e9df73c4ebfb5d84fb9150a0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2790, y: 1969}
+  - name: Impaler Aseprite_Frame_91
+    originalName: 
+    pivot: {x: 1.6774193, y: -0.069230765}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2953
+      y: 1969
+      width: 155
+      height: 130
+    spriteID: 9e2ecea4139343245bf04076be14b3d3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2953, y: 1969}
+  - name: Impaler Aseprite_Frame_92
+    originalName: 
+    pivot: {x: 0.5857843, y: 0.021276597}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3192
+      y: 946
+      width: 408
+      height: 141
+    spriteID: 406ea2855848f704fbc20a0ead286d3b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3192, y: 946}
+  - name: Impaler Aseprite_Frame_93
+    originalName: 
+    pivot: {x: 0.5857843, y: 0.021276597}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3608
+      y: 946
+      width: 408
+      height: 141
+    spriteID: a058e16b8fa6fcf4b8b5941bbdcb25d9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3608, y: 946}
+  - name: Impaler Aseprite_Frame_94
+    originalName: 
+    pivot: {x: 0.5857843, y: 0.021276597}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1145
+      width: 408
+      height: 141
+    spriteID: 44263e5230d720541a851056dc69094b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1145}
+  - name: Impaler Aseprite_Frame_95
+    originalName: 
+    pivot: {x: 0.55769235, y: -0.069230765}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1780
+      y: 797
+      width: 468
+      height: 130
+    spriteID: 57dbaed54578be0489d811265c3f19c4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1780, y: 797}
+  - name: Impaler Aseprite_Frame_96
+    originalName: 
+    pivot: {x: 0.9321429, y: -0.069230765}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1087
+      y: 1747
+      width: 280
+      height: 130
+    spriteID: 6622c77497cf0d94ab954c7c923b17f1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1087, y: 1747}
+  - name: Impaler Aseprite_Frame_97
+    originalName: 
+    pivot: {x: 0.5857843, y: 0.021276597}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 420
+      y: 1145
+      width: 408
+      height: 141
+    spriteID: 7efb5807e879c35428fa76c87a708677
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 420, y: 1145}
+  - name: Impaler Aseprite_Frame_98
+    originalName: 
+    pivot: {x: 0.5857843, y: 0.021276597}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 836
+      y: 1145
+      width: 408
+      height: 141
+    spriteID: 1331efca4aac8a3419c2c321930f5146
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 836, y: 1145}
+  - name: Impaler Aseprite_Frame_99
+    originalName: 
+    pivot: {x: 0.63349515, y: -0.069230765}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2094
+      y: 1294
+      width: 412
+      height: 130
+    spriteID: 753e1c6c709c4044ab1fe20059fb4444
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2094, y: 1294}
+  - name: Impaler Aseprite_Frame_100
+    originalName: 
+    pivot: {x: 0.9702602, y: -0.069230765}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1550
+      y: 1747
+      width: 269
+      height: 130
+    spriteID: d0f03906a59b21341bbe2ba07f6eefb1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1550, y: 1747}
+  - name: Impaler Aseprite_Frame_101
+    originalName: 
+    pivot: {x: 1.5443788, y: -0.069230765}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1128
+      y: 1969
+      width: 169
+      height: 130
+    spriteID: 2cee68cc4b9136042b147f1a75bfd392
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1128, y: 1969}
+  - name: Impaler Aseprite_Frame_102
+    originalName: 
+    pivot: {x: 1.6211181, y: -0.069230765}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1795
+      y: 1969
+      width: 161
+      height: 130
+    spriteID: 069f5f4e3d45e2a42ba883e1ee7f5fa8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1795, y: 1969}
+  - name: Impaler Aseprite_Frame_103
+    originalName: 
+    pivot: {x: 1.6024097, y: -0.069230765}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1305
+      y: 1969
+      width: 166
+      height: 130
+    spriteID: ee5e386aab5ea144390906afd489a57a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1305, y: 1969}
+  - name: Impaler Aseprite_Frame_104
+    originalName: 
+    pivot: {x: 1.4748603, y: -0.069230765}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 404
+      y: 1969
+      width: 179
+      height: 130
+    spriteID: 48c2d4007dbe9d649a93935f249db545
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 404, y: 1969}
+  - name: Impaler Aseprite_Frame_105
+    originalName: 
+    pivot: {x: 0.5636792, y: 0.021276597}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2256
+      y: 797
+      width: 424
+      height: 141
+    spriteID: 2f1d4b18cf4875447ae63c5ac6c42f15
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2256, y: 797}
+  - name: Impaler Aseprite_Frame_106
+    originalName: 
+    pivot: {x: 0.5636792, y: 0.021276597}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2688
+      y: 797
+      width: 424
+      height: 141
+    spriteID: 2da8cb0699dc0e042a9e771a7409d80c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2688, y: 797}
+  - name: Impaler Aseprite_Frame_107
+    originalName: 
+    pivot: {x: 0.5636792, y: 0.021276597}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3120
+      y: 797
+      width: 424
+      height: 141
+    spriteID: c93750940d1a07047b47b8a5df6a8a7e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3120, y: 797}
+  - name: Impaler Aseprite_Frame_108
+    originalName: 
+    pivot: {x: 0.5636792, y: 0.021276597}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3552
+      y: 797
+      width: 424
+      height: 141
+    spriteID: bc043bb4a5396624481dbad3a4dfc64b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3552, y: 797}
+  - name: Impaler Aseprite_Frame_109
+    originalName: 
+    pivot: {x: 0.5636792, y: 0.021276597}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 331
+      y: 946
+      width: 424
+      height: 141
+    spriteID: 607503204730fef4cb303db7a77067c2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 331, y: 946}
+  - name: Impaler Aseprite_Frame_110
+    originalName: 
+    pivot: {x: 0.5636792, y: 0.021276597}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 763
+      y: 946
+      width: 424
+      height: 141
+    spriteID: a780689f41804bd4da5820c91341df01
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 763, y: 946}
+  - name: Impaler Aseprite_Frame_111
+    originalName: 
+    pivot: {x: 0.5636792, y: 0.021276597}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1195
+      y: 946
+      width: 424
+      height: 141
+    spriteID: 2ebfb4ac89f363c429a28fc07eada967
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1195, y: 946}
+  - name: Impaler Aseprite_Frame_112
+    originalName: 
+    pivot: {x: 0.5636792, y: 0.021276597}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1627
+      y: 946
+      width: 424
+      height: 141
+    spriteID: 190599c100301af49a4d9870b2ad1085
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1627, y: 946}
+  - name: Impaler Aseprite_Frame_113
+    originalName: 
+    pivot: {x: 0.5636792, y: 0.021276597}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2059
+      y: 946
+      width: 424
+      height: 141
+    spriteID: 7e79557f7bf2b544da7c2b9b42163e15
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2059, y: 946}
+  - name: Impaler Aseprite_Frame_114
+    originalName: 
+    pivot: {x: 1.2987804, y: -0.0952381}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2120
+      y: 1969
+      width: 164
+      height: 126
+    spriteID: 7df0e273964bd52439d187bef9bf1384
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2120, y: 1969}
+  - name: Impaler Aseprite_Frame_115
+    originalName: 
+    pivot: {x: 1.2987804, y: -0.0952381}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2292
+      y: 1969
+      width: 164
+      height: 126
+    spriteID: 1d118a16f24d6cf49b17251b1e86cfe0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2292, y: 1969}
+  - name: Impaler Aseprite_Frame_116
+    originalName: 
+    pivot: {x: 1.1391305, y: -0.0631579}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2482
+      y: 1507
+      width: 230
+      height: 190
+    spriteID: 724d7ddbd5497ce4d95a805f479cb60e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2482, y: 1507}
+  - name: Impaler Aseprite_Frame_117
+    originalName: 
+    pivot: {x: 1.7702702, y: -0.07317074}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2120
+      width: 148
+      height: 164
+    spriteID: 70a7aceaa2309da41b941f1acb42dfc5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2120}
+  - name: Impaler Aseprite_Frame_118
+    originalName: 
+    pivot: {x: 1.9920636, y: -0.08275862}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 930
+      y: 2292
+      width: 126
+      height: 145
+    spriteID: 324de3afaf33b4441835516dd27b12c0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 930, y: 2292}
+  - name: Impaler Aseprite_Frame_119
+    originalName: 
+    pivot: {x: 1.7972028, y: -0.08275862}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 946
+      y: 2120
+      width: 143
+      height: 145
+    spriteID: 359fe28e3bf53a545a2a5c88dcf76883
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 946, y: 2120}
+  - name: Impaler Aseprite_Frame_120
+    originalName: 
+    pivot: {x: 1.6600001, y: -0.06802721}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 476
+      y: 2120
+      width: 150
+      height: 147
+    spriteID: fc1b9bd1784db464c9bc47708d930159
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 476, y: 2120}
+  - name: Impaler Aseprite_Frame_121
+    originalName: 
+    pivot: {x: 1.6600001, y: -0.06802721}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 634
+      y: 2120
+      width: 150
+      height: 147
+    spriteID: ceb0d8990e7907747bb2c8b406c3e186
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 634, y: 2120}
+  - name: Impaler Aseprite_Frame_122
+    originalName: 
+    pivot: {x: 1.6600001, y: -0.06622516}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 318
+      y: 2120
+      width: 150
+      height: 151
+    spriteID: a2ef231cad0d8e548a507f9a58ab19e2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 318, y: 2120}
+  - name: Impaler Aseprite_Frame_123
+    originalName: 
+    pivot: {x: 1.6600001, y: -0.064935066}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 2120
+      width: 150
+      height: 154
+    spriteID: 3fb051577b429dd47aaa0fb2a7ca298e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 160, y: 2120}
+  - name: Impaler Aseprite_Frame_124
+    originalName: 
+    pivot: {x: 1.6600001, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1479
+      y: 1969
+      width: 150
+      height: 140
+    spriteID: 85ace4da722c16846b9edd2990b74319
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1479, y: 1969}
+  - name: Impaler Aseprite_Frame_125
+    originalName: 
+    pivot: {x: 1.6600001, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1637
+      y: 1969
+      width: 150
+      height: 140
+    spriteID: a21ee4c979ee17a4ba639d0e19b64343
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1637, y: 1969}
+  - name: Impaler Aseprite_Frame_126
+    originalName: 
+    pivot: {x: 1.6824323, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1964
+      y: 1969
+      width: 148
+      height: 140
+    spriteID: b7cb4c36359061e489153106e5127f5a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1964, y: 1969}
+  - name: Impaler Aseprite_Frame_127
+    originalName: 
+    pivot: {x: 1.8308824, y: -0.06382979}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3116
+      y: 1969
+      width: 136
+      height: 141
+    spriteID: 7f71ae1f6ca2cfd469a2817620c768e6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3116, y: 1969}
+  - name: Impaler Aseprite_Frame_128
+    originalName: 
+    pivot: {x: 1.8828125, y: -0.06428572}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3260
+      y: 1969
+      width: 128
+      height: 140
+    spriteID: 76cd1515353fb8a4eaf4e15dd798c4e6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3260, y: 1969}
+  - name: Impaler Aseprite_Frame_129
+    originalName: 
+    pivot: {x: 1.8828125, y: -0.06428572}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3396
+      y: 1969
+      width: 128
+      height: 140
+    spriteID: f82ab7b67030cc04db9f319092f21587
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3396, y: 1969}
+  - name: Impaler Aseprite_Frame_143
+    originalName: 
+    pivot: {x: 2.3495145, y: -0.08275862}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3982
+      y: 270
+      width: 103
+      height: 145
+    spriteID: 7ab00969fb682c5479c7646797f75e8d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3982, y: 270}
+  - name: Impaler Aseprite_Frame_144
+    originalName: 
+    pivot: {x: 1.7553958, y: -0.08275862}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1812
+      y: 2120
+      width: 139
+      height: 145
+    spriteID: 516b0f255dbfbff4897f1b4a3ed5ed50
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1812, y: 2120}
+  - name: Impaler Aseprite_Frame_145
+    originalName: 
+    pivot: {x: 1.7553958, y: -0.08275862}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1959
+      y: 2120
+      width: 139
+      height: 145
+    spriteID: aa005ab28465abc42a27f239e06d2e8e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1959, y: 2120}
+  - name: Impaler Aseprite_Frame_146
+    originalName: 
+    pivot: {x: 1.6712328, y: -0.08275862}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 792
+      y: 2120
+      width: 146
+      height: 145
+    spriteID: c2c010f4fe854964a91da57695db9751
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 792, y: 2120}
+  - name: Impaler Aseprite_Frame_147
+    originalName: 
+    pivot: {x: 0.9907407, y: -0.0625}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 1747
+      width: 216
+      height: 176
+    spriteID: 995354f5682fd65438f8125e6413eece
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 192, y: 1747}
+  - name: Impaler Aseprite_Frame_148
+    originalName: 
+    pivot: {x: 0.9907407, y: -0.0625}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 1747
+      width: 216
+      height: 176
+    spriteID: cd6e9e8c44dd5144f969d54774e97a37
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 416, y: 1747}
+  - name: Impaler Aseprite_Frame_149
+    originalName: 
+    pivot: {x: 0.9907407, y: -0.0625}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 640
+      y: 1747
+      width: 216
+      height: 176
+    spriteID: 839ff45e210e3ea478c301ed35268f23
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 640, y: 1747}
+  - name: Impaler Aseprite_Frame_150
+    originalName: 
+    pivot: {x: 0.9953488, y: -0.0625}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 864
+      y: 1747
+      width: 215
+      height: 176
+    spriteID: cff94fce286484c4ea0042eaa46e26fc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 864, y: 1747}
+  - name: Impaler Aseprite_Frame_151
+    originalName: 
+    pivot: {x: 0.32241812, y: -0.11111112}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1252
+      y: 1145
+      width: 397
+      height: 126
+    spriteID: f2c38cc591a237e4dba6e76b16426175
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1252, y: 1145}
+  - name: Impaler Aseprite_Frame_152
+    originalName: 
+    pivot: {x: 0.32241812, y: -0.11111112}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1657
+      y: 1145
+      width: 397
+      height: 126
+    spriteID: f109a6c026ba4fb48ab26cef9546b4e3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1657, y: 1145}
+  - name: Impaler Aseprite_Frame_153
+    originalName: 
+    pivot: {x: 0.32241812, y: -0.11111112}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2062
+      y: 1145
+      width: 397
+      height: 126
+    spriteID: 766a148432d93a648a6b21caafb5797a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2062, y: 1145}
+  - name: Impaler Aseprite_Frame_154
+    originalName: 
+    pivot: {x: 0.32241812, y: -0.11111112}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2467
+      y: 1145
+      width: 397
+      height: 126
+    spriteID: a1b426fd265b6d64a9cd50b4b546e41c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2467, y: 1145}
+  - name: Impaler Aseprite_Frame_155
+    originalName: 
+    pivot: {x: 0.19219218, y: -0.11111112}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3308
+      y: 1507
+      width: 333
+      height: 126
+    spriteID: d8a33b3b103d5d54b987c534d7b0e72d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3308, y: 1507}
+  - name: Impaler Aseprite_Frame_156
+    originalName: 
+    pivot: {x: 0.19219218, y: -0.11111112}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3649
+      y: 1507
+      width: 333
+      height: 126
+    spriteID: 34e0cfb071bcbf84a9a1fed0f6c16497
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3649, y: 1507}
+  - name: Impaler Aseprite_Frame_157
+    originalName: 
+    pivot: {x: 0.19219218, y: -0.11111112}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3232
+      y: 1145
+      width: 333
+      height: 126
+    spriteID: 6202cd0decc7d3e458921bc6776d334c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3232, y: 1145}
+  - name: Impaler Aseprite_Frame_158
+    originalName: 
+    pivot: {x: 0.19219218, y: -0.11111112}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3573
+      y: 1145
+      width: 333
+      height: 126
+    spriteID: 81693e7f7f4a4934ba5872ed14a8df1e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3573, y: 1145}
+  - name: Impaler Aseprite_Frame_159
+    originalName: 
+    pivot: {x: 0.61467886, y: -0.06382979}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 797
+      width: 436
+      height: 141
+    spriteID: e24ea54acba7209468da6ff2f637a2a2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 797}
+  - name: Impaler Aseprite_Frame_160
+    originalName: 
+    pivot: {x: 0.61467886, y: -0.06382979}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 797
+      width: 436
+      height: 141
+    spriteID: 26f9744d602297840903946d1d0614b3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 448, y: 797}
+  - name: Impaler Aseprite_Frame_161
+    originalName: 
+    pivot: {x: 0.61467886, y: -0.06382979}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 892
+      y: 797
+      width: 436
+      height: 141
+    spriteID: b403eb5cb99a70e439abe9dd03d2f8d5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 892, y: 797}
+  - name: Impaler Aseprite_Frame_162
+    originalName: 
+    pivot: {x: 0.61467886, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1336
+      y: 797
+      width: 436
+      height: 140
+    spriteID: ade5597efbeeb654da32eb8b518d2f8d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1336, y: 797}
+  - name: Impaler Aseprite_Frame_163
+    originalName: 
+    pivot: {x: 0.6322751, y: -0.051587306}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3596
+      y: 270
+      width: 378
+      height: 252
+    spriteID: a06af174c3e70354db4ad5c96a53a9f6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3596, y: 270}
+  - name: Impaler Aseprite_Frame_164
+    originalName: 
+    pivot: {x: 0.6322751, y: -0.051587306}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1952
+      y: 4
+      width: 378
+      height: 252
+    spriteID: bd87c028671bdca499dbef446f609529
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1952, y: 4}
+  - name: Impaler Aseprite_Frame_165
+    originalName: 
+    pivot: {x: 0.6322751, y: -0.051587306}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2338
+      y: 4
+      width: 378
+      height: 252
+    spriteID: 8caa55236e284d74da025f9cbd260c49
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2338, y: 4}
+  - name: Impaler Aseprite_Frame_166
+    originalName: 
+    pivot: {x: 0.6322751, y: -0.052419357}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3494
+      y: 4
+      width: 378
+      height: 248
+    spriteID: 5774e3295df6cb44b92351947f18b2c0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3494, y: 4}
+  - name: Impaler Aseprite_Frame_167
+    originalName: 
+    pivot: {x: 0.6322751, y: -0.052419357}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 541
+      width: 378
+      height: 248
+    spriteID: 8f2770beefc8c9a47874a5de865f70c8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 541}
+  - name: Impaler Aseprite_Frame_168
+    originalName: 
+    pivot: {x: 0.6322751, y: -0.054393306}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 390
+      y: 541
+      width: 378
+      height: 239
+    spriteID: e7ed97fdb5dd0d34a9068642491279e8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 390, y: 541}
+  - name: Impaler Aseprite_Frame_169
+    originalName: 
+    pivot: {x: 0.56426334, y: -0.0625}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2114
+      y: 541
+      width: 319
+      height: 208
+    spriteID: 1f38560734ead2444a245f1b803d16c2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2114, y: 541}
+  - name: Impaler Aseprite_Frame_170
+    originalName: 
+    pivot: {x: 0.56426334, y: -0.06806283}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 946
+      width: 319
+      height: 191
+    spriteID: 7ee4b08a5e5f0e240a04fc84d5273164
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 946}
+  - name: Impaler Aseprite_Frame_171
+    originalName: 
+    pivot: {x: 0.5825243, y: -0.06806283}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2491
+      y: 946
+      width: 309
+      height: 191
+    spriteID: 027ada7c6045d7048ba2b0cb655ed971
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2491, y: 946}
+  - name: Impaler Aseprite_Frame_172
+    originalName: 
+    pivot: {x: 0.9223301, y: -0.08275862}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1814
+      y: 2292
+      width: 103
+      height: 145
+    spriteID: 9a88515ecb4cbd341980068e928d8a2b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1814, y: 2292}
+  - name: Impaler Aseprite_Frame_173
+    originalName: 
+    pivot: {x: 1.1942858, y: -0.12698413}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 945
+      y: 1969
+      width: 175
+      height: 126
+    spriteID: 8fe42508adee43741be4181b1696830d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 945, y: 1969}
+  - name: Impaler Aseprite_Frame_174
+    originalName: 
+    pivot: {x: 1.6089385, y: -0.12}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 591
+      y: 1969
+      width: 179
+      height: 125
+    spriteID: c822131e6986fe94b926506525ba2ac1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 591, y: 1969}
+  - name: Impaler Aseprite_Frame_130
+    originalName: 
+    pivot: {x: 1.9262295, y: -0.06428572}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3958
+      y: 1969
+      width: 122
+      height: 140
+    spriteID: 655eee24f6363474e95339330fe268b7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3958, y: 1969}
+  - name: Impaler Aseprite_Frame_131
+    originalName: 
+    pivot: {x: 1.9262295, y: -0.06428572}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1064
+      y: 2292
+      width: 122
+      height: 140
+    spriteID: 4098d62e29967c64d932f0f81b1890b6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1064, y: 2292}
+  - name: Impaler Aseprite_Frame_132
+    originalName: 
+    pivot: {x: 1.9262295, y: -0.062937066}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3532
+      y: 1969
+      width: 122
+      height: 143
+    spriteID: 7d4ede9d6cd731e459ff7bd223c554b8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3532, y: 1969}
+  - name: Impaler Aseprite_Frame_133
+    originalName: 
+    pivot: {x: 1.9262295, y: -0.062937066}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3662
+      y: 1969
+      width: 122
+      height: 143
+    spriteID: 7fab1523639088f4eb73c55669523a8a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3662, y: 1969}
+  - name: Impaler Aseprite_Frame_134
+    originalName: 
+    pivot: {x: 1.8897638, y: -0.058441557}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 145
+      y: 2292
+      width: 127
+      height: 154
+    spriteID: 06ec2508b0292264886b2f0f5ac689d1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 145, y: 2292}
+  - name: Impaler Aseprite_Frame_135
+    originalName: 
+    pivot: {x: 1.8968254, y: -0.050955415}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3679
+      y: 2120
+      width: 126
+      height: 157
+    spriteID: d33797024dfafcf4e9943230afa497d5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3679, y: 2120}
+  - name: Impaler Aseprite_Frame_136
+    originalName: 
+    pivot: {x: 1.8968254, y: -0.050955415}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3813
+      y: 2120
+      width: 126
+      height: 157
+    spriteID: 1531c9a2eea651a478e222e75cceb090
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3813, y: 2120}
+  - name: Impaler Aseprite_Frame_137
+    originalName: 
+    pivot: {x: 1.8968254, y: -0.050955415}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3947
+      y: 2120
+      width: 126
+      height: 157
+    spriteID: be432df968c49eb4f8158248ff3e785e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3947, y: 2120}
+  - name: Impaler Aseprite_Frame_138
+    originalName: 
+    pivot: {x: 1.9590163, y: -0.050955415}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 280
+      y: 2292
+      width: 122
+      height: 157
+    spriteID: 335634a0382039b45b529053e8292803
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 280, y: 2292}
+  - name: Impaler Aseprite_Frame_139
+    originalName: 
+    pivot: {x: 1.9590163, y: -0.050955415}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 410
+      y: 2292
+      width: 122
+      height: 157
+    spriteID: b3ecbdadc15e4cf42ba1d20a66a4c48f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 410, y: 2292}
+  - name: Impaler Aseprite_Frame_140
+    originalName: 
+    pivot: {x: 1.9590163, y: -0.050955415}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 540
+      y: 2292
+      width: 122
+      height: 157
+    spriteID: 7a9d56164ecc2f9429b12ff3d557104b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 540, y: 2292}
+  - name: Impaler Aseprite_Frame_141
+    originalName: 
+    pivot: {x: 1.9590163, y: -0.050955415}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 670
+      y: 2292
+      width: 122
+      height: 157
+    spriteID: 8bcd494c32f76da4f8c12aef96612d76
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 670, y: 2292}
+  - name: Impaler Aseprite_Frame_142
+    originalName: 
+    pivot: {x: 1.9590163, y: -0.050955415}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 800
+      y: 2292
+      width: 122
+      height: 157
+    spriteID: 9f50a0f4732b41e44ae87c3462e90efc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 800, y: 2292}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -638631581
+    name: Impaler Aseprite
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Impaler Aseprite_Frame_0
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 58
+        y: 9
+        width: 135
+        height: 149
+      spriteId: bc00c0c09b1bc2b45a7952e9569e64e1
+    - name: Impaler Aseprite_Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 58
+        y: 9
+        width: 135
+        height: 149
+      spriteId: 1d69ed8ba0e02ab479f7f61bac46559a
+    - name: Impaler Aseprite_Frame_2
+      frameIndex: 2
+      additiveSortOrder: 0
+      cellRect:
+        x: 58
+        y: 8
+        width: 135
+        height: 150
+      spriteId: b5fac3eb100c16346a9d9ff43ec85f52
+    - name: Impaler Aseprite_Frame_3
+      frameIndex: 3
+      additiveSortOrder: 0
+      cellRect:
+        x: 58
+        y: 8
+        width: 135
+        height: 150
+      spriteId: 387eb786566fe184987e71c4ad637e0e
+    - name: Impaler Aseprite_Frame_4
+      frameIndex: 4
+      additiveSortOrder: 0
+      cellRect:
+        x: 58
+        y: 8
+        width: 135
+        height: 149
+      spriteId: 4a25404f2692391449ef297933997e4a
+    - name: Impaler Aseprite_Frame_5
+      frameIndex: 5
+      additiveSortOrder: 0
+      cellRect:
+        x: 58
+        y: 8
+        width: 135
+        height: 149
+      spriteId: 2defb5679c5eb46498b8740f17ac67f6
+    - name: Impaler Aseprite_Frame_6
+      frameIndex: 6
+      additiveSortOrder: 0
+      cellRect:
+        x: 58
+        y: 8
+        width: 135
+        height: 149
+      spriteId: 13cc1389a3f359a4f9a36c1b266c9196
+    - name: Impaler Aseprite_Frame_7
+      frameIndex: 7
+      additiveSortOrder: 0
+      cellRect:
+        x: 59
+        y: 7
+        width: 135
+        height: 150
+      spriteId: 7e482a2e5c1c0314698d5c8b771d33af
+    - name: Impaler Aseprite_Frame_8
+      frameIndex: 8
+      additiveSortOrder: 0
+      cellRect:
+        x: 59
+        y: 7
+        width: 135
+        height: 150
+      spriteId: 05cf6c861c23e974aa2c446aef07a8fa
+    - name: Impaler Aseprite_Frame_9
+      frameIndex: 9
+      additiveSortOrder: 0
+      cellRect:
+        x: 59
+        y: 7
+        width: 135
+        height: 150
+      spriteId: 21242919d864178468bfa5caf54620fd
+    - name: Impaler Aseprite_Frame_10
+      frameIndex: 10
+      additiveSortOrder: 0
+      cellRect:
+        x: 101
+        y: 19
+        width: 167
+        height: 184
+      spriteId: d111564e3c9cfc24f9962ed72300c173
+    - name: Impaler Aseprite_Frame_11
+      frameIndex: 11
+      additiveSortOrder: 0
+      cellRect:
+        x: 103
+        y: 43
+        width: 167
+        height: 179
+      spriteId: f7118ce7cd4316b469d4cbec7fbedf2e
+    - name: Impaler Aseprite_Frame_12
+      frameIndex: 12
+      additiveSortOrder: 0
+      cellRect:
+        x: 103
+        y: 43
+        width: 167
+        height: 179
+      spriteId: f52331f384b4fe8449706ddf38645955
+    - name: Impaler Aseprite_Frame_13
+      frameIndex: 13
+      additiveSortOrder: 0
+      cellRect:
+        x: 63
+        y: 55
+        width: 155
+        height: 204
+      spriteId: 9ffe13129a7c32c4087f3eb4aa45ed1e
+    - name: Impaler Aseprite_Frame_14
+      frameIndex: 14
+      additiveSortOrder: 0
+      cellRect:
+        x: 48
+        y: 5
+        width: 147
+        height: 113
+      spriteId: bf6c8abd0f5776f43b37bc58f7c38c13
+    - name: Impaler Aseprite_Frame_15
+      frameIndex: 15
+      additiveSortOrder: 0
+      cellRect:
+        x: 48
+        y: 5
+        width: 147
+        height: 113
+      spriteId: 47735210be9d9264499683c11cd46632
+    - name: Impaler Aseprite_Frame_16
+      frameIndex: 16
+      additiveSortOrder: 0
+      cellRect:
+        x: 130
+        y: 15
+        width: 230
+        height: 232
+      spriteId: e8f5c04a820c71149be8cdc7db8d9c0f
+    - name: Impaler Aseprite_Frame_17
+      frameIndex: 17
+      additiveSortOrder: 0
+      cellRect:
+        x: 130
+        y: 15
+        width: 230
+        height: 232
+      spriteId: f3377fb1bfbaf114bbea79d176655fb1
+    - name: Impaler Aseprite_Frame_18
+      frameIndex: 18
+      additiveSortOrder: 0
+      cellRect:
+        x: 130
+        y: 15
+        width: 230
+        height: 232
+      spriteId: ce625154c2c46a64a806b0deb5373f75
+    - name: Impaler Aseprite_Frame_19
+      frameIndex: 19
+      additiveSortOrder: 0
+      cellRect:
+        x: 220
+        y: 76
+        width: 133
+        height: 171
+      spriteId: 4708e20a48f02c24eaf7973cf776ff74
+    - name: Impaler Aseprite_Frame_20
+      frameIndex: 20
+      additiveSortOrder: 0
+      cellRect:
+        x: 163
+        y: 2
+        width: 441
+        height: 263
+      spriteId: eebc664d1955da54ca5f922946797e8c
+    - name: Impaler Aseprite_Frame_21
+      frameIndex: 21
+      additiveSortOrder: 0
+      cellRect:
+        x: 163
+        y: 2
+        width: 441
+        height: 263
+      spriteId: b54b1e7686558a043a86cb5306b61849
+    - name: Impaler Aseprite_Frame_22
+      frameIndex: 22
+      additiveSortOrder: 0
+      cellRect:
+        x: 163
+        y: 2
+        width: 441
+        height: 263
+      spriteId: c77167f3ec6025f4da8afaf7e919dbae
+    - name: Impaler Aseprite_Frame_23
+      frameIndex: 23
+      additiveSortOrder: 0
+      cellRect:
+        x: 163
+        y: 2
+        width: 441
+        height: 263
+      spriteId: 2870cd394a59b214f831156532254e37
+    - name: Impaler Aseprite_Frame_24
+      frameIndex: 24
+      additiveSortOrder: 0
+      cellRect:
+        x: 163
+        y: 2
+        width: 441
+        height: 263
+      spriteId: b49deb4ca91e60d448b392ad7141da68
+    - name: Impaler Aseprite_Frame_25
+      frameIndex: 25
+      additiveSortOrder: 0
+      cellRect:
+        x: 163
+        y: 2
+        width: 441
+        height: 263
+      spriteId: 2440d31ff1d33a747b4d8f8ff63d0437
+    - name: Impaler Aseprite_Frame_26
+      frameIndex: 26
+      additiveSortOrder: 0
+      cellRect:
+        x: 163
+        y: 2
+        width: 441
+        height: 263
+      spriteId: 2805fa9f5d68e5742b32da4e34a4790f
+    - name: Impaler Aseprite_Frame_27
+      frameIndex: 27
+      additiveSortOrder: 0
+      cellRect:
+        x: 163
+        y: 2
+        width: 441
+        height: 263
+      spriteId: d57eb48c774ad2345ae57088a2900f3a
+    - name: Impaler Aseprite_Frame_28
+      frameIndex: 28
+      additiveSortOrder: 0
+      cellRect:
+        x: 124
+        y: 7
+        width: 479
+        height: 258
+      spriteId: f4160990ea6d79647970fdccc99333af
+    - name: Impaler Aseprite_Frame_29
+      frameIndex: 29
+      additiveSortOrder: 0
+      cellRect:
+        x: 124
+        y: 7
+        width: 479
+        height: 258
+      spriteId: a47738e604625db48bb546a099a48e49
+    - name: Impaler Aseprite_Frame_30
+      frameIndex: 30
+      additiveSortOrder: 0
+      cellRect:
+        x: 124
+        y: 7
+        width: 479
+        height: 258
+      spriteId: 384d2dda2749a8a43b1a5ab98d46b3d7
+    - name: Impaler Aseprite_Frame_31
+      frameIndex: 31
+      additiveSortOrder: 0
+      cellRect:
+        x: 124
+        y: 7
+        width: 479
+        height: 258
+      spriteId: 38f9ce13b04d708419d6d6f07a137308
+    - name: Impaler Aseprite_Frame_32
+      frameIndex: 32
+      additiveSortOrder: 0
+      cellRect:
+        x: 124
+        y: 7
+        width: 377
+        height: 251
+      spriteId: 2cc1044f45b2053479c52433f3185ee8
+    - name: Impaler Aseprite_Frame_33
+      frameIndex: 33
+      additiveSortOrder: 0
+      cellRect:
+        x: 124
+        y: 7
+        width: 377
+        height: 251
+      spriteId: e9002a8c26a4fb44bac2dc2dfbbd828d
+    - name: Impaler Aseprite_Frame_34
+      frameIndex: 34
+      additiveSortOrder: 0
+      cellRect:
+        x: 48
+        y: 8
+        width: 158
+        height: 110
+      spriteId: f44521ca0b09c3948b886219e23a0a94
+    - name: Impaler Aseprite_Frame_35
+      frameIndex: 35
+      additiveSortOrder: 0
+      cellRect:
+        x: 48
+        y: 5
+        width: 147
+        height: 113
+      spriteId: 6eb8202d0e506524fa867c82e03d22c6
+    - name: Impaler Aseprite_Frame_36
+      frameIndex: 36
+      additiveSortOrder: 0
+      cellRect:
+        x: 101
+        y: 20
+        width: 167
+        height: 183
+      spriteId: 989c9db4072eff74597b2d4a7a5580ee
+    - name: Impaler Aseprite_Frame_37
+      frameIndex: 37
+      additiveSortOrder: 0
+      cellRect:
+        x: 101
+        y: 20
+        width: 167
+        height: 183
+      spriteId: f0d66ea80da38cd42bcd261fd1def522
+    - name: Impaler Aseprite_Frame_38
+      frameIndex: 38
+      additiveSortOrder: 0
+      cellRect:
+        x: 63
+        y: 55
+        width: 159
+        height: 140
+      spriteId: 99ae5a458d2901346b3fa3d96713cb45
+    - name: Impaler Aseprite_Frame_39
+      frameIndex: 39
+      additiveSortOrder: 0
+      cellRect:
+        x: 87
+        y: 55
+        width: 352
+        height: 141
+      spriteId: a7e60d7bd0d1ca14aa3ae058dbfc85dd
+    - name: Impaler Aseprite_Frame_40
+      frameIndex: 40
+      additiveSortOrder: 0
+      cellRect:
+        x: 63
+        y: 40
+        width: 376
+        height: 155
+      spriteId: fb8c5e0a345d8384ea0fc1a0b42ece4f
+    - name: Impaler Aseprite_Frame_41
+      frameIndex: 41
+      additiveSortOrder: 0
+      cellRect:
+        x: 85
+        y: 83
+        width: 354
+        height: 156
+      spriteId: ff31879dc4191e24d8b7af64f676afc5
+    - name: Impaler Aseprite_Frame_42
+      frameIndex: 42
+      additiveSortOrder: 0
+      cellRect:
+        x: 63
+        y: 55
+        width: 376
+        height: 140
+      spriteId: 034795191016ab34bbf3bcda801174f2
+    - name: Impaler Aseprite_Frame_43
+      frameIndex: 43
+      additiveSortOrder: 0
+      cellRect:
+        x: 67
+        y: 27
+        width: 372
+        height: 169
+      spriteId: dab10d7aeba02954db099b5de9e7cd74
+    - name: Impaler Aseprite_Frame_44
+      frameIndex: 44
+      additiveSortOrder: 0
+      cellRect:
+        x: 63
+        y: 55
+        width: 376
+        height: 140
+      spriteId: 2514c75550bfb074dabf0e81ccc94e7b
+    - name: Impaler Aseprite_Frame_45
+      frameIndex: 45
+      additiveSortOrder: 0
+      cellRect:
+        x: 123
+        y: 36
+        width: 316
+        height: 160
+      spriteId: 3da98642e3ee5ae4ca03eccee948571b
+    - name: Impaler Aseprite_Frame_46
+      frameIndex: 46
+      additiveSortOrder: 0
+      cellRect:
+        x: 63
+        y: 55
+        width: 376
+        height: 140
+      spriteId: 4322c6d3cf0b10d4ab6afadbf0b1c3f9
+    - name: Impaler Aseprite_Frame_47
+      frameIndex: 47
+      additiveSortOrder: 0
+      cellRect:
+        x: 81
+        y: 24
+        width: 358
+        height: 172
+      spriteId: b2941cf584346a247b059d022f194f8c
+    - name: Impaler Aseprite_Frame_48
+      frameIndex: 48
+      additiveSortOrder: 0
+      cellRect:
+        x: 63
+        y: 55
+        width: 376
+        height: 164
+      spriteId: d7c5a0fa6f11adf44925088a83ad827f
+    - name: Impaler Aseprite_Frame_49
+      frameIndex: 49
+      additiveSortOrder: 0
+      cellRect:
+        x: 39
+        y: 84
+        width: 265
+        height: 126
+      spriteId: cd7708f46d016be4f9ff339d111c58a6
+    - name: Impaler Aseprite_Frame_50
+      frameIndex: 50
+      additiveSortOrder: 0
+      cellRect:
+        x: 39
+        y: 84
+        width: 265
+        height: 126
+      spriteId: 8e1fc0979c1aa244dbde40436e3318c4
+    - name: Impaler Aseprite_Frame_51
+      frameIndex: 51
+      additiveSortOrder: 0
+      cellRect:
+        x: 39
+        y: 84
+        width: 265
+        height: 126
+      spriteId: 93c23fa29f1f7fa41822e6aad8798959
+    - name: Impaler Aseprite_Frame_52
+      frameIndex: 52
+      additiveSortOrder: 0
+      cellRect:
+        x: 47
+        y: 3
+        width: 328
+        height: 188
+      spriteId: a81a7d18008ab6547aaf2c1fe389d2df
+    - name: Impaler Aseprite_Frame_53
+      frameIndex: 53
+      additiveSortOrder: 0
+      cellRect:
+        x: 3
+        y: 3
+        width: 438
+        height: 188
+      spriteId: a5e043d9e3784384ebec14dabd1e0026
+    - name: Impaler Aseprite_Frame_54
+      frameIndex: 54
+      additiveSortOrder: 0
+      cellRect:
+        x: 3
+        y: 3
+        width: 438
+        height: 186
+      spriteId: 82ee6951c67559946b8bc0545d70198b
+    - name: Impaler Aseprite_Frame_55
+      frameIndex: 55
+      additiveSortOrder: 0
+      cellRect:
+        x: 3
+        y: 3
+        width: 438
+        height: 188
+      spriteId: 9389894efabc2ff4ba51a9dde5a20086
+    - name: Impaler Aseprite_Frame_56
+      frameIndex: 56
+      additiveSortOrder: 0
+      cellRect:
+        x: 149
+        y: 8
+        width: 177
+        height: 138
+      spriteId: 035af0873a4301044b5dda6f12b0ce93
+    - name: Impaler Aseprite_Frame_57
+      frameIndex: 57
+      additiveSortOrder: 0
+      cellRect:
+        x: 149
+        y: 8
+        width: 177
+        height: 138
+      spriteId: d37dd3bed00fcb549a539293b6707ffc
+    - name: Impaler Aseprite_Frame_58
+      frameIndex: 58
+      additiveSortOrder: 0
+      cellRect:
+        x: 48
+        y: 8
+        width: 147
+        height: 110
+      spriteId: 59ae6c67666482e4ead843bd86ea376a
+    - name: Impaler Aseprite_Frame_59
+      frameIndex: 59
+      additiveSortOrder: 0
+      cellRect:
+        x: 58
+        y: 9
+        width: 135
+        height: 149
+      spriteId: 903c0bcd4f332744e80816683f372f25
+    - name: Impaler Aseprite_Frame_60
+      frameIndex: 60
+      additiveSortOrder: 0
+      cellRect:
+        x: 114
+        y: 9
+        width: 188
+        height: 232
+      spriteId: 982ca6f49b7168e4694eef96e7579c6d
+    - name: Impaler Aseprite_Frame_61
+      frameIndex: 61
+      additiveSortOrder: 0
+      cellRect:
+        x: 114
+        y: 9
+        width: 188
+        height: 232
+      spriteId: 9b190fa61bf191949a91b76e15ef6c65
+    - name: Impaler Aseprite_Frame_62
+      frameIndex: 62
+      additiveSortOrder: 0
+      cellRect:
+        x: 114
+        y: 9
+        width: 188
+        height: 232
+      spriteId: 33e8e7cf63119fc44bbba332104b5f54
+    - name: Impaler Aseprite_Frame_63
+      frameIndex: 63
+      additiveSortOrder: 0
+      cellRect:
+        x: 79
+        y: 6
+        width: 244
+        height: 205
+      spriteId: f0978a44dcf4a3c4eb15d825e1a81ac9
+    - name: Impaler Aseprite_Frame_64
+      frameIndex: 64
+      additiveSortOrder: 0
+      cellRect:
+        x: 79
+        y: 6
+        width: 244
+        height: 205
+      spriteId: 8613c78fa1b9b3946a3ee11bde8d96b0
+    - name: Impaler Aseprite_Frame_65
+      frameIndex: 65
+      additiveSortOrder: 0
+      cellRect:
+        x: 79
+        y: 6
+        width: 244
+        height: 205
+      spriteId: 0e00b4945e5ecfd4a854ce20c8145a3a
+    - name: Impaler Aseprite_Frame_66
+      frameIndex: 66
+      additiveSortOrder: 0
+      cellRect:
+        x: 79
+        y: 6
+        width: 207
+        height: 143
+      spriteId: 44401f3f8f0cbb649bce9b3947103b24
+    - name: Impaler Aseprite_Frame_67
+      frameIndex: 67
+      additiveSortOrder: 0
+      cellRect:
+        x: 58
+        y: 9
+        width: 135
+        height: 149
+      spriteId: 372d7c9657bf99a4db4e97e84525274b
+    - name: Impaler Aseprite_Frame_68
+      frameIndex: 68
+      additiveSortOrder: 0
+      cellRect:
+        x: 58
+        y: 9
+        width: 135
+        height: 149
+      spriteId: 4e7adaf37d021e44dbe795913c2ab513
+    - name: Impaler Aseprite_Frame_69
+      frameIndex: 69
+      additiveSortOrder: 0
+      cellRect:
+        x: 58
+        y: 9
+        width: 135
+        height: 149
+      spriteId: 622784c9e96c96b408058a0753cf3f26
+    - name: Impaler Aseprite_Frame_70
+      frameIndex: 70
+      additiveSortOrder: 0
+      cellRect:
+        x: 58
+        y: 9
+        width: 135
+        height: 149
+      spriteId: c01db4f30b8352f449cb943bd92eadcf
+    - name: Impaler Aseprite_Frame_71
+      frameIndex: 71
+      additiveSortOrder: 0
+      cellRect:
+        x: 58
+        y: 9
+        width: 135
+        height: 149
+      spriteId: 6395de108c7d4104cbd776fd56746e91
+    - name: Impaler Aseprite_Frame_72
+      frameIndex: 72
+      additiveSortOrder: 0
+      cellRect:
+        x: 114
+        y: 9
+        width: 188
+        height: 232
+      spriteId: 8ab037bdde150c84989801da4c786cc7
+    - name: Impaler Aseprite_Frame_73
+      frameIndex: 73
+      additiveSortOrder: 0
+      cellRect:
+        x: 79
+        y: 6
+        width: 244
+        height: 205
+      spriteId: bde2e76cf623e464ab55fa094bfab6cf
+    - name: Impaler Aseprite_Frame_74
+      frameIndex: 74
+      additiveSortOrder: 0
+      cellRect:
+        x: 79
+        y: 6
+        width: 244
+        height: 205
+      spriteId: 8876eea9d2d943745acef7aaaddbe531
+    - name: Impaler Aseprite_Frame_75
+      frameIndex: 75
+      additiveSortOrder: 0
+      cellRect:
+        x: 114
+        y: 9
+        width: 180
+        height: 214
+      spriteId: 13ff55ebf292e594da13ba4de090d4f6
+    - name: Impaler Aseprite_Frame_76
+      frameIndex: 76
+      additiveSortOrder: 0
+      cellRect:
+        x: 114
+        y: 9
+        width: 180
+        height: 214
+      spriteId: 43934eb59308f04429a3b4b31638ccb2
+    - name: Impaler Aseprite_Frame_77
+      frameIndex: 77
+      additiveSortOrder: 0
+      cellRect:
+        x: 114
+        y: 9
+        width: 167
+        height: 214
+      spriteId: a8e5ec210228c9045bb1e4263ed1ff20
+    - name: Impaler Aseprite_Frame_78
+      frameIndex: 78
+      additiveSortOrder: 0
+      cellRect:
+        x: 114
+        y: 9
+        width: 157
+        height: 212
+      spriteId: 892bacf6dc5fade4aa8aaeb28ff70d40
+    - name: Impaler Aseprite_Frame_79
+      frameIndex: 79
+      additiveSortOrder: 0
+      cellRect:
+        x: 79
+        y: 6
+        width: 280
+        height: 205
+      spriteId: 90fa5ec307085aa428c14cb3989f2df2
+    - name: Impaler Aseprite_Frame_80
+      frameIndex: 80
+      additiveSortOrder: 0
+      cellRect:
+        x: 79
+        y: 6
+        width: 280
+        height: 205
+      spriteId: 825cf28dcbf70374b9d623849d85f0a0
+    - name: Impaler Aseprite_Frame_81
+      frameIndex: 81
+      additiveSortOrder: 0
+      cellRect:
+        x: 79
+        y: 6
+        width: 280
+        height: 205
+      spriteId: 776511b5164d43640a63af6e3485cd33
+    - name: Impaler Aseprite_Frame_82
+      frameIndex: 82
+      additiveSortOrder: 0
+      cellRect:
+        x: 79
+        y: 6
+        width: 280
+        height: 205
+      spriteId: b9465c85c393f9b4eaac32a37541b246
+    - name: Impaler Aseprite_Frame_83
+      frameIndex: 83
+      additiveSortOrder: 0
+      cellRect:
+        x: 79
+        y: 6
+        width: 280
+        height: 205
+      spriteId: 4f83a9a299512704e956e136684c803c
+    - name: Impaler Aseprite_Frame_84
+      frameIndex: 84
+      additiveSortOrder: 0
+      cellRect:
+        x: 79
+        y: 6
+        width: 280
+        height: 205
+      spriteId: 5c7b5b4cd22f4e946a3d77ce604edbee
+    - name: Impaler Aseprite_Frame_85
+      frameIndex: 85
+      additiveSortOrder: 0
+      cellRect:
+        x: 79
+        y: 6
+        width: 244
+        height: 205
+      spriteId: dd1028ee294c88e41b3eb43598553c46
+    - name: Impaler Aseprite_Frame_86
+      frameIndex: 86
+      additiveSortOrder: 0
+      cellRect:
+        x: 79
+        y: 6
+        width: 244
+        height: 196
+      spriteId: ae19b3bfbb810ca49997b29c1c1537ee
+    - name: Impaler Aseprite_Frame_87
+      frameIndex: 87
+      additiveSortOrder: 0
+      cellRect:
+        x: 79
+        y: 6
+        width: 207
+        height: 143
+      spriteId: 9cdf3e382654d2447a31b0024a4f0f83
+    - name: Impaler Aseprite_Frame_88
+      frameIndex: 88
+      additiveSortOrder: 0
+      cellRect:
+        x: 59
+        y: 9
+        width: 155
+        height: 130
+      spriteId: d4bef84d83a366744a46d27ea8ee90be
+    - name: Impaler Aseprite_Frame_89
+      frameIndex: 89
+      additiveSortOrder: 0
+      cellRect:
+        x: 59
+        y: 9
+        width: 155
+        height: 130
+      spriteId: 8006c390d8779f84e8ce30e3832d6a35
+    - name: Impaler Aseprite_Frame_90
+      frameIndex: 90
+      additiveSortOrder: 0
+      cellRect:
+        x: 60
+        y: 9
+        width: 155
+        height: 130
+      spriteId: 1fb3eac8e9df73c4ebfb5d84fb9150a0
+    - name: Impaler Aseprite_Frame_91
+      frameIndex: 91
+      additiveSortOrder: 0
+      cellRect:
+        x: 60
+        y: 9
+        width: 155
+        height: 130
+      spriteId: 9e2ecea4139343245bf04076be14b3d3
+    - name: Impaler Aseprite_Frame_92
+      frameIndex: 92
+      additiveSortOrder: 0
+      cellRect:
+        x: 81
+        y: -3
+        width: 408
+        height: 141
+      spriteId: 406ea2855848f704fbc20a0ead286d3b
+    - name: Impaler Aseprite_Frame_93
+      frameIndex: 93
+      additiveSortOrder: 0
+      cellRect:
+        x: 81
+        y: -3
+        width: 408
+        height: 141
+      spriteId: a058e16b8fa6fcf4b8b5941bbdcb25d9
+    - name: Impaler Aseprite_Frame_94
+      frameIndex: 94
+      additiveSortOrder: 0
+      cellRect:
+        x: 81
+        y: -3
+        width: 408
+        height: 141
+      spriteId: 44263e5230d720541a851056dc69094b
+    - name: Impaler Aseprite_Frame_95
+      frameIndex: 95
+      additiveSortOrder: 0
+      cellRect:
+        x: 59
+        y: 9
+        width: 468
+        height: 130
+      spriteId: 57dbaed54578be0489d811265c3f19c4
+    - name: Impaler Aseprite_Frame_96
+      frameIndex: 96
+      additiveSortOrder: 0
+      cellRect:
+        x: 59
+        y: 9
+        width: 280
+        height: 130
+      spriteId: 6622c77497cf0d94ab954c7c923b17f1
+    - name: Impaler Aseprite_Frame_97
+      frameIndex: 97
+      additiveSortOrder: 0
+      cellRect:
+        x: 81
+        y: -3
+        width: 408
+        height: 141
+      spriteId: 7efb5807e879c35428fa76c87a708677
+    - name: Impaler Aseprite_Frame_98
+      frameIndex: 98
+      additiveSortOrder: 0
+      cellRect:
+        x: 81
+        y: -3
+        width: 408
+        height: 141
+      spriteId: 1331efca4aac8a3419c2c321930f5146
+    - name: Impaler Aseprite_Frame_99
+      frameIndex: 99
+      additiveSortOrder: 0
+      cellRect:
+        x: 59
+        y: 9
+        width: 412
+        height: 130
+      spriteId: 753e1c6c709c4044ab1fe20059fb4444
+    - name: Impaler Aseprite_Frame_100
+      frameIndex: 100
+      additiveSortOrder: 0
+      cellRect:
+        x: 59
+        y: 9
+        width: 269
+        height: 130
+      spriteId: d0f03906a59b21341bbe2ba07f6eefb1
+    - name: Impaler Aseprite_Frame_101
+      frameIndex: 101
+      additiveSortOrder: 0
+      cellRect:
+        x: 59
+        y: 9
+        width: 169
+        height: 130
+      spriteId: 2cee68cc4b9136042b147f1a75bfd392
+    - name: Impaler Aseprite_Frame_102
+      frameIndex: 102
+      additiveSortOrder: 0
+      cellRect:
+        x: 59
+        y: 9
+        width: 161
+        height: 130
+      spriteId: 069f5f4e3d45e2a42ba883e1ee7f5fa8
+    - name: Impaler Aseprite_Frame_103
+      frameIndex: 103
+      additiveSortOrder: 0
+      cellRect:
+        x: 54
+        y: 9
+        width: 166
+        height: 130
+      spriteId: ee5e386aab5ea144390906afd489a57a
+    - name: Impaler Aseprite_Frame_104
+      frameIndex: 104
+      additiveSortOrder: 0
+      cellRect:
+        x: 56
+        y: 9
+        width: 179
+        height: 130
+      spriteId: 48c2d4007dbe9d649a93935f249db545
+    - name: Impaler Aseprite_Frame_105
+      frameIndex: 105
+      additiveSortOrder: 0
+      cellRect:
+        x: 81
+        y: -3
+        width: 424
+        height: 141
+      spriteId: 2f1d4b18cf4875447ae63c5ac6c42f15
+    - name: Impaler Aseprite_Frame_106
+      frameIndex: 106
+      additiveSortOrder: 0
+      cellRect:
+        x: 81
+        y: -3
+        width: 424
+        height: 141
+      spriteId: 2da8cb0699dc0e042a9e771a7409d80c
+    - name: Impaler Aseprite_Frame_107
+      frameIndex: 107
+      additiveSortOrder: 0
+      cellRect:
+        x: 81
+        y: -3
+        width: 424
+        height: 141
+      spriteId: c93750940d1a07047b47b8a5df6a8a7e
+    - name: Impaler Aseprite_Frame_108
+      frameIndex: 108
+      additiveSortOrder: 0
+      cellRect:
+        x: 81
+        y: -3
+        width: 424
+        height: 141
+      spriteId: bc043bb4a5396624481dbad3a4dfc64b
+    - name: Impaler Aseprite_Frame_109
+      frameIndex: 109
+      additiveSortOrder: 0
+      cellRect:
+        x: 81
+        y: -3
+        width: 424
+        height: 141
+      spriteId: 607503204730fef4cb303db7a77067c2
+    - name: Impaler Aseprite_Frame_110
+      frameIndex: 110
+      additiveSortOrder: 0
+      cellRect:
+        x: 81
+        y: -3
+        width: 424
+        height: 141
+      spriteId: a780689f41804bd4da5820c91341df01
+    - name: Impaler Aseprite_Frame_111
+      frameIndex: 111
+      additiveSortOrder: 0
+      cellRect:
+        x: 81
+        y: -3
+        width: 424
+        height: 141
+      spriteId: 2ebfb4ac89f363c429a28fc07eada967
+    - name: Impaler Aseprite_Frame_112
+      frameIndex: 112
+      additiveSortOrder: 0
+      cellRect:
+        x: 81
+        y: -3
+        width: 424
+        height: 141
+      spriteId: 190599c100301af49a4d9870b2ad1085
+    - name: Impaler Aseprite_Frame_113
+      frameIndex: 113
+      additiveSortOrder: 0
+      cellRect:
+        x: 81
+        y: -3
+        width: 424
+        height: 141
+      spriteId: 7e79557f7bf2b544da7c2b9b42163e15
+    - name: Impaler Aseprite_Frame_114
+      frameIndex: 114
+      additiveSortOrder: 0
+      cellRect:
+        x: 107
+        y: 12
+        width: 164
+        height: 126
+      spriteId: 7df0e273964bd52439d187bef9bf1384
+    - name: Impaler Aseprite_Frame_115
+      frameIndex: 115
+      additiveSortOrder: 0
+      cellRect:
+        x: 107
+        y: 12
+        width: 164
+        height: 126
+      spriteId: 1d118a16f24d6cf49b17251b1e86cfe0
+    - name: Impaler Aseprite_Frame_116
+      frameIndex: 116
+      additiveSortOrder: 0
+      cellRect:
+        x: 58
+        y: 12
+        width: 230
+        height: 190
+      spriteId: 724d7ddbd5497ce4d95a805f479cb60e
+    - name: Impaler Aseprite_Frame_117
+      frameIndex: 117
+      additiveSortOrder: 0
+      cellRect:
+        x: 58
+        y: 12
+        width: 148
+        height: 164
+      spriteId: 70a7aceaa2309da41b941f1acb42dfc5
+    - name: Impaler Aseprite_Frame_118
+      frameIndex: 118
+      additiveSortOrder: 0
+      cellRect:
+        x: 69
+        y: 12
+        width: 126
+        height: 145
+      spriteId: 324de3afaf33b4441835516dd27b12c0
+    - name: Impaler Aseprite_Frame_119
+      frameIndex: 119
+      additiveSortOrder: 0
+      cellRect:
+        x: 63
+        y: 12
+        width: 143
+        height: 145
+      spriteId: 359fe28e3bf53a545a2a5c88dcf76883
+    - name: Impaler Aseprite_Frame_120
+      frameIndex: 120
+      additiveSortOrder: 0
+      cellRect:
+        x: 71
+        y: 10
+        width: 150
+        height: 147
+      spriteId: fc1b9bd1784db464c9bc47708d930159
+    - name: Impaler Aseprite_Frame_121
+      frameIndex: 121
+      additiveSortOrder: 0
+      cellRect:
+        x: 71
+        y: 10
+        width: 150
+        height: 147
+      spriteId: ceb0d8990e7907747bb2c8b406c3e186
+    - name: Impaler Aseprite_Frame_122
+      frameIndex: 122
+      additiveSortOrder: 0
+      cellRect:
+        x: 71
+        y: 10
+        width: 150
+        height: 151
+      spriteId: a2ef231cad0d8e548a507f9a58ab19e2
+    - name: Impaler Aseprite_Frame_123
+      frameIndex: 123
+      additiveSortOrder: 0
+      cellRect:
+        x: 71
+        y: 10
+        width: 150
+        height: 154
+      spriteId: 3fb051577b429dd47aaa0fb2a7ca298e
+    - name: Impaler Aseprite_Frame_124
+      frameIndex: 124
+      additiveSortOrder: 0
+      cellRect:
+        x: 71
+        y: 10
+        width: 150
+        height: 140
+      spriteId: 85ace4da722c16846b9edd2990b74319
+    - name: Impaler Aseprite_Frame_125
+      frameIndex: 125
+      additiveSortOrder: 0
+      cellRect:
+        x: 71
+        y: 10
+        width: 150
+        height: 140
+      spriteId: a21ee4c979ee17a4ba639d0e19b64343
+    - name: Impaler Aseprite_Frame_126
+      frameIndex: 126
+      additiveSortOrder: 0
+      cellRect:
+        x: 71
+        y: 10
+        width: 148
+        height: 140
+      spriteId: b7cb4c36359061e489153106e5127f5a
+    - name: Impaler Aseprite_Frame_127
+      frameIndex: 127
+      additiveSortOrder: 0
+      cellRect:
+        x: 71
+        y: 9
+        width: 136
+        height: 141
+      spriteId: 7f71ae1f6ca2cfd469a2817620c768e6
+    - name: Impaler Aseprite_Frame_128
+      frameIndex: 128
+      additiveSortOrder: 0
+      cellRect:
+        x: 79
+        y: 9
+        width: 128
+        height: 140
+      spriteId: 76cd1515353fb8a4eaf4e15dd798c4e6
+    - name: Impaler Aseprite_Frame_129
+      frameIndex: 129
+      additiveSortOrder: 0
+      cellRect:
+        x: 79
+        y: 9
+        width: 128
+        height: 140
+      spriteId: f82ab7b67030cc04db9f319092f21587
+    - name: Impaler Aseprite_Frame_143
+      frameIndex: 143
+      additiveSortOrder: 0
+      cellRect:
+        x: 78
+        y: 12
+        width: 103
+        height: 145
+      spriteId: 7ab00969fb682c5479c7646797f75e8d
+    - name: Impaler Aseprite_Frame_144
+      frameIndex: 144
+      additiveSortOrder: 0
+      cellRect:
+        x: 76
+        y: 12
+        width: 139
+        height: 145
+      spriteId: 516b0f255dbfbff4897f1b4a3ed5ed50
+    - name: Impaler Aseprite_Frame_145
+      frameIndex: 145
+      additiveSortOrder: 0
+      cellRect:
+        x: 76
+        y: 12
+        width: 139
+        height: 145
+      spriteId: aa005ab28465abc42a27f239e06d2e8e
+    - name: Impaler Aseprite_Frame_146
+      frameIndex: 146
+      additiveSortOrder: 0
+      cellRect:
+        x: 76
+        y: 12
+        width: 146
+        height: 145
+      spriteId: c2c010f4fe854964a91da57695db9751
+    - name: Impaler Aseprite_Frame_147
+      frameIndex: 147
+      additiveSortOrder: 0
+      cellRect:
+        x: 106
+        y: 11
+        width: 216
+        height: 176
+      spriteId: 995354f5682fd65438f8125e6413eece
+    - name: Impaler Aseprite_Frame_148
+      frameIndex: 148
+      additiveSortOrder: 0
+      cellRect:
+        x: 106
+        y: 11
+        width: 216
+        height: 176
+      spriteId: cd6e9e8c44dd5144f969d54774e97a37
+    - name: Impaler Aseprite_Frame_149
+      frameIndex: 149
+      additiveSortOrder: 0
+      cellRect:
+        x: 106
+        y: 11
+        width: 216
+        height: 176
+      spriteId: 839ff45e210e3ea478c301ed35268f23
+    - name: Impaler Aseprite_Frame_150
+      frameIndex: 150
+      additiveSortOrder: 0
+      cellRect:
+        x: 106
+        y: 11
+        width: 215
+        height: 176
+      spriteId: cff94fce286484c4ea0042eaa46e26fc
+    - name: Impaler Aseprite_Frame_151
+      frameIndex: 151
+      additiveSortOrder: 0
+      cellRect:
+        x: 192
+        y: 14
+        width: 397
+        height: 126
+      spriteId: f2c38cc591a237e4dba6e76b16426175
+    - name: Impaler Aseprite_Frame_152
+      frameIndex: 152
+      additiveSortOrder: 0
+      cellRect:
+        x: 192
+        y: 14
+        width: 397
+        height: 126
+      spriteId: f109a6c026ba4fb48ab26cef9546b4e3
+    - name: Impaler Aseprite_Frame_153
+      frameIndex: 153
+      additiveSortOrder: 0
+      cellRect:
+        x: 192
+        y: 14
+        width: 397
+        height: 126
+      spriteId: 766a148432d93a648a6b21caafb5797a
+    - name: Impaler Aseprite_Frame_154
+      frameIndex: 154
+      additiveSortOrder: 0
+      cellRect:
+        x: 192
+        y: 14
+        width: 397
+        height: 126
+      spriteId: a1b426fd265b6d64a9cd50b4b546e41c
+    - name: Impaler Aseprite_Frame_155
+      frameIndex: 155
+      additiveSortOrder: 0
+      cellRect:
+        x: 256
+        y: 14
+        width: 333
+        height: 126
+      spriteId: d8a33b3b103d5d54b987c534d7b0e72d
+    - name: Impaler Aseprite_Frame_156
+      frameIndex: 156
+      additiveSortOrder: 0
+      cellRect:
+        x: 256
+        y: 14
+        width: 333
+        height: 126
+      spriteId: 34e0cfb071bcbf84a9a1fed0f6c16497
+    - name: Impaler Aseprite_Frame_157
+      frameIndex: 157
+      additiveSortOrder: 0
+      cellRect:
+        x: 256
+        y: 14
+        width: 333
+        height: 126
+      spriteId: 6202cd0decc7d3e458921bc6776d334c
+    - name: Impaler Aseprite_Frame_158
+      frameIndex: 158
+      additiveSortOrder: 0
+      cellRect:
+        x: 256
+        y: 14
+        width: 333
+        height: 126
+      spriteId: 81693e7f7f4a4934ba5872ed14a8df1e
+    - name: Impaler Aseprite_Frame_159
+      frameIndex: 159
+      additiveSortOrder: 0
+      cellRect:
+        x: 52
+        y: 9
+        width: 436
+        height: 141
+      spriteId: e24ea54acba7209468da6ff2f637a2a2
+    - name: Impaler Aseprite_Frame_160
+      frameIndex: 160
+      additiveSortOrder: 0
+      cellRect:
+        x: 52
+        y: 9
+        width: 436
+        height: 141
+      spriteId: 26f9744d602297840903946d1d0614b3
+    - name: Impaler Aseprite_Frame_161
+      frameIndex: 161
+      additiveSortOrder: 0
+      cellRect:
+        x: 52
+        y: 9
+        width: 436
+        height: 141
+      spriteId: b403eb5cb99a70e439abe9dd03d2f8d5
+    - name: Impaler Aseprite_Frame_162
+      frameIndex: 162
+      additiveSortOrder: 0
+      cellRect:
+        x: 52
+        y: 10
+        width: 436
+        height: 140
+      spriteId: ade5597efbeeb654da32eb8b518d2f8d
+    - name: Impaler Aseprite_Frame_163
+      frameIndex: 163
+      additiveSortOrder: 0
+      cellRect:
+        x: 81
+        y: 13
+        width: 378
+        height: 252
+      spriteId: a06af174c3e70354db4ad5c96a53a9f6
+    - name: Impaler Aseprite_Frame_164
+      frameIndex: 164
+      additiveSortOrder: 0
+      cellRect:
+        x: 81
+        y: 13
+        width: 378
+        height: 252
+      spriteId: bd87c028671bdca499dbef446f609529
+    - name: Impaler Aseprite_Frame_165
+      frameIndex: 165
+      additiveSortOrder: 0
+      cellRect:
+        x: 81
+        y: 13
+        width: 378
+        height: 252
+      spriteId: 8caa55236e284d74da025f9cbd260c49
+    - name: Impaler Aseprite_Frame_166
+      frameIndex: 166
+      additiveSortOrder: 0
+      cellRect:
+        x: 81
+        y: 13
+        width: 378
+        height: 248
+      spriteId: 5774e3295df6cb44b92351947f18b2c0
+    - name: Impaler Aseprite_Frame_167
+      frameIndex: 167
+      additiveSortOrder: 0
+      cellRect:
+        x: 81
+        y: 13
+        width: 378
+        height: 248
+      spriteId: 8f2770beefc8c9a47874a5de865f70c8
+    - name: Impaler Aseprite_Frame_168
+      frameIndex: 168
+      additiveSortOrder: 0
+      cellRect:
+        x: 81
+        y: 13
+        width: 378
+        height: 239
+      spriteId: e7ed97fdb5dd0d34a9068642491279e8
+    - name: Impaler Aseprite_Frame_169
+      frameIndex: 169
+      additiveSortOrder: 0
+      cellRect:
+        x: 140
+        y: 13
+        width: 319
+        height: 208
+      spriteId: 1f38560734ead2444a245f1b803d16c2
+    - name: Impaler Aseprite_Frame_170
+      frameIndex: 170
+      additiveSortOrder: 0
+      cellRect:
+        x: 140
+        y: 13
+        width: 319
+        height: 191
+      spriteId: 7ee4b08a5e5f0e240a04fc84d5273164
+    - name: Impaler Aseprite_Frame_171
+      frameIndex: 171
+      additiveSortOrder: 0
+      cellRect:
+        x: 140
+        y: 13
+        width: 309
+        height: 191
+      spriteId: 027ada7c6045d7048ba2b0cb655ed971
+    - name: Impaler Aseprite_Frame_172
+      frameIndex: 172
+      additiveSortOrder: 0
+      cellRect:
+        x: 225
+        y: 12
+        width: 103
+        height: 145
+      spriteId: 9a88515ecb4cbd341980068e928d8a2b
+    - name: Impaler Aseprite_Frame_173
+      frameIndex: 173
+      additiveSortOrder: 0
+      cellRect:
+        x: 111
+        y: 16
+        width: 175
+        height: 126
+      spriteId: 8fe42508adee43741be4181b1696830d
+    - name: Impaler Aseprite_Frame_174
+      frameIndex: 174
+      additiveSortOrder: 0
+      cellRect:
+        x: 32
+        y: 15
+        width: 179
+        height: 125
+      spriteId: c822131e6986fe94b926506525ba2ac1
+    - name: Impaler Aseprite_Frame_130
+      frameIndex: 130
+      additiveSortOrder: 0
+      cellRect:
+        x: 85
+        y: 9
+        width: 122
+        height: 140
+      spriteId: 655eee24f6363474e95339330fe268b7
+    - name: Impaler Aseprite_Frame_131
+      frameIndex: 131
+      additiveSortOrder: 0
+      cellRect:
+        x: 85
+        y: 9
+        width: 122
+        height: 140
+      spriteId: 4098d62e29967c64d932f0f81b1890b6
+    - name: Impaler Aseprite_Frame_132
+      frameIndex: 132
+      additiveSortOrder: 0
+      cellRect:
+        x: 85
+        y: 9
+        width: 122
+        height: 143
+      spriteId: 7d4ede9d6cd731e459ff7bd223c554b8
+    - name: Impaler Aseprite_Frame_133
+      frameIndex: 133
+      additiveSortOrder: 0
+      cellRect:
+        x: 85
+        y: 9
+        width: 122
+        height: 143
+      spriteId: 7fab1523639088f4eb73c55669523a8a
+    - name: Impaler Aseprite_Frame_134
+      frameIndex: 134
+      additiveSortOrder: 0
+      cellRect:
+        x: 80
+        y: 9
+        width: 127
+        height: 154
+      spriteId: 06ec2508b0292264886b2f0f5ac689d1
+    - name: Impaler Aseprite_Frame_135
+      frameIndex: 135
+      additiveSortOrder: 0
+      cellRect:
+        x: 81
+        y: 8
+        width: 126
+        height: 157
+      spriteId: d33797024dfafcf4e9943230afa497d5
+    - name: Impaler Aseprite_Frame_136
+      frameIndex: 136
+      additiveSortOrder: 0
+      cellRect:
+        x: 81
+        y: 8
+        width: 126
+        height: 157
+      spriteId: 1531c9a2eea651a478e222e75cceb090
+    - name: Impaler Aseprite_Frame_137
+      frameIndex: 137
+      additiveSortOrder: 0
+      cellRect:
+        x: 81
+        y: 8
+        width: 126
+        height: 157
+      spriteId: be432df968c49eb4f8158248ff3e785e
+    - name: Impaler Aseprite_Frame_138
+      frameIndex: 138
+      additiveSortOrder: 0
+      cellRect:
+        x: 81
+        y: 8
+        width: 122
+        height: 157
+      spriteId: 335634a0382039b45b529053e8292803
+    - name: Impaler Aseprite_Frame_139
+      frameIndex: 139
+      additiveSortOrder: 0
+      cellRect:
+        x: 81
+        y: 8
+        width: 122
+        height: 157
+      spriteId: b3ecbdadc15e4cf42ba1d20a66a4c48f
+    - name: Impaler Aseprite_Frame_140
+      frameIndex: 140
+      additiveSortOrder: 0
+      cellRect:
+        x: 81
+        y: 8
+        width: 122
+        height: 157
+      spriteId: 7a9d56164ecc2f9429b12ff3d557104b
+    - name: Impaler Aseprite_Frame_141
+      frameIndex: 141
+      additiveSortOrder: 0
+      cellRect:
+        x: 81
+        y: 8
+        width: 122
+        height: 157
+      spriteId: 8bcd494c32f76da4f8c12aef96612d76
+    - name: Impaler Aseprite_Frame_142
+      frameIndex: 142
+      additiveSortOrder: 0
+      cellRect:
+        x: 81
+        y: 8
+        width: 122
+        height: 157
+      spriteId: 9f50a0f4732b41e44ae87c3462e90efc
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 640, y: 265}

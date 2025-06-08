@@ -47,6 +47,8 @@ public class Unit : MonoBehaviour
 
     [SerializeField] private HealthBarSlider healthBarSlider;
 
+    [SerializeField] private SpriteRenderer spriteRenderer;
+
 
     void OnEnable()
     {
@@ -61,8 +63,14 @@ public class Unit : MonoBehaviour
     // Optional: Cache camera if accessed frequently
     // private Camera mainCamera;
 
+    private UnitRangeGeneral rangeGeneral;
+
     void Awake()
     {
+
+        rangeGeneral = GetComponent<UnitRangeGeneral>();
+        // get parent transform
+        spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         healthBarSlider = GetComponentInChildren<HealthBarSlider>();
         // mainCamera = Camera.main; // Example caching
@@ -117,6 +125,12 @@ public class Unit : MonoBehaviour
         if (archer != null)
         {
             archer.Initialize(this);
+        }
+
+        UnitRangeGeneral general = GetComponent<UnitRangeGeneral>();
+        if (general != null)
+        {
+            general.Initialize(this); 
         }
 
         UnitMedic medic = GetComponent<UnitMedic>();
@@ -178,7 +192,7 @@ public class Unit : MonoBehaviour
             if (directionUIInstance != null) Destroy(directionUIInstance);
             PlacementUIManager.Instance?.NotifyDirectionUIHidden();
         }
-        ScanForInitialEnemies();
+        //ScanForInitialEnemies();
     }
 
     // Called externally (e.g., by DirectionSelectionUI) when retreat is chosen
@@ -357,22 +371,22 @@ public class Unit : MonoBehaviour
         }
     }
 
-    void ScanForInitialEnemies()
-    {
-        Vector2 direction = facingRight ? Vector2.right : Vector2.left;
-        Vector2 center = (Vector2)transform.position + direction * unitDataSO.attackOffset.x;
-        float radius = unitDataSO.attackRange;
+    //void ScanForInitialEnemies()
+    //{
+    //    Vector2 direction = facingRight ? Vector2.right : Vector2.left;
+    //    Vector2 center = (Vector2)transform.position + direction * unitDataSO.attackOffset.x;
+    //    float radius = unitDataSO.attackRange;
 
-        Collider2D[] hits = Physics2D.OverlapCircleAll(center, radius);
-        foreach (var hit in hits)
-        {
-            var enemy = hit.GetComponent<EnemyPathFollower>();
-            if (enemy != null)
-            {
-                OnEnemyEnterRange(enemy);
-            }
-        }
-    }
+    //    Collider2D[] hits = Physics2D.OverlapCircleAll(center, radius);
+    //    foreach (var hit in hits)
+    //    {
+    //        var enemy = hit.GetComponent<EnemyPathFollower>();
+    //        if (enemy != null)
+    //        {
+    //            OnEnemyEnterRange(enemy);
+    //        }
+    //    }
+    //}
 
 
 
@@ -456,6 +470,29 @@ public class Unit : MonoBehaviour
         {
             dashUnit.ActivateDashSkill();
         }
+    }
+
+    public void TryActivateBurstSkill()
+    {
+        if (rangeGeneral != null)
+        {
+            rangeGeneral.ActivateBurstSkill();
+        }
+    }
+
+    //Hanle Fllip Unit
+
+    public void SetFacingDirection(Vector2 direction)
+    {
+        if (direction.x > 0)
+        {
+            spriteRenderer.flipX = false; // Face right
+        }
+        else if (direction.x < 0)
+        {
+            spriteRenderer.flipX = true; // Face left
+        }
+
     }
 
 

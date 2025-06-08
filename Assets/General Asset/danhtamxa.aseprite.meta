@@ -1,0 +1,458 @@
+fileFormatVersion: 2
+guid: 4afdb65ecfb5be946a4cc35e92cff337
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: danhtamxa_Frame_0
+    originalName: 
+    pivot: {x: 2.6470587, y: -1.8571428}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 107
+      y: 120
+      width: 17
+      height: 21
+    spriteID: 857117bdd50d85840a96d870b3b22e04
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 107, y: 120}
+  - name: danhtamxa_Frame_7
+    originalName: 
+    pivot: {x: 0.4891304, y: -1.8571428}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 92
+      height: 21
+    spriteID: ef5aa51f0fd836549b4caa73317e11e4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: danhtamxa_Frame_8
+    originalName: 
+    pivot: {x: 0.4891304, y: -1.8571428}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 33
+      width: 92
+      height: 21
+    spriteID: 8190c8a6e3f72864797a6a70b8e11a28
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 33}
+  - name: danhtamxa_Frame_9
+    originalName: 
+    pivot: {x: 0.4891304, y: -1.8571428}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 62
+      width: 92
+      height: 21
+    spriteID: 2ea7bbf1654e7a44ca2e435ab6b30bdd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 62}
+  - name: danhtamxa_Frame_10
+    originalName: 
+    pivot: {x: 0.4891304, y: -1.8571428}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 91
+      width: 92
+      height: 21
+    spriteID: 74c127f699438e84c9cceb638b600347
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 91}
+  - name: danhtamxa_Frame_1
+    originalName: 
+    pivot: {x: 2.6470587, y: -1.7727271}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 149
+      width: 17
+      height: 22
+    spriteID: cdc0f5c2db419584c8896cddfaa7eade
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 149}
+  - name: danhtamxa_Frame_2
+    originalName: 
+    pivot: {x: 2.6470587, y: -1.8571428}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 104
+      y: 33
+      width: 17
+      height: 21
+    spriteID: e000c524ba599aa49a7b01d40c839190
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 104, y: 33}
+  - name: danhtamxa_Frame_3
+    originalName: 
+    pivot: {x: 2.0454545, y: -1.8571428}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 120
+      width: 22
+      height: 21
+    spriteID: d6e5e8dddc6becf45b59f64e45550285
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 48, y: 120}
+  - name: danhtamxa_Frame_4
+    originalName: 
+    pivot: {x: 2.142857, y: -1.9499999}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 78
+      y: 120
+      width: 21
+      height: 20
+    spriteID: a4a96643d7eac76428b5137ddb50258f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 78, y: 120}
+  - name: danhtamxa_Frame_5
+    originalName: 
+    pivot: {x: 2.25, y: -1.9499999}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 104
+      y: 4
+      width: 20
+      height: 20
+    spriteID: c41d77dce64f04248a001104656f8a57
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 104, y: 4}
+  - name: danhtamxa_Frame_6
+    originalName: 
+    pivot: {x: 1.2499999, y: -1.8571428}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 120
+      width: 36
+      height: 21
+    spriteID: cf55155d7dcf93d4d80bd0e10699a941
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 120}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -573181696
+    name: danhtamxa
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: danhtamxa_Frame_0
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 39
+        width: 17
+        height: 21
+      spriteId: 857117bdd50d85840a96d870b3b22e04
+    - name: danhtamxa_Frame_7
+      frameIndex: 7
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 39
+        width: 92
+        height: 21
+      spriteId: ef5aa51f0fd836549b4caa73317e11e4
+    - name: danhtamxa_Frame_8
+      frameIndex: 8
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 39
+        width: 92
+        height: 21
+      spriteId: 8190c8a6e3f72864797a6a70b8e11a28
+    - name: danhtamxa_Frame_9
+      frameIndex: 9
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 39
+        width: 92
+        height: 21
+      spriteId: 2ea7bbf1654e7a44ca2e435ab6b30bdd
+    - name: danhtamxa_Frame_10
+      frameIndex: 10
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 39
+        width: 92
+        height: 21
+      spriteId: 74c127f699438e84c9cceb638b600347
+    - name: danhtamxa_Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 39
+        width: 17
+        height: 22
+      spriteId: cdc0f5c2db419584c8896cddfaa7eade
+    - name: danhtamxa_Frame_2
+      frameIndex: 2
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 39
+        width: 17
+        height: 21
+      spriteId: e000c524ba599aa49a7b01d40c839190
+    - name: danhtamxa_Frame_3
+      frameIndex: 3
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 39
+        width: 22
+        height: 21
+      spriteId: d6e5e8dddc6becf45b59f64e45550285
+    - name: danhtamxa_Frame_4
+      frameIndex: 4
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 39
+        width: 21
+        height: 20
+      spriteId: a4a96643d7eac76428b5137ddb50258f
+    - name: danhtamxa_Frame_5
+      frameIndex: 5
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 39
+        width: 20
+        height: 20
+      spriteId: c41d77dce64f04248a001104656f8a57
+    - name: danhtamxa_Frame_6
+      frameIndex: 6
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 39
+        width: 36
+        height: 21
+      spriteId: cf55155d7dcf93d4d80bd0e10699a941
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 100, y: 100}

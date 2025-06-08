@@ -34,7 +34,7 @@ public class TrailAttackState : MeleeAttackState
         {
             entity.DealDamageToUnit();
             TriggerTrailEffect();
-            attackCounter = 0;
+            attackCounter = 0;  
         }
     }
 

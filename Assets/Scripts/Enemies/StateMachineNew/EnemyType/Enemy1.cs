@@ -25,9 +25,10 @@ public class Enemy1 : Entity
         this.enemyDataSO = enemyData;
         moveState = new E1_MoveState(this, stateMachine, "isWalking", enemyData, this);
         idleState = new E1_IdleState(this, stateMachine, "isIdle", enemyData, this);
-        melleAttackState = new E1_MelleAttackState(this, stateMachine, "isAttacking", attackPosition,enemyData, this);
+        melleAttackState = new MeleeAttackState(this, stateMachine, "isAttacking", attackPosition,enemyData);
         stuntState = new E1_StuntState(this, stateMachine, "isStunned", enemyData, this);
         deadState = new E1_DeadState(this, stateMachine, "isDead", enemyData, this);
+       
 
         stateMachine.Initialize(moveState);
     }
