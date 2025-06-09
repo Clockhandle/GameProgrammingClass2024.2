@@ -20,7 +20,7 @@ public class NewReviveState : State
         base.Enter();
         entity.Move(false);
         entity.anim.SetTrigger(reviveTrigger);
-
+        entity.ResetHealth(revivedData.maxHealth);
 
         entity.StartCoroutine(ReviveCoroutine());
     }
@@ -32,7 +32,6 @@ public class NewReviveState : State
         // Boost stats and change animator
         entity.enemyDataSO = revivedData;
         entity.anim.runtimeAnimatorController = revivedAnimator;
-        entity.ResetHealth(revivedData.maxHealth);
 
         entity.Move(true);
 

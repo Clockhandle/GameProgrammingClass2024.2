@@ -79,8 +79,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 72de0c64f2c6a498096698322c976a67, type: 3}
-  m_Color: {r: 1, g: 0.8235294, b: 0, a: 1}
+  m_Sprite: {fileID: -2259415870146327407, guid: f183ac2b7e3cff54385f280e894bfd1b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -152,6 +152,7 @@ MonoBehaviour:
   alliesInRangeList: []
   healthBarSlider: {fileID: 0}
   spriteRenderer: {fileID: 0}
+  deathEffectPrefab: {fileID: 1186306346101992253, guid: 9509f32f4dade9f42a15fddb9851aba9, type: 3}
   enemiesInRangeList: []
   isDead: 0
 --- !u!50 &-3761565570831759160
@@ -349,7 +350,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.54}
+  m_AnchoredPosition: {x: 0, y: 0.9}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7024891584550612196
@@ -451,8 +452,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000038147, y: 5.33}
-  m_SizeDelta: {x: 100, y: 42.61}
+  m_AnchoredPosition: {x: -0.0000038147, y: 8.17}
+  m_SizeDelta: {x: 100, y: 48.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3816377607712378292
 MonoBehaviour:
@@ -559,7 +560,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4079770647500958882}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1

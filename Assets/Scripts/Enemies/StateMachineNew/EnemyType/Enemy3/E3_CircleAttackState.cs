@@ -39,6 +39,18 @@ public class E3_CircleAttackState : MeleeAttackState
                 circleAttackCount = 0;
                 stateMachine.ChangeState(enemy3.pierceAttackState);
             }
+            else if (enemy3.shouldEnterMovingImpale && !enemy3.hasPierceTriggered)
+            {
+                enemy3.hasPierceTriggered = true;
+                enemy3.shouldEnterMovingImpale = false;
+                stateMachine.ChangeState(enemy3.movingImpale);
+            }
+            else if (enemy3.shouldEnterFinalAttack && !enemy3.isFinalAttackActive)
+            {
+                enemy3.isFinalAttackActive = true;
+                enemy3.shouldEnterFinalAttack = false;
+                stateMachine.ChangeState(enemy3.finalAttackState);
+            }
             else
             {
                 stateMachine.ChangeState(enemy3.moveState);

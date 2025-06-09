@@ -19,6 +19,7 @@ public class DirectionControlUI : MonoBehaviour
     [SerializeField] private Button buffskillButton;
     [SerializeField] private Button dashskillButton;
     [SerializeField] private Button arrowskillButton;
+    [SerializeField] private Button chargeskillButton;
 
 
     [Tooltip("Assign the child 'DirectionHandle' Image GameObject")]
@@ -51,6 +52,7 @@ public class DirectionControlUI : MonoBehaviour
     Slider buffCooldownSlider;
     Slider dashCooldownSlider;
     Slider arrowCooldownSlider;
+    Slider chargeCooldownSlider;
 
     // Handle the flip 
 
@@ -110,6 +112,9 @@ public class DirectionControlUI : MonoBehaviour
 
         arrowCooldownSlider = GameObject.Find("ArrowSkillSlider")?.GetComponent<Slider>();
         arrowskillButton.interactable = true;
+
+        chargeCooldownSlider = GameObject.Find("ChargeSkillSlider")?.GetComponent<Slider>();
+        chargeskillButton.interactable = true;
 
         //buff skill button active
         if (buffskillButton != null)
@@ -180,6 +185,29 @@ public class DirectionControlUI : MonoBehaviour
 
             arrowskillButton.gameObject.SetActive(targetUnit.GetComponent<UnitRangeGeneral>() != null);
         }
+
+        if (chargeskillButton != null)
+        {
+            chargeskillButton.onClick.RemoveAllListeners();
+            chargeskillButton.onClick.AddListener(() => {
+
+                targetUnit.TryActivateChargeSkill();
+                chargeskillButton.interactable = false;
+
+                if (chargeCooldownSlider != null)
+                {
+                    SkillCooldownUI cooldownUI = chargeCooldownSlider.GetComponent<SkillCooldownUI>();
+
+                    cooldownUI.StartCoolDown(8f);
+                    SkillCooldownManager.Instance.StartCooldown(chargeskillButton, 8f);
+                }
+
+            });
+
+
+            chargeskillButton.gameObject.SetActive(targetUnit is ChargeGeneralUnit);
+        }
+
 
 
     }

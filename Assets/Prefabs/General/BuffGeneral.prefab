@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9123585895109999541}
   - component: {fileID: -4874563758727729371}
   m_Layer: 8
-  m_Name: Infantry
+  m_Name: BuffGeneral
   m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

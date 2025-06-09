@@ -49,6 +49,8 @@ public class Unit : MonoBehaviour
 
     [SerializeField] private SpriteRenderer spriteRenderer;
 
+    [SerializeField] private GameObject deathEffectPrefab;
+
 
     void OnEnable()
     {
@@ -288,7 +290,7 @@ public class Unit : MonoBehaviour
 
     //enemy in range
     public List<EnemyPathFollower> enemiesInRangeList = new List<EnemyPathFollower>();
-    private EnemyPathFollower CurrentTarget => enemiesInRangeList.Count > 0 ? enemiesInRangeList[0] : null;
+    protected EnemyPathFollower CurrentTarget => enemiesInRangeList.Count > 0 ? enemiesInRangeList[0] : null;
 
 
     public void OnEnemyEnterRange(EnemyPathFollower enemy)
@@ -442,8 +444,30 @@ public class Unit : MonoBehaviour
     private void Die()
     {
         // Add any cleanup logic here (e.g., notify managers, play animation)
-        Destroy(gameObject);
+        if (isDead) return;
+        isDead = true;
+
+        StopAllCoroutines();
+        if (animator != null)
+        {
+            animator.SetTrigger("Die");
+        }
+
+        GameObject effect =  Instantiate(deathEffectPrefab, transform.position, Quaternion.identity);
+        Destroy(effect, 2f);
+
+        StartCoroutine(DestroyAfterDeathAnimation());
     }
+
+    private IEnumerator DestroyAfterDeathAnimation()
+    {
+
+        yield return new WaitForSeconds(2f); // Wait for animation to finish
+        Destroy(gameObject);
+      
+    }
+
+
 
     private void CleanEnemyList()
     {
@@ -472,6 +496,15 @@ public class Unit : MonoBehaviour
         }
     }
 
+    public void TryActivateChargeSkill()
+    {
+        if (this is ChargeGeneralUnit chargeUnit)
+        {
+            chargeUnit.ActiveChargeSkill();
+        }
+    }
+
+    //Skill Shoot for range general
     public void TryActivateBurstSkill()
     {
         if (rangeGeneral != null)
@@ -479,6 +512,8 @@ public class Unit : MonoBehaviour
             rangeGeneral.ActivateBurstSkill();
         }
     }
+
+   
 
     //Hanle Fllip Unit
 

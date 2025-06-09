@@ -28,7 +28,23 @@ public class E3_PierceAttackState : AttackState
 
         if (isAnimationFinish)
         {
-            stateMachine.ChangeState(enemy3.moveState);
+            if (enemy3.shouldEnterMovingImpale && !enemy3.hasPierceTriggered)
+            {
+                enemy3.hasPierceTriggered = true;
+                enemy3.shouldEnterMovingImpale = false;
+                stateMachine.ChangeState(enemy3.movingImpale);
+            }
+            else if (enemy3.shouldEnterFinalAttack && !enemy3.isFinalAttackActive)
+            {
+                enemy3.isFinalAttackActive = true;
+                enemy3.shouldEnterFinalAttack = false;
+                stateMachine.ChangeState(enemy3.finalAttackState);
+            }
+            else
+            {
+                // Normal state transition logic
+                stateMachine.ChangeState(enemy3.moveState);
+            }
         }
     }
 
@@ -46,7 +62,7 @@ public class E3_PierceAttackState : AttackState
             {
                 if (pierceHitCount == 3 && unitHit)
                 {
-                    enemy3.Heal(50); 
+                    enemy3.Heal(30); 
                 }
             });
         }

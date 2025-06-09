@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -9028975666853131219}
   - component: {fileID: 4502155262712278511}
   - component: {fileID: -14340549050029725}
+  - component: {fileID: -4369318577165094234}
   m_Layer: 10
   m_Name: HorseRideEnemy
   m_TagString: Enemy
@@ -217,8 +218,25 @@ MonoBehaviour:
   healthBarSlider: {fileID: 0}
   enemyData: {fileID: 11400000, guid: c205ed18a88348e4faec8941ccbaa466, type: 2}
   attackPosition: {fileID: 2765756971844068585}
+  hasRevived: 0
   normalController: {fileID: 9100000, guid: e0c7f0068816eae428cd29b2ee2b5dca, type: 2}
   revivedController: {fileID: 9100000, guid: cf5b22398346a94428e69bf9e936cc95, type: 2}
+--- !u!114 &-4369318577165094234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2308237452221420818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8715802b88dbf9a4ca2e9bcb405c11b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentDirection: 0
+  attackType: 0
+  firePoint: {fileID: 0}
+  offsetValue: 1
 --- !u!1 &5483641067244260045
 GameObject:
   m_ObjectHideFlags: 0

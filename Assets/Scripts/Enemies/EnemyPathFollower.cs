@@ -106,6 +106,10 @@ public class EnemyPathFollower : MonoBehaviour
             if (waitTimer >= checkpoint.waitTime)
             {
                 // Debug.Log($"{gameObject.name}: Finished waiting at checkpoint {currentCheckpoint}, moving to next.");
+                if (path is EnemyPath runtimePath)
+                {
+                    runtimePath.OnReachCheckpoint(currentCheckpoint);
+                }
                 currentCheckpoint++;
                 waitTimer = 0f;
             }

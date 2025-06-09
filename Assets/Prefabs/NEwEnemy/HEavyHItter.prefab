@@ -231,6 +231,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentDirection: 3
+  attackType: 0
+  firePoint: {fileID: 0}
+  offsetValue: 1
 --- !u!1 &5483641067244260045
 GameObject:
   m_ObjectHideFlags: 0

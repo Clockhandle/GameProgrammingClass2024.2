@@ -16,43 +16,21 @@ public class EnemyDirectionHandler : MonoBehaviour
     public float offsetValue = 1f;
 
     private CapsuleCollider2D capsuleCollider;
-    private Vector2 lastPosition;
+   
 
     void Start()
     {
         capsuleCollider = GetComponent<CapsuleCollider2D>();
-        lastPosition = transform.position;
+        UpdateBasedOnAttackType();
     }
 
     void Update()
     {
-        Vector2 currentPosition = transform.position;
-        Vector2 moveDir = (currentPosition - lastPosition).normalized;
-
-        // Only update direction if movement is significant
-        if ((currentPosition - lastPosition).sqrMagnitude > 0.001f) //prevent error when stand stil
-        {
-            UpdateFacingDirection(moveDir);
-        }
-
-        lastPosition = currentPosition;  
+       
     }
 
-    void UpdateFacingDirection(Vector2 dir)
-    {
-        if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y))
-        {
-            currentDirection = dir.x > 0 ? FacingDirection.Right : FacingDirection.Left;
-        }
-        else
-        {
-            currentDirection = dir.y > 0 ? FacingDirection.Up : FacingDirection.Down;
-        }
 
-        UpdateBasedOnAttackType();
-    }
-
-    void UpdateBasedOnAttackType()
+    public void UpdateBasedOnAttackType()
     {
         if (attackType == AttackType.Melee)
         {
@@ -70,11 +48,18 @@ public class EnemyDirectionHandler : MonoBehaviour
         {
             case FacingDirection.Up:
             case FacingDirection.Down:
-                capsuleCollider.direction = CapsuleDirection2D.Vertical;
+                if(capsuleCollider= null)
+                {
+                    capsuleCollider.direction = CapsuleDirection2D.Vertical;
+                }
+                
                 break;
             case FacingDirection.Left:
             case FacingDirection.Right:
-                capsuleCollider.direction = CapsuleDirection2D.Horizontal;
+                if (capsuleCollider = null)
+                {
+                    capsuleCollider.direction = CapsuleDirection2D.Horizontal;
+                }
                 break;
         }
     }
