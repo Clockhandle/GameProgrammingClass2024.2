@@ -197,7 +197,7 @@ MonoBehaviour:
   rangeComponent: {fileID: 6541917139019676588}
   rangeWidthTiles: 2
   rangeHeightTiles: 1
-  tileSize: 0.5
+  tileSize: 1
   alliesInRangeList: []
   healthBarSlider: {fileID: 0}
   spriteRenderer: {fileID: 0}
@@ -506,7 +506,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1, y: 0}
+  m_Offset: {x: 0.5, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0.5}

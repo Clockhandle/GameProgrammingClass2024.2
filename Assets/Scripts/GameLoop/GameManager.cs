@@ -49,6 +49,14 @@ public class GameManager : MonoBehaviour
 
         UpdateHealthUI();
         UpdateEnemyCountUI();
+
+        LevelData currentLevelData = ProgressManager.Instance.selectedLevel;
+
+        if (currentLevelData != null && currentLevelData.levelMusic != null)
+        {
+            SoundManager.Instance.ChangeMusic(currentLevelData.levelMusic);
+        }
+
     }
 
     public void SetTotalEnemiesToDefeat(int total)

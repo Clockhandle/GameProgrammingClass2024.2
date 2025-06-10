@@ -4,10 +4,13 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public List<LevelData> levels;
-
+    public AudioClip lobbyMusic;
     void Start()
     {
         ApplySavedProgress();
+
+        //Will change later
+        SoundManager.Instance.ChangeMusic(lobbyMusic);
     }
 
     private void ApplySavedProgress()

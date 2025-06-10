@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c583a4970bbd6147b697bdebadf1455, type: 3}
+  m_Name: Level 3
+  m_EditorClassIdentifier: 
+  levelName: Level 3
+  sceneToLoad: Level 3
+  levelDescription: BOMBADINI GUISINI
+  levelIcon: {fileID: 21300000, guid: 11e7d8eb7afdaeb4295f2a70486be458, type: 3}
+  isUnlocked: 1
+  levelMusic: {fileID: 8300000, guid: 2829162347d8bfb459e102fc2fc72fcf, type: 3}
