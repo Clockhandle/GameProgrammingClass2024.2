@@ -35,6 +35,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 4492632363476768017}
   - {fileID: 1318486336708193425}
   - {fileID: 6569520006447805082}
   - {fileID: 4604032885493801625}
@@ -202,6 +203,9 @@ MonoBehaviour:
   alliesInRangeList: []
   healthBarSlider: {fileID: 0}
   spriteRenderer: {fileID: 0}
+  deathEffectPrefab: {fileID: 0}
+  deploymentEffectPrefab: {fileID: 8347227506616243112, guid: acec1cd9ec9be034db96e710fe3cb448, type: 3}
+  deploymentEffectSpawnPoint: {fileID: 4492632363476768017}
   enemiesInRangeList: []
   isDead: 0
 --- !u!114 &3615240613933502285
@@ -1075,3 +1079,34 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &8284542875180261279
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4492632363476768017}
+  m_Layer: 8
+  m_Name: DepolyMentEffectPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4492632363476768017
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8284542875180261279}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.23, y: -1.45, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5218450643856030122}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
