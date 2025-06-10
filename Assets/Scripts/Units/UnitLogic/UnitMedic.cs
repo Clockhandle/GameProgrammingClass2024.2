@@ -5,7 +5,7 @@ using UnityEngine;
 public class UnitMedic : MonoBehaviour
 {
     [Header("Setup")]
-    private Transform healSpawnPoint;
+    [SerializeField] Transform healSpawnPoint;
     [SerializeField] private GameObject healEffectPrefab;
 
     private Unit unit;
@@ -13,7 +13,7 @@ public class UnitMedic : MonoBehaviour
     public void Initialize(Unit unit)
     {
         this.unit = unit;
-        healSpawnPoint = this.transform;
+       
 
         if (healEffectPrefab == null && unit.HealEffectPrefab != null)
             healEffectPrefab = unit.HealEffectPrefab;

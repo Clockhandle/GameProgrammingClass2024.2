@@ -5,7 +5,17 @@ using UnityEngine;
 public class Enemy3 : Entity
 {
 
-    private bool hasPierceTriggered = false;
+    //Handle Final Attack
+    public bool isInvincible = false;
+
+    public bool isFinalAttackActive = false;
+
+    public bool shouldEnterFinalAttack = false;
+
+    //Handle Moving Priecing
+    public bool shouldEnterMovingImpale = false;
+
+   public bool hasPierceTriggered = false;
 
     public bool hasRevived = false;
     public E3_IdleState idleState { get; private set; }
@@ -23,8 +33,9 @@ public class Enemy3 : Entity
 
       public E3_PierceAttackState pierceAttackState { get; protected set; }   
 
-    //   public E3_MovingImpale movingImpale { get; protected set; }
+       public E3_MovingImpale movingImpale { get; protected set; }
 
+    public E3_FinalAttack finalAttackState { get; protected set; }
 
 
     [SerializeField] protected EnemyDataSO enemyData;
@@ -44,6 +55,7 @@ public class Enemy3 : Entity
     public Collider2D revivedCollider;
     public GameObject aoePrefab;
     public GameObject piercePrefab;
+    public GameObject movingpiercePrefab;
 
     public override void Start()
     {
@@ -57,6 +69,8 @@ public class Enemy3 : Entity
         reviveState = new E3_ReviveState(this, stateMachine, "isRevive", revivedDataSO, revivedAnimator, this);
         circleAttackState = new E3_CircleAttackState(this, stateMachine, "isCircleAttacking", attackPosition, enemyDataSO, aoePrefab, this);
         pierceAttackState = new E3_PierceAttackState(this, stateMachine, "isPiercing", priecePosition, piercePrefab, this);
+        movingImpale = new E3_MovingImpale(this, stateMachine, "isMovePriecing", attackPosition, enemyDataSO,movingpiercePrefab ,this);
+        finalAttackState = new E3_FinalAttack(this, stateMachine, "isFinalAttack", attackPosition, enemyDataSO, movingpiercePrefab, this);
 
 
         stateMachine.Initialize(moveState);
@@ -84,22 +98,12 @@ public class Enemy3 : Entity
 
     public override void TakeDamage(int amount)
     {
+        if (isInvincible) return;
+
         base.TakeDamage(amount);
         if (isDead)
         {
             stateMachine.ChangeState(deadState);
-        }
-    }
-
-    public override void Update()
-    {
-        if (!hasPierceTriggered && currentHealth <= enemyDataSO.maxHealth * 0.3f)
-        {
-            if (DetectTargetInPierceRange())
-            {
-                hasPierceTriggered = true;
-               // stateMachine.ChangeState(movingPierceState);
-            }
         }
     }
 
@@ -109,5 +113,25 @@ public class Enemy3 : Entity
         RaycastHit2D hit = Physics2D.BoxCast(transform.position, boxSize, 0, transform.right, 0, LayerMask.GetMask("Unit"));
         return hit.collider != null;
     }
+
+    public override void Update()
+    {
+        base.Update();
+        if (hasRevived && !hasPierceTriggered && currentHealth <= enemyDataSO.maxHealth * 0.3f)
+        {
+            if (DetectTargetInPierceRange())
+            {
+                shouldEnterMovingImpale = true;
+            }
+        }
+
+        if (hasRevived && !isFinalAttackActive && currentHealth <= 10)
+        {
+            shouldEnterFinalAttack = true;
+          
+        }
+    }
+
+   
 
 }

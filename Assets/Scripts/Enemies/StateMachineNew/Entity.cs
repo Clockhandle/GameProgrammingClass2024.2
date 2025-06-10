@@ -50,6 +50,8 @@ public class Entity : MonoBehaviour
         stateMachine.currentState.LogicUpdate();
 
         healthBarSlider.UpdateHealth(currentHealth, this.enemyDataSO.maxHealth);
+
+        FlipBasedOnDirection();
     }
 
     public virtual void Move(bool canMove)
@@ -150,6 +152,25 @@ public class Entity : MonoBehaviour
         facingDir *= -1;
         transform.Rotate(0f, 180f, 0f);
     }
+
+    public void FlipBasedOnDirection()
+    {
+        var dirHandler = GetComponent<EnemyDirectionHandler>();
+        if (dirHandler == null) return;
+
+        if (dirHandler.currentDirection == EnemyDirectionHandler.FacingDirection.Right)
+        {
+            // Face right (flip by rotating Y)
+            transform.rotation = Quaternion.Euler(0, 180f, 0);
+        }
+        if (dirHandler.currentDirection == EnemyDirectionHandler.FacingDirection.Left)
+        {
+            // Face right (flip by rotating Y)
+            transform.rotation = Quaternion.Euler(0, 0f, 0);
+        }
+
+    }
+
 
     public void ResetHealth(int newMaxHealth)
     {

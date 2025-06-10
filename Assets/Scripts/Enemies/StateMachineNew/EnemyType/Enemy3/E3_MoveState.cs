@@ -30,6 +30,12 @@ public class E3_MoveState : MoveState
             return;
         }
 
+        if (enemy3.shouldEnterFinalAttack && !enemy3.isFinalAttackActive)
+        {
+            enemy3.isFinalAttackActive = true;
+            enemy3.shouldEnterFinalAttack = false;
+            stateMachine.ChangeState(enemy3.finalAttackState);
+        }
 
 
         if (isDetectUnit)

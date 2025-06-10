@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 16
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 638851114922134826
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -143,7 +143,7 @@ ScriptedImporter:
     uvTransform: {x: 235, y: 4}
   - name: smallsoldier (1)_Frame_21
     originalName: 
-    pivot: {x: 0.47368422, y: -1.3793104}
+    pivot: {x: 0.55, y: 0.4}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -163,7 +163,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 65}
   - name: smallsoldier (1)_Frame_22
     originalName: 
-    pivot: {x: 0.38888884, y: -1.4285715}
+    pivot: {x: 0.55, y: 0.4}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -183,7 +183,7 @@ ScriptedImporter:
     uvTransform: {x: 86, y: 65}
   - name: smallsoldier (1)_Frame_23
     originalName: 
-    pivot: {x: 0.28571433, y: -1.6666666}
+    pivot: {x: 0.33297253, y: 0.3527018}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -203,7 +203,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 33}
   - name: smallsoldier (1)_Frame_41
     originalName: 
-    pivot: {x: 0.31250006, y: -2.3529413}
+    pivot: {x: 0.55, y: 0.4}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -223,7 +223,7 @@ ScriptedImporter:
     uvTransform: {x: 184, y: 132}
   - name: smallsoldier (1)_Frame_42
     originalName: 
-    pivot: {x: 0.18181814, y: -3.0769231}
+    pivot: {x: 0.55, y: 0.4}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -243,7 +243,7 @@ ScriptedImporter:
     uvTransform: {x: 154, y: 132}
   - name: smallsoldier (1)_Frame_1
     originalName: 
-    pivot: {x: 0.5294118, y: -1.9047619}
+    pivot: {x: 0.55, y: 0.4}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -263,7 +263,7 @@ ScriptedImporter:
     uvTransform: {x: 29, y: 102}
   - name: smallsoldier (1)_Frame_2
     originalName: 
-    pivot: {x: 0.5294118, y: -1.8181819}
+    pivot: {x: 0.55, y: 0.4}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -283,7 +283,7 @@ ScriptedImporter:
     uvTransform: {x: 144, y: 33}
   - name: smallsoldier (1)_Frame_3
     originalName: 
-    pivot: {x: 0.5294118, y: -1.8181819}
+    pivot: {x: 0.55, y: 0.4}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -303,7 +303,7 @@ ScriptedImporter:
     uvTransform: {x: 169, y: 33}
   - name: smallsoldier (1)_Frame_4
     originalName: 
-    pivot: {x: 0.5294118, y: -1.9047619}
+    pivot: {x: 0.55, y: 0.4}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -323,7 +323,7 @@ ScriptedImporter:
     uvTransform: {x: 54, y: 102}
   - name: smallsoldier (1)_Frame_5
     originalName: 
-    pivot: {x: 0.5294118, y: -1.9047619}
+    pivot: {x: 0.55, y: 0.4}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -343,7 +343,7 @@ ScriptedImporter:
     uvTransform: {x: 79, y: 102}
   - name: smallsoldier (1)_Frame_6
     originalName: 
-    pivot: {x: 0.5294118, y: -1.9047619}
+    pivot: {x: 0.55, y: 0.4}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -363,7 +363,7 @@ ScriptedImporter:
     uvTransform: {x: 104, y: 102}
   - name: smallsoldier (1)_Frame_7
     originalName: 
-    pivot: {x: 0.5294118, y: -1.8181819}
+    pivot: {x: 0.55, y: 0.4}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -383,7 +383,7 @@ ScriptedImporter:
     uvTransform: {x: 194, y: 33}
   - name: smallsoldier (1)_Frame_8
     originalName: 
-    pivot: {x: 0.5294118, y: -1.9047619}
+    pivot: {x: 0.55, y: 0.4}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -423,7 +423,7 @@ ScriptedImporter:
     uvTransform: {x: 79, y: 132}
   - name: smallsoldier (1)_Frame_10
     originalName: 
-    pivot: {x: 0.5294118, y: -1.9047619}
+    pivot: {x: 0.55, y: 0.4}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -443,7 +443,7 @@ ScriptedImporter:
     uvTransform: {x: 154, y: 102}
   - name: smallsoldier (1)_Frame_11
     originalName: 
-    pivot: {x: 0.5294118, y: -1.8181819}
+    pivot: {x: 0.55, y: 0.4}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -463,7 +463,7 @@ ScriptedImporter:
     uvTransform: {x: 219, y: 33}
   - name: smallsoldier (1)_Frame_12
     originalName: 
-    pivot: {x: 0.5294118, y: -1.9047619}
+    pivot: {x: 0.55, y: 0.4}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -483,7 +483,7 @@ ScriptedImporter:
     uvTransform: {x: 179, y: 102}
   - name: smallsoldier (1)_Frame_13
     originalName: 
-    pivot: {x: 0.5294118, y: -2}
+    pivot: {x: 0.55, y: 0.4}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -503,7 +503,7 @@ ScriptedImporter:
     uvTransform: {x: 104, y: 132}
   - name: smallsoldier (1)_Frame_14
     originalName: 
-    pivot: {x: 0.5294118, y: -1.9047619}
+    pivot: {x: 0.55, y: 0.4}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -523,7 +523,7 @@ ScriptedImporter:
     uvTransform: {x: 204, y: 102}
   - name: smallsoldier (1)_Frame_15
     originalName: 
-    pivot: {x: 0.47368422, y: -1.4814814}
+    pivot: {x: 0.55, y: 0.4}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -543,7 +543,7 @@ ScriptedImporter:
     uvTransform: {x: 59, y: 65}
   - name: smallsoldier (1)_Frame_16
     originalName: 
-    pivot: {x: 0.45000002, y: -1.5384616}
+    pivot: {x: 0.55, y: 0.4}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -563,7 +563,7 @@ ScriptedImporter:
     uvTransform: {x: 31, y: 65}
   - name: smallsoldier (1)_Frame_17
     originalName: 
-    pivot: {x: 0.41176465, y: -2}
+    pivot: {x: 0.45959258, y: 0.36584553}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -583,7 +583,7 @@ ScriptedImporter:
     uvTransform: {x: 48, y: 4}
   - name: smallsoldier (1)_Frame_18
     originalName: 
-    pivot: {x: 0.41176465, y: -2}
+    pivot: {x: 0.4720358, y: 0.35661396}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -623,7 +623,7 @@ ScriptedImporter:
     uvTransform: {x: 142, y: 65}
   - name: smallsoldier (1)_Frame_20
     originalName: 
-    pivot: {x: 0.5294118, y: -1.9047619}
+    pivot: {x: 0.55, y: 0.4}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -643,7 +643,7 @@ ScriptedImporter:
     uvTransform: {x: 229, y: 102}
   - name: smallsoldier (1)_Frame_24
     originalName: 
-    pivot: {x: 0.28571433, y: -2.222222}
+    pivot: {x: 0.3710981, y: 0.35828903}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -663,7 +663,7 @@ ScriptedImporter:
     uvTransform: {x: 168, y: 4}
   - name: smallsoldier (1)_Frame_25
     originalName: 
-    pivot: {x: 0.28571433, y: -2.1052632}
+    pivot: {x: 0.3426372, y: 0.39999986}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -683,7 +683,7 @@ ScriptedImporter:
     uvTransform: {x: 132, y: 4}
   - name: smallsoldier (1)_Frame_26
     originalName: 
-    pivot: {x: 0.47368422, y: -1.9047619}
+    pivot: {x: 0.4950417, y: 0.3753455}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -703,7 +703,7 @@ ScriptedImporter:
     uvTransform: {x: 229, y: 65}
   - name: smallsoldier (1)_Frame_27
     originalName: 
-    pivot: {x: 0.5294118, y: -1.9047619}
+    pivot: {x: 0.56233233, y: 0.37271845}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -723,7 +723,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 132}
   - name: smallsoldier (1)_Frame_28
     originalName: 
-    pivot: {x: 0.5294118, y: -1.8181819}
+    pivot: {x: 0.55, y: 0.37}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -743,7 +743,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 102}
   - name: smallsoldier (1)_Frame_29
     originalName: 
-    pivot: {x: 0.5294118, y: -1.9047619}
+    pivot: {x: 0.55, y: 0.37}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -763,7 +763,7 @@ ScriptedImporter:
     uvTransform: {x: 29, y: 132}
   - name: smallsoldier (1)_Frame_30
     originalName: 
-    pivot: {x: 0.40909094, y: -1.9047619}
+    pivot: {x: 0.4946667, y: 0.3700002}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -783,7 +783,7 @@ ScriptedImporter:
     uvTransform: {x: 112, y: 65}
   - name: smallsoldier (1)_Frame_31
     originalName: 
-    pivot: {x: 0.42857143, y: -2}
+    pivot: {x: 0.45338657, y: 0.3902893}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -803,7 +803,7 @@ ScriptedImporter:
     uvTransform: {x: 172, y: 65}
   - name: smallsoldier (1)_Frame_32
     originalName: 
-    pivot: {x: 0.45000002, y: -2}
+    pivot: {x: 0.47028962, y: 0.39411277}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -823,7 +823,7 @@ ScriptedImporter:
     uvTransform: {x: 201, y: 65}
   - name: smallsoldier (1)_Frame_33
     originalName: 
-    pivot: {x: 0.25, y: -1.9047619}
+    pivot: {x: 0.29508683, y: 0.34687227}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -843,7 +843,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: smallsoldier (1)_Frame_34
     originalName: 
-    pivot: {x: 0.39130434, y: -1.9047619}
+    pivot: {x: 0.4265913, y: 0.38203073}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -963,7 +963,7 @@ ScriptedImporter:
     uvTransform: {x: 54, y: 132}
   - name: smallsoldier (1)_Frame_40
     originalName: 
-    pivot: {x: 0.5294118, y: -2.1052632}
+    pivot: {x: 0.56959265, y: 0.39335874}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -1379,7 +1379,55 @@ ScriptedImporter:
       spriteId: e6e3e6d7c58dcba4e9090a094a2b9012
     linkedCells: []
     parentIndex: -1
-  platformSettings: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 

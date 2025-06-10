@@ -252,6 +252,7 @@ GameObject:
   - component: {fileID: 3083861979221308148}
   - component: {fileID: -8185281809536441311}
   - component: {fileID: -4597100888587458789}
+  - component: {fileID: -6072977305336193189}
   m_Layer: 10
   m_Name: ArcherENemy
   m_TagString: Enemy
@@ -455,6 +456,22 @@ MonoBehaviour:
   enemyData: {fileID: 11400000, guid: fce2235afb039df40b4f4056eb451730, type: 2}
   firePoint: {fileID: 7021507493388979477}
   projectilePrefab: {fileID: 1563203788659945797, guid: 461536ae16771d74dbbbd5b584b6fe31, type: 3}
+--- !u!114 &-6072977305336193189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2308237452221420818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8715802b88dbf9a4ca2e9bcb405c11b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentDirection: 0
+  attackType: 1
+  firePoint: {fileID: 0}
+  offsetValue: 1
 --- !u!1 &3347051165903270073
 GameObject:
   m_ObjectHideFlags: 0
