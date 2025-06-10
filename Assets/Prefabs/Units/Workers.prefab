@@ -149,7 +149,7 @@ MonoBehaviour:
   rangeComponent: {fileID: 7252601647902930089}
   rangeWidthTiles: 2
   rangeHeightTiles: 1
-  tileSize: 0.5
+  tileSize: 1
   alliesInRangeList: []
   healthBarSlider: {fileID: 0}
   spriteRenderer: {fileID: 0}
@@ -695,7 +695,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.806158, y: 0.9180817}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &5992430019109944326
 GameObject:
