@@ -3,7 +3,7 @@
     height: 464px;
     background-image: none;
     margin-top: 2px;
-    margin-right: 10px;
+    margin-right: 40px;
     margin-bottom: 20px;
     margin-left: 4px;
     flex-direction: row;
@@ -18,13 +18,14 @@
     border-left-color: rgba(0, 0, 0, 0);
     border-right-color: rgba(0, 0, 0, 0);
     border-bottom-color: rgba(0, 0, 0, 0);
+    color: rgb(27, 27, 27);
 }
 
 .unitTitle {
     width: 115px;
     height: 49px;
     translate: 0 209px;
-    background-image: url("project://database/Assets/SunnyLand%20Artwork/Environment/back.png?fileID=21300000&guid=8e160a2a620644cd6afef9119dad1093&type=3#back");
+    background-image: url("project://database/Assets/Tornioduva's%20basic%20card%20game%20asset%20pack/vampire%20card/vampire%20empty%20playboard.png?fileID=21300000&guid=1f444cb2c3ca25848aa6f2dc82cc8e2f&type=3#vampire empty playboard");
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
@@ -46,7 +47,7 @@
 
 .InfoText {
     margin-bottom: 60px;
-    -unity-font: initial;
+    -unity-font: url("project://database/Assets/UI/Fonts/ChelaOne-Regular.ttf?fileID=12800000&guid=8c2226f5768e49f4ca5f58858a57cb7a&type=3#ChelaOne-Regular");
 }
 
 .buttonSelect:hover {

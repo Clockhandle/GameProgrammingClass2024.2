@@ -52,6 +52,11 @@ public class Unit : MonoBehaviour
     [SerializeField] private GameObject deathEffectPrefab;
 
 
+    [Header("Deployment Effect")]
+    [SerializeField] private GameObject deploymentEffectPrefab; 
+    [SerializeField] private Transform deploymentEffectSpawnPoint;
+
+
     void OnEnable()
     {
         StartCoroutine(AttackEnemiesInRangeRoutine());
@@ -184,6 +189,12 @@ public class Unit : MonoBehaviour
             UnitStates operationalState = UnitStateFactory.CreateState(unitDataSO);
 
             SwitchState(operationalState);
+
+            //Instantiate Deployment effect
+            GameObject deployedEffect = Instantiate(deploymentEffectPrefab, deploymentEffectSpawnPoint.position, deploymentEffectSpawnPoint.rotation);
+            Destroy(deployedEffect, 1.5f);
+
+
 
             // 7. Trigger post-placement actions (animation, enabling components, etc.)
             PlayDeploymentAnimation();

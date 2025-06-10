@@ -1,0 +1,9 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/NewUSS.uss?fileID=7433441132597879392&amp;guid=bc130e53d86cf764eb7a2c8ba346399f&amp;type=3#NewUSS" />
+    <engine:VisualElement name="MainMenu" style="flex-grow: 1; align-items: center; justify-content: center; -unity-text-align: upper-left; flex-direction: column; -unity-font-definition: url(&quot;project://database/Assets/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&amp;guid=543cd9fe3f3f74e1fa43a1538bdb5564&amp;type=3#NotInter-Regular&quot;); transition-duration: 0.45s;">
+        <engine:Label text="Label" name="Title" class="header" style="margin-top: 4px; width: 654px; height: 376px; -unity-text-align: middle-center; -unity-font-definition: url(&quot;project://database/Assets/UI/Fonts/ChelaOne-Regular.ttf?fileID=12800000&amp;guid=8c2226f5768e49f4ca5f58858a57cb7a&amp;type=3#ChelaOne-Regular&quot;); white-space: pre; text-overflow: clip;" />
+        <engine:Button text="Start" name="StartButton" class="button" />
+        <engine:Button text="Setting&#10;" name="SettingButton" class="button" />
+        <engine:Button text="Quit&#10;" name="QuitButton" class="button" />
+    </engine:VisualElement>
+</engine:UXML>

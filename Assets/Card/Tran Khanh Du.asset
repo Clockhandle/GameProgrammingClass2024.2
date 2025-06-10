@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4825cc0d765aec45943f889e9cc6102, type: 3}
+  m_Name: Tran Khanh Du
+  m_EditorClassIdentifier: 
+  charaName: Tran Khanh Du
+  image: {fileID: 8923951454323899545, guid: 4a261fb0ce00c9e419b2191a257d56ae, type: 3}
+  atk: 10
+  hp: 100
+  def: 2
+  role: 4
+  type: 1
+  Skill: Dash Attack
+  character: {fileID: 0}
+  unlocked: 1
+  inTeam: 0

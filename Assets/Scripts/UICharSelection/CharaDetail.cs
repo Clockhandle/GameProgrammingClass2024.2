@@ -7,7 +7,7 @@ public class CharaDetail : MonoBehaviour
 {
     public static Cards cardDetail;
 
-    private Label charaNameLabel, atkLabel, hpLabel, defLabel, roleLabel, typeLabel;
+    private Label charaNameLabel, atkLabel, hpLabel, defLabel, roleLabel, typeLabel, Skill;
     private VisualElement detailContainer;
 
     private void OnEnable()
@@ -21,6 +21,7 @@ public class CharaDetail : MonoBehaviour
         defLabel = root.Q<Label>("Def");
         roleLabel = root.Q<Label>("Role");
         typeLabel = root.Q<Label>("Type");
+        Skill = root.Q<Label>("Skill");
 
         detailContainer = root.Q<VisualElement>("InfoPanel");
 
@@ -49,6 +50,7 @@ public class CharaDetail : MonoBehaviour
             defLabel.text = "DEF : " + cardDetail.def;
             roleLabel.text = "ROLE : " + cardDetail.role.ToString();
             typeLabel.text = "TYPE : " + cardDetail.type.ToString();
+            Skill.text = "SKILL: " + cardDetail.Skill.ToString();
         }
     }
 }

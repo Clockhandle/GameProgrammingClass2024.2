@@ -411,6 +411,13 @@ public class DirectionControlUI : MonoBehaviour
             retreatButton.gameObject.SetActive(false);
         
     }
-    private void OnRetreatClicked() { /* ... Same ... */ if (targetUnit != null) targetUnit.InitiateRetreat(); else Destroy(gameObject); }
-    void OnDestroy() { /* ... Same ... */ if (retreatButton != null) retreatButton.onClick.RemoveListener(OnRetreatClicked); PlacementUIManager.Instance?.NotifyDirectionUIHidden(); InputManager.SignalUIDragInactive(); }
+    private void OnRetreatClicked() 
+    { /* ... Same ... */ 
+        if (targetUnit != null) targetUnit.InitiateRetreat(); 
+        else Destroy(gameObject); }
+    void OnDestroy() 
+    { /* ... Same ... */ 
+        if (retreatButton != null) retreatButton.onClick.RemoveListener(OnRetreatClicked); 
+        PlacementUIManager.Instance?.NotifyDirectionUIHidden(); InputManager.SignalUIDragInactive(); 
+    }
 }
