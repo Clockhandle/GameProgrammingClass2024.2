@@ -1,61 +1,61 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/CharSelection.uss?fileID=7433441132597879392&amp;guid=59ea40b27200e1744ac073b39b51586b&amp;type=3#CharSelection" />
     <ui:VisualElement name="Panel" style="flex-grow: 1; flex-direction: column-reverse; display: flex; background-image: url(&quot;project://database/Assets/Tornioduva&apos;s%20basic%20card%20game%20asset%20pack/fantasy%20card/fantasy%20empty%20playboard.png?fileID=21300000&amp;guid=8a7f06e74c38a4d46831eb274272d191&amp;type=3#fantasy empty playboard&quot;);">
-        <ui:VisualElement name="Content" style="flex-grow: 1; justify-content: center; flex-direction: row; align-self: flex-start; flex-wrap: wrap; align-items: flex-end; width: 1460px; height: 1087px; translate: 221px 74px; padding-top: 0; margin-top: 0;">
-            <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button" class="buttonSelect" style="flex-direction: row; justify-content: center; align-items: flex-start; flex-wrap: wrap; padding-right: 0; padding-left: 0; padding-bottom: 0;">
-                <ui:VisualElement name="UnitName" class="unitTitle" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/SunnyLand%20Artwork/Environment/back.png?fileID=21300000&amp;guid=8e160a2a620644cd6afef9119dad1093&amp;type=3#back&quot;); width: 115px; height: 30px; flex-direction: row; align-items: flex-start; justify-content: flex-end; align-self: center; flex-wrap: wrap; bottom: auto; translate: 0 209px;">
+        <ui:VisualElement name="Content" style="flex-grow: 1; justify-content: center; flex-direction: row; align-self: flex-start; flex-wrap: wrap; align-items: flex-end; width: 1594px; height: 1087px; translate: 221px 74px; padding-top: 0; margin-top: 0; padding-right: 0; margin-right: 0; margin-left: -100px;">
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button" class="buttonSelect" style="flex-direction: row; justify-content: center; align-items: flex-start; flex-wrap: wrap; padding-right: 0; padding-left: 0; padding-bottom: 0; color: rgb(27, 27, 27);">
+                <ui:VisualElement name="UnitName" class="unitTitle" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Tornioduva&apos;s%20basic%20card%20game%20asset%20pack/vampire%20card/vampire%20empty%20playboard.png?fileID=21300000&amp;guid=1f444cb2c3ca25848aa6f2dc82cc8e2f&amp;type=3#vampire empty playboard&quot;); width: 115px; height: 49px; flex-direction: row; align-items: flex-start; justify-content: flex-end; align-self: center; flex-wrap: wrap; bottom: auto; translate: 0 209px;">
                     <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Name" class="UnitName" style="font-size: 25px;" />
                 </ui:VisualElement>
             </ui:Button>
-            <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button" class="buttonSelect" style="padding-right: 0; padding-bottom: 0; padding-left: 0;">
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button" class="buttonSelect" style="padding-right: 0; padding-bottom: 0; padding-left: 0;">
                 <ui:VisualElement class="unitTitle" style="flex-grow: 1;">
                     <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Name" class="UnitName" />
                 </ui:VisualElement>
             </ui:Button>
-            <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button" class="buttonSelect" style="padding-right: 0; padding-bottom: 0; padding-left: 0;">
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button" class="buttonSelect" style="padding-right: 0; padding-bottom: 0; padding-left: 0;">
                 <ui:VisualElement class="unitTitle" style="flex-grow: 1;">
                     <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Name" class="UnitName" />
                 </ui:VisualElement>
             </ui:Button>
-            <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button" class="buttonSelect" style="padding-right: 0; padding-bottom: 0; padding-left: 0;">
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button" class="buttonSelect" style="padding-right: 0; padding-bottom: 0; padding-left: 0;">
                 <ui:VisualElement class="unitTitle" style="flex-grow: 1;">
                     <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Name" class="UnitName" />
                 </ui:VisualElement>
             </ui:Button>
-            <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button" class="buttonSelect" style="padding-right: 0; padding-bottom: 0; padding-left: 0;">
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button" class="buttonSelect" style="padding-right: 0; padding-bottom: 0; padding-left: 0;">
                 <ui:VisualElement class="unitTitle" style="flex-grow: 1;">
                     <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Name" class="UnitName" />
                 </ui:VisualElement>
             </ui:Button>
-            <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button" class="buttonSelect" style="padding-right: 0; padding-bottom: 0; padding-left: 0;">
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button" class="buttonSelect" style="padding-right: 0; padding-bottom: 0; padding-left: 0;">
                 <ui:VisualElement class="unitTitle" style="flex-grow: 1;">
                     <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Name" class="UnitName" />
                 </ui:VisualElement>
             </ui:Button>
-            <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button" class="buttonSelect" style="padding-right: 0; padding-bottom: 0; padding-left: 0;">
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button" class="buttonSelect" style="padding-right: 0; padding-bottom: 0; padding-left: 0;">
                 <ui:VisualElement class="unitTitle" style="flex-grow: 1;">
                     <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Name" class="UnitName" />
                 </ui:VisualElement>
             </ui:Button>
-            <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button" class="buttonSelect" style="padding-right: 0; padding-bottom: 0; padding-left: 0;">
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button" class="buttonSelect" style="padding-right: 0; padding-bottom: 0; padding-left: 0;">
                 <ui:VisualElement class="unitTitle" style="flex-grow: 1;">
                     <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Name" class="UnitName" />
                 </ui:VisualElement>
             </ui:Button>
-            <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button" class="buttonSelect" style="padding-right: 0; padding-bottom: 0; padding-left: 0;">
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button" class="buttonSelect" style="padding-right: 0; padding-bottom: 0; padding-left: 0;">
                 <ui:VisualElement class="unitTitle" style="flex-grow: 1;">
-                    <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Name" />
+                    <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Name" style="font-size: 25px;" />
                 </ui:VisualElement>
             </ui:Button>
-            <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button" class="buttonSelect" style="padding-right: 0; padding-bottom: 0; padding-left: 0;">
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button" class="buttonSelect" style="padding-right: 0; padding-bottom: 0; padding-left: 0;">
                 <ui:VisualElement class="unitTitle" style="flex-grow: 1;">
-                    <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Name" />
+                    <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Name" style="font-size: 25px;" />
                 </ui:VisualElement>
             </ui:Button>
         </ui:VisualElement>
-        <ui:Button text="Multi Selectioin" parse-escape-sequences="true" display-tooltip-when-elided="true" name="MultiSelectButton" style="position: absolute; top: -7px; left: 1500px; height: 69px; width: 217px; font-size: 25px;" />
-        <ui:Button text="Clear" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ClearButton" style="position: absolute; top: -4px; left: 1737px; height: 69px; width: 160px; font-size: 25px;" />
-        <ui:Button text="Back" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BackButton" style="position: absolute; top: -4px; left: -3px; height: 59px; width: 139px; font-size: 25px;" />
-        <ui:Button text="StartLevel" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PlayButton" style="position: absolute; top: 351px; left: 1672px; height: 476px; width: 180px; font-size: 30px;" />
+        <ui:Button text="Multi Selectioin" parse-escape-sequences="true" display-tooltip-when-elided="true" name="MultiSelectButton" style="position: absolute; top: -7px; left: 1500px; height: 69px; width: 217px; font-size: 25px; background-image: url(&quot;project://database/Assets/Tornioduva&apos;s%20basic%20card%20game%20asset%20pack/vampire%20card/icons/vampire%20generica%20action%20button.png?fileID=21300000&amp;guid=500a421ecd1e99b4da65d2c0ff3f33e2&amp;type=3#vampire generica action button&quot;);" />
+        <ui:Button text="Clear" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ClearButton" style="position: absolute; top: -4px; left: 1737px; height: 69px; width: 160px; font-size: 25px; background-image: url(&quot;project://database/Assets/Tornioduva&apos;s%20basic%20card%20game%20asset%20pack/vampire%20card/icons/vampire%20generica%20action%20button.png?fileID=21300000&amp;guid=500a421ecd1e99b4da65d2c0ff3f33e2&amp;type=3#vampire generica action button&quot;); translate: 0 0;" />
+        <ui:Button text="Back" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BackButton" style="position: absolute; top: -4px; left: -3px; height: 59px; width: 139px; font-size: 25px; background-image: url(&quot;project://database/Assets/Tornioduva&apos;s%20basic%20card%20game%20asset%20pack/vampire%20card/icons/vampire%20generica%20action%20button.png?fileID=21300000&amp;guid=500a421ecd1e99b4da65d2c0ff3f33e2&amp;type=3#vampire generica action button&quot;);" />
+        <ui:Button text="StartLevel" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PlayButton" style="position: absolute; top: 351px; left: 1672px; height: 476px; width: 180px; font-size: 30px; background-image: url(&quot;project://database/Assets/Tornioduva&apos;s%20basic%20card%20game%20asset%20pack/vampire%20card/vampire%20empty%20card%20section.png?fileID=21300000&amp;guid=b872de868fe9964419b6ab09222204dd&amp;type=3#vampire empty card section&quot;); color: rgb(255, 255, 255);" />
     </ui:VisualElement>
 </ui:UXML>

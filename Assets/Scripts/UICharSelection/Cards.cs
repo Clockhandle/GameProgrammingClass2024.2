@@ -16,6 +16,7 @@ public class Cards : ScriptableObject
     public int def;
     public Roles role;
     public Type type;
+    public string Skill;
     public GameObject character;
     public bool unlocked;
     public bool inTeam;

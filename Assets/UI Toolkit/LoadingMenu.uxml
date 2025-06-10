@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/NewUSS.uss?fileID=7433441132597879392&amp;guid=bc130e53d86cf764eb7a2c8ba346399f&amp;type=3#NewUSS" />
+    <ui:VisualElement name="VisualElement" style="flex-grow: 1; padding-top: 50px; padding-right: 50px; padding-bottom: 50px; padding-left: 50px;">
+        <ui:ProgressBar value="0" high-value="1" name="loading_progress_bar" class="unity_progress_bar unity-progress-bar_progress" style="translate: 0 164px; -unity-text-outline-color: rgba(65, 63, 63, 0);" />
+        <ui:Label text="Loading" class="label" style="font-size: 50px; padding-top: 100px; bottom: 0; padding-bottom: 134px; top: 803px;" />
+    </ui:VisualElement>
+</ui:UXML>

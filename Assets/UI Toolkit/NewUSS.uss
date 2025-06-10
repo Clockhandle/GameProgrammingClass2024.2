@@ -1,0 +1,90 @@
+.button {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 600px;
+    height: 150px;
+    align-self: auto;
+    align-items: center;
+    justify-content: center;
+    font-size: 100px;
+    -unity-font-definition: url("project://database/Assets/UI/Fonts/ChelaOne-Regular.ttf?fileID=12800000&guid=8c2226f5768e49f4ca5f58858a57cb7a&type=3#ChelaOne-Regular");
+    background-image: url("project://database/Assets/UI/Textures/UI_atlas.psd?fileID=1091145085093474729&guid=68de98d899585b7469e0fb40a0fcbc56&type=3#bt_09");
+    min-width: 220px;
+    min-height: 50px;
+    padding-top: 0;
+    margin-top: 31px;
+    background-size: 100% 100%;
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.61);
+    -unity-text-align: upper-center;
+}
+
+.header {
+    font-size: 100px;
+    -unity-font-definition: url("project://database/Assets/UI/Fonts/ChelaOne-Regular.ttf?fileID=12800000&guid=8c2226f5768e49f4ca5f58858a57cb7a&type=3#ChelaOne-Regular");
+    -unity-text-align: middle-center;
+    width: 600px;
+    height: 400px;
+    -unity-font-style: bold;
+}
+
+.button:hover {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 600px;
+    height: 150px;
+    align-self: auto;
+    align-items: center;
+    justify-content: center;
+    font-size: 110px;
+    -unity-font-definition: url("project://database/Assets/UI/Fonts/ChelaOne-Regular.ttf?fileID=12800000&guid=8c2226f5768e49f4ca5f58858a57cb7a&type=3#ChelaOne-Regular");
+    -unity-background-image-tint-color: rgb(255, 0, 0);
+    transition-duration: 0.35s;
+    scale: 1.1 1.1;
+    rotate: 2deg;
+}
+
+.button:active {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 500px;
+    height: 80px;
+    align-self: auto;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    -unity-font-definition: url("project://database/Assets/UI/Fonts/ChelaOne-Regular.ttf?fileID=12800000&guid=8c2226f5768e49f4ca5f58858a57cb7a&type=3#ChelaOne-Regular");
+    color: rgb(255, 255, 255);
+    scale: 1.2 1.2;
+}
+
+.unity_progress_bar {
+    position: absolute;
+    bottom: 200px;
+    left: 53px;
+    right: 42px;
+    height: 0;
+    -unity-text-outline-color: rgba(75, 75, 75, 0);
+    opacity: 1;
+    color: rgb(0, 0, 0);
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    background-color: rgba(204, 90, 90, 0);
+}
+
+.label {
+    font-size: 100px;
+}
+
+.unity-label {
+}
+
+.buttonInPaused:hover {
+    scale: 1.1 1.1;
+    background-image: url("project://database/Assets/UI/Textures/UI_atlas.psd?fileID=-4974648745144471294&guid=68de98d899585b7469e0fb40a0fcbc56&type=3#bt_12");
+}
