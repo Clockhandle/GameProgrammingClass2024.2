@@ -32,7 +32,7 @@ public class MainMEnuUI1 : MonoBehaviour
     private IEnumerator StartGame()
     {
         yield return new WaitForSeconds(0.3f);
-        Loader.Load("Level1");
+        Loader.Load("LevelSelector");
     }
     private IEnumerator SettingGame()
     {

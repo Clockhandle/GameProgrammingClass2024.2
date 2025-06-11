@@ -7,6 +7,8 @@ public class ProgressManager : MonoBehaviour
 
     public LevelData selectedLevel;
     public List<Cards> selectedCards;
+
+    public string sceneOfNextLevelToUnlock;
     private void Awake()
     {
         if (Instance != null && Instance != this)

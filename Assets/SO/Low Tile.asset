@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: Low Tile
   m_EditorClassIdentifier: 
   tiles:
-  - {fileID: 11400000, guid: c541c54721a16c2469f4cc6e8d48c303, type: 2}
-  - {fileID: 11400000, guid: c2ee9b794942d86438549fd521ed5c44, type: 2}
+  - {fileID: 11400000, guid: 650a48749fbe6b44a853b3c5ecd85a6c, type: 2}
   tileProperties: 2

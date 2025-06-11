@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     [Header("UI")]
     public TMP_Text healthText;
     public TMP_Text enemyCountText;
+    public GameObject gameOverPanel;
+    public GameObject WinPanel;
 
     [Header("Spawners")]
     public List<EnemySpawner> spawners = new List<EnemySpawner>();
@@ -57,6 +59,9 @@ public class GameManager : MonoBehaviour
             SoundManager.Instance.ChangeMusic(currentLevelData.levelMusic);
         }
 
+        WinPanel.SetActive(false);
+        gameOverPanel.SetActive(false);
+
     }
 
     public void SetTotalEnemiesToDefeat(int total)
@@ -73,7 +78,16 @@ public class GameManager : MonoBehaviour
         if (enemiesDefeated >= totalEnemiesToDefeat)
         {
             Debug.Log("Game Clear!");
-            // Add your game clear logic here
+
+            //string sceneToUnlock = ProgressManager.Instance.sceneOfNextLevelToUnlock;
+
+            //// 2. If it's not empty, tell the ProgressManager to save it
+            //if (!string.IsNullOrEmpty(sceneToUnlock))
+            //{
+            //    ProgressManager.Instance.UnlockLevel(sceneToUnlock);
+            //}
+
+            WinPanel.SetActive(true);
         }
     }
 
@@ -85,7 +99,7 @@ public class GameManager : MonoBehaviour
         if (currentHealth <= 0)
         {
             Debug.Log("Game Over!");
-            // Add your game over logic here
+            gameOverPanel.SetActive(true);
         }
     }
 
@@ -123,5 +137,19 @@ public class GameManager : MonoBehaviour
         enemySlainCounter++;
         // Optionally update UI or trigger events here
         Debug.Log($"Enemy slain! Total: {enemySlainCounter}");
+    }
+
+    public void ReturnToLevelSelector()
+    {
+        string sceneToUnlock = ProgressManager.Instance.sceneOfNextLevelToUnlock;
+
+        // 2. If it's not empty, tell the ProgressManager to save it
+        if (!string.IsNullOrEmpty(sceneToUnlock))
+        {
+            ProgressManager.Instance.UnlockLevel(sceneToUnlock);
+        }
+        ProgressManager.Instance.selectedCards.Clear();
+        ProgressManager.Instance.selectedLevel = null;
+        UnityEngine.SceneManagement.SceneManager.LoadScene("LevelSelector");
     }
 }

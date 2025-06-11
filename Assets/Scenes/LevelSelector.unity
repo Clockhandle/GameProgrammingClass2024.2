@@ -810,6 +810,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2087647610}
     m_Modifications:
+    - target: {fileID: -8856803043532615255, guid: a228353077a1ed8438ed67ed05981990, type: 3}
+      propertyPath: levelIndex
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4780590211617468717, guid: a228353077a1ed8438ed67ed05981990, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1660,6 +1664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedLevel: {fileID: 0}
   selectedCards: []
+  sceneOfNextLevelToUnlock: 
 --- !u!4 &1478170807
 Transform:
   m_ObjectHideFlags: 0
@@ -2027,6 +2032,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2087647610}
     m_Modifications:
+    - target: {fileID: -8856803043532615255, guid: a228353077a1ed8438ed67ed05981990, type: 3}
+      propertyPath: levelIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4780590211617468717, guid: a228353077a1ed8438ed67ed05981990, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2328,6 +2337,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levels:
   - {fileID: 11400000, guid: 1c992f3031d5e584283e98d35dce85a4, type: 2}
+  - {fileID: 11400000, guid: 7aaf0481a0f65a0419ea773d6394afdb, type: 2}
+  - {fileID: 11400000, guid: 9ddf998d6fd620b4e9ecfd811c640906, type: 2}
   lobbyMusic: {fileID: 8300000, guid: 35ee74508b9339247a2118f1a4126f0b, type: 3}
 --- !u!4 &1842273972
 Transform:
