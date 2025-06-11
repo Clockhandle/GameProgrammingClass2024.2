@@ -9226,6 +9226,8 @@ MonoBehaviour:
   totalEnemiesToDefeat: 10
   healthText: {fileID: 108215733}
   enemyCountText: {fileID: 693434382}
+  gameOverPanel: {fileID: 0}
+  WinPanel: {fileID: 0}
   spawners:
   - {fileID: 1069802099}
 --- !u!4 &1906898357
