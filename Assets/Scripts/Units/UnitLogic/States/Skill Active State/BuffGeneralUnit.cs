@@ -11,8 +11,7 @@ public class BuffGeneralUnit : Unit
     [SerializeField] private float animSpeedMultiplier = 1.5f;
     [SerializeField] private float buffDuration = 5f;
 
-
-    private bool skillUsed = false;
+    private bool isOnCooldown = false;
 
     private class BuffGeneralUnitInfo
     {
@@ -23,11 +22,12 @@ public class BuffGeneralUnit : Unit
 
     public void ActivateBuffSkill()
     {
-        if ( skillUsed) return;
+        if (isOnCooldown) return;
 
-        skillUsed = true;
-        Debug.Log("Buff SKILL ACTIVE");
+        isOnCooldown = true;
+        animator.SetTrigger("Buffing");
         StartCoroutine(ApplyTemporaryBuff());
+        StartCoroutine(CooldownRoutine());
     }
 
     private IEnumerator ApplyTemporaryBuff()
@@ -46,14 +46,10 @@ public class BuffGeneralUnit : Unit
                     originalAnimSpeed = ally.animator != null ? ally.animator.speed : 1f
                 };
 
-                // Increase health (heals but does not raise max)
                 ally.currentHealth += bonusHealth;
                 ally.currentHealth = Mathf.Min(ally.currentHealth, ally.MaxHealth);
-
-                // Increase attack damage (temporary)
                 ally.unitDataSO.attackDamage += bonusDamage;
 
-                // Increase animation speed
                 if (ally.animator != null)
                 {
                     ally.animator.speed *= animSpeedMultiplier;
@@ -66,7 +62,6 @@ public class BuffGeneralUnit : Unit
         Debug.Log("Buff applied to " + buffedAllies.Count + " allies.");
         yield return new WaitForSeconds(buffDuration);
 
-        // Revert buffs
         foreach (var allyInfo in buffedAllies)
         {
             if (allyInfo.unit != null)
@@ -85,11 +80,16 @@ public class BuffGeneralUnit : Unit
         Debug.Log("All buffs reverted.");
     }
 
+    private IEnumerator CooldownRoutine()
+    {
+        yield return new WaitForSeconds(unitDataSO.skillCoolDown);
+        isOnCooldown = false;
+        Debug.Log("Buff skill cooldown finished.");
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, buffRadius);
     }
-
 }
-

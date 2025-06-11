@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.57}
+  m_AnchoredPosition: {x: 0, y: 0.91}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4144206839725828872
@@ -318,7 +318,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: e0aab8ef7a3e2664c9a41888a276b862, type: 3}
+  m_Sprite: {fileID: 301918402, guid: 677588ac782b74a4bb8a9273e32f15c0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -361,9 +361,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.17}
+  m_Offset: {x: -0.09194978, y: -0.10312748}
   serializedVersion: 2
-  m_Radius: 0.27890864
+  m_Radius: 0.43773094
 --- !u!50 &3338548304988179924
 Rigidbody2D:
   serializedVersion: 4
@@ -455,7 +455,7 @@ MonoBehaviour:
   healthBarSlider: {fileID: 0}
   enemyData: {fileID: 11400000, guid: fce2235afb039df40b4f4056eb451730, type: 2}
   firePoint: {fileID: 7021507493388979477}
-  projectilePrefab: {fileID: 1563203788659945797, guid: 461536ae16771d74dbbbd5b584b6fe31, type: 3}
+  projectilePrefab: {fileID: 1563203788659945797, guid: 792a12160fcc1b4499863774d67f05e0, type: 3}
 --- !u!114 &-6072977305336193189
 MonoBehaviour:
   m_ObjectHideFlags: 0

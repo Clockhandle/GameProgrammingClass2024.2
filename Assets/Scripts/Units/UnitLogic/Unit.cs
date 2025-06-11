@@ -192,7 +192,7 @@ public class Unit : MonoBehaviour
 
             //Instantiate Deployment effect
             GameObject deployedEffect = Instantiate(deploymentEffectPrefab, deploymentEffectSpawnPoint.position, deploymentEffectSpawnPoint.rotation);
-            Destroy(deployedEffect, 1.5f);
+            Destroy(deployedEffect, .8f);
 
 
 
@@ -277,6 +277,9 @@ public class Unit : MonoBehaviour
             }
 
             Destroy(gameObject);
+
+            
+
         }
     }
 
@@ -287,6 +290,7 @@ public class Unit : MonoBehaviour
         currentStates?.UpdateState(this);
         UpdateAnimatorState();
         UpdateAlliesInRange();
+        healthBarSlider.UpdateHealth(currentHealth, unitDataSO.maxHealth);
 
         CleanEnemyList(); // prevent null enemy taking up space in the list
 

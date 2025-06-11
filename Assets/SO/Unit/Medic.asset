@@ -21,10 +21,11 @@ MonoBehaviour:
   attackInterval: 1
   attackRange: 4
   attackOffset: {x: 1, y: 0, z: 0}
-  healAmount: 5
+  healAmount: 10
   type: 2
   unitClass: 4
   DP: 10
   maxNumberOfDeployments: 1
-  icon: {fileID: 0}
+  icon: {fileID: 6567690713016545532, guid: 3698447984ad5c245b550eece41eba59, type: 3}
   redeployCooldown: 10
+  skillCoolDown: 8

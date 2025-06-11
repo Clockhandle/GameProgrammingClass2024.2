@@ -202,7 +202,7 @@ MonoBehaviour:
   alliesInRangeList: []
   healthBarSlider: {fileID: 0}
   spriteRenderer: {fileID: 0}
-  deathEffectPrefab: {fileID: 0}
+  deathEffectPrefab: {fileID: 1186306346101992253, guid: 9509f32f4dade9f42a15fddb9851aba9, type: 3}
   deploymentEffectPrefab: {fileID: 8347227506616243112, guid: acec1cd9ec9be034db96e710fe3cb448, type: 3}
   deploymentEffectSpawnPoint: {fileID: 7786408036724386502}
   enemiesInRangeList: []

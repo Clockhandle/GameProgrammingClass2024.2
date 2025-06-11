@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3928611554853354696}
   - component: {fileID: 9123585895109999541}
   - component: {fileID: -4874563758727729371}
+  - component: {fileID: 8167555061615594946}
   m_Layer: 8
   m_Name: BuffGeneral
   m_TagString: Unit
@@ -79,8 +80,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 72de0c64f2c6a498096698322c976a67, type: 3}
-  m_Color: {r: 0.67058825, g: 0.20392157, b: 0.5019608, a: 1}
+  m_Sprite: {fileID: 245822659, guid: 1445f6c9710d5d046b5e79f6e0c50d4f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -172,14 +173,14 @@ MonoBehaviour:
   currentHealth: 0
   directionControlUIPrefab: {fileID: 8002188024767451207, guid: 039eeb05d41c36d40b8139c598d21dc2, type: 3}
   uiLocalOffset: {x: 0, y: 0, z: 0}
-  rangeComponent: {fileID: 0}
+  rangeComponent: {fileID: 6541917139019676588}
   rangeWidthTiles: 3
   rangeHeightTiles: 5
   tileSize: 1
   alliesInRangeList: []
   healthBarSlider: {fileID: 0}
   spriteRenderer: {fileID: 0}
-  deathEffectPrefab: {fileID: 0}
+  deathEffectPrefab: {fileID: 1186306346101992253, guid: 9509f32f4dade9f42a15fddb9851aba9, type: 3}
   deploymentEffectPrefab: {fileID: 8347227506616243112, guid: acec1cd9ec9be034db96e710fe3cb448, type: 3}
   deploymentEffectSpawnPoint: {fileID: 4305527494698342694}
   enemiesInRangeList: []
@@ -189,6 +190,27 @@ MonoBehaviour:
   bonusDamage: 10
   animSpeedMultiplier: 1.5
   buffDuration: 5
+--- !u!95 &8167555061615594946
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212387026881475238}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 78b7e320bf3d08744a950707f1485d52, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &592647078625067618
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,7 +315,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.53999996}
+  m_AnchoredPosition: {x: 0, y: 0.84}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7892199073276662032
@@ -565,7 +587,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1, y: 0}
+  m_Offset: {x: 0.5788568, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0.5}
@@ -576,7 +598,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.825974, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &5218998576422141649
 GameObject:

@@ -125,7 +125,7 @@ public class Enemy3 : Entity
             }
         }
 
-        if (hasRevived && !isFinalAttackActive && currentHealth <= 10)
+        if (hasRevived && !isFinalAttackActive && currentHealth <= 50)
         {
             shouldEnterFinalAttack = true;
           
