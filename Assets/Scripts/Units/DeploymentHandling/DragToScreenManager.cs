@@ -294,8 +294,7 @@ public class DragToScreenManager : MonoBehaviour
     private void OnRedeployReadyHandler(GameObject prefab)
     {
         // Unsubscribe to avoid memory leaks
-        if (RedeploymentManager.Instance != null)
-            RedeploymentManager.Instance.OnRedeployReady -= OnRedeployReadyHandler;
+        
 
         ReactivatePrefab(prefab);
     }

@@ -7,7 +7,7 @@ public class Enemy1 : Entity
    public E1_IdleState idleState {  get; private set; } 
     public E1_MoveState moveState { get; private set; }
     //public E1_MelleAttackState melleAttackState { get; protected set; }
-    public MeleeAttackState melleAttackState { get; protected set; }
+    public E1_MeleeAttackState melleAttackState { get; protected set; }
 
     public E1_StuntState stuntState { get; private set; }   
 
@@ -25,7 +25,7 @@ public class Enemy1 : Entity
         this.enemyDataSO = enemyData;
         moveState = new E1_MoveState(this, stateMachine, "isWalking", enemyData, this);
         idleState = new E1_IdleState(this, stateMachine, "isIdle", enemyData, this);
-        melleAttackState = new MeleeAttackState(this, stateMachine, "isAttacking", attackPosition,enemyData);
+        melleAttackState = new E1_MeleeAttackState(this, stateMachine, "isAttacking", attackPosition,enemyData, this);
         stuntState = new E1_StuntState(this, stateMachine, "isStunned", enemyData, this);
         deadState = new E1_DeadState(this, stateMachine, "isDead", enemyData, this);
        

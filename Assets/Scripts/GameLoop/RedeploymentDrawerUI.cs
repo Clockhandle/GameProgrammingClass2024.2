@@ -4,6 +4,17 @@ using System.Collections.Generic;
 
 public class RedeploymentDrawerUI : MonoBehaviour
 {
+    public static RedeploymentDrawerUI Instance { get; private set; }
+
+    [Header("UI References")]
+    [SerializeField] private Transform redeployListParent; // e.g., a HorizontalLayoutGroup
+    [SerializeField] private GameObject redeployIconPrefab;
+
+
+    // The img handle wait sprite 
+   [SerializeField] private List<Image> redeploySlots;
+
+
     [SerializeField] private GameObject iconPrefab;
     [SerializeField] private Transform iconParent;
     [SerializeField] private GameObject drawerPanel;
@@ -16,6 +27,12 @@ public class RedeploymentDrawerUI : MonoBehaviour
 
     private bool isOpen = false;
     private float targetX;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
 
     void Start()
     {
@@ -57,20 +74,45 @@ public class RedeploymentDrawerUI : MonoBehaviour
 
     void RefreshDrawer()
     {
-        // Clear old icons
-        foreach (var go in iconMap.Values)
-            Destroy(go);
-        iconMap.Clear();
+        //// Clear old icons
+        //foreach (var go in iconMap.Values)
+        //    Destroy(go);
+        //iconMap.Clear();
 
-        // Add new icons
+        //// Add new icons
+        //foreach (var entry in RedeploymentManager.Instance.WaitList)
+        //{
+        //    Debug.Log("initiateRetreat called on an operational unit, adding to wait list.");
+
+        //    var iconGO = Instantiate(iconPrefab, iconParent);
+        //    // Set icon sprite
+        //    iconGO.GetComponentInChildren<Image>().sprite = entry.unitIcon;
+        //    iconMap[entry] = iconGO;
+        //}
+
+        // Clear all slots 
+        foreach (var img in redeploySlots)
+        {
+            if (img != null)
+            {
+                img.sprite = null;
+                img.color = new Color(1, 1, 1, 0); // Transparent
+                img.gameObject.SetActive(false);  // Hide the slot
+            }
+        }
+
+       
+        int i = 0;
         foreach (var entry in RedeploymentManager.Instance.WaitList)
         {
-            Debug.Log("initiateRetreat called on an operational unit, adding to wait list.");
+            if (i >= redeploySlots.Count) break;
 
-            var iconGO = Instantiate(iconPrefab, iconParent);
-            // Set icon sprite
-            iconGO.GetComponentInChildren<Image>().sprite = entry.unitIcon;
-            iconMap[entry] = iconGO;
+            var img = redeploySlots[i];
+
+            img.sprite = entry.unitIcon;
+            img.color = Color.white;             
+            img.gameObject.SetActive(true);          
+            i++;
         }
     }
 

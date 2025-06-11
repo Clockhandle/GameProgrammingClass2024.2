@@ -6,6 +6,8 @@ public class UnitIconData : MonoBehaviour
     [Tooltip("The Unit Prefab this UI icon represents.")]
     public GameObject unitPrefab;
 
+    public Sprite unitIcon;
+
     public Transform originalParent { get; private set; }
     public int originalSiblingIndex { get; private set; }
     public Vector2 originalAnchoredPosition { get; private set; }
@@ -17,6 +19,7 @@ public class UnitIconData : MonoBehaviour
     {
         rectTransform = GetComponent<RectTransform>();
         StoreInitialState(); // Store state when the icon first wakes up
+        unitIcon = unitPrefab.GetComponent<SpriteRenderer>().sprite;
     }
 
     public void StoreInitialState()

@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.57}
+  m_AnchoredPosition: {x: 0, y: 0.96}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4144206839725828872
@@ -246,13 +246,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2765756971844068585}
   - component: {fileID: 1527325219445792768}
-  - component: {fileID: 4633535477705826107}
   - component: {fileID: 3338548304988179924}
   - component: {fileID: -3156637070853388226}
   - component: {fileID: 3083861979221308148}
   - component: {fileID: -8185281809536441311}
   - component: {fileID: 6532268640776425583}
   - component: {fileID: 2984186964359471340}
+  - component: {fileID: 2593307902833896483}
   m_Layer: 10
   m_Name: AOEENemy
   m_TagString: Enemy
@@ -318,7 +318,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: e0aab8ef7a3e2664c9a41888a276b862, type: 3}
+  m_Sprite: {fileID: -1952342291, guid: 0ff5bced5f2dbf041b9dc6a5a6f1a2ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -329,41 +329,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &4633535477705826107
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2308237452221420818}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.17}
-  serializedVersion: 2
-  m_Radius: 0.27890864
 --- !u!50 &3338548304988179924
 Rigidbody2D:
   serializedVersion: 4
@@ -415,7 +380,7 @@ Animator:
   m_GameObject: {fileID: 2308237452221420818}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2b656825904332a4a9aea45e002fa3e5, type: 2}
+  m_Controller: {fileID: 9100000, guid: bcc8bf1b90fce9947a07d7eb34f42026, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -453,7 +418,7 @@ MonoBehaviour:
   detectedTargets: []
   enemyDataSO: {fileID: 11400000, guid: 86263692572b62d46b89f4ed9dd10ca8, type: 2}
   healthBarSlider: {fileID: 0}
-  enemyData: {fileID: 11400000, guid: fce2235afb039df40b4f4056eb451730, type: 2}
+  enemyData: {fileID: 11400000, guid: 86263692572b62d46b89f4ed9dd10ca8, type: 2}
   firePoint: {fileID: 7021507493388979477}
   projectilePrefab: {fileID: 1563203788659945797, guid: 899bf017e0a972d4ab6d638b4fe2fda9, type: 3}
 --- !u!114 &2984186964359471340
@@ -472,6 +437,41 @@ MonoBehaviour:
   attackType: 1
   firePoint: {fileID: 7021507493388979477}
   offsetValue: 4.12
+--- !u!70 &2593307902833896483
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2308237452221420818}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.03852584, y: -0.13912082}
+  m_Size: {x: 0.63528645, y: 1.1922945}
+  m_Direction: 0
 --- !u!1 &3347051165903270073
 GameObject:
   m_ObjectHideFlags: 0

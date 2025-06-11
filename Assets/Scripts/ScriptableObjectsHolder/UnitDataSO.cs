@@ -23,6 +23,8 @@ public enum UnitClass
 [CreateAssetMenu(fileName = "UnitData", menuName = "Data/Unit Data")]
 public class UnitDataSO : ScriptableObject
 {
+ 
+
     [Header("Stats")]
     public int maxHealth = 100;
     public int defense = 10;

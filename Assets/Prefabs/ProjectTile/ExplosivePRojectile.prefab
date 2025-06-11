@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.0671, y: -0.9167, z: 0}
-  m_LocalScale: {x: 0.8295224, y: 0.5937, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -162,6 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05d718197c87fea49b8a383c832f8c8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionRadius: 2
   animator: {fileID: 1490416333932522948}
   explosionTriggerName: Explode
 --- !u!95 &1490416333932522948

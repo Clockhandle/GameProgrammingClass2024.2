@@ -9,6 +9,8 @@ public class Enemy1TrailAttack : Enemy1
     public GameObject additionEffect;
     private EnemyDirectionHandler directionHandler;
 
+    new public E1_TrailAttackState melleAttackState { get; protected set; }
+
     public override void Start()
     {
         base.Start();

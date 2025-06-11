@@ -15,5 +15,7 @@ MonoBehaviour:
   maxHealth: 10
   moveSpeed: 2
   damage: 5
-  idleTime: 3
+  idleTime: 0
   longRange: 6
+  walkDurrationRanged: 2
+  stuntTime: 1.5
