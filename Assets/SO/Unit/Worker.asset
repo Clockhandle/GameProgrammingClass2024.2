@@ -25,7 +25,7 @@ MonoBehaviour:
   type: -1
   unitClass: 8
   DP: 10
-  maxNumberOfDeployments: 3
+  maxNumberOfDeployments: 5
   icon: {fileID: -3882655780624005115, guid: f183ac2b7e3cff54385f280e894bfd1b, type: 3}
   redeployCooldown: 10
   skillCoolDown: 8
