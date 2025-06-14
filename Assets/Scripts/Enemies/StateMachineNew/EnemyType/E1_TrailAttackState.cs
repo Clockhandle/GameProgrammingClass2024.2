@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class E1_TrailAttackState : TrailAttackState
+public class E1_TrailAttackState : E1_MeleeAttackState
 {
     private Enemy1TrailAttack enemy1;
-    public E1_TrailAttackState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, Transform attackPosition, EnemyDataSO enemyData, Enemy1TrailAttack enemy1) : base(entity, stateMachine, animBoolName, attackPosition, enemyData)
+    int attackCounter = 0;
+    int trialAttackThresHold = 4;
+
+    public E1_TrailAttackState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, Transform attackPosition, EnemyDataSO enemyData, Enemy1TrailAttack enemy1) : base(entity, stateMachine, animBoolName, attackPosition, enemyData, enemy1)
     {
         this.enemy1 = enemy1;   
     }
@@ -44,6 +47,14 @@ public class E1_TrailAttackState : TrailAttackState
     public override void TriggerAttack()
     {
         base.TriggerAttack();
+        attackCounter++;
+
+        if (attackCounter >= trialAttackThresHold)
+        {
+            entity.DealDamageToUnit();
+            TriggerTrailEffect();
+            attackCounter = 0;
+        }
     }
 
     public override void TriggerAttackEnd()
@@ -51,9 +62,9 @@ public class E1_TrailAttackState : TrailAttackState
         base.TriggerAttackEnd();
     }
 
-    protected override void TriggerTrailEffect()
+    protected void TriggerTrailEffect()
     {
-        base.TriggerTrailEffect();
+       
 
         if (entity.CurrentTar != null)
         {

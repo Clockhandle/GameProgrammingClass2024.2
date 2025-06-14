@@ -212,16 +212,6 @@ public class DirectionControlUI : MonoBehaviour
 
     }
 
-    private IEnumerator ReactivateButtonAfterDelay(Button button, float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        button.interactable = true;
-        Debug.Log("Cooldown over FOR DASSHHH");
-    }
-
-   
-
-
     // Reset handle to center/default rotation
     private void ResetHandleVisuals()
     {
@@ -258,11 +248,7 @@ public class DirectionControlUI : MonoBehaviour
         Vector2 localPoint;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(panelRectTransform, eventData.position, eventData.pressEventCamera ?? eventCamera, out localPoint);
 
-        //float distance = localPoint.magnitude;
-        //Vector2 direction = (distance > 0.01f) ? localPoint.normalized : (Quaternion.Euler(0, 0, handleRectTransform.localEulerAngles.z) * Vector2.up);
-
-
-        // Snap direction to nearest axis (N, S, E, W)
+        // Snap direction 
         Vector2 direction;
         if (Mathf.Abs(localPoint.x) > Mathf.Abs(localPoint.y))
             direction = (localPoint.x >= 0) ? Vector2.right : Vector2.left;
@@ -288,33 +274,6 @@ public class DirectionControlUI : MonoBehaviour
                 targetUnitRange.transform.rotation = Quaternion.Euler(0, 0, visualAngle);
             }
         }
-
-
-        //// Clamp Handle Position
-        //float clampedDistance = Mathf.Min(distance, dragRadius);
-        //Vector2 targetHandlePosition = direction * clampedDistance;
-        //handleRectTransform.anchoredPosition = targetHandlePosition;
-
-        //// Update Handle Rotation
-        //float visualAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        //handleRectTransform.localRotation = Quaternion.Euler(0, 0, visualAngle - 90f);
-
-        //// Update the range visibility and rotation based on deadzone
-        //if (targetUnitRange != null)
-        //{
-        //    // Check if outside deadzone
-        //    bool outsideDeadZone = distance >= deadZoneRadius;
-
-        //    // Only show and update range when outside deadzone
-
-        //    if (outsideDeadZone)
-        //    {
-        //        targetUnitRange.ShowRangePreview(outsideDeadZone);
-        //        Quaternion rangeRotation = Quaternion.Euler(0, 0, visualAngle);
-        //        targetUnitRange.transform.rotation = rangeRotation;
-        //    }
-        //}
-
 
     }
 
@@ -363,7 +322,22 @@ public class DirectionControlUI : MonoBehaviour
         targetUnit.ConfirmPlacement(finalUnitRotation);
 
         // Register Deployment
-        if (targetUnit.SourcePrefab != null) { DeploymentManager.Instance?.RegisterDeployment(targetUnit.SourcePrefab); }
+        if (targetUnit.SourcePrefab != null) {
+
+            DeploymentManager.Instance?.RegisterDeployment(targetUnit.SourcePrefab);
+
+            //Call text update herreeeeeeee
+            UnitIconData iconData = UnitIconData.GetIconDataByPrefab(targetUnit.SourcePrefab);
+            if (iconData != null)
+            {
+                DeploymentAmountText deploymentText = iconData.GetComponentInChildren<DeploymentAmountText>();
+                if (deploymentText != null)
+                {
+                    deploymentText.UpdateDeployCountText();
+                }
+            }
+
+        }
         else { /* Log Error */ }
 
         // Signal Drag End

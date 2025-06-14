@@ -59,5 +59,6 @@ public class DeploymentManager : MonoBehaviour
         if (unitPrefab == null) return 0;
         int key = unitPrefab.GetInstanceID();
         return deployedCounts.ContainsKey(key) ? deployedCounts[key] : 0;
+        
     }
 }

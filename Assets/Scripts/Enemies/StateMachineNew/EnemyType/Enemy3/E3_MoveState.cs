@@ -34,6 +34,7 @@ public class E3_MoveState : MoveState
         {
             enemy3.isFinalAttackActive = true;
             enemy3.shouldEnterFinalAttack = false;
+           
             stateMachine.ChangeState(enemy3.finalAttackState);
         }
 

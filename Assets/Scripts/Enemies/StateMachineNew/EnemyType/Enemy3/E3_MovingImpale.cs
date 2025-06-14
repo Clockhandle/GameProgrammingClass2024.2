@@ -31,6 +31,7 @@ public class E3_MovingImpale : MeleeAttackState
             {
                 enemy3.isFinalAttackActive = true;
                 enemy3.shouldEnterFinalAttack = false;
+                enemy3.isInvincible = true;
                 stateMachine.ChangeState(enemy3.finalAttackState);
             }
             else
@@ -80,10 +81,10 @@ public class E3_MovingImpale : MeleeAttackState
 
     private IEnumerator HealSmallAmountOverTime()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 15; i++)
         {
-            yield return new WaitForSeconds(2);
-            enemy3.Heal(10);  // heal 10 health every 2 econd for 10 times
+            yield return new WaitForSeconds(1f);
+            enemy3.Heal(50);  // heal 10 health every 2 econd for 10 times
         }
         enemy3.anim.speed = 1f;
     }

@@ -11,6 +11,9 @@ public class BuffGeneralUnit : Unit
     [SerializeField] private float animSpeedMultiplier = 1.5f;
     [SerializeField] private float buffDuration = 5f;
 
+    [SerializeField] private GameObject shockwavePrefab;
+    [SerializeField] private float shockwaveSpawnDelay = 0.75f;
+
     private bool isOnCooldown = false;
 
     private class BuffGeneralUnitInfo
@@ -26,6 +29,8 @@ public class BuffGeneralUnit : Unit
 
         isOnCooldown = true;
         animator.SetTrigger("Buffing");
+        StartCoroutine(SpawnShockwaves());
+
         StartCoroutine(ApplyTemporaryBuff());
         StartCoroutine(CooldownRoutine());
     }
@@ -85,6 +90,19 @@ public class BuffGeneralUnit : Unit
         yield return new WaitForSeconds(unitDataSO.skillCoolDown);
         isOnCooldown = false;
         Debug.Log("Buff skill cooldown finished.");
+    }
+
+    private IEnumerator SpawnShockwaves()
+    {
+        GameObject instance = Instantiate(shockwavePrefab, transform.position, Quaternion.identity);
+        ShockWaveManager shock = instance.GetComponent<ShockWaveManager>();
+
+        for (int i = 0; i < 3; i++)
+        {
+            shock.CallShowckWave(); // Play effect
+            yield return new WaitForSeconds(shockwaveSpawnDelay);
+        }
+        shock.AutoDestroy(2.25f);
     }
 
     private void OnDrawGizmosSelected()
