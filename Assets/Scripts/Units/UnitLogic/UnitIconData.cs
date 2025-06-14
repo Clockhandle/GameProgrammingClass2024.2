@@ -42,4 +42,14 @@ public class UnitIconData : MonoBehaviour
     {
         StoreInitialState();
     }
+
+    public static UnitIconData GetIconDataByPrefab(GameObject prefab)
+    {
+        foreach (var icon in FindObjectsOfType<UnitIconData>())
+        {
+            if (icon.unitPrefab == prefab)
+                return icon;
+        }
+        return null;
+    }
 }

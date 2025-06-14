@@ -11,7 +11,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - PostProcessing
   - Water
   - UI
   - Ground
@@ -46,4 +46,7 @@ TagManager:
     locked: 0
   - name: Unit
     uniqueID: 2342799599
+    locked: 0
+  - name: CameraSortingLayer
+    uniqueID: 445145373
     locked: 0

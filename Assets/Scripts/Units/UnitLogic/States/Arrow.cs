@@ -3,10 +3,10 @@ using UnityEngine;
 public class Arrow : MonoBehaviour
 {
     private Transform target;
-    private int damage;
+    protected int damage;
     private float speed = 10f;
 
-    public void Initialize(Transform target, int damage)
+    public virtual void Initialize(Transform target, int damage)
     {
         this.target = target;
         this.damage = damage;
@@ -29,7 +29,7 @@ public class Arrow : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected   virtual void OnTriggerEnter2D(Collider2D collision)
     {
         // Only respond to GameObjects tagged "Enemy"
         if (!collision.CompareTag("Enemy"))

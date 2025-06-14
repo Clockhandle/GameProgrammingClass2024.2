@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine;
 
+
 public class E3_FinalAttack : MeleeAttackState
 {
     private Enemy3 enemy3;
     private int attackCount = 0;
     public GameObject pierceColliderPrefab;
-    public E3_FinalAttack(Entity entity, FiniteStateMachine stateMachine, string animBoolName, Transform attackPosition, EnemyDataSO enemyData, GameObject pierceColliderPrefab, Enemy3 enemy3) : base(entity, stateMachine, animBoolName, attackPosition, enemyData)
+    private FinalAttakPostProcessingEffect postProcessingEffect;
+    public E3_FinalAttack(Entity entity, FiniteStateMachine stateMachine, string animBoolName, Transform attackPosition, EnemyDataSO enemyData, GameObject pierceColliderPrefab, FinalAttakPostProcessingEffect postProcessingEffect, Enemy3 enemy3) : base(entity, stateMachine, animBoolName, attackPosition, enemyData)
     {
         this.enemy3 = enemy3;   
         this.pierceColliderPrefab = pierceColliderPrefab;   
+        this.postProcessingEffect = postProcessingEffect;
     }
 
     public override void Enter()
@@ -23,6 +26,7 @@ public class E3_FinalAttack : MeleeAttackState
     public override void Exit()
     {
         base.Exit();
+        enemy3.isInvincible = false;
     }
 
     public override void LogicUpdate()
@@ -31,7 +35,7 @@ public class E3_FinalAttack : MeleeAttackState
         if (isAnimationFinish)
         {
             stateMachine.ChangeState(enemy3.moveState);
-            enemy3.isInvincible = false;
+           
         }
     }
 
@@ -61,9 +65,10 @@ public class E3_FinalAttack : MeleeAttackState
             {
                 if (attackCount == 3)
                 {
-                    enemy3.isInvincible = true;
-
                    
+
+                    postProcessingEffect?.ActivateEffect();
+
                     DealMassiveDamageToAllUnits();
 
 

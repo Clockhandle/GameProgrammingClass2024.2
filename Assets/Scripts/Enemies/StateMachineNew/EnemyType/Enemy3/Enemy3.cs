@@ -6,6 +6,8 @@ public class Enemy3 : Entity
 {
 
     //Handle Final Attack
+    private bool canInvincible = false;
+
     public bool isInvincible = false;
 
     public bool isFinalAttackActive = false;
@@ -57,8 +59,15 @@ public class Enemy3 : Entity
     public GameObject piercePrefab;
     public GameObject movingpiercePrefab;
 
+    [SerializeField] private FinalAttakPostProcessingEffect postProcessingEffect;
+
     public override void Start()
     {
+        GameObject manager = GameObject.Find("PostProcessingManager");
+        postProcessingEffect = manager.GetComponent<FinalAttakPostProcessingEffect>();
+
+
+
         base.Start();
         this.enemyDataSO = enemyData;
         moveState = new E3_MoveState(this, stateMachine, "isWalking", enemyData, this);
@@ -70,7 +79,7 @@ public class Enemy3 : Entity
         circleAttackState = new E3_CircleAttackState(this, stateMachine, "isCircleAttacking", attackPosition, enemyDataSO, aoePrefab, this);
         pierceAttackState = new E3_PierceAttackState(this, stateMachine, "isPiercing", priecePosition, piercePrefab, this);
         movingImpale = new E3_MovingImpale(this, stateMachine, "isMovePriecing", attackPosition, enemyDataSO,movingpiercePrefab ,this);
-        finalAttackState = new E3_FinalAttack(this, stateMachine, "isFinalAttack", attackPosition, enemyDataSO, movingpiercePrefab, this);
+        finalAttackState = new E3_FinalAttack(this, stateMachine, "isFinalAttack", attackPosition, enemyDataSO, movingpiercePrefab, postProcessingEffect, this);
 
 
         stateMachine.Initialize(moveState);
@@ -117,7 +126,7 @@ public class Enemy3 : Entity
     public override void Update()
     {
         base.Update();
-        if (hasRevived && !hasPierceTriggered && currentHealth <= enemyDataSO.maxHealth * 0.3f)
+        if (hasRevived && !hasPierceTriggered && currentHealth <= enemyDataSO.maxHealth * 0.5f)
         {
             if (DetectTargetInPierceRange())
             {
@@ -125,11 +134,17 @@ public class Enemy3 : Entity
             }
         }
 
-        if (hasRevived && !isFinalAttackActive && currentHealth <= 50)
+        if (hasRevived && currentHealth <= 100 && canInvincible== false)
         {
-            shouldEnterFinalAttack = true;
-          
+            isInvincible = true;
+            canInvincible = true;
+            if (!isFinalAttackActive)
+            {
+                shouldEnterFinalAttack = true;
+
+            }
         }
+       
     }
 
    
