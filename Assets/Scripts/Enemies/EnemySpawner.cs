@@ -1,91 +1,144 @@
-using System.IO;
-using System;
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+
+// --- DATA STRUCTURES FOR THE NEW SYSTEM ---
+
+/// <summary>
+/// Defines a single group of identical enemies to be spawned sequentially.
+/// </summary>
+[System.Serializable]
+public class EnemyGroup
+{
+    [Tooltip("The type of enemy to spawn in this group.")]
+    public GameObject enemyPrefab;
+
+    [Tooltip("The path this specific group of enemies will follow.")]
+    public EnemyPathData pathForThisEnemy;
+
+    [Tooltip("How many enemies to spawn in this group.")]
+    public int count = 5;
+
+    [Tooltip("The time delay between each spawn within this group.")]
+    public float spawnInterval = 1.5f;
+}
+
+/// <summary>
+/// Defines a single wave. A wave can contain multiple enemy groups
+/// that will all start spawning at the same time (in parallel).
+/// </summary>
+[System.Serializable]
+public class SpawnWave
+{
+    [Tooltip("Time in seconds to wait AFTER the previous wave is completely finished BEFORE this wave begins.")]
+    public float delayBeforeWave = 10f;
+
+    [Tooltip("A list of all enemy groups that will start spawning simultaneously in this wave.")]
+    public List<EnemyGroup> enemyGroups;
+}
+
+
+// --- THE NEW ENEMY SPAWNER SCRIPT ---
 
 public class EnemySpawner : MonoBehaviour
 {
-    [Header("Spawner Settings")]
-    public GameObject[] enemyPrefabs;
-    public Transform spawnPoint;
-    public float spawnInterval = 2f;
-
-    private float timer;
-    private int spawnedCount = 0;
-    public int maxEnemies = 10; // Set per spawner
-
-    [Header("Path Settings")]
-    public EnemyPathData enemyPathData;
-    public int EnemyIndex;
-
-    public int GetQuota() => maxEnemies;
-
-    private void Awake()
-    {
-        
-    }
+    [Header("Wave Configuration")]
+    [Tooltip("A list of all waves that this spawner will execute in order.")]
+    public List<SpawnWave> waves;
 
     void Start()
     {
-        // Optionally, register this spawner in a static list for quota summing
-        EnemySpawnerRegistry.Register(this);
+        StartCoroutine(ProcessAllWaves());
     }
 
-    void Update()
+    /// <summary>
+    /// Calculates the total number of enemies this spawner will create across all waves.
+    /// Call this from your GameManager to set the win condition.
+    /// </summary>
+    /// <returns>The total count of all enemies to be spawned.</returns>
+    public int GetTotalEnemyCount()
     {
-        if (spawnedCount >= maxEnemies)
-            return;
-
-        timer += Time.deltaTime;
-        if (timer >= spawnInterval)
+        int totalCount = 0;
+        foreach (var wave in waves)
         {
-            timer = 0f;
-            SpawnEnemy(EnemyIndex);
+            foreach (var group in wave.enemyGroups)
+            {
+                totalCount += group.count;
+            }
+        }
+        return totalCount;
+    }
+
+    /// <summary>
+    /// The main coroutine that iterates through each wave sequentially.
+    /// </summary>
+    private IEnumerator ProcessAllWaves()
+    {
+        foreach (var wave in waves)
+        {
+            // 1. Wait for the specified delay before this wave starts.
+            yield return new WaitForSeconds(wave.delayBeforeWave);
+
+            // --- THIS IS THE NEW LOGIC TO WAIT FOR THE WAVE TO FINISH ---
+            // 2. Create a list to keep track of the running spawn coroutines for this wave.
+            List<Coroutine> runningGroupSpawners = new List<Coroutine>();
+
+            // 3. Start a new coroutine for each enemy group in the wave and add it to our tracking list.
+            foreach (var group in wave.enemyGroups)
+            {
+                Coroutine groupCoroutine = StartCoroutine(SpawnEnemyGroup(group));
+                runningGroupSpawners.Add(groupCoroutine);
+            }
+
+            // 4. Now, wait for every single coroutine in our tracking list to finish.
+            //    The main coroutine will pause here until the last enemy of the current wave has been spawned.
+            foreach (var coroutine in runningGroupSpawners)
+            {
+                yield return coroutine;
+            }
+            // --- END NEW LOGIC ---
+
+            Debug.Log("A wave has finished spawning all its enemies.");
+        }
+
+        Debug.Log("Spawner has finished all waves.");
+    }
+
+    /// <summary>
+    /// A coroutine responsible for spawning a single group of sequential enemies.
+    /// </summary>
+    private IEnumerator SpawnEnemyGroup(EnemyGroup group)
+    {
+        for (int i = 0; i < group.count; i++)
+        {
+            SpawnSingleEnemy(group);
+            yield return new WaitForSeconds(group.spawnInterval);
         }
     }
 
-    void SpawnEnemy(int index)
+    /// <summary>
+    /// Instantiates one enemy and assigns it the correct path.
+    /// </summary>
+    private void SpawnSingleEnemy(EnemyGroup group)
     {
-        if (index < 0 || index >= enemyPrefabs.Length)
+        if (group.enemyPrefab == null || group.pathForThisEnemy == null)
         {
-            Debug.LogWarning("Invalid enemy index");
+            Debug.LogWarning("An enemy group is missing a prefab or a path!", this);
             return;
         }
 
-        GameObject enemyObj = Instantiate(enemyPrefabs[index], transform.position, Quaternion.identity);
+        GameObject enemyObj = Instantiate(group.enemyPrefab, transform.position, Quaternion.identity);
+
         var pathFollower = enemyObj.GetComponent<EnemyPathFollower>();
         var directionHandler = enemyObj.GetComponent<EnemyDirectionHandler>();
 
-        if (pathFollower != null && directionHandler != null && enemyPathData != null)
+        if (pathFollower != null && directionHandler != null)
         {
-            // Create a per-enemy runtime path
             var runtimePath = enemyObj.AddComponent<EnemyPath>();
-            runtimePath.Initialize(enemyPathData.checkpoints, directionHandler);
-
-            // Assign the runtime path to the path follower
+            runtimePath.Initialize(group.pathForThisEnemy.checkpoints, directionHandler);
             pathFollower.SetPath(runtimePath);
         }
 
         GameManager.Instance?.RegisterEnemy(enemyObj);
-        spawnedCount++;
-    }
-}
-
-// Helper registry for quota summing
-public static class EnemySpawnerRegistry
-{
-    private static readonly System.Collections.Generic.List<EnemySpawner> spawners = new();
-
-    public static void Register(EnemySpawner spawner)
-    {
-        if (!spawners.Contains(spawner))
-            spawners.Add(spawner);
-    }
-
-    public static int GetTotalQuota()
-    {
-        int total = 0;
-        foreach (var spawner in spawners)
-            total += spawner.GetQuota();
-        return total;
     }
 }

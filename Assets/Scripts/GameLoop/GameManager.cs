@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
         foreach (var spawner in spawners)
         {
             if (spawner != null)
-                total += spawner.maxEnemies;
+                total += spawner.GetTotalEnemyCount();
         }
         SetTotalEnemiesToDefeat(total);
 

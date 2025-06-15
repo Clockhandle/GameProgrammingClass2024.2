@@ -12,10 +12,9 @@ public class LevelMapController : MonoBehaviour
             Debug.LogError("LevelMapController: The 'LevelManager' reference has not been set in the Inspector! Aborting setup.");
             return;
         }
-        ConfigureAllLevelButtons();
     }
 
-    private void ConfigureAllLevelButtons()
+    public void ConfigureAllLevelButtons()
     {
 
         LevelButton[] levelButtonsInScene = FindObjectsOfType<LevelButton>(true);

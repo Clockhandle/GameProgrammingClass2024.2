@@ -33,4 +33,5 @@ public class ProgressManager : MonoBehaviour
     {
         return PlayerPrefs.GetInt(levelSceneName, 0) == 1;
     }
+
 }
