@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrowSpawnPoint: {fileID: 4604032885493801625}
-  arrowPrefab: {fileID: 1563203788659945797, guid: 1fe7ab0acff1b134c82d31b38e015dc8, type: 3}
+  arrowPrefab: {fileID: 1563203788659945797, guid: 89eb31fd12b2c0546b7ac98fa3988742, type: 3}
   isBurstActive: 0
 --- !u!1 &576035123649388288
 GameObject:
@@ -615,6 +615,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarSlider: {fileID: 3816377607712378292}
+  damageIndicatorSlider: {fileID: 0}
+  indicatorSpeed: 1.5
 --- !u!1 &2810045611388495110
 GameObject:
   m_ObjectHideFlags: 0

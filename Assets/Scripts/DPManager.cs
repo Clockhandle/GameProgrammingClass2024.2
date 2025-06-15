@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class DPManager : MonoBehaviour
 {
@@ -10,7 +11,11 @@ public class DPManager : MonoBehaviour
     public int startingDP = 20;
     public TMP_Text dpText;
 
+    public float dpGainInterval = 1f; 
+    public int dpGainAmount = 1;
+
     private int currentDP;
+    public int maxDP = 50;
 
     void Awake()
     {
@@ -26,8 +31,20 @@ public class DPManager : MonoBehaviour
     {
         currentDP = startingDP;
         UpdateDPText();
+      
     }
 
+    private float dpTimer = 0f;
+
+    void Update()
+    {
+        dpTimer += Time.deltaTime;
+        if (dpTimer >= dpGainInterval)
+        {
+            dpTimer = 0f;
+            GainDP(dpGainAmount);
+        }
+    }
     public bool CanSpendDP(int amount)
     {
         return currentDP >= amount;
@@ -41,7 +58,7 @@ public class DPManager : MonoBehaviour
 
     public void GainDP(int amount)
     {
-        currentDP += amount;
+        currentDP = Mathf.Min(currentDP + amount, maxDP);
         UpdateDPText();
     }
 
@@ -55,4 +72,6 @@ public class DPManager : MonoBehaviour
     {
         return currentDP;
     }
+
+  
 }

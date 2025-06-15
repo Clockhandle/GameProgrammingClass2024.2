@@ -190,9 +190,11 @@ public class Unit : MonoBehaviour
 
             SwitchState(operationalState);
 
+          
+
             //Instantiate Deployment effect
             GameObject deployedEffect = Instantiate(deploymentEffectPrefab, deploymentEffectSpawnPoint.position, deploymentEffectSpawnPoint.rotation);
-            Destroy(deployedEffect, .8f);
+            Destroy(deployedEffect, .5f);
 
 
 
@@ -252,7 +254,22 @@ public class Unit : MonoBehaviour
             Sprite unitIcon = unitDataSO != null ? unitDataSO.icon : null; // Add an 'icon' field to UnitDataSO if needed
             float cooldown = unitDataSO != null ? unitDataSO.redeployCooldown : 10f; // Or use a dedicated redeployCooldown
 
-            RedeploymentManager.Instance.AddToWaitList(SourcePrefab, unitIcon, cooldown);
+            RedeploymentManager.Instance.AddToWaitList(SourcePrefab, unitIcon, cooldown, entry => {
+
+                // When retreat updadt text
+                UnitIconData iconData = UnitIconData.GetIconDataByPrefab(entry.unitPrefab);
+                if (iconData != null)
+                {
+                    var deploymentText = iconData.GetComponentInChildren<DeploymentAmountText>();
+                    if (deploymentText != null)
+                    {
+                        deploymentText.UpdateDeployCountText();
+                    }
+                }
+
+            });
+
+
 
             if (unitDataSO != null && DPManager.Instance != null)
             {
@@ -266,6 +283,7 @@ public class Unit : MonoBehaviour
             if (prefabToRestore != null)
             {
                 DeploymentManager.Instance?.UnregisterDeployment(prefabToRestore);
+
                 // Re-enable the icon for deployment
                 DragToScreenManager.Instance?.HandleUnitRetreat(prefabToRestore);
             }

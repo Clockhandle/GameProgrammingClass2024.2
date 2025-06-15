@@ -190,6 +190,8 @@ MonoBehaviour:
   bonusDamage: 10
   animSpeedMultiplier: 1.5
   buffDuration: 5
+  shockwavePrefab: {fileID: 3257162758910164222, guid: e8e4b977be7fa9a4586c9e4906731e55, type: 3}
+  shockwaveSpawnDelay: 0.75
 --- !u!95 &8167555061615594946
 Animator:
   serializedVersion: 5
