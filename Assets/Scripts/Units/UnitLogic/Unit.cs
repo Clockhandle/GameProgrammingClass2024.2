@@ -158,7 +158,8 @@ public class Unit : MonoBehaviour
                 if (!DPManager.Instance.CanSpendDP(unitDP))
                 {
                     Debug.LogWarning("Not enough DP to confirm deployment!");
-                    // Optionally destroy the provisional unit or show a warning
+                    DragToScreenManager.Instance?.HandleUnitRetreat(SourcePrefab);
+                    TileManager.Instance?.tileOccupancyCheck?.SetTileToOccupied(transform.position, false); // Unoccupy the tile
                     Destroy(gameObject);
                     return;
                 }
@@ -496,6 +497,7 @@ public class Unit : MonoBehaviour
     {
 
         yield return new WaitForSeconds(2f); // Wait for animation to finish
+        TileManager.Instance.tileOccupancyCheck.SetTileToOccupied(transform.position, false); // Unoccupy the tile
         Destroy(gameObject);
       
     }
