@@ -50,3 +50,9 @@ TagManager:
   - name: CameraSortingLayer
     uniqueID: 445145373
     locked: 0
+  - name: TileLayer
+    uniqueID: 4081488397
+    locked: 0
+  - name: New Layer 4
+    uniqueID: 3603863201
+    locked: 0
