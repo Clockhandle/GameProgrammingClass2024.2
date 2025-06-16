@@ -563,13 +563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8408553afffa8db4db254a2d8ee7df0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefabs:
-  - {fileID: 2308237452221420818, guid: 16cf4e12810d5a243809054affab8126, type: 3}
-  spawnPoint: {fileID: 130296949}
-  spawnInterval: 5
-  maxEnemies: 5
-  enemyPathData: {fileID: 0}
-  EnemyIndex: 0
+  waves: []
 --- !u!1 &157763540
 GameObject:
   m_ObjectHideFlags: 0
@@ -4092,7 +4086,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &613308270
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5678,18 +5672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8408553afffa8db4db254a2d8ee7df0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefabs:
-  - {fileID: 2308237452221420818, guid: 16cf4e12810d5a243809054affab8126, type: 3}
-  - {fileID: 2308237452221420818, guid: c57c3c882e4170f43a09432aa427076e, type: 3}
-  - {fileID: 2308237452221420818, guid: 3d7c1d5113beb4b49bb533ce37f8685a, type: 3}
-  - {fileID: 2308237452221420818, guid: 7f231135d0badcb4c9e6de19a13d09e6, type: 3}
-  - {fileID: 2308237452221420818, guid: 5c41efb92319d024b9db52eb72c8aad2, type: 3}
-  - {fileID: 2308237452221420818, guid: a6ed76609c771864f8fccf74299da475, type: 3}
-  spawnPoint: {fileID: 1069802098}
-  spawnInterval: 2
-  maxEnemies: 3
-  enemyPathData: {fileID: 1485921165}
-  EnemyIndex: 2
+  waves: []
 --- !u!224 &1077756844 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 88175055074354247, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
@@ -5883,7 +5866,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1129010644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7613,19 +7596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8408553afffa8db4db254a2d8ee7df0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefabs:
-  - {fileID: 2308237452221420818, guid: 3d7c1d5113beb4b49bb533ce37f8685a, type: 3}
-  - {fileID: 2308237452221420818, guid: 7f231135d0badcb4c9e6de19a13d09e6, type: 3}
-  - {fileID: 2308237452221420818, guid: 0d204e74eac827e4b90344aeeb02745d, type: 3}
-  - {fileID: 2308237452221420818, guid: a6ed76609c771864f8fccf74299da475, type: 3}
-  - {fileID: 2308237452221420818, guid: c2592038bcc41d84c884dd2f29152f27, type: 3}
-  - {fileID: 2308237452221420818, guid: 5c41efb92319d024b9db52eb72c8aad2, type: 3}
-  - {fileID: 2308237452221420818, guid: fea43ae6fb11e1f489326e0cb217a49e, type: 3}
-  spawnPoint: {fileID: 1640323015}
-  spawnInterval: 3
-  maxEnemies: 4
-  enemyPathData: {fileID: 919867792}
-  EnemyIndex: 5
+  waves: []
 --- !u!1001 &1649479039
 PrefabInstance:
   m_ObjectHideFlags: 0

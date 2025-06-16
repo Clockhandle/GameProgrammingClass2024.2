@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb5abc4f2fcf7843a30adc1d8591e32, type: 3}
   m_Name: REviveDevilBossData
   m_EditorClassIdentifier: 
-  maxHealth: 2000
+  maxHealth: 1000
   moveSpeed: 3
   damage: 10
   idleTime: 0
