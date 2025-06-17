@@ -5981,20 +5981,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - delayBeforeWave: 2
+  - delayBeforeWave: 1
     enemyGroups:
     - enemyPrefab: {fileID: 2308237452221420818, guid: 3d7c1d5113beb4b49bb533ce37f8685a, type: 3}
+      pathForThisEnemy: {fileID: 919867792}
+      count: 2
+      spawnInterval: 3
+    - enemyPrefab: {fileID: 2308237452221420818, guid: 3d7c1d5113beb4b49bb533ce37f8685a, type: 3}
+      pathForThisEnemy: {fileID: 478860176}
+      count: 1
+      spawnInterval: 1
+    - enemyPrefab: {fileID: 2308237452221420818, guid: 3d7c1d5113beb4b49bb533ce37f8685a, type: 3}
+      pathForThisEnemy: {fileID: 2103218459}
+      count: 2
+      spawnInterval: 1
+  - delayBeforeWave: 8
+    enemyGroups:
+    - enemyPrefab: {fileID: 2308237452221420818, guid: 7f231135d0badcb4c9e6de19a13d09e6, type: 3}
+      pathForThisEnemy: {fileID: 919867792}
+      count: 1
+      spawnInterval: 0
+    - enemyPrefab: {fileID: 2308237452221420818, guid: 7f231135d0badcb4c9e6de19a13d09e6, type: 3}
+      pathForThisEnemy: {fileID: 478860176}
+      count: 1
+      spawnInterval: 1
+    - enemyPrefab: {fileID: 2308237452221420818, guid: 7f231135d0badcb4c9e6de19a13d09e6, type: 3}
+      pathForThisEnemy: {fileID: 2103218459}
+      count: 1
+      spawnInterval: 1
+  - delayBeforeWave: 8
+    enemyGroups:
+    - enemyPrefab: {fileID: 2308237452221420818, guid: 7f231135d0badcb4c9e6de19a13d09e6, type: 3}
       pathForThisEnemy: {fileID: 919867792}
       count: 1
       spawnInterval: 0
     - enemyPrefab: {fileID: 2308237452221420818, guid: 3d7c1d5113beb4b49bb533ce37f8685a, type: 3}
       pathForThisEnemy: {fileID: 478860176}
       count: 1
-      spawnInterval: 0
+      spawnInterval: 1
     - enemyPrefab: {fileID: 2308237452221420818, guid: 3d7c1d5113beb4b49bb533ce37f8685a, type: 3}
       pathForThisEnemy: {fileID: 2103218459}
       count: 1
-      spawnInterval: 0
+      spawnInterval: 1
 --- !u!224 &1077756844 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 88175055074354247, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
