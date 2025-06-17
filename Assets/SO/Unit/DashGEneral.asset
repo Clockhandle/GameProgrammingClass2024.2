@@ -17,14 +17,14 @@ MonoBehaviour:
   resistance: 0
   SP: 10
   blockCount: 2
-  attackDamage: 1
+  attackDamage: 10
   attackInterval: 1
   attackRange: 3
   attackOffset: {x: 1, y: 0, z: 0}
   healAmount: 2
   type: -1
   unitClass: 8
-  DP: 10
+  DP: 20
   maxNumberOfDeployments: 1
   icon: {fileID: 4180825990950168742, guid: 829abd4cc361e704687d33c249815fae, type: 3}
   redeployCooldown: 10

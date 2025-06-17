@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15e5fd9db2dce3c40a6321014b0f375f, type: 3}
   m_Name: Scout
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 70
   defense: 10
   resistance: 0
   SP: 10
@@ -24,7 +24,7 @@ MonoBehaviour:
   healAmount: 2
   type: -1
   unitClass: 16
-  DP: 10
+  DP: 7
   maxNumberOfDeployments: 5
   icon: {fileID: -5114849652909933884, guid: 39d21d1e2e703db46b248dbe1205b17d, type: 3}
   redeployCooldown: 3

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb5abc4f2fcf7843a30adc1d8591e32, type: 3}
   m_Name: TrailAttackEnemy
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 200
   moveSpeed: 2
-  damage: 10
-  idleTime: 4
+  damage: 15
+  idleTime: 1
   longRange: 4
   walkDurrationRanged: 2
-  stuntTime: 1.5
+  stuntTime: 2
