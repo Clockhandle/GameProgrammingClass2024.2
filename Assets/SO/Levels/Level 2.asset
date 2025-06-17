@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c583a4970bbd6147b697bdebadf1455, type: 3}
   m_Name: Level 2
   m_EditorClassIdentifier: 
-  levelName: Level 2
+  levelName: Level 1
   sceneToLoad: Level 2
-  levelDescription: BOMBADINO CROCODILO
+  levelDescription: The army advances to Ai Nam Quan and engages the enemy at Van
+    Kiep, with Tran Hung Dao personally leading the charge.
   levelIcon: {fileID: 21300000, guid: 5c5ed1578e4273c479c26e90f88fdcf4, type: 3}
   isUnlocked: 0
   levelMusic: {fileID: 8300000, guid: 2829162347d8bfb459e102fc2fc72fcf, type: 3}

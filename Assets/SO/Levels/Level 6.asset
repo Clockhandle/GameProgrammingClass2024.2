@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c583a4970bbd6147b697bdebadf1455, type: 3}
   m_Name: Level 6
   m_EditorClassIdentifier: 
-  levelName: Level 6
+  levelName: Level 5
   sceneToLoad: Level 6
-  levelDescription: BOMBADINI GUISINI
+  levelDescription: "The enemy\u2019s overwhelming numbers initially forced our troops
+    to retreat. Yet, with the support of fellow generals and the spirit of unity,
+    our army rose once more to stand against an unimaginable force."
   levelIcon: {fileID: 21300000, guid: f8edd1b11997fa746ba505a0ec1e680f, type: 3}
   isUnlocked: 0
   levelMusic: {fileID: 8300000, guid: 2829162347d8bfb459e102fc2fc72fcf, type: 3}

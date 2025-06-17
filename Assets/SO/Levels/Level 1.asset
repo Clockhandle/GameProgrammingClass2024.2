@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: Tutorial
   sceneToLoad: Level 1
-  levelDescription: TRALALERO TRALALA
+  levelDescription: " February 1284 \u2013 Soldiers train at the drill grounds of
+    Th\u0103ng Long Imperial Citadel in preparation for the upcoming battle against
+    the Mongol invaders"
   levelIcon: {fileID: 21300000, guid: 822e961102198384a878d2da0265c504, type: 3}
   isUnlocked: 1
   levelMusic: {fileID: 8300000, guid: 2829162347d8bfb459e102fc2fc72fcf, type: 3}
