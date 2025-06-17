@@ -1,11 +1,12 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/NewUSS.uss?fileID=7433441132597879392&amp;guid=bc130e53d86cf764eb7a2c8ba346399f&amp;type=3#NewUSS" />
     <ui:VisualElement name="MainMenu" style="flex-grow: 1; align-items: center; justify-content: center; -unity-text-align: upper-left; flex-direction: column; -unity-font-definition: url(&quot;project://database/Assets/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&amp;guid=543cd9fe3f3f74e1fa43a1538bdb5564&amp;type=3#NotInter-Regular&quot;); transition-duration: 0.45s; background-image: none; -unity-slice-bottom: 0; -unity-slice-right: 0; -unity-slice-left: 0;">
-        <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/General%20Asset/resize%20again.png?fileID=21300000&amp;guid=df1b6b4946f1e6e42b413b964fbf8396&amp;type=3#resize again&quot;); height: 1000px; width: 1920px;">
+        <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/General%20Asset/New%20BG.png?fileID=21300000&amp;guid=286d2f970a319f04d9eeeb0372383d27&amp;type=3#New BG&quot;); height: 1000px; width: 1920px;">
             <ui:Label text="Label" name="Title" class="header" style="margin-top: 4px; width: 654px; height: 376px; -unity-text-align: middle-center; -unity-font-definition: url(&quot;project://database/Assets/UI/Fonts/ChelaOne-Regular.ttf?fileID=12800000&amp;guid=8c2226f5768e49f4ca5f58858a57cb7a&amp;type=3#ChelaOne-Regular&quot;); white-space: pre; text-overflow: clip; color: rgba(27, 27, 27, 0);" />
             <ui:Button text="Start" name="StartButton" class="button" style="position: absolute; top: 486px; left: 61px;" />
             <ui:Button text="Setting&#10;" name="SettingButton" class="button" style="position: absolute; top: 681px; left: 60px;" />
             <ui:Button text="Quit&#10;" name="QuitButton" class="button" style="position: absolute; top: 883px; left: 62px;" />
         </ui:VisualElement>
     </ui:VisualElement>
+    <ui:VisualElement name="TiTl" style="flex-grow: 1; position: absolute; height: 438px; width: 932px; top: -79px; left: 478px; background-image: url(&quot;project://database/Assets/General%20Asset/newTitle.png?fileID=21300000&amp;guid=fafe564364e59b747b1afc61fc4f4ebc&amp;type=3#newTitle&quot;);" />
 </ui:UXML>

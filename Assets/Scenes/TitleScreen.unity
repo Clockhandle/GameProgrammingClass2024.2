@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 10
+  serializedVersion: 9
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -42,8 +42,8 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 13
-  m_BakeOnSceneLoad: 0
+  serializedVersion: 12
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -66,6 +66,9 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
+    m_FinalGather: 0
+    m_FinalGatherFiltering: 1
+    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -146,8 +149,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 1604718913182635227, guid: ac794248e9b1e8a4195696f279f2d1cc, type: 2}
-  m_audioClip: {fileID: 8300000, guid: d908e625c6c6c482f95f3dd405da2969, type: 3}
-  m_Resource: {fileID: 8300000, guid: d908e625c6c6c482f95f3dd405da2969, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0c2f5e196afe4644d9b1ffb8d644851d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -414,14 +416,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ComponentVersion: 2
+  m_ComponentVersion: 1
   m_LightType: 4
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 1
-  m_LightVolumeEnabled: 0
+  m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
@@ -431,10 +433,8 @@ MonoBehaviour:
   m_NormalMapDistance: 3
   m_NormalMapQuality: 2
   m_UseNormalMap: 0
-  m_ShadowsEnabled: 0
+  m_ShadowIntensityEnabled: 0
   m_ShadowIntensity: 0.75
-  m_ShadowSoftness: 0
-  m_ShadowSoftnessFalloffIntensity: 0.5
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
@@ -504,9 +504,6 @@ MonoBehaviour:
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: ef12ae46693e2584f9a3f82cb10caba7, type: 3}
   m_SortingOrder: 1
-  m_WorldSpaceSizeMode: 1
-  m_WorldSpaceWidth: 1920
-  m_WorldSpaceHeight: 1080
 --- !u!4 &903796533
 Transform:
   m_ObjectHideFlags: 0
@@ -546,7 +543,6 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 7607741706569866238, guid: ac794248e9b1e8a4195696f279f2d1cc, type: 2}
   m_audioClip: {fileID: 8300000, guid: c5270734ff02ea2468e4a4085ab2c04f, type: 3}
-  m_Resource: {fileID: 8300000, guid: c5270734ff02ea2468e4a4085ab2c04f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -666,9 +662,6 @@ MonoBehaviour:
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 6399f1a8aee86b740b090525c0a5f914, type: 3}
   m_SortingOrder: 0
-  m_WorldSpaceSizeMode: 1
-  m_WorldSpaceWidth: 1920
-  m_WorldSpaceHeight: 1080
 --- !u!4 &1871564810
 Transform:
   m_ObjectHideFlags: 0
@@ -731,9 +724,6 @@ MonoBehaviour:
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 6faf47aecf77c0542b497c9ce09bad7b, type: 3}
   m_SortingOrder: 0
-  m_WorldSpaceSizeMode: 1
-  m_WorldSpaceWidth: 1920
-  m_WorldSpaceHeight: 1080
 --- !u!4 &2074925338
 Transform:
   m_ObjectHideFlags: 0
@@ -774,7 +764,6 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 7607741706569866238, guid: ac794248e9b1e8a4195696f279f2d1cc, type: 2}
   m_audioClip: {fileID: 8300000, guid: c5270734ff02ea2468e4a4085ab2c04f, type: 3}
-  m_Resource: {fileID: 8300000, guid: c5270734ff02ea2468e4a4085ab2c04f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
