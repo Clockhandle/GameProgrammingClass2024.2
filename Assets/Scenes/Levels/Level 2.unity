@@ -10640,6 +10640,7 @@ MonoBehaviour:
   WinPanel: {fileID: 1271378545}
   spawners:
   - {fileID: 1069802099}
+  - {fileID: 1640323016}
   levelSelectorSceneName: LevelSelector3
 --- !u!4 &1906898357
 Transform:
