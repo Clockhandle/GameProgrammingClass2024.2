@@ -157,15 +157,27 @@ public class Unit : MonoBehaviour
             if (unitDataSO != null && DPManager.Instance != null)
             {
                 int unitDP = unitDataSO.DP;
+                // Check deployment count BEFORE spending DP
+                if (unitDataSO.maxNumberOfDeployments <= 0)
+                {
+                    Debug.LogWarning("No deployments left for this unit!");
+                    DragToScreenManager.Instance?.HandleUnitRetreat(SourcePrefab);
+                    TileManager.Instance?.tileOccupancyCheck?.SetTileToOccupied(transform.position, false);
+                    Destroy(gameObject);
+                    return;
+                }
                 if (!DPManager.Instance.CanSpendDP(unitDP))
                 {
                     Debug.LogWarning("Not enough DP to confirm deployment!");
+                    // Reverse the deployment count decrement if it was already decremented elsewhere
+                    unitDataSO.maxNumberOfDeployments += 1; // Restore the count
                     DragToScreenManager.Instance?.HandleUnitRetreat(SourcePrefab);
-                    TileManager.Instance?.tileOccupancyCheck?.SetTileToOccupied(transform.position, false); // Unoccupy the tile
+                    TileManager.Instance?.tileOccupancyCheck?.SetTileToOccupied(transform.position, false);
                     Destroy(gameObject);
                     return;
                 }
                 DPManager.Instance.SpendDP(unitDP);
+                unitDataSO.maxNumberOfDeployments -= 1; // Only decrement after successful DP spend
             }
 
             // --- Placement Finalization Steps ---

@@ -89,9 +89,13 @@ public abstract class EnemyBase : MonoBehaviour
     {
         if (isDead) return;
         isDead = true;
-        animator?.SetBool("isAttacking", false);
-        // Unified: Notify GameManager that this enemy is defeated (slain or reached goal)
-        GameManager.Instance?.OnEnemyDefeated();
+
+        // Only call OnEnemyDefeated if this enemy does NOT have a custom revive logic
+        // Enemy1Revive will handle the counter itself after true death
+        if (!(this is Enemy1Revive))
+        {
+            GameManager.Instance?.OnEnemyDefeated();
+        }
 
         // Add death effects, drop loot, etc.
         Destroy(gameObject);

@@ -29,7 +29,7 @@ public class Enemy1Revive : Enemy1
 
         if (currentHealth <= 2 && !hasRevived)
         {
-            currentHealth = 2; // clamp HP to 1 before revive
+            currentHealth = 2; // clamp HP to 2 before revive
             hasRevived = true;
             isDead = true; // temporarily dead for revive state
             stateMachine.ChangeState(reviveState);
@@ -40,7 +40,9 @@ public class Enemy1Revive : Enemy1
         {
             isDead = true;
             stateMachine.ChangeState(deadState);
-           
+
+            // Only now, after revive is used and health is 0, count as truly dead
+            GameManager.Instance?.OnEnemyDefeated();
         }
     }
 
