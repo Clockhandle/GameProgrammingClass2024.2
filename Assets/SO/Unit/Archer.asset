@@ -17,7 +17,7 @@ MonoBehaviour:
   resistance: 0
   SP: 10
   blockCount: 1
-  attackDamage: 1
+  attackDamage: 10
   attackInterval: 1
   attackRange: 5
   attackOffset: {x: 1, y: 0, z: 0}
