@@ -5943,7 +5943,7 @@ MonoBehaviour:
       pathForThisEnemy: {fileID: 2103218459}
       count: 1
       spawnInterval: 6
-  - delayBeforeWave: 20
+  - delayBeforeWave: 30
     enemyGroups:
     - enemyPrefab: {fileID: 2308237452221420818, guid: 0d204e74eac827e4b90344aeeb02745d, type: 3}
       pathForThisEnemy: {fileID: 919867792}
@@ -8491,13 +8491,13 @@ MonoBehaviour:
     enemyGroups:
     - enemyPrefab: {fileID: 2308237452221420818, guid: 0d204e74eac827e4b90344aeeb02745d, type: 3}
       pathForThisEnemy: {fileID: 2103218459}
-      count: 2
+      count: 1
       spawnInterval: 5
   - delayBeforeWave: 80
     enemyGroups:
     - enemyPrefab: {fileID: 2308237452221420818, guid: 0d204e74eac827e4b90344aeeb02745d, type: 3}
       pathForThisEnemy: {fileID: 2103218459}
-      count: 3
+      count: 1
       spawnInterval: 10
 --- !u!1001 &1649479039
 PrefabInstance:
