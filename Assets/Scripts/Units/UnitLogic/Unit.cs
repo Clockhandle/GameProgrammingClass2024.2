@@ -36,6 +36,7 @@ public class Unit : MonoBehaviour
     private GameObject directionUIInstance;
     public GameObject SourcePrefab { get; private set; }
     private UnitStates currentStates;
+    private UnitAudio unitAudio;
 
     //List of friend and foe
     private List<EnemyPathFollower> blockedEnemies = new List<EnemyPathFollower>();
@@ -84,6 +85,7 @@ public class Unit : MonoBehaviour
         // Ensure UnitDataSO is assigned
         if (unitDataSO == null) Debug.LogError("UnitDataSO not found on Unit!", this);
         currentHealth = unitDataSO != null ? unitDataSO.maxHealth : 1;
+        unitAudio = GetComponent<UnitAudio>();
     }
 
     // Called immediately after instantiation by TileManager.TryPlaceCharacterProvisionally
@@ -461,6 +463,7 @@ public class Unit : MonoBehaviour
     {
         currentHealth -= amount;
         healthBarSlider.UpdateHealth(currentHealth, unitDataSO.maxHealth);
+        unitAudio.PlayHurtSound();
         if (currentHealth <= 0)
         {
             Die();
@@ -485,6 +488,7 @@ public class Unit : MonoBehaviour
         if (animator != null)
         {
             animator.SetTrigger("Die");
+            unitAudio.PlayDeathSound();
         }
 
         GameObject effect =  Instantiate(deathEffectPrefab, transform.position, Quaternion.identity);

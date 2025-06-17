@@ -802,6 +802,8 @@ MonoBehaviour:
   sfxList:
   - name: Skill Activation
     clip: {fileID: 8300000, guid: 9e9a93e898bbd93419fdb0c0b3f3b8dc, type: 3}
+  - name: Skill Special SFX
+    clip: {fileID: 8300000, guid: e010bdc2dfe8a054dbee383442792f8b, type: 3}
 --- !u!82 &318658979
 AudioSource:
   m_ObjectHideFlags: 0
