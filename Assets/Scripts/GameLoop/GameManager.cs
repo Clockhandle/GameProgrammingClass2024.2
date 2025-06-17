@@ -81,17 +81,8 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Game Clear!");
 
-            string sceneToUnlock = ProgressManager.Instance.sceneOfNextLevelToUnlock;
-
-            // 2. If it's not empty, tell the ProgressManager to save it
-            if (!string.IsNullOrEmpty(sceneToUnlock))
-            {
-                ProgressManager.Instance.UnlockLevel(sceneToUnlock);
-            }
-            ProgressManager.Instance.selectedCards.Clear();
-            ProgressManager.Instance.selectedLevel = null;
-
             WinPanel.SetActive(true);
+
         }
     }
 
@@ -145,6 +136,17 @@ public class GameManager : MonoBehaviour
 
     public void ReturnToLevelSelector()
     {
+        string sceneToUnlock = ProgressManager.Instance.sceneOfNextLevelToUnlock;
+
+        // 2. If it's not empty, tell the ProgressManager to save it
+        if (!string.IsNullOrEmpty(sceneToUnlock))
+        {
+            ProgressManager.Instance.UnlockLevel(sceneToUnlock);
+        }
+        ProgressManager.Instance.selectedCards.Clear();
+        ProgressManager.Instance.selectedLevel = null;
+
+
         UnityEngine.SceneManagement.SceneManager.LoadScene(levelSelectorSceneName);
     }
 }

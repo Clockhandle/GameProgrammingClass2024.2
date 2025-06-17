@@ -21,6 +21,8 @@ public class Unit : MonoBehaviour
     public int currentHealth;
     public int MaxHealth => unitDataSO.maxHealth;
 
+    // Add a runtime field to track remaining deployments for this unit instance
+    private int remainingDeployments;
 
     [Header("World Space UI")]
     [Tooltip("Assign the World Space Canvas Prefab with DirectionControlUI script")]
@@ -86,6 +88,7 @@ public class Unit : MonoBehaviour
         if (unitDataSO == null) Debug.LogError("UnitDataSO not found on Unit!", this);
         currentHealth = unitDataSO != null ? unitDataSO.maxHealth : 1;
         unitAudio = GetComponent<UnitAudio>();
+        remainingDeployments = unitDataSO != null ? unitDataSO.maxNumberOfDeployments : 1;
     }
 
     // Called immediately after instantiation by TileManager.TryPlaceCharacterProvisionally
@@ -94,6 +97,9 @@ public class Unit : MonoBehaviour
         this.SourcePrefab = prefab;
         currentStates = new UnitAwaitDeploymentState();
         currentStates?.StartState(this);
+
+        // Initialize runtime deployment count for this instance
+        remainingDeployments = unitDataSO != null ? unitDataSO.maxNumberOfDeployments : 1;
 
         if (directionControlUIPrefab != null)
         {
@@ -157,8 +163,8 @@ public class Unit : MonoBehaviour
             if (unitDataSO != null && DPManager.Instance != null)
             {
                 int unitDP = unitDataSO.DP;
-                // Check deployment count BEFORE spending DP
-                if (unitDataSO.maxNumberOfDeployments <= 0)
+                // Check runtime deployment count BEFORE spending DP
+                if (remainingDeployments <= 0)
                 {
                     Debug.LogWarning("No deployments left for this unit!");
                     DragToScreenManager.Instance?.HandleUnitRetreat(SourcePrefab);
@@ -169,15 +175,13 @@ public class Unit : MonoBehaviour
                 if (!DPManager.Instance.CanSpendDP(unitDP))
                 {
                     Debug.LogWarning("Not enough DP to confirm deployment!");
-                    // Reverse the deployment count decrement if it was already decremented elsewhere
-                    unitDataSO.maxNumberOfDeployments += 1; // Restore the count
                     DragToScreenManager.Instance?.HandleUnitRetreat(SourcePrefab);
                     TileManager.Instance?.tileOccupancyCheck?.SetTileToOccupied(transform.position, false);
                     Destroy(gameObject);
                     return;
                 }
                 DPManager.Instance.SpendDP(unitDP);
-                unitDataSO.maxNumberOfDeployments -= 1; // Only decrement after successful DP spend
+                remainingDeployments -= 1; // Only decrement after successful DP spend
             }
 
             // --- Placement Finalization Steps ---
@@ -223,6 +227,12 @@ public class Unit : MonoBehaviour
             PlacementUIManager.Instance?.NotifyDirectionUIHidden();
         }
         //ScanForInitialEnemies();
+    }
+
+    // Optionally, expose a method to get remaining deployments for UI
+    public int GetRemainingDeployments()
+    {
+        return remainingDeployments;
     }
 
     // Called externally (e.g., by DirectionSelectionUI) when retreat is chosen

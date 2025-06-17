@@ -1704,7 +1704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 389010cce8f2ab64092d5a8ff9e476e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 5
+  waitTime: 15
   facingDirectionPoint: 3
 --- !u!1 &372703188
 GameObject:
@@ -2899,7 +2899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 389010cce8f2ab64092d5a8ff9e476e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 5
+  waitTime: 15
   facingDirectionPoint: 3
 --- !u!1 &642509752
 GameObject:
@@ -12974,6 +12974,7 @@ MonoBehaviour:
   WinPanel: {fileID: 877211860}
   spawners:
   - {fileID: 1069802099}
+  - {fileID: 1640323016}
   levelSelectorSceneName: LevelSelector5
 --- !u!4 &1906898357
 Transform:

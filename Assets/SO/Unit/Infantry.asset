@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15e5fd9db2dce3c40a6321014b0f375f, type: 3}
   m_Name: Infantry
   m_EditorClassIdentifier: 
-  maxHealth: 150
+  maxHealth: 500
   defense: 10
   resistance: 0
   SP: 10
   blockCount: 3
-  attackDamage: 10
+  attackDamage: 20
   attackInterval: 1
   attackRange: 1
   attackOffset: {x: 1, y: 0, z: 0}
@@ -25,7 +25,7 @@ MonoBehaviour:
   type: 1
   unitClass: 1
   DP: 10
-  maxNumberOfDeployments: 1
+  maxNumberOfDeployments: 3
   icon: {fileID: -8763367917977260938, guid: c68f26ebcd978154c87338620a962482, type: 3}
   redeployCooldown: 10
   skillCoolDown: 8

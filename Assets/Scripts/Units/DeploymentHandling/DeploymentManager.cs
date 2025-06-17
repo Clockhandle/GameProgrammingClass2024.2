@@ -7,6 +7,7 @@ public class DeploymentManager : MonoBehaviour
 {
     public static DeploymentManager Instance { get; private set; }
     private Dictionary<int, int> deployedCounts = new Dictionary<int, int>();
+    private Dictionary<GameObject, int> runtimeDeploymentCounts = new Dictionary<GameObject, int>();
 
     private void Awake()
     {
@@ -59,6 +60,24 @@ public class DeploymentManager : MonoBehaviour
         if (unitPrefab == null) return 0;
         int key = unitPrefab.GetInstanceID();
         return deployedCounts.ContainsKey(key) ? deployedCounts[key] : 0;
-        
+    }
+
+    public int GetRemainingDeployments(GameObject unitPrefab, UnitDataSO unitDataSO)
+    {
+        if (!runtimeDeploymentCounts.ContainsKey(unitPrefab))
+            runtimeDeploymentCounts[unitPrefab] = unitDataSO.maxNumberOfDeployments;
+        return runtimeDeploymentCounts[unitPrefab];
+    }
+
+    public bool TryDecrementDeployment(GameObject unitPrefab, UnitDataSO unitDataSO)
+    {
+        if (!runtimeDeploymentCounts.ContainsKey(unitPrefab))
+            runtimeDeploymentCounts[unitPrefab] = unitDataSO.maxNumberOfDeployments;
+        if (runtimeDeploymentCounts[unitPrefab] > 0)
+        {
+            runtimeDeploymentCounts[unitPrefab]--;
+            return true;
+        }
+        return false;
     }
 }
