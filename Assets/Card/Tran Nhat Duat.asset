@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4825cc0d765aec45943f889e9cc6102, type: 3}
+  m_Name: Tran Nhat Duat
+  m_EditorClassIdentifier: 
+  charaName: Tran Nhat Duat
+  image: {fileID: 21300000, guid: aafe5a3e94639764b8aecb3003f44d95, type: 3}
+  atk: 10
+  hp: 100
+  def: 2
+  role: 4
+  type: 1
+  Skill: Buff Attk Speed and Heal
+  character: {fileID: 0}
+  unlocked: 1
+  inTeam: 0

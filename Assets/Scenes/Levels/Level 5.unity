@@ -5665,7 +5665,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 000000000d9246f3a196ced6
+  m_ApplyToSortingLayers: 000000000d9246f3a196ced61d61881a
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -13166,6 +13166,7 @@ MonoBehaviour:
   WinPanel: {fileID: 1129010643}
   spawners:
   - {fileID: 1069802099}
+  levelSelectorSceneName: LevelSelector6
 --- !u!4 &1906898357
 Transform:
   m_ObjectHideFlags: 0
