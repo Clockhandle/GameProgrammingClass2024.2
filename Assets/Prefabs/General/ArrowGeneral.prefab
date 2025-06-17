@@ -32,12 +32,12 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.76, y: -0.22, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4492632363476768017}
-  - {fileID: 1318486336708193425}
   - {fileID: 6569520006447805082}
+  - {fileID: 1318486336708193425}
   - {fileID: 4604032885493801625}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -125,8 +125,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.21261388, y: -0.6121177}
-  m_Size: {x: 0.58448875, y: 1.6477734}
+  m_Offset: {x: -0.042167664, y: 0.13027084}
+  m_Size: {x: 0.6526674, y: 1.0417445}
   m_Direction: 0
 --- !u!50 &-3761565570831759160
 Rigidbody2D:
@@ -197,9 +197,9 @@ MonoBehaviour:
   directionControlUIPrefab: {fileID: 8002188024767451207, guid: 039eeb05d41c36d40b8139c598d21dc2, type: 3}
   uiLocalOffset: {x: 0, y: 0, z: 0}
   rangeComponent: {fileID: 7252601647902930089}
-  rangeWidthTiles: 3
-  rangeHeightTiles: 4
-  tileSize: 0.5
+  rangeWidthTiles: 4
+  rangeHeightTiles: 3
+  tileSize: 1.4
   alliesInRangeList: []
   healthBarSlider: {fileID: 0}
   spriteRenderer: {fileID: 0}
@@ -446,8 +446,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.06, y: 0.82}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -0.2682, y: 0.82}
+  m_SizeDelta: {x: 155.5189, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7024891584550612196
 Canvas:
@@ -548,8 +548,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000038147, y: 5.33}
-  m_SizeDelta: {x: 100, y: 42.61}
+  m_AnchoredPosition: {x: -1.09, y: 5.33}
+  m_SizeDelta: {x: 142.53, y: 42.61}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3816377607712378292
 MonoBehaviour:
@@ -653,8 +653,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.50124, y: -7.7}
-  m_SizeDelta: {x: 98.997, y: 22.54}
+  m_AnchoredPosition: {x: -1.0895, y: -7.7}
+  m_SizeDelta: {x: 142.53, y: 22.54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8580854544555824783
 MonoBehaviour:
@@ -843,7 +843,7 @@ GameObject:
   - component: {fileID: 6016308267699353487}
   - component: {fileID: 7252601647902930089}
   - component: {fileID: 8842213182591488412}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -859,7 +859,7 @@ Transform:
   m_GameObject: {fileID: 4079770647500958882}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -907,7 +907,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 98933c1806c8ad54da9e790f470e38a7, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.29803923}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -962,7 +962,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.1301013, y: -0.003168106}
+  m_Offset: {x: 0.5, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0.5}
@@ -973,7 +973,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.0819256, y: 2.960722}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &4572311641494433254
 GameObject:

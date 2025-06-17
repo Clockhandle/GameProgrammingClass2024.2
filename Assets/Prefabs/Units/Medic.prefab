@@ -32,12 +32,12 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.0202088, y: 0.49485385, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5280678597845726910}
-  - {fileID: 3117717170256983910}
   - {fileID: 5488582934118751868}
+  - {fileID: 3117717170256983910}
   - {fileID: 7035073212418958452}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -125,8 +125,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.028994143, y: 0.016280591}
-  m_Size: {x: 0.439772, y: 0.60414004}
+  m_Offset: {x: -0.028994143, y: 0.17721383}
+  m_Size: {x: 0.439772, y: 0.9260065}
   m_Direction: 0
 --- !u!114 &5070981990953955509
 MonoBehaviour:
@@ -151,7 +151,7 @@ MonoBehaviour:
   rangeComponent: {fileID: 7054646876329023754}
   rangeWidthTiles: 4
   rangeHeightTiles: 3
-  tileSize: 1
+  tileSize: 1.4
   alliesInRangeList: []
   healthBarSlider: {fileID: 0}
   spriteRenderer: {fileID: 0}
@@ -446,7 +446,7 @@ GameObject:
   - component: {fileID: 2396424575869156238}
   - component: {fileID: 7054646876329023754}
   - component: {fileID: 6412091214915845222}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -510,7 +510,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 98933c1806c8ad54da9e790f470e38a7, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.29803923}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

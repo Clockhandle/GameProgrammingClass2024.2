@@ -15,6 +15,6 @@ MonoBehaviour:
   levelName: Tutorial
   sceneToLoad: Level 1
   levelDescription: TRALALERO TRALALA
-  levelIcon: {fileID: 21300000, guid: 11e7d8eb7afdaeb4295f2a70486be458, type: 3}
+  levelIcon: {fileID: 21300000, guid: 822e961102198384a878d2da0265c504, type: 3}
   isUnlocked: 1
   levelMusic: {fileID: 8300000, guid: 2829162347d8bfb459e102fc2fc72fcf, type: 3}

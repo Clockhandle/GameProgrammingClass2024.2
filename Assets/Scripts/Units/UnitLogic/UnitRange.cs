@@ -41,7 +41,10 @@ public class UnitRange : MonoBehaviour
 
             // Semi-transparent
             Color rangeColor = rangeVisual.color;
-            rangeColor.a = 0.5f;
+            rangeColor.a = 0.3f;
+            rangeColor.r = 0.5f;
+            rangeColor.g = 0.5f;
+            rangeColor.b = 0.5f; // Grayish color
             rangeVisual.color = rangeColor;
         }
     }

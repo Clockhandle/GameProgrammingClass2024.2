@@ -9546,6 +9546,7 @@ MonoBehaviour:
   WinPanel: {fileID: 0}
   spawners:
   - {fileID: 1069802099}
+  levelSelectorSceneName: 
 --- !u!4 &1906898357
 Transform:
   m_ObjectHideFlags: 0

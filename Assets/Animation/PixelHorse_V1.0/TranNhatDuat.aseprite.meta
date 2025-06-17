@@ -123,7 +123,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: TranNhatDuat_Frame_2
     originalName: 
-    pivot: {x: 0.05, y: 0.5}
+    pivot: {x: 0.045734286, y: 0.32857972}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -143,7 +143,7 @@ ScriptedImporter:
     uvTransform: {x: 86, y: 48}
   - name: TranNhatDuat_Frame_0
     originalName: 
-    pivot: {x: 0.58873594, y: 0.4339493}
+    pivot: {x: 0.5360921, y: 0.32208174}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -163,7 +163,7 @@ ScriptedImporter:
     uvTransform: {x: 129, y: 201}
   - name: TranNhatDuat_Frame_1
     originalName: 
-    pivot: {x: 0.6042473, y: 0.444424}
+    pivot: {x: 0.60424805, y: 0.3165754}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -183,7 +183,7 @@ ScriptedImporter:
     uvTransform: {x: 227, y: 145}
   - name: TranNhatDuat_Frame_3
     originalName: 
-    pivot: {x: 0.05, y: 0.5}
+    pivot: {x: 0.050000202, y: 0.31198686}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -203,7 +203,7 @@ ScriptedImporter:
     uvTransform: {x: 109, y: 102}
   - name: TranNhatDuat_Frame_4
     originalName: 
-    pivot: {x: 0.05, y: 0.5}
+    pivot: {x: 0.03975821, y: 0.2990243}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -223,7 +223,7 @@ ScriptedImporter:
     uvTransform: {x: 115, y: 4}
   - name: TranNhatDuat_Frame_5
     originalName: 
-    pivot: {x: 0.05, y: 0.5}
+    pivot: {x: 0.033931147, y: 0.2816201}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -243,7 +243,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: TranNhatDuat_Frame_6
     originalName: 
-    pivot: {x: 0.44, y: 0.5}
+    pivot: {x: 0.060708046, y: 0.27759665}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -263,7 +263,7 @@ ScriptedImporter:
     uvTransform: {x: 191, y: 48}
   - name: TranNhatDuat_Frame_7
     originalName: 
-    pivot: {x: 0.05, y: 0.5}
+    pivot: {x: 0.04644303, y: 0.22533756}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -283,7 +283,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 48}
   - name: TranNhatDuat_Frame_8
     originalName: 
-    pivot: {x: 0.05, y: 0.5}
+    pivot: {x: 0.050000265, y: 0.26478383}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -303,7 +303,7 @@ ScriptedImporter:
     uvTransform: {x: 75, y: 145}
   - name: TranNhatDuat_Frame_9
     originalName: 
-    pivot: {x: 0.05, y: 0.5}
+    pivot: {x: 0.04582203, y: 0.24774933}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -323,7 +323,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 145}
   - name: TranNhatDuat_Frame_10
     originalName: 
-    pivot: {x: 0.05, y: 0.5}
+    pivot: {x: 0.065483764, y: 0.31777212}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -343,7 +343,7 @@ ScriptedImporter:
     uvTransform: {x: 87, y: 201}
   - name: TranNhatDuat_Frame_11
     originalName: 
-    pivot: {x: 0.44599187, y: 0.4959422}
+    pivot: {x: 0.44599262, y: 0.31861115}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -363,7 +363,7 @@ ScriptedImporter:
     uvTransform: {x: 224, y: 4}
   - name: TranNhatDuat_Frame_12
     originalName: 
-    pivot: {x: 0.05, y: 0.5}
+    pivot: {x: 0.050000083, y: 0.31950727}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -383,7 +383,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 102}
   - name: TranNhatDuat_Frame_13
     originalName: 
-    pivot: {x: 0.05, y: 0.5}
+    pivot: {x: 0.04649051, y: 0.29694605}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -403,7 +403,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 201}
   - name: TranNhatDuat_Frame_14
     originalName: 
-    pivot: {x: 0.12097314, y: 0.4129236}
+    pivot: {x: 0.11736747, y: 0.3454316}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:

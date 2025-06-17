@@ -35,8 +35,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8366688213400072794}
-  - {fileID: 2473650840744623688}
   - {fileID: 8223878739903245434}
+  - {fileID: 2473650840744623688}
   - {fileID: 8513143725029504522}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -150,7 +150,7 @@ MonoBehaviour:
   rangeComponent: {fileID: 1658252164539729704}
   rangeWidthTiles: 2
   rangeHeightTiles: 1
-  tileSize: 1
+  tileSize: 1.4
   alliesInRangeList: []
   healthBarSlider: {fileID: 0}
   spriteRenderer: {fileID: 0}
@@ -642,7 +642,7 @@ GameObject:
   - component: {fileID: 4011052970826919985}
   - component: {fileID: 1658252164539729704}
   - component: {fileID: 2909308686387475860}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -706,7 +706,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 98933c1806c8ad54da9e790f470e38a7, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.29803923}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638851129239083889
+  platformSettingsDirtyTick: 638857742959770273
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -123,7 +123,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: throwblood_Frame_0
     originalName: 
-    pivot: {x: 0.62155086, y: 0.389482}
+    pivot: {x: 0.62155086, y: 0.29213616}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -143,7 +143,7 @@ ScriptedImporter:
     uvTransform: {x: 96, y: 40}
   - name: throwblood_Frame_1
     originalName: 
-    pivot: {x: 0.62052727, y: 0.3624957}
+    pivot: {x: 0.60227555, y: 0.32463893}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -163,7 +163,7 @@ ScriptedImporter:
     uvTransform: {x: 64, y: 40}
   - name: throwblood_Frame_2
     originalName: 
-    pivot: {x: 0.490678, y: 0.40216166}
+    pivot: {x: 0.5125812, y: 0.27777544}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -183,7 +183,7 @@ ScriptedImporter:
     uvTransform: {x: 103, y: 4}
   - name: throwblood_Frame_3
     originalName: 
-    pivot: {x: 0.5, y: 0.3}
+    pivot: {x: 0.46681413, y: 0.23685671}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -203,7 +203,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 40}
   - name: throwblood_Frame_4
     originalName: 
-    pivot: {x: 0.5, y: 0.3}
+    pivot: {x: 0.45353976, y: 0.24869609}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -223,7 +223,7 @@ ScriptedImporter:
     uvTransform: {x: 34, y: 40}
   - name: throwblood_Frame_5
     originalName: 
-    pivot: {x: 0.2656577, y: 0.29642752}
+    pivot: {x: 0.2656577, y: 0.18169867}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -243,7 +243,7 @@ ScriptedImporter:
     uvTransform: {x: 60, y: 4}
   - name: throwblood_Frame_6
     originalName: 
-    pivot: {x: 0.19365978, y: 0.3049641}
+    pivot: {x: 0.19061781, y: 0.21109483}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -373,6 +373,30 @@ ScriptedImporter:
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
   - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: iPhone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Windows Store Apps
     overridden: 0
     ignorePlatformSupport: 0
     maxTextureSize: 2048

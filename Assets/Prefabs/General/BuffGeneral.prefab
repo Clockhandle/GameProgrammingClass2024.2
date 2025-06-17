@@ -35,8 +35,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4305527494698342694}
-  - {fileID: 8212923632217303988}
   - {fileID: 1331558773283229257}
+  - {fileID: 8212923632217303988}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6841365688292740706
@@ -176,7 +176,7 @@ MonoBehaviour:
   rangeComponent: {fileID: 6541917139019676588}
   rangeWidthTiles: 3
   rangeHeightTiles: 5
-  tileSize: 1
+  tileSize: 1.4
   alliesInRangeList: []
   healthBarSlider: {fileID: 0}
   spriteRenderer: {fileID: 0}
@@ -470,7 +470,7 @@ GameObject:
   - component: {fileID: 3223216290774212466}
   - component: {fileID: 6541917139019676588}
   - component: {fileID: 4634596630650458275}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -534,7 +534,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 98933c1806c8ad54da9e790f470e38a7, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.29803923}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -589,7 +589,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5788568, y: 0}
+  m_Offset: {x: 0.5, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0.5}
@@ -600,7 +600,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.825974, y: 1}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &5218998576422141649
 GameObject:
@@ -891,6 +891,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarSlider: {fileID: 6903179522195325971}
+  damageIndicatorSlider: {fileID: 0}
+  indicatorSpeed: 1.5
 --- !u!1 &7422806050804229564
 GameObject:
   m_ObjectHideFlags: 0

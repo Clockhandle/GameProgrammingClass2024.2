@@ -15,6 +15,6 @@ MonoBehaviour:
   levelName: Level 2
   sceneToLoad: Level 2
   levelDescription: BOMBADINO CROCODILO
-  levelIcon: {fileID: 21300000, guid: 11e7d8eb7afdaeb4295f2a70486be458, type: 3}
+  levelIcon: {fileID: 21300000, guid: 5c5ed1578e4273c479c26e90f88fdcf4, type: 3}
   isUnlocked: 0
   levelMusic: {fileID: 8300000, guid: 2829162347d8bfb459e102fc2fc72fcf, type: 3}
