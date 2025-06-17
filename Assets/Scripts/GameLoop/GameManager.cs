@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
     private HashSet<GameObject> activeEnemies = new HashSet<GameObject>();
     private int enemySlainCounter = 0;
 
+    public string levelSelectorSceneName;
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -150,6 +152,6 @@ public class GameManager : MonoBehaviour
         }
         ProgressManager.Instance.selectedCards.Clear();
         ProgressManager.Instance.selectedLevel = null;
-        UnityEngine.SceneManagement.SceneManager.LoadScene("LevelSelector");
+        UnityEngine.SceneManagement.SceneManager.LoadScene(levelSelectorSceneName);
     }
 }
