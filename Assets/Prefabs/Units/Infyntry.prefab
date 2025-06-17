@@ -537,7 +537,7 @@ GameObject:
   - component: {fileID: 3223216290774212466}
   - component: {fileID: 6541917139019676588}
   - component: {fileID: 4634596630650458275}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
