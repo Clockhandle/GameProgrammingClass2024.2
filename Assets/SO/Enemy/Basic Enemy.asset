@@ -18,4 +18,4 @@ MonoBehaviour:
   idleTime: 0
   longRange: 4
   walkDurrationRanged: 2
-  stuntTime: 1.5
+  stuntTime: 2
