@@ -962,7 +962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 389010cce8f2ab64092d5a8ff9e476e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 5
+  waitTime: 2
   facingDirectionPoint: 0
 --- !u!1 &272894858
 GameObject:
@@ -3132,7 +3132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 389010cce8f2ab64092d5a8ff9e476e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 10
+  waitTime: 2
   facingDirectionPoint: 2
 --- !u!1 &427471575
 GameObject:
@@ -4674,7 +4674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 389010cce8f2ab64092d5a8ff9e476e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 10
+  waitTime: 2
   facingDirectionPoint: 2
 --- !u!1 &743245474
 GameObject:
@@ -5901,7 +5901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - delayBeforeWave: 2
+  - delayBeforeWave: 3
     enemyGroups:
     - enemyPrefab: {fileID: 2308237452221420818, guid: 3d7c1d5113beb4b49bb533ce37f8685a, type: 3}
       pathForThisEnemy: {fileID: 919867792}
@@ -5915,6 +5915,48 @@ MonoBehaviour:
       pathForThisEnemy: {fileID: 2103218459}
       count: 1
       spawnInterval: 0
+  - delayBeforeWave: 8
+    enemyGroups:
+    - enemyPrefab: {fileID: 2308237452221420818, guid: 7f231135d0badcb4c9e6de19a13d09e6, type: 3}
+      pathForThisEnemy: {fileID: 919867792}
+      count: 1
+      spawnInterval: 2
+    - enemyPrefab: {fileID: 2308237452221420818, guid: 7f231135d0badcb4c9e6de19a13d09e6, type: 3}
+      pathForThisEnemy: {fileID: 478860176}
+      count: 1
+      spawnInterval: 2
+    - enemyPrefab: {fileID: 2308237452221420818, guid: 3d7c1d5113beb4b49bb533ce37f8685a, type: 3}
+      pathForThisEnemy: {fileID: 2103218459}
+      count: 1
+      spawnInterval: 2
+  - delayBeforeWave: 20
+    enemyGroups:
+    - enemyPrefab: {fileID: 2308237452221420818, guid: 0d204e74eac827e4b90344aeeb02745d, type: 3}
+      pathForThisEnemy: {fileID: 919867792}
+      count: 1
+      spawnInterval: 6
+    - enemyPrefab: {fileID: 2308237452221420818, guid: 0d204e74eac827e4b90344aeeb02745d, type: 3}
+      pathForThisEnemy: {fileID: 478860176}
+      count: 1
+      spawnInterval: 6
+    - enemyPrefab: {fileID: 2308237452221420818, guid: 0d204e74eac827e4b90344aeeb02745d, type: 3}
+      pathForThisEnemy: {fileID: 2103218459}
+      count: 1
+      spawnInterval: 6
+  - delayBeforeWave: 20
+    enemyGroups:
+    - enemyPrefab: {fileID: 2308237452221420818, guid: 0d204e74eac827e4b90344aeeb02745d, type: 3}
+      pathForThisEnemy: {fileID: 919867792}
+      count: 1
+      spawnInterval: 6
+    - enemyPrefab: {fileID: 2308237452221420818, guid: c2592038bcc41d84c884dd2f29152f27, type: 3}
+      pathForThisEnemy: {fileID: 478860176}
+      count: 1
+      spawnInterval: 6
+    - enemyPrefab: {fileID: 2308237452221420818, guid: c2592038bcc41d84c884dd2f29152f27, type: 3}
+      pathForThisEnemy: {fileID: 2103218459}
+      count: 1
+      spawnInterval: 6
 --- !u!224 &1077756844 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 88175055074354247, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
@@ -6042,7 +6084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 389010cce8f2ab64092d5a8ff9e476e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 5
+  waitTime: 2
   facingDirectionPoint: 0
 --- !u!1001 &1118600477
 PrefabInstance:
@@ -8444,7 +8486,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8408553afffa8db4db254a2d8ee7df0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waves: []
+  waves:
+  - delayBeforeWave: 60
+    enemyGroups:
+    - enemyPrefab: {fileID: 2308237452221420818, guid: 0d204e74eac827e4b90344aeeb02745d, type: 3}
+      pathForThisEnemy: {fileID: 2103218459}
+      count: 2
+      spawnInterval: 5
+  - delayBeforeWave: 80
+    enemyGroups:
+    - enemyPrefab: {fileID: 2308237452221420818, guid: 0d204e74eac827e4b90344aeeb02745d, type: 3}
+      pathForThisEnemy: {fileID: 2103218459}
+      count: 3
+      spawnInterval: 10
 --- !u!1001 &1649479039
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10870,7 +10924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 389010cce8f2ab64092d5a8ff9e476e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 10
+  waitTime: 2
   facingDirectionPoint: 2
 --- !u!224 &2072085084 stripped
 RectTransform:
