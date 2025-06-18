@@ -9,6 +9,9 @@ public class LevelData : ScriptableObject
     [Tooltip("The name of the scene to load for this level.")]
     public string sceneToLoad;
 
+    [Tooltip("The name of the character selection scene to load.")]
+    public string charSceneToLoad;
+
     [Tooltip("A brief description of the level or its objectives.")]
     [TextArea]
     public string levelDescription;

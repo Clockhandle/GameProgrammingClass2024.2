@@ -21,26 +21,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Level 1.unity
     guid: 3085ce02d49a9a34daed3c4a11fa5e4f
   - enabled: 1
-    path: Assets/Scenes/LevelSelect/LevelSelector2.unity
-    guid: 50cfea2b08a907c48ad53d27ecf54966
-  - enabled: 1
     path: Assets/Scenes/CharSelector/CharSelectLV2.unity
     guid: a1af6714d03432d4c834346186ea5034
   - enabled: 1
     path: Assets/Scenes/Levels/Level 2.unity
-    guid: 1de7203587a67c64ab80065ca8b82b00
-  - enabled: 1
-    path: Assets/Scenes/LevelSelect/LevelSelector3.unity
-    guid: c1a60cd1e2c38a745b764b0ad2101838
+    guid: a5d6d67dd2ee0964fa6941af0dd3acbd
   - enabled: 1
     path: Assets/Scenes/CharSelector/CharSelectLV3.unity
     guid: 9d348b1d5e6f0624cafd684937c3d23f
   - enabled: 1
     path: Assets/Scenes/Levels/Level 3.unity
-    guid: 511da99869ee9c34eb3a9075504217b4
-  - enabled: 1
-    path: Assets/Scenes/LevelSelect/LevelSelector4.unity
-    guid: f180154fdcd2935489b503989c90ff17
+    guid: edc10a107c52c87479689c5d0893e51a
   - enabled: 1
     path: Assets/Scenes/CharSelector/CharSelectLV4.unity
     guid: 1f156f0fb4160c1419e72629bdfa0e78
@@ -48,17 +39,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Level 4.unity
     guid: d473a7a45fbe7a6428cd48f6971d9508
   - enabled: 1
-    path: Assets/Scenes/LevelSelect/LevelSelector5.unity
-    guid: 25ec3243ae054714d8eedfdc0299075a
-  - enabled: 1
     path: Assets/Scenes/CharSelector/CharSelectLV5.unity
     guid: 395a7de59990d5147bef66037b2d1a64
   - enabled: 1
     path: Assets/Scenes/Levels/Level 5.unity
     guid: 08ee5da023336eb46a74a37f14ef43ee
-  - enabled: 1
-    path: Assets/Scenes/LevelSelect/LevelSelector6.unity
-    guid: 8b9434d98c0584149a8b5f95b45464e8
   - enabled: 1
     path: Assets/Scenes/CharSelector/CharSelectLV6.unity
     guid: c0c3dc788c3f9804ba286bab84b1bbce

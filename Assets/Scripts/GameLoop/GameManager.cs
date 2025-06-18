@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     private int enemySlainCounter = 0;
 
     public string levelSelectorSceneName;
+    public string levelSelectorUponFailureSceneName;
 
     void Awake()
     {
@@ -134,6 +135,17 @@ public class GameManager : MonoBehaviour
         Debug.Log($"Enemy slain! Total: {enemySlainCounter}");
     }
 
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0f;
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f;
+    }
+
     public void ReturnToLevelSelector()
     {
         string sceneToUnlock = ProgressManager.Instance.sceneOfNextLevelToUnlock;
@@ -148,5 +160,10 @@ public class GameManager : MonoBehaviour
 
 
         UnityEngine.SceneManagement.SceneManager.LoadScene(levelSelectorSceneName);
+    }
+
+    public void ReturnToLevelSelectorUponFailure()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(levelSelectorUponFailureSceneName);
     }
 }

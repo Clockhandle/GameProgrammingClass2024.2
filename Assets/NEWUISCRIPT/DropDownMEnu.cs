@@ -30,6 +30,23 @@ public class DropDownMEnu : MonoBehaviour
     }
     private void Start()
     {
+        // --- ADD THESE CHECKS ---
+        if (audioMixer == null)
+        {
+            Debug.LogError("CRITICAL: AudioMixer is not assigned in the Inspector on '" + this.name + "'!", this.gameObject);
+            return; // Stop the method here to prevent crashing.
+        }
+        if (MusicSlider == null)
+        {
+            Debug.LogError("CRITICAL: Could not find the UI element named 'MusicSlider'. Check the UI Document.", this.gameObject);
+            return;
+        }
+        if (SFXSlider == null)
+        {
+            Debug.LogError("CRITICAL: Could not find the UI element named 'SFXSlider'. Check the UI Document.", this.gameObject);
+            return;
+        }
+
         float musicVolume = PlayerPrefs.GetFloat("MusicVolume", 0f); 
         float sfxVolume = PlayerPrefs.GetFloat("SFXVolume", 0f);
 

@@ -171,5 +171,6 @@ public class SlotManager : MonoBehaviour
 
         selectionCanvas.style.display = DisplayStyle.None;
         teamCanvas.style.display = DisplayStyle.Flex;
-    }    
+    }
+
 }

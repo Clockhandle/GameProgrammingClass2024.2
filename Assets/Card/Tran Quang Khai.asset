@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Tran Quang Khai
   m_EditorClassIdentifier: 
   charaName: Tran Quang Khai
-  image: {fileID: 8923951454323899545, guid: 4a261fb0ce00c9e419b2191a257d56ae, type: 3}
-  atk: 10
-  hp: 100
-  def: 2
-  role: 4
+  image: {fileID: -1213100576037954233, guid: 7808a8807882bd84ca3fd4a3d05abbe6, type: 3}
+  atk: 15
+  hp: 150
+  def: 10
+  role: 1
   type: 1
-  Skill: Dash Attack
+  Skill: Big slash
   character: {fileID: 0}
   unlocked: 1
   inTeam: 0

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: Level 4
   sceneToLoad: Level 5
+  charSceneToLoad: CharSelectLV5
   levelDescription: Toa Do leads the southern Mongol invasion, advancing from the
     south. Tran Quang Khai takes command, coordinating with other generals to mount
     a unified defense
