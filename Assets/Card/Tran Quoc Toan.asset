@@ -16,7 +16,7 @@ MonoBehaviour:
   image: {fileID: -1933909524, guid: d4953fcb75a9df046bd01546e711d89b, type: 3}
   atk: 10
   hp: 100
-  def: 2
+  def: 10
   role: 0
   type: 0
   Skill: Explosive arrow skill

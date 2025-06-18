@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Tran Nhat Duat
   m_EditorClassIdentifier: 
   charaName: Tran Nhat Duat
-  image: {fileID: 21300000, guid: aafe5a3e94639764b8aecb3003f44d95, type: 3}
+  image: {fileID: -658606530835699793, guid: 4a261fb0ce00c9e419b2191a257d56ae, type: 3}
   atk: 10
-  hp: 100
-  def: 2
-  role: 4
+  hp: 150
+  def: 10
+  role: 1
   type: 1
-  Skill: Buff Attk Speed and Heal
+  Skill: Multi Slash
   character: {fileID: 0}
   unlocked: 1
   inTeam: 0

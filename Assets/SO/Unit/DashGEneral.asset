@@ -22,7 +22,7 @@ MonoBehaviour:
   attackRange: 3
   attackOffset: {x: 1, y: 0, z: 0}
   healAmount: 2
-  type: -1
+  type: 1
   unitClass: 8
   DP: 20
   maxNumberOfDeployments: 1

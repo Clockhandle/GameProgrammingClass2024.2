@@ -51,6 +51,11 @@ public class StartLevel : MonoBehaviour
             ProgressManager.Instance.sceneOfNextLevelToUnlock = null;
             Debug.Log("CARGO LOADED: This is the last level. No next level to unlock.");
         }
-        SceneManager.LoadScene(characterSelectSceneName);
+
+        // Use the character selection scene from LevelData, fallback to default if empty
+        string charSelectScene = !string.IsNullOrEmpty(currentLevel.charSceneToLoad)
+            ? currentLevel.charSceneToLoad
+            : "CharSelection";
+        SceneManager.LoadScene(charSelectScene);
     }
 }

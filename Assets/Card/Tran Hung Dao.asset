@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Tran Hung Dao
   m_EditorClassIdentifier: 
   charaName: Tran Hung Dao
-  image: {fileID: -1213100576037954233, guid: 7808a8807882bd84ca3fd4a3d05abbe6, type: 3}
-  atk: 10
-  hp: 100
-  def: 2
+  image: {fileID: 21300000, guid: aafe5a3e94639764b8aecb3003f44d95, type: 3}
+  atk: 12
+  hp: 150
+  def: 10
   role: 4
   type: 1
-  Skill: PowerFul Attack
+  Skill: Attack Speed Buff
   character: {fileID: 0}
   unlocked: 1
   inTeam: 0
