@@ -48,7 +48,7 @@ public class TileManager : MonoBehaviour
         tileOccupancyCheck.SetTileToOccupied(cellPos, true);
         return true;
     }
-
+    
     public bool TryPlaceCharacterProvisionally(Vector3 worldPosition, GameObject characterPrefab, out Unit placedUnit)
     {
         placedUnit = null;

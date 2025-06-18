@@ -86,6 +86,9 @@ public class UnitSelectionManager : MonoBehaviour
             activeUI.gameObject.SetActive(true);
             activeUI.SetRetreatModeOnly(true);
 
+            // Show skill buttons when a unit is selected
+            activeUI.ShowSkillButtons();
+
             Canvas uiCanvas = activeUI.GetComponent<Canvas>();
             if (uiCanvas != null)
             {

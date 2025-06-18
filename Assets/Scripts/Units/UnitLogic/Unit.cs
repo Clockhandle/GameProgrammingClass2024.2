@@ -181,7 +181,7 @@ public class Unit : MonoBehaviour
                     return;
                 }
                 DPManager.Instance.SpendDP(unitDP);
-                remainingDeployments -= 1; // Only decrement after successful DP spend
+                //remainingDeployments -= 1; // Only decrement after successful DP spend
             }
 
             // --- Placement Finalization Steps ---
