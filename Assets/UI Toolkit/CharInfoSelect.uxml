@@ -63,7 +63,7 @@
             <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Def" class="InfoText" />
             <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Role" class="InfoText" />
             <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Type" class="InfoText" />
-            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Skill" class="InfoText" />
+            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Skill" class="InfoText" style="height: 133px; width: 367px;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

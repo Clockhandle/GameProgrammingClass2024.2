@@ -187,25 +187,32 @@ public class DragToScreenManager : MonoBehaviour
         // --- PHASE 1 PLACEMENT LOGIC ---
         if (canPlace)
         {
-            Vector3 snapPosition = tileManager.tilemap.GetCellCenterWorld(closestTile);
-            Unit awaitDeploymentUnit = null;
-
-            // Call provisional placement (no DP check/spend here)
-            bool placedSuccessfully = tileManager.TryPlaceCharacterProvisionally(snapPosition, currentDraggedPrefab, out awaitDeploymentUnit);
-
-            if (placedSuccessfully && awaitDeploymentUnit != null)
+            // only place when enough hdp 
+            int unitCost = currentUnitDataOnPrefab.unitDataSO.DP;
+            if (DPManager.Instance.CanSpendDP(unitCost))
             {
-                if (isDraggingLastOne && currentlyDraggedIconData != null)
+
+                Vector3 snapPosition = tileManager.tilemap.GetCellCenterWorld(closestTile);
+                Unit awaitDeploymentUnit = null;
+
+                // Call provisional placement (no DP check/spend here)
+                bool placedSuccessfully = tileManager.TryPlaceCharacterProvisionally(snapPosition, currentDraggedPrefab, out awaitDeploymentUnit);
+
+                if (placedSuccessfully && awaitDeploymentUnit != null)
                 {
-                    currentlyDraggedIconData.gameObject.SetActive(false);
+                    if (isDraggingLastOne && currentlyDraggedIconData != null)
+                    {
+                        currentlyDraggedIconData.gameObject.SetActive(false);
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning($"Phase 1: Provisional placement failed for {currentDraggedPrefab?.name ?? "Unknown"} at {closestTile}.");
                 }
             }
-            else
-            {
-                Debug.LogWarning($"Phase 1: Provisional placement failed for {currentDraggedPrefab?.name ?? "Unknown"} at {closestTile}.");
-            }
+
         }
-        // --- END PHASE 1 LOGIC ---
+   
 
 
         // --- Cleanup ---
@@ -228,7 +235,7 @@ public class DragToScreenManager : MonoBehaviour
                 originalParent = null;
             }
         }
-
+            
         ResetDragState(); // Reset manager's internal state
     }
 
