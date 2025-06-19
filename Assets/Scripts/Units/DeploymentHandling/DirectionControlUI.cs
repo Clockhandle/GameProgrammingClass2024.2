@@ -371,6 +371,8 @@ public class DirectionControlUI : MonoBehaviour
             {
                 retreatButton.gameObject.SetActive(true);
             }
+            
+            
         }
     }
 
@@ -383,8 +385,30 @@ public class DirectionControlUI : MonoBehaviour
             directionHandleImage.gameObject.SetActive(false);
         if (retreatButton != null)
             retreatButton.gameObject.SetActive(false);
-        
+        if(buffskillButton != null)
+            buffskillButton.gameObject.SetActive(false);
+        if (dashskillButton != null)
+            dashskillButton.gameObject.SetActive(false);
+        if (arrowskillButton != null)
+            arrowskillButton.gameObject.SetActive(false);
+        if (chargeskillButton != null)
+            chargeskillButton.gameObject.SetActive(false);
+
     }
+
+    // Add this method to show skill buttons when a unit is selected
+    public void ShowSkillButtons()
+    {
+        if (buffskillButton != null)
+            buffskillButton.gameObject.SetActive(targetUnit is BuffGeneralUnit);
+        if (dashskillButton != null)
+            dashskillButton.gameObject.SetActive(targetUnit is DashGeneralUnit);
+        if (arrowskillButton != null)
+            arrowskillButton.gameObject.SetActive(targetUnit.GetComponent<UnitRangeGeneral>() != null);
+        if (chargeskillButton != null)
+            chargeskillButton.gameObject.SetActive(targetUnit is ChargeGeneralUnit);
+    }
+
     private void OnRetreatClicked() 
     { /* ... Same ... */ 
         if (targetUnit != null) targetUnit.InitiateRetreat(); 
