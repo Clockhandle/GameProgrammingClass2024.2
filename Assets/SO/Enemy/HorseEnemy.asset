@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eeb5abc4f2fcf7843a30adc1d8591e32, type: 3}
-  m_Name: AOERangedNEmy
+  m_Name: HorseEnemy
   m_EditorClassIdentifier: 
-  maxHealth: 150
-  moveSpeed: 2
-  damage: 15
-  idleTime: 1
-  longRange: 5
-  walkDurrationRanged: 3
+  maxHealth: 200
+  moveSpeed: 4
+  damage: 30
+  idleTime: 0
+  longRange: 4
+  walkDurrationRanged: 2
   stuntTime: 2

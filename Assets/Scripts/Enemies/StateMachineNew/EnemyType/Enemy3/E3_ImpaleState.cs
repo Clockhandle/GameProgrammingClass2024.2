@@ -62,7 +62,7 @@ public class E3_PierceAttackState : AttackState
             {
                 if (pierceHitCount == 3 && unitHit)
                 {
-                    enemy3.Heal(30); 
+                    enemy3.Heal(200); 
                 }
             });
         }

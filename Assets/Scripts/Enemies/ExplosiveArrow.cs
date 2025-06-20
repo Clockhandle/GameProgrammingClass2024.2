@@ -11,7 +11,7 @@ public class ExplosiveArrow : Arrow
     
     public override void Initialize(Transform target, int damage)
     {
-        base.Initialize(target, damage + 2); 
+        base.Initialize(target, damage + 7); 
     }
 
     protected override void OnTriggerEnter2D(Collider2D collision)
