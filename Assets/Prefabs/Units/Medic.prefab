@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 5218450643856030122}
   - component: {fileID: 6841365688292740706}
-  - component: {fileID: 3928611554853354696}
   - component: {fileID: 5070981990953955509}
   - component: {fileID: 8918657729669260576}
   - component: {fileID: 689322351526741616}
   - component: {fileID: -6342043173381550986}
   - component: {fileID: -8843770353047043805}
   - component: {fileID: -3563666491576160825}
+  - component: {fileID: 6708054759903142825}
   m_Layer: 8
   m_Name: Medic
   m_TagString: Unit
@@ -34,7 +34,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.0202088, y: 0.49485385, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5280678597845726910}
@@ -95,41 +95,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &3928611554853354696
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 212387026881475238}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.028994143, y: 0.17721383}
-  m_Size: {x: 0.439772, y: 0.9260065}
-  m_Direction: 0
 --- !u!114 &5070981990953955509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,6 +300,41 @@ MonoBehaviour:
   attackSoundClip: {fileID: 8300000, guid: 6d72c818f1673ec4c9c1f9476d16c457, type: 3}
   hurtSoundClip: {fileID: 8300000, guid: 30b4b730ed9dfd44fa65cfe218f49572, type: 3}
   deathSoundClip: {fileID: 8300000, guid: 0e90fb69d8e15d84b8f4adc558687998, type: 3}
+--- !u!70 &6708054759903142825
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212387026881475238}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.002443851, y: -0.16277884}
+  m_Size: {x: 0.8534173, y: 0.77985644}
+  m_Direction: 1
 --- !u!1 &1394459112279634404
 GameObject:
   m_ObjectHideFlags: 0
