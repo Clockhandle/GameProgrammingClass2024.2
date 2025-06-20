@@ -24,6 +24,12 @@ public class SimpleCameraZoom : MonoBehaviour
 
     public void ZoomTo(Transform target)
     {
+        cam = Camera.main; 
+        if (cam == null) return;
+
+        originalPosition = cam.transform.position; // capture the current position
+        originalZoom = cam.orthographicSize;       // capture the current zoom
+
         StopAllCoroutines();
         StartCoroutine(ZoomIn(target));
     }

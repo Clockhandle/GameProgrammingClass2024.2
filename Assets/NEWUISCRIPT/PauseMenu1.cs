@@ -7,9 +7,11 @@ public class PauseMenu1 : MonoBehaviour
     bool isPaused;
     private AudioSource audioSource;
     public AudioClip hoverSound;
+    private GameObject SettingPanel;
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        SettingPanel = GameObject.Find("PauseMenu");
     }
     private void Start()
     {
@@ -26,36 +28,28 @@ public class PauseMenu1 : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (isPaused)
-            {
-                ResumeGame();
-            }
-            else
-            {
-                PausedGame();
-            }
-        }
+        
     }
-    private void PausedGame()
+    public void PausedGame()
     {
-        isPaused = true;
         pausedMenu.style.display = DisplayStyle.Flex;
-        Time.timeScale = 0;
 
     }
     private void ResumeGame()
     {
-        isPaused= false;    
+        isPaused= false;
+       // SettingPanel.SetActive(false);
         pausedMenu.style.display = DisplayStyle.None;
-        Time.timeScale = 1f;
+        GameManager.Instance.ResumeGame();
     }
     private IEnumerator BackToMenu()
     {
-        Time.timeScale = 1f;
+        
+        GameManager.Instance.ResumeGame();
         yield return new WaitForSeconds(0.3f);
-        Loader.Load("SampleScene");
+        GameManager.Instance.ReturnToLevelSelectorUponFailure();
+        
+       // Loader.Load("SampleScene");
     }
     private void PlayClickSound()
     {

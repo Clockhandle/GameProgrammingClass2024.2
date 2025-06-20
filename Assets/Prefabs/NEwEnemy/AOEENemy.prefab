@@ -600,7 +600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8715802b88dbf9a4ca2e9bcb405c11b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDirection: 0
+  currentDirection: 2
   attackType: 1
   firePoint: {fileID: 7021507493388979477}
   offsetValue: 4.12

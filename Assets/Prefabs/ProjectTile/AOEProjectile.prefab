@@ -163,5 +163,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   hitEffectPrefab: {fileID: 1638935839887300819, guid: d3ecbfa9f21e99d4f992a4df5a46aef8, type: 3}
-  aoeRadius: 3
+  aoeRadius: 4
   damage: 0

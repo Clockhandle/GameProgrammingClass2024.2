@@ -958,7 +958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitTime: 0
-  facingDirectionPoint: 3
+  facingDirectionPoint: 1
 --- !u!1 &201905892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1261,7 +1261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitTime: 0
-  facingDirectionPoint: 3
+  facingDirectionPoint: 0
 --- !u!1 &268835925
 GameObject:
   m_ObjectHideFlags: 0
@@ -2218,16 +2218,86 @@ PrefabInstance:
       propertyPath: unitPrefab
       value: 
       objectReference: {fileID: 212387026881475238, guid: b3442df73b171d44794720960d2e979f, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2845432073241139850, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1023290732452521616, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 279987574}
   m_SourcePrefab: {fileID: 100100000, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
 --- !u!224 &279987572 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 88175055074354247, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
   m_PrefabInstance: {fileID: 279987571}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &279987573 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1023290732452521616, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
+  m_PrefabInstance: {fileID: 279987571}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &279987574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279987573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
+          m_MethodName: HandleBeginDrag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 5
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
+          m_MethodName: HandleDrag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 14
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
+          m_MethodName: HandleEndDrag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &289109130
 GameObject:
   m_ObjectHideFlags: 0
@@ -2350,7 +2420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 389010cce8f2ab64092d5a8ff9e476e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 15
+  waitTime: 7
   facingDirectionPoint: 3
 --- !u!1 &358513002
 GameObject:
@@ -3798,6 +3868,7 @@ RectTransform:
   - {fileID: 877211863}
   - {fileID: 289109131}
   - {fileID: 1910615265}
+  - {fileID: 679806624}
   - {fileID: 1458553638}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4461,16 +4532,86 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -81
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2845432073241139850, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1023290732452521616, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 614506660}
   m_SourcePrefab: {fileID: 100100000, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
 --- !u!224 &614506658 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 88175055074354247, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
   m_PrefabInstance: {fileID: 614506657}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &614506659 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1023290732452521616, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
+  m_PrefabInstance: {fileID: 614506657}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &614506660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614506659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
+          m_MethodName: HandleBeginDrag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 5
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
+          m_MethodName: HandleDrag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 14
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
+          m_MethodName: HandleEndDrag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &617415039
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4754,7 +4895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 389010cce8f2ab64092d5a8ff9e476e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 15
+  waitTime: 7
   facingDirectionPoint: 3
 --- !u!1 &642509752
 GameObject:
@@ -5102,16 +5243,259 @@ PrefabInstance:
       propertyPath: unitPrefab
       value: 
       objectReference: {fileID: 212387026881475238, guid: 26e0a31f897b4ef4ab2eee54aba114b1, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2845432073241139850, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1023290732452521616, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 650931282}
   m_SourcePrefab: {fileID: 100100000, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
 --- !u!224 &650931280 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 88175055074354247, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
   m_PrefabInstance: {fileID: 650931279}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &650931281 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1023290732452521616, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
+  m_PrefabInstance: {fileID: 650931279}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &650931282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650931281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
+          m_MethodName: HandleBeginDrag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 5
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
+          m_MethodName: HandleDrag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 14
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
+          m_MethodName: HandleEndDrag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!1 &679806623
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 679806624}
+  - component: {fileID: 679806628}
+  - component: {fileID: 679806627}
+  - component: {fileID: 679806626}
+  - component: {fileID: 679806625}
+  m_Layer: 5
+  m_Name: PauseMenu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &679806624
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679806623}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -960, y: -540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 521243657}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &679806625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679806623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58dd3ef0e5cd0294a89e9b62d5fa87e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: ac794248e9b1e8a4195696f279f2d1cc, type: 2}
+--- !u!82 &679806626
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679806623}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 7607741706569866238, guid: ac794248e9b1e8a4195696f279f2d1cc, type: 2}
+  m_audioClip: {fileID: 8300000, guid: c5270734ff02ea2468e4a4085ab2c04f, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &679806627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679806623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d493c439551408a42a45ecb1c69a46e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSound: {fileID: 8300000, guid: dca2499ec6e49784aba27643e3a1575d, type: 3}
+--- !u!114 &679806628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679806623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: bcf58ff54d054a543830b7ae7a9c2892, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 9353bb26fba6966468b673ce6eef9c1e, type: 3}
+  m_SortingOrder: 1
 --- !u!1 &689820288
 GameObject:
   m_ObjectHideFlags: 0
@@ -5538,16 +5922,86 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2845432073241139850, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1023290732452521616, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 703835411}
   m_SourcePrefab: {fileID: 100100000, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
 --- !u!224 &703835409 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 88175055074354247, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
   m_PrefabInstance: {fileID: 703835408}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &703835410 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1023290732452521616, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
+  m_PrefabInstance: {fileID: 703835408}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &703835411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703835410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
+          m_MethodName: HandleBeginDrag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 5
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
+          m_MethodName: HandleDrag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 14
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
+          m_MethodName: HandleEndDrag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &706412975
 GameObject:
   m_ObjectHideFlags: 0
@@ -6810,16 +7264,86 @@ PrefabInstance:
       propertyPath: unitPrefab
       value: 
       objectReference: {fileID: 212387026881475238, guid: ba7d6ebed8a186846b29c219d93b5b10, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2845432073241139850, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1023290732452521616, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 876949051}
   m_SourcePrefab: {fileID: 100100000, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
 --- !u!224 &876949049 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 88175055074354247, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
   m_PrefabInstance: {fileID: 876949048}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &876949050 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1023290732452521616, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
+  m_PrefabInstance: {fileID: 876949048}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &876949051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876949050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
+          m_MethodName: HandleBeginDrag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 5
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
+          m_MethodName: HandleDrag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 14
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
+          m_MethodName: HandleEndDrag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &877211860
 GameObject:
   m_ObjectHideFlags: 0
@@ -7184,16 +7708,86 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -13
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2845432073241139850, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1023290732452521616, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 886727419}
   m_SourcePrefab: {fileID: 100100000, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
 --- !u!224 &886727417 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 88175055074354247, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
   m_PrefabInstance: {fileID: 886727416}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &886727418 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1023290732452521616, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
+  m_PrefabInstance: {fileID: 886727416}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &886727419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886727418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
+          m_MethodName: HandleBeginDrag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 5
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
+          m_MethodName: HandleDrag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 14
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
+          m_MethodName: HandleEndDrag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &891090594
 GameObject:
   m_ObjectHideFlags: 0
@@ -11363,6 +11957,16 @@ MonoBehaviour:
       pathForThisEnemy: {fileID: 740721591}
       count: 3
       spawnInterval: 4
+  - delayBeforeWave: 30
+    enemyGroups:
+    - enemyPrefab: {fileID: 2308237452221420818, guid: 7f231135d0badcb4c9e6de19a13d09e6, type: 3}
+      pathForThisEnemy: {fileID: 1485921165}
+      count: 3
+      spawnInterval: 4
+    - enemyPrefab: {fileID: 2308237452221420818, guid: a6ed76609c771864f8fccf74299da475, type: 3}
+      pathForThisEnemy: {fileID: 740721591}
+      count: 3
+      spawnInterval: 4
 --- !u!224 &1077756844 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 88175055074354247, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
@@ -12235,16 +12839,86 @@ PrefabInstance:
       propertyPath: unitPrefab
       value: 
       objectReference: {fileID: 212387026881475238, guid: e3a50ce95b566e646a9d7ffbf7c8c7e3, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2845432073241139850, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1023290732452521616, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1178715686}
   m_SourcePrefab: {fileID: 100100000, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
 --- !u!224 &1178715684 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 88175055074354247, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
   m_PrefabInstance: {fileID: 1178715683}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1178715685 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1023290732452521616, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
+  m_PrefabInstance: {fileID: 1178715683}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1178715686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178715685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
+          m_MethodName: HandleBeginDrag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 5
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
+          m_MethodName: HandleDrag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 14
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
+          m_MethodName: HandleEndDrag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1212207803
 GameObject:
   m_ObjectHideFlags: 0
@@ -15446,16 +16120,86 @@ PrefabInstance:
       propertyPath: unitPrefab
       value: 
       objectReference: {fileID: 212387026881475238, guid: 789a319dfc4c8cb4dae22ed7d7d8e34a, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2845432073241139850, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1023290732452521616, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1612586351}
   m_SourcePrefab: {fileID: 100100000, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
 --- !u!224 &1612586349 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 88175055074354247, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
   m_PrefabInstance: {fileID: 1612586348}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1612586350 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1023290732452521616, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
+  m_PrefabInstance: {fileID: 1612586348}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1612586351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612586350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
+          m_MethodName: HandleBeginDrag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 5
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
+          m_MethodName: HandleDrag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 14
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
+          m_MethodName: HandleEndDrag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &1615613461
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15638,20 +16382,20 @@ MonoBehaviour:
       spawnInterval: 1
     - enemyPrefab: {fileID: 2308237452221420818, guid: c2592038bcc41d84c884dd2f29152f27, type: 3}
       pathForThisEnemy: {fileID: 1573055878}
-      count: 1
-      spawnInterval: 2
+      count: 3
+      spawnInterval: 9
   - delayBeforeWave: 20
     enemyGroups:
     - enemyPrefab: {fileID: 2308237452221420818, guid: 5c41efb92319d024b9db52eb72c8aad2, type: 3}
       pathForThisEnemy: {fileID: 919867792}
-      count: 1
+      count: 3
       spawnInterval: 2
   - delayBeforeWave: 10
     enemyGroups:
     - enemyPrefab: {fileID: 2308237452221420818, guid: 0d204e74eac827e4b90344aeeb02745d, type: 3}
       pathForThisEnemy: {fileID: 1573055878}
-      count: 1
-      spawnInterval: 2
+      count: 3
+      spawnInterval: 15
 --- !u!1001 &1649479039
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19785,16 +20529,86 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 111
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2845432073241139850, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1023290732452521616, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1813514955}
   m_SourcePrefab: {fileID: 100100000, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
 --- !u!224 &1813514953 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 88175055074354247, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
   m_PrefabInstance: {fileID: 1813514952}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1813514954 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1023290732452521616, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
+  m_PrefabInstance: {fileID: 1813514952}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1813514955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813514954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
+          m_MethodName: HandleBeginDrag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 5
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
+          m_MethodName: HandleDrag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 14
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 492209785}
+          m_TargetAssemblyTypeName: DragToScreenManager, Assembly-CSharp
+          m_MethodName: HandleEndDrag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1814784038
 GameObject:
   m_ObjectHideFlags: 0
@@ -20462,10 +21276,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1458553637}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 679806627}
+        m_TargetAssemblyTypeName: PauseMenu1, Assembly-CSharp
+        m_MethodName: PausedGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -20937,7 +21751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitTime: 0
-  facingDirectionPoint: 0
+  facingDirectionPoint: 1
 --- !u!1 &2019775713
 GameObject:
   m_ObjectHideFlags: 0

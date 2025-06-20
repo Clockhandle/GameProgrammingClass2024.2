@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15e5fd9db2dce3c40a6321014b0f375f, type: 3}
   m_Name: Infantry
   m_EditorClassIdentifier: 
-  maxHealth: 500
+  maxHealth: 150
   defense: 10
   resistance: 0
   SP: 10

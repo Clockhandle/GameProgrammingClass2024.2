@@ -214,9 +214,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectedTargets: []
-  enemyDataSO: {fileID: 11400000, guid: c205ed18a88348e4faec8941ccbaa466, type: 2}
+  enemyDataSO: {fileID: 11400000, guid: 9acc8d405e71ec04693fbc3e25802ea7, type: 2}
   healthBarSlider: {fileID: 0}
-  enemyData: {fileID: 11400000, guid: c205ed18a88348e4faec8941ccbaa466, type: 2}
+  enemyData: {fileID: 11400000, guid: 9acc8d405e71ec04693fbc3e25802ea7, type: 2}
   attackPosition: {fileID: 2765756971844068585}
   hasRevived: 0
   normalController: {fileID: 9100000, guid: e0c7f0068816eae428cd29b2ee2b5dca, type: 2}
