@@ -2250,7 +2250,7 @@ Transform:
   m_GameObject: {fileID: 372703188}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12, y: -0.5, z: 0}
+  m_LocalPosition: {x: 12, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4817,7 +4817,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8408553afffa8db4db254a2d8ee7df0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waves: []
+  waves:
+  - delayBeforeWave: 0
+    enemyGroups:
+    - enemyPrefab: {fileID: 2308237452221420818, guid: fea43ae6fb11e1f489326e0cb217a49e, type: 3}
+      pathForThisEnemy: {fileID: 919867792}
+      count: 1
+      spawnInterval: 0
 --- !u!224 &1077756844 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 88175055074354247, guid: ef6cdbc42491e034499297ecc4529d61, type: 3}
@@ -6888,7 +6894,7 @@ Transform:
   m_GameObject: {fileID: 1717797674}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.73, y: 3, z: 0}
+  m_LocalPosition: {x: -10.73, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9547,6 +9553,7 @@ MonoBehaviour:
   spawners:
   - {fileID: 1069802099}
   levelSelectorSceneName: 
+  levelSelectorUponFailureSceneName: 
 --- !u!4 &1906898357
 Transform:
   m_ObjectHideFlags: 0
@@ -9742,7 +9749,7 @@ Transform:
   m_GameObject: {fileID: 2002131857}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12, y: 3, z: 0}
+  m_LocalPosition: {x: 12, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9946,7 +9953,7 @@ Transform:
   m_GameObject: {fileID: 2085346380}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.67, y: -0.5, z: 0}
+  m_LocalPosition: {x: 16.67, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

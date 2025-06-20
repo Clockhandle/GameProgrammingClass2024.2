@@ -20,12 +20,14 @@ public class SlotManager : MonoBehaviour
     private Button multiSelectButton;
     private Button clearButton;
     private Button startButton;
+    private Button backButton;
 
     [Header("Selection UI")]
     [SerializeField] private UIDocument selectionUIDocument;
     private VisualElement selectionCanvas;
 
     private CardsManager cardsManager;
+    public string BackSceneName;
 
     private void Awake()
     {
@@ -43,6 +45,7 @@ public class SlotManager : MonoBehaviour
         multiSelectButton = root.Q<Button>("MultiSelectButton");
         clearButton = root.Q<Button>("ClearButton");
         startButton = root.Q<Button>("PlayButton");
+        backButton= root.Q<Button>("BackButton");
 
         int count = content.childCount;
         teamMaxSize = count;
@@ -66,6 +69,7 @@ public class SlotManager : MonoBehaviour
         multiSelectButton.clicked += MultiSelectButton;
         clearButton.clicked += ClearButton;
         startButton.clicked += StartLevel;
+        backButton.clicked += BackLevel;
     }
 
     private void OnEnable()
@@ -171,6 +175,10 @@ public class SlotManager : MonoBehaviour
 
         selectionCanvas.style.display = DisplayStyle.None;
         teamCanvas.style.display = DisplayStyle.Flex;
+    }
+    public void BackLevel()
+    {
+        SceneManager.LoadScene("LevelSelector");
     }
 
 }

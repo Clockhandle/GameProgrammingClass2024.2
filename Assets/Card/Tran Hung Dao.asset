@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tran Hung Dao
   m_EditorClassIdentifier: 
   charaName: Tran Hung Dao
-  image: {fileID: 21300000, guid: aafe5a3e94639764b8aecb3003f44d95, type: 3}
+  image: {fileID: 245822659, guid: 1445f6c9710d5d046b5e79f6e0c50d4f, type: 3}
   atk: 12
   hp: 150
   def: 10
