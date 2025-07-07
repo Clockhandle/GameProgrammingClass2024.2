@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tran
   m_EditorClassIdentifier: 
   charaName: Tran
-  image: {fileID: 8923951454323899545, guid: 4a261fb0ce00c9e419b2191a257d56ae, type: 3}
+  image: {fileID: -658606530835699793, guid: 4a261fb0ce00c9e419b2191a257d56ae, type: 3}
   atk: 10
   hp: 100
   def: 2

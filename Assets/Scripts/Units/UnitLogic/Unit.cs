@@ -298,7 +298,7 @@ public class Unit : MonoBehaviour
 
             if (unitDataSO != null && DPManager.Instance != null)
             {
-                DPManager.Instance.GainDP(unitDataSO.DP);
+                DPManager.Instance.GainDP(unitDataSO.DP / 2);
             }
 
             // Clear any selection first

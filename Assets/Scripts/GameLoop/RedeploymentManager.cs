@@ -81,6 +81,11 @@ public class RedeploymentManager : MonoBehaviour
     private IEnumerator CooldownRoutine(GameObject prefab, float cooldown)
     {
         yield return new WaitForSeconds(cooldown);
+        CooldownComplete(prefab);
+    }
+
+    private void CooldownComplete(GameObject prefab)
+    {
         if (cooldowns.ContainsKey(prefab))
         {
             cooldowns.Remove(prefab);
@@ -107,5 +112,4 @@ public class RedeploymentManager : MonoBehaviour
         if (prefab == null) return false;
         return cooldowns.ContainsKey(prefab);
     }
-  
 }

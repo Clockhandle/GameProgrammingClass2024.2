@@ -243,7 +243,7 @@ ScriptedImporter:
     uvTransform: {x: 75, y: 58}
   - name: TNDuatattack_Frame_6
     originalName: 
-    pivot: {x: 0.65828186, y: 0.43820277}
+    pivot: {x: 0.53312325, y: 0.28801227}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:

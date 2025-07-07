@@ -10,7 +10,6 @@ public class StartLevel : MonoBehaviour
 {
     [Header("Configuration")]
     [Tooltip("The name of the scene to load after selecting a level.")]
-    [SerializeField] private string characterSelectSceneName = "CharSelection";
 
     private LevelManager levelManager;
 

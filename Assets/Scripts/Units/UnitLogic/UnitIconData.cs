@@ -53,4 +53,13 @@ public class UnitIconData : MonoBehaviour
         }
         return null;
     }
+
+    // Add this method to allow setting the icon sprite from outside
+    public void SetIconSprite(Sprite sprite)
+    {
+        unitIcon = sprite;
+        var image = GetComponent<UnityEngine.UI.Image>();
+        if (image != null)
+            image.sprite = sprite;
+    }
 }

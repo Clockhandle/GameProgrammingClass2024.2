@@ -44,12 +44,14 @@ public class InputManager : MonoBehaviour
 
     private void OnMouseClick()
     {
+        if(TutorialPanelController.IsTutorialOpen) return;
         if (IsPointerOverUI) return;
         OnTap?.Invoke();
     }
 
     private void OnMouseHold()
     {
+        if (TutorialPanelController.IsTutorialOpen) return;
         if (IsPointerOverUI) return;
         isHolding = true;
         OnHold?.Invoke();

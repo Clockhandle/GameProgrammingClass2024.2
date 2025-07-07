@@ -96,4 +96,23 @@ public class UnitRange : MonoBehaviour
     }
 
     public IEnumerable<EnemyPathFollower> GetEnemiesInRange() => enemiesInRange;
+
+    public List<Unit> GetAlliesInRange(Unit self)
+    {
+        List<Unit> allies = new List<Unit>();
+        Collider2D[] colliders = Physics2D.OverlapBoxAll(
+            transform.position,
+            new Vector2(transform.localScale.x, transform.localScale.y),
+            transform.eulerAngles.z
+        );
+        foreach (var col in colliders)
+        {
+            Unit ally = col.GetComponent<Unit>();
+            if (ally != null && ally != self && ally.IsOperational)
+            {
+                allies.Add(ally);
+            }
+        }
+        return allies;
+    }
 }

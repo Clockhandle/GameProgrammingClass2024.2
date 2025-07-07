@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charaName: Tran Quang Khai
   image: {fileID: -1213100576037954233, guid: 7808a8807882bd84ca3fd4a3d05abbe6, type: 3}
-  atk: 15
+  atk: 20
   hp: 150
   def: 10
   role: 1

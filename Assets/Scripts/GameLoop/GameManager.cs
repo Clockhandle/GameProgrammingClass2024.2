@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text enemyCountText;
     public GameObject gameOverPanel;
     public GameObject WinPanel;
+    public GameObject tutorialPanel;
 
     [Header("Spawners")]
     public List<EnemySpawner> spawners = new List<EnemySpawner>();
@@ -64,6 +65,7 @@ public class GameManager : MonoBehaviour
 
         WinPanel.SetActive(false);
         gameOverPanel.SetActive(false);
+        tutorialPanel.SetActive(false);
 
     }
 

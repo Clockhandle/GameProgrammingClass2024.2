@@ -17,6 +17,6 @@ MonoBehaviour:
   charSceneToLoad: CharSelectLV2
   levelDescription: The army advances to Ai Nam Quan and engages the enemy at Van
     Kiep, with Tran Hung Dao personally leading the charge.
-  levelIcon: {fileID: 21300000, guid: 5c5ed1578e4273c479c26e90f88fdcf4, type: 3}
+  levelIcon: {fileID: 21300000, guid: e6375aaeadcbc99489528f81ed2925e6, type: 3}
   isUnlocked: 1
   levelMusic: {fileID: 8300000, guid: 2829162347d8bfb459e102fc2fc72fcf, type: 3}

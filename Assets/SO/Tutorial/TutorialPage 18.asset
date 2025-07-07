@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83250533a3b42014492fccb9ed8c4130, type: 3}
+  m_Name: TutorialPage 18
+  m_EditorClassIdentifier: 
+  tutorialImage: {fileID: 21300000, guid: 42861a897fb11cd4ba1c08a0f73c622e, type: 3}
+  tutorialText: Certain specially named units will have skills. These skills can
+    have varifying effects, to boosting your units, dealing a lot of damage, or explode
+    enemies. They take time to recharge.

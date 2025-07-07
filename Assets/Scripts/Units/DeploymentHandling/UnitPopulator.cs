@@ -61,27 +61,51 @@ public class UnitPopulator : MonoBehaviour
             GameObject uiIconInstance = Instantiate(genericUnitIconPrefab, unitIconContainer);
             UnitIconData iconDataScript = uiIconInstance.GetComponent<UnitIconData>();
 
-            // C. Assign the found prefab to the UI icon's data script.
-            //    The icon now knows which 3D model it is responsible for spawning.
             iconDataScript.unitPrefab = characterPrefabToAssign;
 
-            // D. Set the visual appearance of the UI icon using the card's image.
-            Image iconImage = uiIconInstance.GetComponent<Image>();
-            if (iconImage != null && cardData.image != null)
+            // Set the icon sprite using the new method
+            if (cardData.image != null)
             {
-                iconImage.sprite = cardData.image;
+                iconDataScript.SetIconSprite(cardData.image);
             }
 
             SetupEventTrigger(uiIconInstance);
         }
     }
 
+    public void InstantiateUnitIconForPrefab(GameObject characterPrefabToAssign)
+    {
+        // Find the cardData for this prefab (if possible)
+        Cards cardData = null;
+        foreach (var mapping in characterMappings)
+        {
+            if (mapping.characterPrefab == characterPrefabToAssign)
+            {
+                cardData = mapping.cardData;
+                break;
+            }
+        }
+
+        // Instantiate the generic UI icon prefab and place it in the hand container (deploymentList panel)
+        GameObject uiIconInstance = Instantiate(genericUnitIconPrefab, unitIconContainer);
+        UnitIconData iconDataScript = uiIconInstance.GetComponent<UnitIconData>();
+
+        iconDataScript.unitPrefab = characterPrefabToAssign;
+
+        // Set the icon sprite using the new method
+        Sprite iconSprite = (cardData != null && cardData.image != null)
+            ? cardData.image
+            : characterPrefabToAssign.GetComponent<Unit>()?.unitDataSO?.icon;
+        iconDataScript.SetIconSprite(iconSprite);
+
+        iconDataScript.StoreInitialState();
+        SetupEventTrigger(uiIconInstance);
+    }
+
     private GameObject FindCharacterPrefabByCard(Cards cardToFind)
     {
-        // Use LINQ to find the mapping where the 'cardData' asset matches the one we're looking for.
         CharacterPrefabMapping mapping = characterMappings.FirstOrDefault(m => m.cardData == cardToFind);
 
-        // Return the associated prefab if a mapping was found, otherwise return null.
         return mapping?.characterPrefab;
     }
 

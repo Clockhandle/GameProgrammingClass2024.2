@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charaName: Tran Nhat Duat
   image: {fileID: -658606530835699793, guid: 4a261fb0ce00c9e419b2191a257d56ae, type: 3}
-  atk: 10
+  atk: 15
   hp: 150
   def: 10
   role: 1

@@ -178,66 +178,43 @@ public class DragToScreenManager : MonoBehaviour
     public void HandleEndDrag(BaseEventData baseData)
     {
         if (!isDragging) return;
-
         InputManager.SignalUIDragInactive();
-
         if (tileManager?.tileHighlighter != null)
             tileManager.tileHighlighter.ClearHighlights();
 
-        // --- PHASE 1 PLACEMENT LOGIC ---
+        bool placedSuccessfully = false;
+        Unit placedUnitReference = null;
+
         if (canPlace)
         {
-            // only place when enough hdp 
             int unitCost = currentUnitDataOnPrefab.unitDataSO.DP;
             if (DPManager.Instance.CanSpendDP(unitCost))
             {
-
                 Vector3 snapPosition = tileManager.tilemap.GetCellCenterWorld(closestTile);
-                Unit awaitDeploymentUnit = null;
+                placedSuccessfully = tileManager.TryPlaceCharacterProvisionally(snapPosition, currentDraggedPrefab, out placedUnitReference);
 
-                // Call provisional placement (no DP check/spend here)
-                bool placedSuccessfully = tileManager.TryPlaceCharacterProvisionally(snapPosition, currentDraggedPrefab, out awaitDeploymentUnit);
-
-                if (placedSuccessfully && awaitDeploymentUnit != null)
-                {
-                    if (isDraggingLastOne && currentlyDraggedIconData != null)
-                    {
-                        currentlyDraggedIconData.gameObject.SetActive(false);
-                    }
-                }
-                else
+                if (!placedSuccessfully)
                 {
                     Debug.LogWarning($"Phase 1: Provisional placement failed for {currentDraggedPrefab?.name ?? "Unknown"} at {closestTile}.");
                 }
             }
-
         }
-   
 
-
-        // --- Cleanup ---
         if (ghostIconInstance != null)
         {
             DestroyGhostIcon();
-            // Optional: Re-enable original icon
         }
         else if (draggedOriginalIconRect != null)
         {
-            // Reset original icon *only if it wasn't just disabled*
-            if (currentlyDraggedIconData != null && currentlyDraggedIconData.gameObject.activeSelf)
+            ResetOriginalIcon();
+            if (placedSuccessfully && isDraggingLastOne && currentlyDraggedIconData != null)
             {
-                ResetOriginalIcon(); // Resets parent, index, position, raycasts (NO layout element)
-            }
-            else
-            {
-                // Icon was disabled, just clear refs
-                draggedOriginalIconRect = null;
-                originalParent = null;
+                currentlyDraggedIconData.gameObject.SetActive(false);
             }
         }
-            
-        ResetDragState(); // Reset manager's internal state
+        ResetDragState();
     }
+
 
 
     // --- Helper Methods ---
@@ -303,23 +280,48 @@ public class DragToScreenManager : MonoBehaviour
     {
         // Unsubscribe to avoid memory leaks
         if (RedeploymentManager.Instance != null)
+<<<<<<< Updated upstream
         {
             RedeploymentManager.Instance.OnRedeployReady -= OnRedeployReadyHandler;
         }
+=======
+            RedeploymentManager.Instance.OnRedeployReady -= OnRedeployReadyHandler;
+>>>>>>> Stashed changes
 
         ReactivatePrefab(prefab);
+
+        // Explicitly set the icon active if it exists
+        foreach (UnitIconData icon in unitIcons)
+        {
+            if (icon != null && icon.unitPrefab == prefab)
+            {
+                if (!icon.gameObject.activeSelf)
+                {
+                    icon.gameObject.SetActive(true);
+                }
+                break;
+            }
+        }
     }
 
     // Actual logic to re-enable the prefab/icon in UI
     private void ReactivatePrefab(GameObject prefab)
     {
+<<<<<<< Updated upstream
  
+=======
+        if (prefab == null) return;
+
+        // Search the list of all known icons for one that matches the prefab
+        // and is currently turned off.
+>>>>>>> Stashed changes
         foreach (UnitIconData icon in unitIcons)
         {
             icon.gameObject.SetActive(true);
           
             if (icon != null && icon.unitPrefab == prefab)
             {
+<<<<<<< Updated upstream
                 // Found the matching icon!
                 RectTransform iconRect = icon.GetComponent<RectTransform>();
                 if (iconRect == null) continue; // Need RectTransform
@@ -349,10 +351,22 @@ public class DragToScreenManager : MonoBehaviour
                     LayoutRebuilder.MarkLayoutForRebuild(icon.originalParent as RectTransform); // Requires 'using UnityEngine.UI;'
 
                 return; // Exit after handling
+=======
+                // Found the disabled icon. Simply re-enable it.
+                // Its position and parent are already correct from the HandleEndDrag fix.
+                icon.gameObject.SetActive(true);
+                return; // Job done.
+>>>>>>> Stashed changes
             }
         }
-        // ... (Log warning if not found) ...
-        Debug.LogWarning($"Could not find matching UnitIconData in list to re-enable for prefab {prefab.name}");
+
+        // Fallback if no inactive icon was found (should be rare)
+        Debug.LogWarning($"ReactivatePrefab: No inactive icon found for {prefab.name}. You may need to create a new one if this is intended.");
+        // Example of creating a new one if needed:
+        // if (UnitPopulatorInstance != null) {
+        //     UnitPopulatorInstance.InstantiateUnitIconForPrefab(prefab);
+        //     RefreshIconList();
+        // }
     }
 
     public void RefreshIconList()

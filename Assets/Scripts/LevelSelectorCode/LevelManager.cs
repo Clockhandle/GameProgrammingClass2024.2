@@ -78,4 +78,28 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public void UnlockAllLevelProgress()
+    {
+        Debug.LogWarning("--- UNLOCKING ALL LEVELS ---");
+
+        if (levels != null && levels.Count > 0 && ProgressManager.Instance != null)
+        {
+            foreach (var level in levels)
+            {
+                ProgressManager.Instance.UnlockLevel(level.sceneToLoad);
+            }
+            Debug.Log("All levels have been unlocked and saved.");
+        }
+        else
+        {
+            Debug.LogError("Could not unlock all levels because the 'levels' list is not assigned or ProgressManager is missing!");
+        }
+
+        // Optionally update UI immediately
+        ApplySavedProgress();
+        if (levelMapController != null)
+        {
+            levelMapController.ConfigureAllLevelButtons();
+        }
+    }
 }

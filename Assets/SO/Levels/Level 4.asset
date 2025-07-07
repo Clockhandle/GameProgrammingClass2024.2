@@ -17,6 +17,6 @@ MonoBehaviour:
   charSceneToLoad: CharSelectLV4
   levelDescription: Continue with the Battle of Van Nam, now with the help of Tran
     Quoc Toan defending the army of Mongol
-  levelIcon: {fileID: 21300000, guid: 7ca7bb88b4c69344781914897af99b3a, type: 3}
+  levelIcon: {fileID: 21300000, guid: e6c9eaf78751694479c9634903fe447e, type: 3}
   isUnlocked: 0
   levelMusic: {fileID: 8300000, guid: 2829162347d8bfb459e102fc2fc72fcf, type: 3}
