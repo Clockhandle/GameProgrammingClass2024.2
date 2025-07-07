@@ -280,13 +280,9 @@ public class DragToScreenManager : MonoBehaviour
     {
         // Unsubscribe to avoid memory leaks
         if (RedeploymentManager.Instance != null)
-<<<<<<< Updated upstream
         {
             RedeploymentManager.Instance.OnRedeployReady -= OnRedeployReadyHandler;
         }
-=======
-            RedeploymentManager.Instance.OnRedeployReady -= OnRedeployReadyHandler;
->>>>>>> Stashed changes
 
         ReactivatePrefab(prefab);
 
@@ -307,21 +303,13 @@ public class DragToScreenManager : MonoBehaviour
     // Actual logic to re-enable the prefab/icon in UI
     private void ReactivatePrefab(GameObject prefab)
     {
-<<<<<<< Updated upstream
- 
-=======
         if (prefab == null) return;
-
-        // Search the list of all known icons for one that matches the prefab
-        // and is currently turned off.
->>>>>>> Stashed changes
         foreach (UnitIconData icon in unitIcons)
         {
             icon.gameObject.SetActive(true);
           
             if (icon != null && icon.unitPrefab == prefab)
             {
-<<<<<<< Updated upstream
                 // Found the matching icon!
                 RectTransform iconRect = icon.GetComponent<RectTransform>();
                 if (iconRect == null) continue; // Need RectTransform
@@ -351,12 +339,6 @@ public class DragToScreenManager : MonoBehaviour
                     LayoutRebuilder.MarkLayoutForRebuild(icon.originalParent as RectTransform); // Requires 'using UnityEngine.UI;'
 
                 return; // Exit after handling
-=======
-                // Found the disabled icon. Simply re-enable it.
-                // Its position and parent are already correct from the HandleEndDrag fix.
-                icon.gameObject.SetActive(true);
-                return; // Job done.
->>>>>>> Stashed changes
             }
         }
 
